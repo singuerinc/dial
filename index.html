@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Dial by singuerinc</title>
+    <title>Dial</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -13,8 +13,10 @@
   </head>
   <body>
     <div class="wrapper">
+      <section class="clock">
+        <h1 id="clock">--:--</h1>
+      </section>
       <section>
-        <h1>@</h1>
         <ul>
           <li><a target="_blank" href="https://google.com">Google</a></li>
           <li><a target="_blank" href="https://mail.google.com">Google Mail</a></li>
@@ -110,18 +112,32 @@
     </div>
     <script src="javascripts/packery.pkgd.min.js"></script>
     <script charset="utf-8">
-      
+
       // var style = document.createElement('style');
       // var head = document.querySelector('head');
       // var r = function(){ return Math.floor(Math.random() * 255) };
-      // style.textContent = 'h1 { color: rgb('+r()+', '+r()+', '+r()+') }';
+      // style.textContent = '#clock { color: rgb('+r()+', '+r()+', '+r()+') }';
       // head.appendChild(style);
 
-      var container = document.querySelector('.wrapper');
-      var pckry = new Packery( container, {
+      var pckry = new Packery( '.wrapper', {
         itemSelector: 'section',
         gutter: 0
       });
+
+      function time() {
+          var today=new Date();
+          var d = today.getDate();
+          var M = today.getMonth()+1;
+          var YYYY = today.getFullYear();
+          var h=today.getHours();
+          var m=today.getMinutes();
+          m = m < 10 ? '0'+m : m;
+          document.getElementById('clock').innerHTML = h+":"+m+" <small>"+d+"-"+M+"-"+YYYY+"</small> ";
+          setTimeout(function(){time()}, 1000);
+      }
+
+      time();
+
     </script>
 
   </body>

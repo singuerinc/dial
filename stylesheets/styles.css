@@ -1,23 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 html, body {
-  background-color: #ccc;
+  background-color: #FFF;
 }
 
 body {
   padding:50px;
   font:16px/1.5 Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#555;
+  color:#444;
   font-weight:100;
   -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#FD335A;
   font-weight: 100;
   margin:0 0 20px;
   text-transform: uppercase;
+}
+
+#clock {
+  font-size: 40px;
+  color: rgb(231, 127, 154);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 30px;
+  margin-bottom: 50px !important;
+}
+
+#clock small {
+  font-size: 26px;
+  color: #888;
+}
+
+section.clock {
+  width: 100%;
 }
 
 p, ul, ol, table, pre, dl {
@@ -46,7 +62,7 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color:#666;
+  color:#888;
   text-decoration:none;
 }
 
@@ -59,7 +75,6 @@ a small {
 
 a:hover {
   color:#111;
-  text-decoration: underline;
 }
 
 .wrapper {
@@ -118,7 +133,7 @@ img {
 }
 
 section {
-  width:33%;
+  width:25%;
   float:left;
   padding-bottom:0;
 }
