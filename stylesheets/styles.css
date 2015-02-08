@@ -1,19 +1,32 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+html, body {
+  background-color: #ccc;
+}
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
-  font-weight:300;
+  font:16px/1.5 Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#555;
+  font-weight:100;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#222;
+  color:#FD335A;
+  font-weight: 100;
   margin:0 0 20px;
+  text-transform: uppercase;
 }
 
 p, ul, ol, table, pre, dl {
   margin:0 0 20px;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
 }
 
 h1, h2, h3 {
@@ -21,7 +34,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:28px;
+  font-size:16px;
 }
 
 h2 {
@@ -33,8 +46,7 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color:#39c;
-  font-weight:400;
+  color:#666;
   text-decoration:none;
 }
 
@@ -45,9 +57,19 @@ a small {
   display:block;
 }
 
+a:hover {
+  color:#111;
+  text-decoration: underline;
+}
+
 .wrapper {
-  width:860px;
-  margin:0 auto;
+  width: 860px;
+  margin: 0 auto;
+  overflow: hidden;
+  top: 50%;
+  position: absolute !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 blockquote {
@@ -65,7 +87,7 @@ code, pre {
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;  
+  background: #f8f8f8;
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
@@ -96,9 +118,9 @@ img {
 }
 
 section {
-  width:770px;
-  float:right;
-  padding-bottom:50px;
+  width:33%;
+  float:left;
+  padding-bottom:0;
 }
 
 small {
@@ -120,33 +142,33 @@ footer {
 }
 
 @media print, screen and (max-width: 960px) {
-  
+
   div.wrapper {
     width:auto;
     margin:0;
   }
-  
+
   header, section, footer {
     float:none;
     position:static;
     width:auto;
   }
-  
+
   header {
     padding-right:320px;
   }
-  
+
   section {
     border:1px solid #e5e5e5;
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
   }
-  
+
   header a small {
     display:inline;
   }
-  
+
   header ul {
     position:absolute;
     right:50px;
@@ -158,15 +180,15 @@ footer {
   body {
     word-wrap:break-word;
   }
-  
+
   header {
     padding:0;
   }
-  
+
   header ul, header p.view {
     position:static;
   }
-  
+
   pre, code {
     word-wrap:normal;
   }
@@ -176,7 +198,7 @@ footer {
   body {
     padding:15px;
   }
-  
+
   header ul {
     display:none;
   }

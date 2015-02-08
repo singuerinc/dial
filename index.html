@@ -14,17 +14,115 @@
   <body>
     <div class="wrapper">
       <section>
-        <h1>
-<a id="news" class="anchor" href="#news" aria-hidden="true"><span class="octicon octicon-link"></span></a>News</h1>
-<p><a href="http://news.ycombinator.com">Hacker News</a></p>
-<p><a href="http://news.ycombinator.com">Hacker News</a></p>
+        <h1>@</h1>
+        <ul>
+          <li><a target="_blank" href="https://google.com">Google</a></li>
+          <li><a target="_blank" href="https://mail.google.com">Google Mail</a></li>
+          <li><a target="_blank" href="https://inbox.google.com">Google Inbox</a></li>
+          <li><a target="_blank" href="https://calendar.google.com">Google Calendar</a></li>
+        </ul>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/singuerinc">singuerinc</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+      <section>
+        <h1>News</h1>
+        <ul>
+          <li><a target="_blank" href="http://elpais.com">El Pais</a></li>
+          <li><a target="_blank" href="http://www.nytimes.com">New York Times</a></li>
+          <li><a target="_blank" href="http://www.ole.com.ar">Diario Ol&eacute;</a></li>
+          <li><a target="_blank" href="http://www.planetabocajuniors.com.ar">Planeta Boca Juniors</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Web Dev</h1>
+        <ul>
+          <li><a target="_blank" href="http://dailyjs.com">DailyJS</a></li>
+          <li><a target="_blank" href="http://updates.html5rocks.com/">HTML5 Updates</a></li>
+          <li><a target="_blank" href="http://ejohn.org/category/blog/">John Resig - Blog</a></li>
+          <li><a target="_blank" href="http://tympanus.net/codrops/">codrops</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Tech News</h1>
+        <ul>
+          <li><a target="_blank" href="http://news.ycombinator.com">Hacker News</a></li>
+          <li><a target="_blank" href="http://theverge.com">The Verge</a></li>
+          <li><a target="_blank" href="http://thenextweb.com">The Next Web</a></li>
+          <li><a target="_blank" href="http://blog.jetbrains.com/">JetBrains Blog</a></li>
+          <li><a target="_blank" href="http://www.engadget.com/">Engadget</a></li>
+          <li><a target="_blank" href="http://es.gizmodo.com/">Gizmodo ES</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Tech</h1>
+        <ul>
+          <li><a target="_blank" href="http://github.com">GitHub</a></li>
+          <li><a target="_blank" href="http://bitbucket.com">Bitbucket</a></li>
+          <li><a target="_blank" href="http://openshift.com">OpenShift</a></li>
+          <li><a target="_blank" href="http://stackoverflow.com">Stackoverflow</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Social</h1>
+        <ul>
+          <li><a target="_blank" href="http://facebook.com">Facebook</a></li>
+          <li><a target="_blank" href="http://twitter.com">Twitter</a></li>
+          <li><a target="_blank" href="http://plus.google.com">Google+</a></li>
+          <li><a target="_blank" href="http://instagram.com">Instagram</a></li>
+          <li><a target="_blank" href="http://pinterest.com">Pinterest</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Funny</h1>
+        <ul>
+          <li><a target="_blank" href="http://commitstrip.com">Commit Strip</a></li>
+          <li><a target="_blank" href="http://thecodinglove.com">The Coding Love</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Android</h1>
+        <ul>
+          <li><a target="_blank" href="http://www.androidcentral.com/">Android Central</a></li>
+          <li><a target="_blank" href="http://androidheadlines.com/">Android Headlines</a></li>
+          <li><a target="_blank" href="http://androidandme.com/">Android and Me</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Hack</h1>
+        <ul>
+          <li><a target="_blank" href="http://www.macserialjunkie.com/">Mac Serial Junkie</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Inspiration</h1>
+        <ul>
+          <li><a target="_blank" href="http://theultralinx.com/">The Ultralinx</a></li>
+          <li><a target="_blank" href="http://linxspiration.com/">Linxspiration</a></li>
+          <li><a target="_blank" href="http://designspiration.net/">Designspiration</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Health</h1>
+        <ul>
+          <li><a target="_blank" href="http://runkeeper.com/home">RunKeeper</a></li>
+          <li><a target="_blank" href="http://linxspiration.com/">Linxspiration</a></li>
+          <li><a target="_blank" href="http://designspiration.net/">Designspiration</a></li>
+        </ul>
+      </section>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+    <script src="javascripts/packery.pkgd.min.js"></script>
+    <script charset="utf-8">
+      
+      // var style = document.createElement('style');
+      // var head = document.querySelector('head');
+      // var r = function(){ return Math.floor(Math.random() * 255) };
+      // style.textContent = 'h1 { color: rgb('+r()+', '+r()+', '+r()+') }';
+      // head.appendChild(style);
+
+      var container = document.querySelector('.wrapper');
+      var pckry = new Packery( container, {
+        itemSelector: 'section',
+        gutter: 0
+      });
+    </script>
+
   </body>
 </html>
