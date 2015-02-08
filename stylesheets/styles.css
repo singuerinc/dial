@@ -77,6 +77,10 @@ a:hover {
   color:#111;
 }
 
+.main a {
+  color: red;
+}
+
 .wrapper {
   width: 860px;
   margin: 0 auto;
