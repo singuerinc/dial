@@ -25,11 +25,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-#clock {
-  font-size: 40px;
+.clock {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 30px;
   margin-bottom: 50px !important;
+}
+
+#clock {
+  display: inline-block;
+  font-size: 40px;
+  margin: 0;
 }
 
 #clock small {
@@ -136,6 +141,20 @@ section ul {
   margin: 0 0 20px;
 }
 
+*:focus {
+  outline: 0;
+}
+
+#search {
+  font-family: "Raleway";
+  display: inline-block;
+  margin: 0 0 0 30px;
+  font-size: 29px;
+  background: transparent;
+  border: 0;
+  color: #25FFB4;
+}
+
 body.theme_light {
   background-color: #FFF;
   color: #CCC;
@@ -149,6 +168,10 @@ body.theme_light .main a {
   color: #0094FF;
 }
 
-body.theme_light #clock {
+body.theme_light .clock {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.theme_light #search {
+  color: #0094FF;
 }

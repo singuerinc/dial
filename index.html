@@ -1,29 +1,37 @@
 <!doctype html>
-<html>
+<html ng-app="dial">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Dial</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
-<body class="theme_dark">
+<body class="{{theme}}" ng-controller="DialController">
 <div class="wrapper">
     <section class="clock">
-        <h1 id="clock">-</h1>
+        <h1 id="clock">{{time}}</h1>
+        <input id="search" type="text" autofocus autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
+    </section>
+    <section ng-class="section.title|lowercase" ng-repeat="section in data">
+        <h1>{{section.title}}</h1>
+        <ul>
+            <li ng-repeat="item in section.links|filter:search:label"><a href="{{item.href}}" target="_self">{{item.label}}</a></li>
+        </ul>
     </section>
 </div>
 <footer>
     <ul>
         <li class="right">
-            <a id="theme-light" target="_self" href="#theme-light">light</a>
+            <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>
         <li class="right">
-            <a id="theme-dark" target="_self" href="#theme-dark">dark</a>
+            <a id="theme-dark" target="_self" href="#" ng-click="changeTheme('theme_dark')">dark</a>
         </li>
     </ul>
 </footer>
 <script src="javascripts/jquery-2.1.3.min.js"></script>
 <script src="javascripts/packery.pkgd.min.js"></script>
+<script src="javascripts/angular.min.js"></script>
 <script src="data.js"></script>
 <script src="index.js"></script>
 </body>
