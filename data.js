@@ -13,7 +13,7 @@ var data = [
         title: "News + Blogs", links: [
             {label: "El Pais", href: "http://elpais.com"},
             {label: "New York Times", href: "http://www.nytimes.com"},
-            {label: "Diario Ol&eacute;", href: "http://www.ole.com.ar"},
+            {label: "Diario Olé", href: "http://www.ole.com.ar"},
             {label: "Planeta Boca Juniors", href: "http://www.planetabocajuniors.com.ar"},
             {label: "Medium", href: "https://medium.com"}
         ]
