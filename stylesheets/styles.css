@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 html, body {
-  background-color: #FFF;
+  background-color: #222;
 }
 
 body {
@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #clock {
   font-size: 40px;
-  color: rgb(131, 127, 154);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding-bottom: 30px;
   margin-bottom: 50px !important;
@@ -78,7 +77,7 @@ a:hover {
 }
 
 .main a {
-  color: red;
+  color: #ccc;
 }
 
 .wrapper {
