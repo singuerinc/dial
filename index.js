@@ -7,9 +7,6 @@
 
 (function(){
 
-
-
-
     var Dial = function(){
 
     };
@@ -17,12 +14,16 @@
     Dial.prototype.init = function(){
 
         this.body = $('body');
+        this.wrapper = $('.wrapper');
+
+        this._construct(data);
 
         var pckry = new Packery( '.wrapper', {
             itemSelector: 'section',
             gutter: 0
         });
 
+        this._update_time();
         setInterval(this._update_time, 1000);
 
         this._light_theme_btn = $('#theme-light');
@@ -32,6 +33,24 @@
         this._dark_theme_btn.on('click', this._changeThemeToDark.bind(this));
 
         return this;
+    };
+
+    Dial.prototype._construct = function(data){
+
+        for(var i=0; i<data.length; i++){
+            var className = data[i].title.toLowerCase().replace(/\s/ig, '_');
+            var section = $('<section class="'+className+'"><h1>'+data[i].title+'</h1></section>');
+
+            var level2 = data[i].links;
+            var ul = $('<ul></ul>');
+            for(var j=0; j<level2.length; j++){
+                var item = level2[j];
+                var li = $('<li><a href="'+item.href+'">'+item.label+'</a></li>');
+                li.appendTo(ul);
+            }
+            ul.appendTo(section);
+            section.appendTo(this.wrapper);
+        }
     };
 
     Dial.prototype._changeThemeToLight = function(){
