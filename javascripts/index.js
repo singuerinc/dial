@@ -17,7 +17,8 @@ function time() {
     var h=today.getHours();
     var m=today.getMinutes();
     m = m < 10 ? '0'+m : m;
-    document.getElementById('clock').innerHTML = h+":"+m+" <small>"+d+"-"+M+"-"+YYYY+"</small> ";
+    // document.getElementById('clock').innerHTML = h+":"+m+" <small>"+d+"-"+M+"-"+YYYY+"</small> ";
+    document.getElementById('clock').innerHTML = h+":"+m;
     setTimeout(function(){time()}, 1000);
 }
 
