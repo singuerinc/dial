@@ -18,6 +18,11 @@
 
         this._construct(data);
 
+        var theme = localStorage.getItem('theme');
+        if(typeof(theme) != 'undefined'){
+            this.changeTheme(theme);
+        }
+
         var pckry = new Packery( '.wrapper', {
             itemSelector: 'section',
             gutter: 0
@@ -64,6 +69,7 @@
     Dial.prototype.changeTheme = function(theme){
         this.body.attr('class', '');
         this.body.addClass(theme);
+        localStorage.setItem('theme', theme);
         return this;
     };
 
