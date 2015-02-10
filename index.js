@@ -3,9 +3,18 @@ angular.module('dial', [])
 
         $scope.search = '';
         $scope.data = data;
-        $scope.theme = 'theme_dark';
 
-        if(typeof(localstorage))
+        var all_data = [];
+        for(var i=0; i<data.length; i++){
+            var links = data[i].links;
+            for(var j=0; j<links.length; j++){
+                all_data.push(links[j]);
+            }
+        }
+
+        $scope.all_data = all_data;
+
+        $scope.theme = 'theme_dark';
 
         $scope.time = '-';
 

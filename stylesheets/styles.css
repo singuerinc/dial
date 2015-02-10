@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
+.ng-hide {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -131,6 +135,15 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+#search-result {
+  position: absolute;
+  top: 161px;
+}
+
+#search-result li:nth-child(1) a{
+  color: white;
+}
+
 section {
   width:25%;
   float:left;
@@ -174,4 +187,8 @@ body.theme_light .clock {
 
 body.theme_light #search {
   color: #0094FF;
+}
+
+body.theme_light #search-result li:nth-child(1) a{
+  color: black;
 }

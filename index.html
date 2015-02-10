@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="dial">
+<html ng-app="dial" ng-csp="">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -12,12 +12,15 @@
         <h1 id="clock">{{time}}</h1>
         <input id="search" type="text" autofocus autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
-    <section ng-class="section.title|lowercase" ng-repeat="section in data">
+    <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
         <h1>{{section.title}}</h1>
         <ul>
-            <li ng-repeat="item in section.links|filter:search:label"><a href="{{item.href}}" target="_self">{{item.label}}</a></li>
+            <li ng-repeat="item in section.links"><a href="{{item.href}}" target="_self">{{item.label}}</a></li>
         </ul>
     </section>
+    <ul id="search-result" ng-hide="search == ''">
+        <li ng-repeat="item in filtered = (all_data|filter:search|limitTo:10)"><a href="{{item.href}}" target="_self">{{item.label}}</a></li>
+    </ul>
 </div>
 <footer>
     <ul>
