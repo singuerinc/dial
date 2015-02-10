@@ -10,4 +10,4 @@
 ![light](https://dl.dropboxusercontent.com/u/311265/dial/theme_light.png)
 
 ## Search
-![search](https://dl.dropboxusercontent.com/u/311265/dial/search.png)
+![search](https://dl.dropboxusercontent.com/u/311265/dial/search_anim.gif)
