@@ -1,7 +1,6 @@
 var data = [
     {
         title: "main", links: [
-        {label: "Google", href: "https://google.com"},
         {label: "Mail", href: "https://mail.google.com"},
         {label: "Whatsapp", href: "https://web.whatsapp.com"},
         {label: "Inbox", href: "https://inbox.google.com"},
