@@ -1,6 +1,6 @@
 ## About
 
-...
+Dial is a Chrome Extension. It replaces the newtab page.
 
 ## Themes
 ### Dark
