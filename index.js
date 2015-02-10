@@ -18,6 +18,10 @@ angular.module('dial', [])
 
         $scope.time = '-';
 
+        $scope.init = function(){
+          document.getElementById('search').focus();
+        };
+
         $scope.changeTheme = function (theme) {
             $scope.theme = theme;
             localStorage.setItem('theme', theme);
