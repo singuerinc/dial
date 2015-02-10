@@ -8,7 +8,7 @@ It replaces the newtab page on Chrome.
 ## Search
 ![search](https://dl.dropboxusercontent.com/u/311265/dial/search_anim.gif)
 
->> Tip: Search and press enter: navigates to the first occurrence.
+> Tip: Search and press enter: navigates to the first occurrence.
 
 ## Themes
 ### Dark
