@@ -10,7 +10,7 @@
 <div class="wrapper">
     <section class="clock">
         <h1 id="clock">{{time}}</h1>
-        <input id="search" type="text" autofocus autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
+        <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
     <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
         <h1>{{section.title}}</h1>
