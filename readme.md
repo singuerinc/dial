@@ -18,7 +18,7 @@ If you want to check how it works, check out this demo:
 ### Light
 ![light](https://dl.dropboxusercontent.com/u/311265/dial/theme_light.png)
 
-## Instalation
+## Installation
 If you want to test Dial you have to install it manually in Chrome.
 
 1. Clone/Download the repo
@@ -28,9 +28,9 @@ If you want to test Dial you have to install it manually in Chrome.
 5. Open a new tab in Chrome.
 
 ### TODO
-- Navigate through results with keys
-- Better options page
-- Change default sites
-- Profile image?
-- Sync
-- Backgrounds
+- [ ] Navigate through results with keys
+- [ ] Better options page
+- [ ] Change default sites
+- [ ] Profile image?
+- [x] Sync
+- [ ] Backgrounds
