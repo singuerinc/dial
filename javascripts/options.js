@@ -1,46 +1,46 @@
 angular.module("dialOptions", [])
-    .controller("DialOptionsController", ["$scope", function ($scope) {
+	.controller("DialOptionsController", ["$scope", function($scope) {
 
-        var dial_data;
-        try {
-            dial_data = JSON.parse(localStorage.getItem('dial_data'));
-            if(dial_data == null){
-                throw new Error();
-            }
-        } catch (error) {
-            // if error get data from data.js
-            dial_data = data;
-        }
+		var _onDataLoaded = function(items) {
+			$scope.$apply(function() {
+				$scope.data = JSON.parse(items.dial_data);
+			});
+		};
 
-        $scope.data = dial_data;
+		chrome.storage.sync.get('dial_data', _onDataLoaded);
+		//_onDataLoaded(data);
 
-        $scope.saveAll = function () {
-            localStorage.setItem('dial_data', angular.toJson($scope.data));
-        };
+		$scope.saveAll = function() {
+			chrome.storage.sync.set({
+				'dial_data': angular.toJson($scope.data)
+			}, function() {
+				console.log('data saved!');
+			});
+		};
 
-        $scope.newSection = function (data) {
-            data.unshift({
-                title: 'Untitled section',
-                links: [{
-                    label: 'Untitled link',
-                    href: 'http://'
-                }]
-            });
-        };
+		$scope.newSection = function(data) {
+			data.unshift({
+				title: 'Untitled section',
+				links: [{
+					label: 'Untitled link',
+					href: 'http://'
+				}]
+			});
+		};
 
-        $scope.removeSection = function (data, index) {
-            data.splice(index, 1);
-        };
+		$scope.removeSection = function(data, index) {
+			data.splice(index, 1);
+		};
 
-        $scope.newLink = function (links) {
-            links.unshift({
-                label: 'Untitled link',
-                href: 'http://'
-            });
-        };
+		$scope.newLink = function(links) {
+			links.unshift({
+				label: 'Untitled link',
+				href: 'http://'
+			});
+		};
 
-        $scope.removeLink = function (links, index) {
-            links.splice(index, 1);
-        };
+		$scope.removeLink = function(links, index) {
+			links.splice(index, 1);
+		};
 
-    }]);
+	}]);
