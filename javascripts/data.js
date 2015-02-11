@@ -6,6 +6,7 @@ var data = [
         {label: "Inbox", href: "https://inbox.google.com"},
         {label: "Drive", href: "https://drive.google.com/drive/#my-drive"},
         {label: "Calendar", href: "https://calendar.google.com"},
+        {label: "Dropbox", href: "https://www.dropbox.com/home"},
         {label: "localhost:3000", href: "http://localhost:3000"}
     ]
     }, {
@@ -14,7 +15,8 @@ var data = [
             {label: "New York Times", href: "http://www.nytimes.com"},
             {label: "Diario Olé", href: "http://www.ole.com.ar"},
             {label: "Planeta Boca Juniors", href: "http://www.planetabocajuniors.com.ar"},
-            {label: "Medium", href: "https://medium.com"}
+            {label: "Medium", href: "https://medium.com"},
+            {label: "Ciencia de Sofá", href: "http://cienciadesofa.com"}
         ]
     }, {
         title: "Web Dev", links: [
@@ -60,7 +62,7 @@ var data = [
             {label: "Android and Me", href: "http://androidandme.com"}
         ]
     }, {
-        title: "Hack", links: [
+        title: "Hack + Torrents", links: [
             {label: "Mac Serial Junkie", href: "http://www.macserialjunkie.com"}
         ]
     }, {
