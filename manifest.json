@@ -6,5 +6,6 @@
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
+  "options_page": "options.html",
   "manifest_version": 2
 }

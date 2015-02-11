@@ -1,0 +1,63 @@
+body {
+    margin: 50px;
+}
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+ul li {
+    list-style: none;
+}
+.btn {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0;
+    margin: 5px 0 0 0;
+}
+
+input {
+    border: 1px solid transparent !important;
+    padding: 2px 4px !important;
+}
+
+input:focus {
+    border: 1px solid grey !important;
+    box-shadow: none !important;
+    padding: 2px 4px !important;
+}
+
+.section-title {
+    font-size: 22px !important;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.link-label {
+    font-weight: bold;
+}
+
+.link-label, .link-href {
+    color: #777;
+}
+
+.no-visible {
+    display: none;
+}
+
+.cancel-circle {
+    width: 15px;
+    margin: 9px 65px 0 0;
+    float: right;
+    opacity: 0.7;
+}
+
+.file-empty-big {
+    width: 25px;
+    margin: 28px 11px 0 0;
+    float: right;
+}
+.cancel-circle-big {
+    width: 25px;
+    margin: 28px 11px 0 0;
+    float: right;
+}

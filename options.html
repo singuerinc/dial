@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="dialOptions" ng-csp="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dial | Options</title>
+    <link rel="stylesheet" href="stylesheets/kube.min.css">
+    <link rel="stylesheet" href="stylesheets/options.css">
+</head>
+<body ng-controller="DialOptionsController">
+
+<div class="container">
+
+    <div class="units-row">
+        <div class="unit-100">
+            <h1>Dial | Options</h1>
+        </div>
+    </div>
+    <div class="units-row">
+        <div class="unit-100">
+            <button class="btn btn-red right smaller" ng-click="saveAll()">SAVE</button>
+            <button class="btn btn-blue left smaller" ng-click="newSection(data)">NEW SECTION</button>
+        </div>
+    </div>
+    <div class="units-row" ng-repeat="section in data">
+
+        <div class="unit-100">
+            <div class="unit-90"><input class="section-title unit-100" type="text" ng-model="section.title"/></div>
+            <div class="unit-10">
+                <a href="#" ng-click="removeSection(data, $index)"><img class="cancel-circle-big" src="images/cancel-circle.svg" alt="Remove Section"/></a>
+                <a href="#" ng-click="newLink(section.links)"><img class="file-empty-big" src="images/file-empty.svg" alt="New Link"/></a>
+            </div>
+        </div>
+
+        <ul class="unit-100">
+            <li ng-repeat="link in section.links">
+                <div class="unit-30"><input class="width-100 link-label" type="text" ng-model="link.label"/></div>
+                <div class="unit-50"><input class="width-100 link-href" type="text" ng-model="link.href"/></div>
+                <div class="unit-20">
+                    <a href="#" ng-click="removeLink(section.links, $index)"><img class="cancel-circle" src="images/cancel-circle.svg" alt="Remove Link"/></a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<script src="javascripts/jquery-2.1.3.min.js"></script>
+<script src="javascripts/angular.min.js"></script>
+<script src="javascripts/options.js"></script>
+</body>
+</html>

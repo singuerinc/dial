@@ -2,11 +2,11 @@ angular.module('dial', [])
     .controller('DialController', ['$scope', '$filter', function ($scope, $filter) {
 
         $scope.search = '';
-        $scope.data = data;
+        $scope.data = JSON.parse(localStorage.getItem('dial_data'));
 
         var all_data = [];
-        for(var i=0; i<data.length; i++){
-            var links = data[i].links;
+        for(var i=0; i<$scope.data.length; i++){
+            var links = $scope.data[i].links;
             for(var j=0; j<links.length; j++){
                 all_data.push(links[j]);
             }
