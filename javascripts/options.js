@@ -1,7 +1,18 @@
 angular.module("dialOptions", [])
     .controller("DialOptionsController", ["$scope", function ($scope) {
 
-        $scope.data = JSON.parse(localStorage.getItem('dial_data'));
+        var dial_data;
+        try {
+            dial_data = JSON.parse(localStorage.getItem('dial_data'));
+            if(dial_data == null){
+                throw new Error();
+            }
+        } catch (error) {
+            // if error get data from data.js
+            dial_data = data;
+        }
+
+        $scope.data = dial_data;
 
         $scope.saveAll = function () {
             localStorage.setItem('dial_data', angular.toJson($scope.data));
