@@ -9,7 +9,7 @@
 <body class="{{theme}}" ng-controller="DialController" ng-init="init()" ng-click="init()">
 <div class="wrapper">
     <section class="clock">
-        <h1 id="clock">{{time}}</h1>
+        <h1 id="clock" class="ng-cloak">{{time}}</h1>
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
     <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
