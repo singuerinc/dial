@@ -34,8 +34,11 @@ angular.module('dial', [])
 			});
 		};
 
-		chrome.storage.sync.get('dial_data', _onDataLoaded);
-		//_onDataLoaded(data);
+		try{
+			chrome.storage.sync.get('dial_data', _onDataLoaded);
+		} catch(err){
+			_onDataLoaded({dial_data: JSON.stringify(data)});
+		}
 
 		$scope.search = '';
 

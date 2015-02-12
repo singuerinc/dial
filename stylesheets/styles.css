@@ -124,17 +124,24 @@ a, .item-label {
   color:#888;
   text-decoration:none;
   opacity: 1;
+  position: relative;
 }
 
-a small {
-  font-size:11px;
-  color:#777;
-  margin-top:-0.6em;
-  display:block;
-}
-
-a:hover {
+a.item-label:hover {
   opacity: 0.5;
+}
+
+.icon-remove {
+  height: 12px;
+  left: -18px;
+  top: 4px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.icon-remove:hover {
+  opacity: 0.7;
 }
 
 .main a {
@@ -145,7 +152,6 @@ a:hover {
   opacity: 0;
   width: 860px;
   margin: 0 auto;
-  overflow: hidden;
   top: 50%;
   position: absolute !important;
   left: 50%;
@@ -187,19 +193,6 @@ section ul li a {
   background: transparent;
   border: 0;
   color: #25FFB4;
-}
-
-.icon-remove {
-  height: 12px;
-  margin-right: 8px;
-  top: 1px;
-  position: relative;
-  cursor: pointer;
-  opacity: 1;
-}
-
-.icon-remove:hover {
-  opacity: 0.7;
 }
 
 body.theme_light {
