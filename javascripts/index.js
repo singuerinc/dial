@@ -10,7 +10,7 @@ angular.module('dial', [])
 				gutter: 0
 			});
 			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1, z: 0.01}, delay: 0.3});
-			TweenLite.from('.wrapper', 0.7, {css: {y: '+=200px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
+			TweenLite.from('.wrapper', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
 			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
 			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
@@ -40,6 +40,7 @@ angular.module('dial', [])
 		$scope.search = '';
 
 		$scope.theme = 'theme_dark';
+		$scope.editMode = true;
 
 		$scope.time = '-';
 
@@ -47,7 +48,7 @@ angular.module('dial', [])
 			document.getElementById('search').focus();
 		};
 
-		$('#options_url').attr('href', chrome.extension.getURL("options.html"));
+		//$('#options_url').attr('href', chrome.extension.getURL("options.html"));
 
 		$scope.changeTheme = function(theme) {
 			$scope.theme = theme;

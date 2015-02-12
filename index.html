@@ -13,9 +13,12 @@
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
     <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
-        <h1 class="ng-cloak">{{section.title}}</h1>
+        <h1 class="ng-cloak">{{section.title}} <img ng-if="editMode" class="icon-remove" src="images/add-circle.svg" /></h1>
         <ul>
-            <li ng-repeat="item in section.links"><a class="ng-cloak" href="{{item.href}}" target="_self">{{item.label}}</a></li>
+            <li ng-repeat="item in section.links">
+              <a ng-if="!editMode" class="ng-cloak item-label" href="{{item.href}}" target="_self">{{item.label}}</a>
+              <span ng-if="editMode" class="ng-cloak item-label">{{item.label}} <img class="icon-remove" src="images/cancel-circle.svg" /></span>
+            </li>
         </ul>
     </section>
     <ul id="search-result" ng-hide="search == ''">
@@ -24,7 +27,7 @@
 </div>
 <footer>
     <ul>
-        <li class="left"><a id="options_url" target="_blank">OPTIONS</a></li>
+        <li class="left"><a id="options_url" href="#" ng-click="editMode=!editMode">OPTIONS</a></li>
         <li class="right">
             <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>
