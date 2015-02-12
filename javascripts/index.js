@@ -1,11 +1,18 @@
 angular.module('dial', [])
 	.controller('DialController', ['$scope', '$filter', function($scope, $filter) {
 
+		TweenLite.set('.clock', {css: {opacity: 0}});
+		TweenLite.set('.wrapper', {css: {opacity: 0}});
+
 		var layout = function() {
 			new Packery('.wrapper', {
 				itemSelector: 'section',
 				gutter: 0
 			});
+			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1, z: 0.01}, delay: 0.3});
+			TweenLite.from('.wrapper', 0.7, {css: {y: '+=200px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
+			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
+			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
 		};
 
 		var _onDataLoaded = function(items) {
