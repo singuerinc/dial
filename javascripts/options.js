@@ -12,7 +12,7 @@ angular.module("dialOptions", [])
 
 		$scope.saveAll = function() {
 			chrome.storage.sync.set({
-				'dial_data': angular.toJson($scope.data)
+				'dial_data': JSON.stringify(angular.toJson($scope.data))
 			}, function() {
 				console.log('data saved!');
 			});
