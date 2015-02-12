@@ -40,7 +40,7 @@ angular.module('dial', [])
 		$scope.search = '';
 
 		$scope.theme = 'theme_dark';
-		$scope.editMode = true;
+		$scope.editMode = false;
 
 		$scope.time = '-';
 
