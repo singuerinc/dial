@@ -4,6 +4,7 @@ Dial is a (beta) Chrome Extension. It's a launcher of frequent websites that you
 It replaces the newtab page on Chrome.
 
 If you want to check how it works, check out this demo:
+
 [Demo](http://singuerinc.github.io/dial/)
 
 ## Search
