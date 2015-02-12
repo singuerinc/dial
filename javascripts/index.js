@@ -13,6 +13,7 @@ angular.module('dial', [])
 			TweenLite.from('.wrapper', 0.7, {css: {y: '+=200px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
 			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
+			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
 		};
 
 		var _onDataLoaded = function(items) {

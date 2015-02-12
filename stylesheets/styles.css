@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 30px;
   margin-bottom: 50px !important;
+  opacity: 0;
 }
 
 #clock {
@@ -75,6 +76,7 @@ footer {
   right: 0;
   width: 100%;
   text-transform: uppercase;
+  opacity: 0;
 }
 
 footer ul {
@@ -140,6 +142,7 @@ a:hover {
 }
 
 .wrapper {
+  opacity: 0;
   width: 860px;
   margin: 0 auto;
   overflow: hidden;
