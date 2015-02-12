@@ -30,7 +30,7 @@ If you want to test Dial you have to install it manually in Chrome.
 ### TODO
 - [ ] Navigate through results with keys
 - [ ] Better options page
-- [ ] Change default sites
+- [x] Change default sites
 - [ ] Profile image?
 - [x] Sync
 - [ ] Backgrounds

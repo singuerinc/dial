@@ -27,7 +27,7 @@
 </div>
 <footer>
     <ul>
-        <li class="left"><a id="options_url" href="#" ng-click="setEditMode()">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
+        <li class="left"><a id="configure-btn" href="#" ng-click="setEditMode()" ng-class="{unsaved: editMode}">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
         <li class="right">
             <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>

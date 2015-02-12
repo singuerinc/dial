@@ -221,10 +221,14 @@ section ul li a {
   color: #25FFB4;
 }
 
-#options_url {
+#configure-btn {
   width: 72px;
   text-align: center;
   display: block;
+}
+
+#configure-btn.unsaved {
+  color: red;
 }
 
 body.theme_light {
