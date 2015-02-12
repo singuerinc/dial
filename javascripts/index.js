@@ -16,22 +16,30 @@ angular.module('dial', [])
 			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
 		};
 
-		var _onDataLoaded = function(items) {
-			$scope.$apply(function() {
+		var _updateWithData = function(items){
+			$scope.data = JSON.parse(items.dial_data);
 
-				$scope.data = JSON.parse(items.dial_data);
-
-				var all_data = [];
-				for (var i = 0; i < $scope.data.length; i++) {
-					var links = $scope.data[i].links;
-					for (var j = 0; j < links.length; j++) {
-						all_data.push(links[j]);
-					}
+			var all_data = [];
+			for (var i = 0; i < $scope.data.length; i++) {
+				var links = $scope.data[i].links;
+				for (var j = 0; j < links.length; j++) {
+					all_data.push(links[j]);
 				}
+			}
 
-				$scope.all_data = all_data;
-				setTimeout(layout, 1);
-			});
+			$scope.all_data = all_data;
+			setTimeout(layout, 1);
+		};
+
+		var _onDataLoaded = function(items) {
+
+			if(!$scope.$$phase) {
+				$scope.$apply(function() {
+					_updateWithData(items);
+				});
+			} else {
+				_updateWithData(items);
+			}
 		};
 
 		try{
