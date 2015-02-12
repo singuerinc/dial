@@ -1,39 +1,30 @@
 var data = [
     {
         title: "main", links: [
-        {label: "Mail", href: "https://mail.google.com"},
+        {label: "GMail", href: "https://mail.google.com"},
         {label: "Whatsapp", href: "https://web.whatsapp.com"},
         {label: "Inbox", href: "https://inbox.google.com"},
         {label: "Drive", href: "https://drive.google.com/drive/#my-drive"},
         {label: "Calendar", href: "https://calendar.google.com"},
-        {label: "Dropbox", href: "https://www.dropbox.com/home"},
-        {label: "localhost:3000", href: "http://localhost:3000"}
+        {label: "Dropbox", href: "https://www.dropbox.com/home"}
     ]
     }, {
         title: "News + Blogs", links: [
-            {label: "El Pais", href: "http://elpais.com"},
             {label: "New York Times", href: "http://www.nytimes.com"},
-            {label: "Diario Olé", href: "http://www.ole.com.ar"},
-            {label: "Planeta Boca Juniors", href: "http://www.planetabocajuniors.com.ar"},
-            {label: "Medium", href: "https://medium.com"},
-            {label: "Ciencia de Sofá", href: "http://cienciadesofa.com"}
+            {label: "El Pais", href: "http://elpais.com"},
+            {label: "Medium", href: "https://medium.com"}
         ]
     }, {
         title: "Web Dev", links: [
             {label: "DailyJS", href: "http://dailyjs.com"},
-            {label: "HTML5 Updates", href: "http://updates.html5rocks.com"},
-            {label: "John Resig - Blog", href: "http://ejohn.org/category/blog"},
-            {label: "codrops", href: "http://tympanus.net/codrops"},
-            {label: "Egghead.io", href: "https://egghead.io"}
+            {label: "HTML5 Updates", href: "http://updates.html5rocks.com"}
         ]
     }, {
         title: "Tech News", links: [
             {label: "Hacker News", href: "http://news.ycombinator.com"},
             {label: "The Verge", href: "http://theverge.com"},
             {label: "The Next Web", href: "http://thenextweb.com"},
-            {label: "JetBrains Blog", href: "http://blog.jetbrains.com"},
-            {label: "Engadget", href: "http://www.engadget.com"},
-            {label: "Gizmodo ES", href: "http://es.gizmodo.com"}
+            {label: "Engadget", href: "http://www.engadget.com"}
         ]
     }, {
         title: "Tech", links: [
@@ -49,21 +40,6 @@ var data = [
             {label: "Google+", href: "http://plus.google.com"},
             {label: "Instagram", href: "http://instagram.com"},
             {label: "Pinterest", href: "http://pinterest.com"}
-        ]
-    }, {
-        title: "Funny", links: [
-            {label: "Commit Strip", href: "http://commitstrip.com"},
-            {label: "The Coding Love", href: "http://thecodinglove.com"}
-        ]
-    }, {
-        title: "Android", links: [
-            {label: "Android Central", href: "http://www.androidcentral.com"},
-            {label: "Android Headlines", href: "http://androidheadlines.com"},
-            {label: "Android and Me", href: "http://androidandme.com"}
-        ]
-    }, {
-        title: "Hack + Torrents", links: [
-            {label: "Mac Serial Junkie", href: "http://www.macserialjunkie.com"}
         ]
     }, {
         title: "Inspiration", links: [
