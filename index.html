@@ -8,16 +8,16 @@
 </head>
 <body class="{{theme}}" ng-controller="DialController" ng-init="init()" ng-click="init()">
 <div class="wrapper">
-    <section class="clock" ng-class="{hide: editMode}">
+    <section class="clock">
         <h1 id="clock" class="ng-cloak">{{time}}</h1>
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
-    <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
-        <h1 class="ng-cloak">{{section.title}}</h1>
+    <section class="group" ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
+        <h1 class="ng-cloak group-label"><img ng-click="removeSection(data, $index)" ng-if="editMode" class="icon-remove" src="images/cancel-circle.svg" ng-click="removeLink(section.links, $index)" /><span class="label">{{section.title}}</span></h1>
         <ul>
             <li ng-repeat="item in section.links">
-              <a ng-if="!editMode" class="ng-cloak item-label" href="{{item.href}}" target="_self">{{item.label}}</a>
-              <span ng-if="editMode" class="ng-cloak item-label"><img class="icon-remove" src="images/cancel-circle.svg" /> {{item.label}}</span>
+              <a ng-if="!editMode" class="ng-cloak label" href="{{item.href}}" target="_self">{{item.label}}</a>
+              <span ng-if="editMode" class="ng-cloak item-label"><img class="icon-remove" src="images/cancel-circle.svg" ng-click="removeLink(section.links, $index)" /><span class="label">{{item.label}}</span></span>
             </li>
         </ul>
     </section>

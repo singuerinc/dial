@@ -1,14 +1,9 @@
 angular.module('dial', [])
 	.controller('DialController', ['$scope', '$filter', function($scope, $filter) {
 
-		TweenLite.set('.clock', {css: {opacity: 0}});
-		TweenLite.set('.wrapper', {css: {opacity: 0}});
+		TweenLite.set(['.clock', '.wrapper'], {css: {opacity: 0}});
 
-		var layout = function() {
-			new Packery('.wrapper', {
-				itemSelector: 'section',
-				gutter: 0
-			});
+		var animIntro = function(){
 			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1, z: 0.01}, delay: 0.3});
 			TweenLite.from('.wrapper', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
@@ -16,9 +11,14 @@ angular.module('dial', [])
 			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
 		};
 
-		var _updateWithData = function(items){
-			$scope.data = JSON.parse(items.dial_data);
+		$scope.layout = function() {
+			new Packery('.wrapper', {
+				itemSelector: 'section',
+				gutter: 0
+			});
+		};
 
+		var parseAllData = function(){
 			var all_data = [];
 			for (var i = 0; i < $scope.data.length; i++) {
 				var links = $scope.data[i].links;
@@ -28,7 +28,15 @@ angular.module('dial', [])
 			}
 
 			$scope.all_data = all_data;
-			setTimeout(layout, 1);
+		};
+
+		var _updateWithData = function(items){
+			$scope.data = JSON.parse(items.dial_data);
+
+			parseAllData($scope.data);
+
+			setTimeout($scope.layout, 1);
+			setTimeout(animIntro, 1);
 		};
 
 		var _onDataLoaded = function(items) {
@@ -56,10 +64,8 @@ angular.module('dial', [])
 		$scope.time = '-';
 
 		$scope.init = function() {
-			document.getElementById('search').focus();
+			$('search').focus();
 		};
-
-		//$('#options_url').attr('href', chrome.extension.getURL("options.html"));
 
 		$scope.changeTheme = function(theme) {
 			$scope.theme = theme;
@@ -72,8 +78,14 @@ angular.module('dial', [])
 		}
 
 		$scope.setEditMode = function(){
-			$scope.editMode=!$scope.editMode;
 			$scope.search = '';
+			$scope.editMode=!$scope.editMode;
+			if($scope.editMode) {
+				TweenLite.to('#search', 0.2, {css: {opacity: 0, display: 'none'}});
+			} else {
+				TweenLite.to('#search', 0.2, {css: {opacity: 1, display: 'inline-block'}});
+			}
+			setTimeout($scope.layout, 1);
 		};
 
 		$scope.navigate = function($event) {
@@ -100,5 +112,46 @@ angular.module('dial', [])
 
 		_update_time();
 		setInterval(_update_time, 1000);
+
+
+
+		// cms
+
+		$scope.saveAll = function() {
+			chrome.storage.sync.set({
+				'dial_data': JSON.stringify(angular.toJson($scope.data))
+			}, function() {
+				console.log('data saved!');
+			});
+		};
+
+		$scope.newSection = function(data) {
+			data.unshift({
+				title: 'Untitled section',
+				links: [{
+					label: 'Untitled link',
+					href: 'http://'
+				}]
+			});
+		};
+
+		$scope.removeSection = function(data, index) {
+			data.splice(index, 1);
+			parseAllData();
+			//$scope.saveAll();
+		};
+
+		$scope.newLink = function(links) {
+			links.unshift({
+				label: 'Untitled link',
+				href: 'http://'
+			});
+			parseAllData();
+			//$scope.saveAll();
+		};
+
+		$scope.removeLink = function(links, index) {
+			links.splice(index, 1);
+		};
 
 	}]);

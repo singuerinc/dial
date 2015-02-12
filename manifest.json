@@ -1,6 +1,6 @@
 {
   "name": "Dial",
-  "description": "",
+  "description": "It's a launcher of frequent websites that you define.",
   "version": "1.0",
   "incognito": "split",
   "chrome_url_overrides": {
@@ -9,7 +9,5 @@
   "permissions": [
     "storage"
   ],
-  "options_page": "options.html",
-  "web_accessible_resources": ["options.html"],
   "manifest_version": 2
 }
