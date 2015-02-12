@@ -13,11 +13,12 @@
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
     <section ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
-        <h1 class="ng-cloak">{{section.title}} <img ng-if="editMode" class="icon-remove" src="images/add-circle.svg" /></h1>
+        <h1 class="ng-cloak">{{section.title}}</h1>
         <ul>
+            <li ng-if="editMode"><img class="icon-remove" src="images/add-circle.svg" /></li>
             <li ng-repeat="item in section.links">
               <a ng-if="!editMode" class="ng-cloak item-label" href="{{item.href}}" target="_self">{{item.label}}</a>
-              <span ng-if="editMode" class="ng-cloak item-label">{{item.label}} <img class="icon-remove" src="images/cancel-circle.svg" /></span>
+              <span ng-if="editMode" class="ng-cloak item-label"><img class="icon-remove" src="images/cancel-circle.svg" /> {{item.label}}</span>
             </li>
         </ul>
     </section>
