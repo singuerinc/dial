@@ -71,6 +71,11 @@ angular.module('dial', [])
 			$scope.changeTheme(theme);
 		}
 
+		$scope.setEditMode = function(){
+			$scope.editMode=!$scope.editMode;
+			$scope.search = '';
+		};
+
 		$scope.navigate = function($event) {
 			if ($event.charCode == 13) {
 				//console.log($scope.search);

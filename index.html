@@ -8,7 +8,7 @@
 </head>
 <body class="{{theme}}" ng-controller="DialController" ng-init="init()" ng-click="init()">
 <div class="wrapper">
-    <section class="clock">
+    <section class="clock" ng-class="{hide: editMode}">
         <h1 id="clock" class="ng-cloak">{{time}}</h1>
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
@@ -27,7 +27,7 @@
 </div>
 <footer>
     <ul>
-        <li class="left"><a id="options_url" href="#" ng-click="editMode=!editMode">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
+        <li class="left"><a id="options_url" href="#" ng-click="setEditMode()">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
         <li class="right">
             <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>
