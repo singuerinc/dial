@@ -5,7 +5,13 @@ angular.module('dial', [])
 
 		var animIntro = function(){
 			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1, z: 0.01}, delay: 0.3});
-			TweenLite.from('.wrapper', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.3});
+			TweenLite.from('.wrapper', 0.7, {css: {y: '+=100px'}, ease: 'Expo.easeOut', delay: 0.3, onComplete: function () {
+				setTimeout(function () {
+					var d = document.querySelector('.wrapper');
+					d.style.height = (Math.ceil(parseInt(d.style.height)/2)*2)+'px';
+					d.style.transform = 'translate3d(-50%, -50%, 0)';
+				}, 1);
+			}});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
 			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
 			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
@@ -16,6 +22,7 @@ angular.module('dial', [])
 				itemSelector: 'section',
 				gutter: 0
 			});
+
 		};
 
 		var parseAllData = function(){
@@ -130,11 +137,16 @@ angular.module('dial', [])
 		};
 
 		$scope.newSection = function(data, title) {
+			if(title=='' || title==null) return;
 			data.unshift({
 				title: title,
 				links: []
 			});
 			setTimeout($scope.layout, 1);
+			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
+		};
+
+		$scope.cancelNewSection = function () {
 			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 		};
 

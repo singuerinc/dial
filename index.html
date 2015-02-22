@@ -27,7 +27,7 @@
 </div>
 <footer>
     <ul>
-        <li class="left"><a id="configure-btn" href="#" ng-click="setEditMode()" ng-class="{unsaved: editMode}">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
+        <li class="left"><a id="configure-btn" href="#" ng-click="setEditMode()" ng-class="{unsaved: editMode}">{{editMode?'DONE':'CONFIGURE'}}</a></li>
         <li class="left" ng-if="editMode"><a id="new-section-btn" href="#" ng-click="createNewSection()">NEW SECTION</a></li>
         <li class="left" ng-if="editMode"><a id="new-link-btn" href="#" ng-click="newLink(data)">NEW LINK</a></li>
         <li class="right">
@@ -41,6 +41,7 @@
 <div id="new-section-modal">
     <div class="container">
         <h1>Create new section</h1>
+        <img class="icon-remove cancel" src="images/cancel-circle.svg" ng-click="cancelNewSection()" />
         <input type="text" name="title" ng-model="new_section_title" />
         <input type="button" value="OK" ng-click="newSection(data, new_section_title); new_section_title = ''" />
     </div>
