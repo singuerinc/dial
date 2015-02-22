@@ -125,19 +125,23 @@ angular.module('dial', [])
 			});
 		};
 
-		$scope.newSection = function(data) {
+		$scope.createNewSection = function() {
+			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 1, display: 'block'}});
+		};
+
+		$scope.newSection = function(data, title) {
 			data.unshift({
-				title: 'Untitled section',
-				links: [{
-					label: 'Untitled link',
-					href: 'http://'
-				}]
+				title: title,
+				links: []
 			});
+			setTimeout($scope.layout, 1);
+			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 		};
 
 		$scope.removeSection = function(data, index) {
 			data.splice(index, 1);
 			parseAllData();
+			setTimeout($scope.layout, 1);
 			//$scope.saveAll();
 		};
 

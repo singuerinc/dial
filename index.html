@@ -28,6 +28,8 @@
 <footer>
     <ul>
         <li class="left"><a id="configure-btn" href="#" ng-click="setEditMode()" ng-class="{unsaved: editMode}">{{editMode?'SAVE':'CONFIGURE'}}</a></li>
+        <li class="left" ng-if="editMode"><a id="new-section-btn" href="#" ng-click="createNewSection()">NEW SECTION</a></li>
+        <li class="left" ng-if="editMode"><a id="new-link-btn" href="#" ng-click="newLink(data)">NEW LINK</a></li>
         <li class="right">
             <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>
@@ -36,6 +38,13 @@
         </li>
     </ul>
 </footer>
+<div id="new-section-modal">
+    <div class="container">
+        <h1>Create new section</h1>
+        <input type="text" name="title" ng-model="new_section_title" />
+        <input type="button" value="OK" ng-click="newSection(data, new_section_title); new_section_title = ''" />
+    </div>
+</div>
 <script src="javascripts/jquery-2.1.3.min.js"></script>
 <script src="javascripts/CSSPlugin.min.js"></script>
 <script src="javascripts/EasePack.min.js"></script>
