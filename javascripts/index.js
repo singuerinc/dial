@@ -27,13 +27,18 @@ angular.module('dial', [])
 
 		var parseAllData = function(){
 			var all_data = [];
+			$scope.data = JSON.parse($scope.data);
 			for (var i = 0; i < $scope.data.length; i++) {
-				var links = $scope.data[i].links;
+
+				//$scope.data[i].id = uuid.v1();
+				var sectionData = $scope.data[i];
+				var links = sectionData.links;
 				for (var j = 0; j < links.length; j++) {
+					//links[j].id = uuid.v1();
 					all_data.push(links[j]);
 				}
 			}
-
+			//console.log(angular.toJson($scope.data));
 			$scope.all_data = all_data;
 		};
 
@@ -60,7 +65,7 @@ angular.module('dial', [])
 		try{
 			chrome.storage.sync.get('dial_data', _onDataLoaded);
 		} catch(err){
-			_onDataLoaded({dial_data: JSON.stringify(data)});
+			//_onDataLoaded({dial_data: JSON.stringify(data)});
 		}
 
 		$scope.search = '';
@@ -93,6 +98,7 @@ angular.module('dial', [])
 				TweenLite.to('#search', 0.2, {css: {opacity: 1, display: 'inline-block'}});
 			}
 			setTimeout($scope.layout, 1);
+			$scope.saveAll();
 		};
 
 		$scope.navigate = function($event) {
@@ -125,6 +131,9 @@ angular.module('dial', [])
 		// cms
 
 		$scope.saveAll = function() {
+
+			//console.log($scope.data);
+
 			chrome.storage.sync.set({
 				'dial_data': JSON.stringify(angular.toJson($scope.data))
 			}, function() {
@@ -136,6 +145,10 @@ angular.module('dial', [])
 			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 1, display: 'block'}});
 		};
 
+		$scope.createNewLink = function() {
+			TweenLite.to('#new-link-modal', 0.3, {css: {opacity: 1, display: 'block'}});
+		};
+
 		$scope.newSection = function(data, title) {
 			if(title=='' || title==null) return;
 			data.unshift({
@@ -144,30 +157,43 @@ angular.module('dial', [])
 			});
 			setTimeout($scope.layout, 1);
 			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
+			$scope.saveAll();
 		};
 
 		$scope.cancelNewSection = function () {
 			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 		};
 
+		$scope.cancelLinkSection = function () {
+			TweenLite.to('#new-link-modal', 0.3, {css: {opacity: 0, display: 'none'}});
+		};
+
 		$scope.removeSection = function(data, index) {
 			data.splice(index, 1);
 			parseAllData();
 			setTimeout($scope.layout, 1);
-			//$scope.saveAll();
+			$scope.saveAll();
 		};
 
-		$scope.newLink = function(links) {
-			links.unshift({
-				label: 'Untitled link',
-				href: 'http://'
+		$scope.newLink = function(section, title, href) {
+
+			if(section=='' || section==null) return;
+			if(title=='' || title==null) return;
+			if(href=='' || href==null) return;
+			section.links.unshift({
+				id: uuid.v1(),
+				label: title,
+				href: href
 			});
-			parseAllData();
-			//$scope.saveAll();
+			//parseAllData();
+			setTimeout($scope.layout, 1);
+			TweenLite.to('#new-link-modal', 0.3, {css: {opacity: 0, display: 'none'}});
+			$scope.saveAll();
 		};
 
 		$scope.removeLink = function(links, index) {
 			links.splice(index, 1);
+			$scope.saveAll();
 		};
 
 	}]);

@@ -29,7 +29,7 @@
     <ul>
         <li class="left"><a id="configure-btn" href="#" ng-click="setEditMode()" ng-class="{unsaved: editMode}">{{editMode?'DONE':'CONFIGURE'}}</a></li>
         <li class="left" ng-if="editMode"><a id="new-section-btn" href="#" ng-click="createNewSection()">NEW SECTION</a></li>
-        <li class="left" ng-if="editMode"><a id="new-link-btn" href="#" ng-click="newLink(data)">NEW LINK</a></li>
+        <li class="left" ng-if="editMode"><a id="new-link-btn" href="#" ng-click="createNewLink()">NEW LINK</a></li>
         <li class="right">
             <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
         </li>
@@ -46,12 +46,26 @@
         <input type="button" value="OK" ng-click="newSection(data, new_section_title); new_section_title = ''" />
     </div>
 </div>
+<div id="new-link-modal">
+    <div class="container">
+        <h1>Create new link</h1>
+        <img class="icon-remove cancel" src="images/cancel-circle.svg" ng-click="cancelNewLink()" />
+        <select ng-model="link_section" ng-options="section.title for section in data">
+        </select>
+        <label for="link_title">Title</label>
+        <input type="text" id="link_title" name="link_title" ng-model="new_link_title" />
+        <label for="link_title">Link</label>
+        <input type="text" id="link_href" name="link_href" ng-model="new_link_href" />
+        <input type="button" value="OK" ng-click="newLink(link_section, new_link_title, new_link_href); new_link_title = ''; new_link_href = ''" />
+    </div>
+</div>
 <script src="javascripts/jquery-2.1.3.min.js"></script>
 <script src="javascripts/CSSPlugin.min.js"></script>
 <script src="javascripts/EasePack.min.js"></script>
 <script src="javascripts/TweenLite.min.js"></script>
 <script src="javascripts/packery.pkgd.min.js"></script>
 <script src="javascripts/angular.min.js"></script>
+<script src="javascripts/uuid.js"></script>
 <script src="javascripts/data.js"></script>
 <script src="javascripts/index.js"></script>
 </body>
