@@ -27,7 +27,6 @@ angular.module('dial', [])
 
 		var parseAllData = function(){
 			var all_data = [];
-			$scope.data = JSON.parse($scope.data);
 			for (var i = 0; i < $scope.data.length; i++) {
 
 				//$scope.data[i].id = uuid.v1();
@@ -95,10 +94,10 @@ angular.module('dial', [])
 			if($scope.editMode) {
 				TweenLite.to('#search', 0.2, {css: {opacity: 0, display: 'none'}});
 			} else {
+				$scope.saveAll();
 				TweenLite.to('#search', 0.2, {css: {opacity: 1, display: 'inline-block'}});
 			}
 			setTimeout($scope.layout, 1);
-			$scope.saveAll();
 		};
 
 		$scope.navigate = function($event) {
@@ -132,10 +131,10 @@ angular.module('dial', [])
 
 		$scope.saveAll = function() {
 
-			//console.log($scope.data);
+			//console.log(JSON.stringify($scope.data));
 
 			chrome.storage.sync.set({
-				'dial_data': JSON.stringify(angular.toJson($scope.data))
+				'dial_data': angular.toJson($scope.data)
 			}, function() {
 				console.log('data saved!');
 			});
