@@ -65,7 +65,7 @@ angular.module('dial', [])
 		try{
 			chrome.storage.sync.get('dial_data', _onDataLoaded);
 		} catch(err){
-			//_onDataLoaded({dial_data: JSON.stringify(data)});
+			_onDataLoaded({dial_data: JSON.stringify(data)});
 		}
 
 		$scope.search = '';

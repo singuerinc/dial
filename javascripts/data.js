@@ -37,14 +37,6 @@ var data = [{
         "href": "http://www.nytimes.com",
         "id": "b43cc98a-bd30-11e4-9832-c55bcc7a9c94"
     }, {
-        "label": "Diario Olé",
-        "href": "http://www.ole.com.ar",
-        "id": "b43cc98b-bd30-11e4-9832-c55bcc7a9c94"
-    }, {
-        "label": "Planeta Boca Juniors",
-        "href": "http://www.planetabocajuniors.com.ar",
-        "id": "b43cc98c-bd30-11e4-9832-c55bcc7a9c94"
-    }, {
         "label": "Medium",
         "href": "https://medium.com",
         "id": "b43cc98d-bd30-11e4-9832-c55bcc7a9c94"
@@ -150,14 +142,6 @@ var data = [{
         "id": "b43cc9ac-bd30-11e4-9832-c55bcc7a9c94"
     }, {"label": "Android and Me", "href": "http://androidandme.com", "id": "b43cc9ad-bd30-11e4-9832-c55bcc7a9c94"}],
     "id": "b43cc9aa-bd30-11e4-9832-c55bcc7a9c94"
-}, {
-    "title": "Hack + Torrents",
-    "links": [{
-        "label": "Mac Serial Junkie",
-        "href": "http://www.macserialjunkie.com",
-        "id": "b43cc9af-bd30-11e4-9832-c55bcc7a9c94"
-    }],
-    "id": "b43cc9ae-bd30-11e4-9832-c55bcc7a9c94"
 }, {
     "title": "Inspiration",
     "links": [{
