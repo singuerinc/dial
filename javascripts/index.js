@@ -44,6 +44,8 @@ angular.module('dial', [])
 		var _updateWithData = function(items){
 			$scope.data = JSON.parse(items.dial_data);
 
+			console.log('DATA:', $scope.data);
+
 			parseAllData($scope.data);
 
 			setTimeout($scope.layout, 1);
@@ -163,7 +165,7 @@ angular.module('dial', [])
 			TweenLite.to('#new-section-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 		};
 
-		$scope.cancelLinkSection = function () {
+		$scope.cancelNewLink = function () {
 			TweenLite.to('#new-link-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 		};
 
@@ -174,20 +176,27 @@ angular.module('dial', [])
 			$scope.saveAll();
 		};
 
-		$scope.newLink = function(section, title, href) {
+		$scope.saveLink = function(section, item) {
 
-			if(section=='' || section==null) return;
-			if(title=='' || title==null) return;
-			if(href=='' || href==null) return;
-			section.links.unshift({
-				id: uuid.v1(),
-				label: title,
-				href: href
-			});
+			if(section==null) return;
+			if(item==null) return;
+
+			if (typeof(item.id) == 'undefined') {
+				item.id = uuid.v1();
+				section.links.unshift(item);
+			}
 			//parseAllData();
 			setTimeout($scope.layout, 1);
 			TweenLite.to('#new-link-modal', 0.3, {css: {opacity: 0, display: 'none'}});
 			$scope.saveAll();
+		};
+
+		$scope.editLink = function(section, item) {
+			$scope.link_section = section;
+			$scope.new_link_title = item.label;
+			$scope.new_link_href = item.href;
+			$scope.item = item;
+			$scope.createNewLink();
 		};
 
 		$scope.removeLink = function(links, index) {
