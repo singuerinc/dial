@@ -14,7 +14,7 @@ angular.module('dial', [])
 			}});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
 			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
-			TweenLite.to('footer', 0.7, {css: {opacity: 1}, delay: 0.4});
+			TweenLite.to(['header', 'footer'], 0.7, {css: {opacity: 1}, delay: 0.4});
 		};
 
 		$scope.layout = function() {
