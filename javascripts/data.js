@@ -1,4 +1,4 @@
-[
+var data = [
     {
         "title": "Other",
         "links": [
