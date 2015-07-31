@@ -66,27 +66,32 @@ var data = [
             {
                 "label": "New York Times",
                 "href": "http://www.nytimes.com",
-                "id": "b43cc98a-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc98a-bd30-11e4-9832-c55bcc7a9c95"
             },
             {
                 "label": "Diario Olé",
                 "href": "http://www.ole.com.ar",
-                "id": "b43cc98b-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc98b-bd30-11e4-9832-c55bcc7a9c96"
             },
             {
                 "label": "Planeta Boca Juniors",
                 "href": "http://www.planetabocajuniors.com.ar",
-                "id": "b43cc98c-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc98c-bd30-11e4-9832-c55bcc7a9c97"
             },
             {
                 "label": "Medium",
                 "href": "https://medium.com",
-                "id": "b43cc98d-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc98d-bd30-11e4-9832-c55bcc7a9c98"
             },
             {
                 "label": "Ciencia de Sofá",
                 "href": "http://cienciadesofa.com",
-                "id": "b43cc98e-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc98e-bd30-11e4-9832-c55bcc7a9c99"
+            },
+            {
+                "label": "Vice News",
+                "href": "https://news.vice.com/es",
+                "id": "b43cc98e-bd30-11e4-9832-c55bcc7a9d00"
             }
         ],
         "id": "b43cc988-bd30-11e4-9832-c55bcc7a9c94"
