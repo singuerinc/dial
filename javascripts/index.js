@@ -4,25 +4,26 @@ angular.module('dial', [])
 		TweenLite.set(['.clock', '.wrapper'], {css: {opacity: 0}});
 
 		var animIntro = function(){
-			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1, z: 0.01}, delay: 0.3});
+			TweenLite.to('.wrapper', 0.4, {css: {opacity: 1}, delay: 0.3});
 			TweenLite.from('.wrapper', 0.7, {css: {y: '+=100px'}, ease: 'Expo.easeOut', delay: 0.3, onComplete: function () {
-				setTimeout(function () {
+				/*setTimeout(function () {
 					var d = document.querySelector('.wrapper');
 					d.style.height = (Math.ceil(parseInt(d.style.height)/2)*2)+'px';
 					d.style.transform = 'translate3d(-50%, -50%, 0)';
-				}, 1);
+				}, 1);*/
 			}});
 			TweenLite.to('.clock', 0.7, {css: {opacity: 1}, delay: 0.4});
-			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
+//			TweenLite.from('.clock', 0.7, {css: {y: '+=100px', z: 0.01}, ease: 'Expo.easeOut', delay: 0.4});
 			TweenLite.to(['header', 'footer'], 0.7, {css: {opacity: 1}, delay: 0.4});
 		};
 
 		$scope.layout = function() {
+			/*
 			new Packery('.wrapper', {
 				itemSelector: 'section',
 				gutter: 0
 			});
-
+*/
 		};
 
 		var parseAllData = function(){
@@ -80,14 +81,15 @@ angular.module('dial', [])
 			$('search').focus();
 		};
 
-		$scope.changeTheme = function(theme) {
+		$scope.changeTheme = function(event, theme) {
+			if(event) event.preventDefault();
 			$scope.theme = theme;
 			localStorage.setItem('theme', theme);
 		};
 
 		var theme = localStorage.getItem('theme');
 		if (typeof(theme) != 'undefined') {
-			$scope.changeTheme(theme);
+			$scope.changeTheme(event, theme);
 		}
 
 		$scope.setEditMode = function(){

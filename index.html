@@ -24,7 +24,8 @@
         <h1 id="clock" class="ng-cloak">{{time}}</h1>
         <input id="search" type="text" autofocus tabindex="0" autocomplete="off" ng-model="search" ng-keypress="navigate($event)"/>
     </section>
-    <section class="group" ng-class="section.title|lowercase" ng-repeat="section in data" ng-hide="search != ''">
+    <ul class="group" ng-class="section.title|lowercase" ng-hide="search != ''">
+      <li ng-repeat="section in data">
         <h1 class="ng-cloak group-label"><img ng-click="removeSection(data, $index)" ng-if="editMode" class="icon-remove" src="images/cancel-circle.svg" ng-click="removeLink(section.links, $index)" /><span class="label">{{section.title}}</span></h1>
         <ul>
             <li ng-repeat="item in section.links">
@@ -33,7 +34,8 @@
                       href="#" ng-click="editLink(section, item)">{{item.label}}</a></span></span>
             </li>
         </ul>
-    </section>
+        </li>
+    </ul>
     <ul id="search-result" ng-hide="search == ''">
         <li ng-repeat="item in filtered = (all_data|filter:search|limitTo:10)"><a href="{{item.href}}" target="_self">{{item.label}}</a></li>
     </ul>
@@ -41,10 +43,10 @@
 <footer>
     <ul>
         <li class="right">
-            <a id="theme-light" target="_self" href="#" ng-click="changeTheme('theme_light')">light</a>
+            <a id="theme-light" target="_self" href="#" ng-click="changeTheme($event, 'theme_light')">light</a>
         </li>
         <li class="right">
-            <a id="theme-dark" target="_self" href="#" ng-click="changeTheme('theme_dark')">dark</a>
+            <a id="theme-dark" target="_self" href="#" ng-click="changeTheme($event, 'theme_dark')">dark</a>
         </li>
     </ul>
 </footer>
