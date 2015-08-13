@@ -92,6 +92,11 @@ var data = [
                 "label": "Vice News",
                 "href": "https://news.vice.com/es",
                 "id": "b43cc98e-bd30-11e4-9832-c55bcc7a9d00"
+            },
+            {
+                "label": "TyC Sports",
+                "href": "http://www.tycsports.com/SubSecciones/clubes/boca/",
+                "id": "b43cc98e-bd30-11e4-9832-c55bcc7a9d01"
             }
         ],
         "id": "b43cc988-bd30-11e4-9832-c55bcc7a9c94"
