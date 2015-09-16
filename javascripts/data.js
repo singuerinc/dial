@@ -54,6 +54,11 @@ var data = [
         "title": "News + Blogs",
         "links": [
             {
+                "href": "http://www.ted.com/",
+                "label": "Ted Talks",
+                "id": "17f20d30-edda-11e4-8316-1920a3d34f2b"
+            },
+            {
                 "href": "http://www.forbes.com/technology/",
                 "label": "Forbes Tech",
                 "id": "17f20d30-edda-11e4-8316-1920a3d34f2a"
