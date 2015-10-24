@@ -41,11 +41,6 @@ var data = [
                 "label": "Dropbox",
                 "href": "https://www.dropbox.com/home",
                 "id": "b43cc986-bd30-11e4-9832-c55bcc7a9c94"
-            },
-            {
-                "label": "localhost:3000",
-                "href": "http://localhost:3000",
-                "id": "b43cc987-bd30-11e4-9832-c55bcc7a9c94"
             }
         ],
         "id": "b43cc980-bd30-11e4-9832-c55bcc7a9c94"
@@ -130,19 +125,9 @@ var data = [
                 "href": "http://caniuse.com/"
             },
             {
-                "label": "DailyJS",
-                "href": "http://dailyjs.com",
-                "id": "b43cc990-bd30-11e4-9832-c55bcc7a9c94"
-            },
-            {
                 "label": "HTML5 Updates",
                 "href": "http://updates.html5rocks.com",
                 "id": "b43cc991-bd30-11e4-9832-c55bcc7a9c94"
-            },
-            {
-                "label": "John Resig - Blog",
-                "href": "http://ejohn.org/category/blog",
-                "id": "b43cc992-bd30-11e4-9832-c55bcc7a9c94"
             },
             {
                 "label": "codrops",
@@ -230,27 +215,32 @@ var data = [
             {
                 "label": "Facebook",
                 "href": "http://facebook.com",
-                "id": "b43cc9a2-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc9a2-bd30-11e4-9832-c55bcc7a9c95"
             },
             {
                 "label": "Twitter",
                 "href": "http://twitter.com",
-                "id": "b43cc9a3-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc9a3-bd30-11e4-9832-c55bcc7a9c96"
             },
             {
                 "label": "Google+",
                 "href": "http://plus.google.com",
-                "id": "b43cc9a4-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc9a4-bd30-11e4-9832-c55bcc7a9c97"
             },
             {
                 "label": "Instagram",
                 "href": "http://instagram.com",
-                "id": "b43cc9a5-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc9a5-bd30-11e4-9832-c55bcc7a9c98"
             },
             {
                 "label": "Pinterest",
                 "href": "http://pinterest.com",
-                "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9c94"
+                "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9c99"
+            },
+            {
+                "label": "Trakt.tv",
+                "href": "https://trakt.tv/dashboard",
+                "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9d00"
             }
         ],
         "id": "b43cc9a1-bd30-11e4-9832-c55bcc7a9c94"
