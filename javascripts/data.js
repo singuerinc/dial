@@ -187,6 +187,11 @@ var data = [
         "title": "Tech",
         "links": [
             {
+                "id": "949971c0-bd35-11e4-84bd-d991a36cea50",
+                "label": "JSFiddle",
+                "href": "http://jsfiddle.net/"
+            },
+            {
                 "id": "949979c0-bd35-11e4-84bd-d991a36cea50",
                 "label": "GitHub",
                 "href": "https://github.com/singuerinc"
