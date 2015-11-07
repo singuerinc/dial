@@ -9,5 +9,6 @@
   "permissions": [
     "storage"
   ],
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://query.yahooapis.com; object-src 'self'"
 }

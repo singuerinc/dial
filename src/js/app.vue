@@ -159,24 +159,31 @@ header, footer {
   var Weather = require('./weather.vue');
   var Profile = require('./profile.vue');
   var Clock = require('./clock.vue');
-  var data = require('../data.json');
+  //var data = require('../data.json');
 
   var onlyItems = [];
-  for(var i=0; i<data.length; i++){
-    onlyItems = onlyItems.concat(data[i].links);
-  }
+
 
   var App = Vue.extend({
 
     ready: function(){
-
+      // chrome.storage.sync.get('singuerinc__dial_data', (function(data){
+      //
+      //   debugger;
+      //   this.items = data;
+      //
+      //   for(var i=0; i<data.length; i++){
+      //     onlyItems = onlyItems.concat(data[i].links);
+      //   }
+      //
+      // }).bind(this));
     },
 
     data : function(){
       return {
         search: '',
         selectedIndex: 0,
-        items: data
+        items: []
       }
     },
 
