@@ -28,8 +28,15 @@ If you want to test Dial you have to install it manually in Chrome.
 4. Select the folder that contains Dial files.
 5. Open a new tab in Chrome.
 
+## develop
+
+```sh
+# compile js
+watchify -t vueify -e _src/main.js -o build.js
+```
+
 ### TODO
-- [ ] Navigate through results with keys
+- [x] Navigate through results with keys
 - [x] Better options page
 - [x] Change default sites
 - [ ] Profile image?

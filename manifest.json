@@ -1,7 +1,7 @@
 {
   "name": "Dial",
   "description": "It's a launcher of frequent websites that you define.",
-  "version": "1.0",
+  "version": "2.0",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"

@@ -1,0 +1,27 @@
+{
+  "name": "dial",
+  "version": "2.0.0",
+  "description": "Dial is a (beta) Chrome Extension. It's a launcher of frequent websites that you define. It replaces the newtab page on Chrome.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singuerinc/dial.git"
+  },
+  "author": "singuerinc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singuerinc/dial/issues"
+  },
+  "homepage": "https://github.com/singuerinc/dial#readme",
+  "devDependencies": {
+    "babel-runtime": "^5.8.29",
+    "vue": "^1.0.6",
+    "vue-hot-reload-api": "^1.2.1",
+    "vue-router": "^0.7.5",
+    "vueify": "^5.0.3",
+    "vueify-insert-css": "^1.0.0"
+  }
+}
