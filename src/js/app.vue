@@ -161,29 +161,50 @@ header, footer {
   var Clock = require('./clock.vue');
   //var data = require('../data.json');
 
-  var onlyItems = [];
-
+  // chrome.storage.sync.set({'singuerinc__dial_data': []
+  // }, (function(){
+  //
+  // }).bind(this));
 
   var App = Vue.extend({
 
     ready: function(){
-      // chrome.storage.sync.get('singuerinc__dial_data', (function(data){
-      //
-      //   debugger;
-      //   this.items = data;
-      //
-      //   for(var i=0; i<data.length; i++){
-      //     onlyItems = onlyItems.concat(data[i].links);
-      //   }
-      //
-      // }).bind(this));
+
+        var self, loadFunc;
+
+        if(typeof(chrome.storage) != 'undefined'){
+          self = chrome.storage.sync;
+          loadFunc = chrome.storage.sync.get;
+          console.log('from chrome storage');
+        } else {
+          self = this;
+          loadFunc = function(label, callback){
+            var payload = {
+              singuerinc__dial_data: require('../data.json')
+            };
+            callback(payload);
+          }
+          console.log('from data.json');
+        }
+
+        loadFunc.apply(self, ['singuerinc__dial_data', (function(data){
+
+          this.items = data.singuerinc__dial_data;
+
+          for(var i=0; i<this.items.length; i++){
+            this.onlyItems = this.onlyItems.concat(this.items[i].links);
+          }
+
+        }).bind(this)]);
+
     },
 
     data : function(){
       return {
         search: '',
         selectedIndex: 0,
-        items: []
+        items: [],
+        onlyItems: []
       }
     },
 
@@ -191,7 +212,7 @@ header, footer {
       filteredItems: function () {
         var filterBy = Vue.filter('filterBy');
         var orderBy = Vue.filter('orderBy');
-        return orderBy(filterBy(onlyItems, this.search, 'label'), 'label');
+        return orderBy(filterBy(this.onlyItems, this.search, 'label'), 'label');
       },
 
       go_to_url: function(){
