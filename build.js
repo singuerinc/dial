@@ -954,7 +954,7 @@ config._assetTypes.forEach(function (type) {
 })
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../config":13,"../directives/internal":20,"../fragment/factory":42,"../parsers/directive":52,"../parsers/expression":53,"../parsers/path":54,"../parsers/template":55,"../parsers/text":56,"../util":64,"_process":79}],6:[function(require,module,exports){
+},{"../compiler":11,"../config":13,"../directives/internal":20,"../fragment/factory":42,"../parsers/directive":52,"../parsers/expression":53,"../parsers/path":54,"../parsers/template":55,"../parsers/text":56,"../util":64,"_process":80}],6:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var compiler = require('../compiler')
@@ -1026,7 +1026,7 @@ exports.$compile = function (el, host, scope, frag) {
 }
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../util":64,"_process":79}],7:[function(require,module,exports){
+},{"../compiler":11,"../util":64,"_process":80}],7:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var config = require('./config')
@@ -1135,7 +1135,7 @@ exports.push = function (watcher) {
 }
 
 }).call(this,require('_process'))
-},{"./config":13,"./util":64,"_process":79}],8:[function(require,module,exports){
+},{"./config":13,"./util":64,"_process":80}],8:[function(require,module,exports){
 /**
  * A doubly linked list-based Least Recently Used (LRU)
  * cache. Will keep most recently used items while
@@ -1460,7 +1460,7 @@ function getDefault (vm, options) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"../directives/internal/prop":21,"../parsers/directive":52,"../parsers/path":54,"../util":64,"_process":79}],10:[function(require,module,exports){
+},{"../config":13,"../directives/internal/prop":21,"../parsers/directive":52,"../parsers/path":54,"../util":64,"_process":80}],10:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var publicDirectives = require('../directives/public')
@@ -2207,7 +2207,7 @@ function makeNodeLinkFn (directives) {
 }
 
 }).call(this,require('_process'))
-},{"../directives/internal":20,"../directives/public":30,"../parsers/directive":52,"../parsers/template":55,"../parsers/text":56,"../util":64,"./compile-props":9,"_process":79}],11:[function(require,module,exports){
+},{"../directives/internal":20,"../directives/public":30,"../parsers/directive":52,"../parsers/template":55,"../parsers/text":56,"../util":64,"./compile-props":9,"_process":80}],11:[function(require,module,exports){
 var _ = require('../util')
 
 _.extend(exports, require('./compile'))
@@ -2365,7 +2365,7 @@ function mergeAttrs (from, to) {
 }
 
 }).call(this,require('_process'))
-},{"../parsers/template":55,"../util":64,"_process":79}],13:[function(require,module,exports){
+},{"../parsers/template":55,"../util":64,"_process":80}],13:[function(require,module,exports){
 module.exports = {
 
   /**
@@ -2795,7 +2795,7 @@ Directive.prototype._teardown = function () {
 module.exports = Directive
 
 }).call(this,require('_process'))
-},{"./parsers/expression":53,"./util":64,"./watcher":68,"_process":79}],15:[function(require,module,exports){
+},{"./parsers/expression":53,"./util":64,"./watcher":68,"_process":80}],15:[function(require,module,exports){
 exports.slot = require('./slot')
 exports.partial = require('./partial')
 
@@ -2846,7 +2846,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"../public/if":29,"_process":79}],17:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"../public/if":29,"_process":80}],17:[function(require,module,exports){
 var _ = require('../../util')
 var templateParser = require('../../parsers/template')
 
@@ -3390,7 +3390,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../parsers/template":55,"../../util":64,"_process":79}],20:[function(require,module,exports){
+},{"../../parsers/template":55,"../../util":64,"_process":80}],20:[function(require,module,exports){
 exports.style = require('./style')
 exports['class'] = require('./class')
 exports.component = require('./component')
@@ -3726,7 +3726,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"../internal/style":22,"_process":79}],25:[function(require,module,exports){
+},{"../../util":64,"../internal/style":22,"_process":80}],25:[function(require,module,exports){
 module.exports = {
   bind: function () {
     var el = this.el
@@ -4358,7 +4358,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"_process":79}],28:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"_process":80}],28:[function(require,module,exports){
 var _ = require('../../util')
 var templateParser = require('../../parsers/template')
 
@@ -4470,7 +4470,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"_process":79}],30:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"_process":80}],30:[function(require,module,exports){
 // text & html
 exports.text = require('./text')
 exports.html = require('./html')
@@ -4646,7 +4646,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../../util":64,"./checkbox":31,"./radio":33,"./select":34,"./text":35,"_process":79}],33:[function(require,module,exports){
+},{"../../../util":64,"./checkbox":31,"./radio":33,"./select":34,"./text":35,"_process":80}],33:[function(require,module,exports){
 var _ = require('../../../util')
 
 module.exports = {
@@ -5058,7 +5058,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"_process":79}],37:[function(require,module,exports){
+},{"../../util":64,"_process":80}],37:[function(require,module,exports){
 (function (process){
 if (process.env.NODE_ENV !== 'production') {
   module.exports = {
@@ -5072,7 +5072,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"_process":79}],38:[function(require,module,exports){
+},{"../../util":64,"_process":80}],38:[function(require,module,exports){
 var _ = require('../../util')
 var transition = require('../../transition')
 
@@ -5772,7 +5772,7 @@ exports._callHook = function (hook) {
 }
 
 }).call(this,require('_process'))
-},{"../util":64,"_process":79}],45:[function(require,module,exports){
+},{"../util":64,"_process":80}],45:[function(require,module,exports){
 var mergeOptions = require('../util').mergeOptions
 var uid = 0
 
@@ -6222,7 +6222,7 @@ exports._resolveComponent = function (id, cb) {
 }
 
 }).call(this,require('_process'))
-},{"../util":64,"_process":79}],48:[function(require,module,exports){
+},{"../util":64,"_process":80}],48:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var compiler = require('../compiler')
@@ -6467,7 +6467,7 @@ exports._initMeta = function () {
 }
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../observer":51,"../observer/dep":50,"../util":64,"../watcher":68,"_process":79}],49:[function(require,module,exports){
+},{"../compiler":11,"../observer":51,"../observer/dep":50,"../util":64,"../watcher":68,"_process":80}],49:[function(require,module,exports){
 var _ = require('../util')
 var arrayProto = Array.prototype
 var arrayMethods = Object.create(arrayProto)
@@ -7234,7 +7234,7 @@ exports.isSimplePath = function (exp) {
 }
 
 }).call(this,require('_process'))
-},{"../cache":8,"../util":64,"./path":54,"_process":79}],54:[function(require,module,exports){
+},{"../cache":8,"../util":64,"./path":54,"_process":80}],54:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var Cache = require('../cache')
@@ -7596,7 +7596,7 @@ exports.set = function (obj, path, val) {
 }
 
 }).call(this,require('_process'))
-},{"../cache":8,"../util":64,"_process":79}],55:[function(require,module,exports){
+},{"../cache":8,"../util":64,"_process":80}],55:[function(require,module,exports){
 var _ = require('../util')
 var Cache = require('../cache')
 var templateCache = new Cache(1000)
@@ -8689,7 +8689,7 @@ function formatValue (val) {
 }
 
 }).call(this,require('_process'))
-},{"./index":64,"_process":79}],61:[function(require,module,exports){
+},{"./index":64,"_process":80}],61:[function(require,module,exports){
 (function (process){
 /**
  * Enable debug utilities.
@@ -8740,7 +8740,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"_process":79}],62:[function(require,module,exports){
+},{"../config":13,"_process":80}],62:[function(require,module,exports){
 (function (process){
 var _ = require('./index')
 var config = require('../config')
@@ -9106,7 +9106,7 @@ exports.removeNodeRange = function (start, end, vm, frag, cb) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"../transition":57,"./index":64,"_process":79}],63:[function(require,module,exports){
+},{"../config":13,"../transition":57,"./index":64,"_process":80}],63:[function(require,module,exports){
 // can we use __proto__?
 exports.hasProto = '__proto__' in {}
 
@@ -9954,7 +9954,7 @@ exports.resolveAsset = function resolve (options, type, id) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"./index":64,"_process":79}],67:[function(require,module,exports){
+},{"../config":13,"./index":64,"_process":80}],67:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var extend = _.extend
@@ -10054,7 +10054,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./api/data":2,"./api/dom":3,"./api/events":4,"./api/global":5,"./api/lifecycle":6,"./directives/element":15,"./directives/public":30,"./filters":41,"./instance/events":44,"./instance/init":45,"./instance/lifecycle":46,"./instance/misc":47,"./instance/state":48,"./util":64,"_process":79}],68:[function(require,module,exports){
+},{"./api/data":2,"./api/dom":3,"./api/events":4,"./api/global":5,"./api/lifecycle":6,"./directives/element":15,"./directives/public":30,"./filters":41,"./instance/events":44,"./instance/init":45,"./instance/lifecycle":46,"./instance/misc":47,"./instance/state":48,"./util":64,"_process":80}],68:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var config = require('./config')
@@ -10401,7 +10401,7 @@ function traverse (val) {
 module.exports = Watcher
 
 }).call(this,require('_process'))
-},{"./batcher":7,"./config":13,"./observer/dep":50,"./parsers/expression":53,"./util":64,"_process":79}],69:[function(require,module,exports){
+},{"./batcher":7,"./config":13,"./observer/dep":50,"./parsers/expression":53,"./util":64,"_process":80}],69:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 exports.insert = function (css) {
@@ -11001,7 +11001,7 @@ module.exports=[
 ]
 
 },{}],72:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.1);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 120px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #EEE;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #EEE;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11058,10 +11058,16 @@ var App = Vue.extend({
       items: [],
       onlyItems: [],
       config: {
-        countries: require('../countries.json'),
-        city: 'Barcelona',
-        country: 'ES',
-        unit: 'c'
+        weather: {
+          countries: require('../countries.json'),
+          city: 'Barcelona',
+          country: 'ES',
+          unit: 'c'
+        },
+        clock: {
+          format: 24
+        }
+
       }
     };
   },
@@ -11119,14 +11125,14 @@ var App = Vue.extend({
 });
 
 module.exports = App;
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather v-bind:config.sync=\"config\"></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile v-bind:config.sync=\"config\"></profile>\n      <clock v-bind:config.sync=\"config\"></clock>\n      <weather v-bind:config.sync=\"config\"></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.1);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 120px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n"] = false
+    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #EEE;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #EEE;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11135,13 +11141,20 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../countries.json":70,"../data.json":71,"./clock.vue":73,"./profile.vue":75,"./search-bar.vue":76,"./weather.vue":77,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],73:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    font-size: 3.5rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n")
+},{"../countries.json":70,"../data.json":71,"./clock.vue":73,"./profile.vue":76,"./search-bar.vue":77,"./weather.vue":78,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],73:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 10px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
+var ConfigureClock = require('./configure-clock.vue');
 
 module.exports = Vue.extend({
+
+  props: ["config"],
+
+  components: {
+    'configure-clock': ConfigureClock
+  },
 
   ready: function ready() {
     this.timerId = setInterval(this.updateTimer.bind(this), 1000);
@@ -11156,6 +11169,10 @@ module.exports = Vue.extend({
   methods: {
     updateTimer: function updateTimer() {
       this.now = new Date();
+    },
+
+    openConf: function openConf() {
+      this.$refs.configurator.open();
     }
   },
 
@@ -11163,19 +11180,22 @@ module.exports = Vue.extend({
     time: function time() {
       var minutes = this.now.getMinutes();
       minutes = minutes < 10 ? '0' + minutes : minutes;
-      return this.now.getHours() + ':' + minutes;
+      var hours = this.now.getHours();
+      var pmam_str = hours < 12 ? ' am' : ' pm';
+      hours = this.config.clock.format == 12 ? hours % 12 : hours;
+      return hours + ':' + minutes + (this.config.clock.format == 12 ? pmam_str : '');
     }
   }
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"clock\">{{ time }}</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"clock\" v-on:click=\"openConf()\">\n    <div class=\"time\">{{ time }}</div>\n  </div>\n  <configure-clock v-ref:configurator=\"\" v-bind:config.sync=\"config\"></configure-clock>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/clock.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .clock {\n    font-size: 3.5rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 10px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11184,8 +11204,62 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],74:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  footer {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 20px;\n  }\n\n  .configure-window .weather_units .weather_unit, .configure-window .weather_units input[type=\"radio\"] {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"] {\n    height: 27px;\n    width: 27px;\n    margin: 1px 5px 0;\n    -webkit-appearance: none;\n    border: 1px solid #EEE;\n    cursor: pointer;\n    opacity: 1;\n    position: relative;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:after {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 27px;\n    height: 27px;\n    content: '';\n    display: block;\n    background: url(../img/ic_clear_black_48px.svg);\n    background-size: 100%;\n    background-position: -1px -1px;\n    opacity: 0;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:checked:after {\n    opacity: 1;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:not(:checked):hover:after {\n    opacity: 0.3;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n\n  .configure-window hr {\n    border: 0;\n    border-bottom: 1px solid #EEE;\n    margin-bottom: 10px;\n  }\n\n  .configure-window .save {\n    margin-top: 20px;\n  }\n\n  .configure-window #config_save {\n    float: right;\n  }\n\n  .configure-window .btn {\n    display: inline-block;\n    padding: 10px 20px;\n    border: 1px solid transparent;\n    background: black;\n    font-size: 2rem;\n    color: white;\n  }\n\n  .configure-window .btn:hover {\n    background: white;\n    color: black;\n    border: 1px solid black;\n  }\n")
+},{"./configure-clock.vue":74,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],74:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n")
+'use strict';
+
+var Vue = require('vue');
+Vue.config.debug = true;
+
+module.exports = Vue.extend({
+
+  props: ["config"],
+
+  data: function data() {
+    return {
+      configTmp: {
+        clock: {
+          format: this.config.clock.format
+        }
+      }
+    };
+  },
+
+  methods: {
+    open: function open() {
+      this.$els.modal.classList.add('on');
+    },
+    save: function save() {
+      this.config.clock.format = this.configTmp.clock.format;
+      this.close();
+    },
+    close: function close() {
+      this.configTmp.clock.format = this.config.clock.format;
+      this.$els.modal.classList.remove('on');
+    }
+  },
+
+  computed: {}
+
+});
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">CLOCK</h1>\n      <hr>\n      <div class=\"row clock_formats\">\n        <label for=\"clock_format\">FORMAT</label>\n        <span class=\"clock_format format12\">12h</span>\n        <input type=\"radio\" id=\"format12\" value=\"12\" v-model=\"configTmp.clock.format\">\n        <span class=\"clock_format format24\">24h</span>\n        <input type=\"radio\" id=\"format24\" value=\"24\" v-model=\"configTmp.clock.format\">\n      </div>\n      <div class=\"row save\">\n        <button class=\"btn config_save\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/configure-clock.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],75:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11197,9 +11271,9 @@ module.exports = Vue.extend({
   data: function data() {
     return {
       configTmp: {
-        unit: this.config.unit,
-        country: this.config.country,
-        city: this.config.city
+        unit: this.config.weather.unit,
+        country: this.config.weather.country,
+        city: this.config.weather.city
       }
     };
   },
@@ -11209,15 +11283,15 @@ module.exports = Vue.extend({
       this.$els.modal.classList.add('on');
     },
     save: function save() {
-      this.config.unit = this.configTmp.unit;
-      this.config.country = this.configTmp.country;
-      this.config.city = this.configTmp.city;
+      this.config.weather.unit = this.configTmp.unit;
+      this.config.weather.country = this.configTmp.country;
+      this.config.weather.city = this.configTmp.city;
       this.close();
     },
     close: function close() {
-      this.configTmp.unit = this.config.unit;
-      this.configTmp.country = this.config.country;
-      this.configTmp.city = this.config.city;
+      this.configTmp.unit = this.config.weather.unit;
+      this.configTmp.country = this.config.weather.country;
+      this.configTmp.city = this.config.weather.city;
       this.$els.modal.classList.remove('on');
     }
   },
@@ -11225,14 +11299,14 @@ module.exports = Vue.extend({
   computed: {}
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">WEATHER</h1>\n      <hr>\n      <div class=\"row\">\n        <label for=\"config_country\">YOUR COUNTRY</label>\n        <select name=\"config_country\" id=\"config_country\" v-model=\"configTmp.country\">\n          <option v-for=\"country in config.countries\" value=\"{{country.code}}\">{{country.name}}</option>\n        </select>\n      </div>\n      <div class=\"row\">\n        <label for=\"config_city\">YOUR CITY</label>\n        <input id=\"config_city\" type=\"text\" v-model=\"configTmp.city\">\n      </div>\n      <div class=\"row weather_units\">\n        <label for=\"config_city\">UNIT</label>\n        <span class=\"weather_unit unit_f\">°F</span>\n        <input type=\"radio\" id=\"unit_f\" value=\"f\" v-model=\"configTmp.unit\">\n        <span class=\"weather_unit unit_c\">°C</span>\n        <input type=\"radio\" id=\"unit_c\" value=\"c\" v-model=\"configTmp.unit\">\n      </div>\n      <div class=\"row save\">\n        <button id=\"config_save\" class=\"btn\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n  <div class=\"icon-config\" v-on:click=\"open()\"></div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">WEATHER</h1>\n      <hr>\n      <div class=\"row\">\n        <label for=\"config_country\">YOUR COUNTRY</label>\n        <select name=\"config_country\" id=\"config_country\" v-model=\"configTmp.country\">\n          <option v-for=\"country in config.weather.countries\" value=\"{{country.code}}\">{{country.name}}</option>\n        </select>\n      </div>\n      <div class=\"row\">\n        <label for=\"config_city\">YOUR CITY</label>\n        <input id=\"config_city\" type=\"text\" v-model=\"configTmp.city\">\n      </div>\n      <div class=\"row weather_units\">\n        <label for=\"config_city\">UNIT</label>\n        <span class=\"weather_unit unit_f\">°F</span>\n        <input type=\"radio\" id=\"unit_f\" value=\"f\" v-model=\"configTmp.unit\">\n        <span class=\"weather_unit unit_c\">°C</span>\n        <input type=\"radio\" id=\"unit_c\" value=\"c\" v-model=\"configTmp.unit\">\n      </div>\n      <div class=\"row save\">\n        <button class=\"btn config_save\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/configure-weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  footer {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 20px;\n  }\n\n  .configure-window .weather_units .weather_unit, .configure-window .weather_units input[type=\"radio\"] {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"] {\n    height: 27px;\n    width: 27px;\n    margin: 1px 5px 0;\n    -webkit-appearance: none;\n    border: 1px solid #EEE;\n    cursor: pointer;\n    opacity: 1;\n    position: relative;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:after {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 27px;\n    height: 27px;\n    content: '';\n    display: block;\n    background: url(../img/ic_clear_black_48px.svg);\n    background-size: 100%;\n    background-position: -1px -1px;\n    opacity: 0;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:checked:after {\n    opacity: 1;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:not(:checked):hover:after {\n    opacity: 0.3;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n\n  .configure-window hr {\n    border: 0;\n    border-bottom: 1px solid #EEE;\n    margin-bottom: 10px;\n  }\n\n  .configure-window .save {\n    margin-top: 20px;\n  }\n\n  .configure-window #config_save {\n    float: right;\n  }\n\n  .configure-window .btn {\n    display: inline-block;\n    padding: 10px 20px;\n    border: 1px solid transparent;\n    background: black;\n    font-size: 2rem;\n    color: white;\n  }\n\n  .configure-window .btn:hover {\n    background: white;\n    color: black;\n    border: 1px solid black;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11241,13 +11315,15 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],75:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n  }\n\n  .profile .img {\n    width: 50px;\n    height: 50px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n")
-'use strict';
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],76:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n    margin-right: 20px;\n  }\n\n  .profile .img {\n    width: 40px;\n    height: 40px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n")
+"use strict";
 
 var Vue = require('vue');
 
 module.exports = Vue.extend({
+
+  props: ["config"],
 
   data: function data() {
     return {};
@@ -11263,7 +11339,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/profile.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n  }\n\n  .profile .img {\n    width: 50px;\n    height: 50px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n    margin-right: 20px;\n  }\n\n  .profile .img {\n    width: 40px;\n    height: 40px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11272,8 +11348,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],76:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 5rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n")
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],77:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 6rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 100%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11318,7 +11394,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/search-bar.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 5rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 6rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 100%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11327,13 +11403,12 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],77:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: default;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n\n  .icon-config {\n    opacity: 0.1;\n    width: 22px;\n    height: 22px;\n    display: none;\n    background: url(../img/ic_settings.svg);\n    background-size: 100%;\n    cursor: pointer;\n  }\n\n  .icon-config:hover {\n    opacity: 1;\n  }\n\n  .weather:hover .icon-config {\n    display: inline-block;\n  }\n")
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],78:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    padding: 0 10px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
 var ConfigureWeather = require('./configure-weather.vue');
-Vue.config.debug = true;
 
 module.exports = Vue.extend({
 
@@ -11378,6 +11453,10 @@ module.exports = Vue.extend({
 
   methods: {
 
+    openConf: function openConf() {
+      this.$refs.configurator.open();
+    },
+
     jsonp: function jsonp(url, callback) {
       var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
       window[callbackName] = function (data) {
@@ -11393,11 +11472,9 @@ module.exports = Vue.extend({
 
     getWeather: function getWeather() {
 
-      var city, country, unit;
-
-      city = this.config.city.toLowerCase();
-      country = this.config.country.toLowerCase();
-      unit = this.config.unit.toLowerCase();
+      var city = this.config.weather.city.toLowerCase(),
+          country = this.config.weather.country.toLowerCase(),
+          unit = this.config.weather.unit.toLowerCase();
 
       this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + ", " + country + "') and u='" + unit + "'&format=json&u=c", (function (data) {
         //        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 753692 and u='c'&format=json&u=c", (function(data) {
@@ -11407,14 +11484,14 @@ module.exports = Vue.extend({
   }
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n    <div class=\"description\">{{ description }}</div>\n    <configure-weather v-bind:config.sync=\"config\"></configure-weather>\n  </div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\" v-on:click=\"openConf()\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n    <div class=\"description\">{{ description }}</div>\n  </div>\n  <configure-weather v-ref:configurator=\"\" v-bind:config.sync=\"config\"></configure-weather>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: default;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n\n  .icon-config {\n    opacity: 0.1;\n    width: 22px;\n    height: 22px;\n    display: none;\n    background: url(../img/ic_settings.svg);\n    background-size: 100%;\n    cursor: pointer;\n  }\n\n  .icon-config:hover {\n    opacity: 1;\n  }\n\n  .weather:hover .icon-config {\n    display: inline-block;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    padding: 0 10px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11423,7 +11500,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./configure-weather.vue":74,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],78:[function(require,module,exports){
+},{"./configure-weather.vue":75,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],79:[function(require,module,exports){
 var Vue = require('vue');
 var App = require('./js/app.vue');
 
@@ -11434,7 +11511,7 @@ new Vue({
   }
 });
 
-},{"./js/app.vue":72,"vue":67}],79:[function(require,module,exports){
+},{"./js/app.vue":72,"vue":67}],80:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -11527,4 +11604,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[78]);
+},{}]},{},[79]);

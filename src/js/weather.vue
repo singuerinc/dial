@@ -2,10 +2,14 @@
 
   .weather {
     display: inline-block;
-    margin: 0;
+    padding: 0 10px;
     font-size: 3.5rem;
     line-height: 3rem;
-    cursor: default;
+    cursor: pointer;
+  }
+
+  .weather:hover {
+    color: grey;
   }
 
   .icon {
@@ -29,42 +33,23 @@
     line-height: 4rem;
     vertical-align: top;
   }
-
-  .icon-config {
-    opacity: 0.1;
-    width: 22px;
-    height: 22px;
-    display: none;
-    background: url(../img/ic_settings.svg);
-    background-size: 100%;
-    cursor: pointer;
-  }
-
-  .icon-config:hover {
-    opacity: 1;
-  }
-
-  .weather:hover .icon-config {
-    display: inline-block;
-  }
 </style>
 
 <template>
-  <div class="weather">
+  <div class="weather" v-on:click="openConf()">
     <div class="icon">
       <i v-bind:class="icon"></i>
     </div>
     <div class="temperature">{{ temperature }}</div>
     <div class="description">{{ description }}</div>
-    <configure-weather v-bind:config.sync="config"></configure-weather>
   </div>
+  <configure-weather v-ref:configurator v-bind:config.sync="config"></configure-weather>
 </template>
 
 <script>
 
   var Vue = require('vue');
   var ConfigureWeather = require('./configure-weather.vue');
-  Vue.config.debug = true;
 
   module.exports = Vue.extend({
 
@@ -109,6 +94,10 @@
 
     methods: {
 
+      openConf: function(){
+        this.$refs.configurator.open();
+      },
+
       jsonp: function(url, callback) {
           var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
           window[callbackName] = function(data) {
@@ -124,12 +113,9 @@
 
       getWeather: function(){
 
-        var city, country, unit;
-
-        city = this.config.city.toLowerCase();
-        country = this.config.country.toLowerCase();
-        unit = this.config.unit.toLowerCase();
-
+        var city = this.config.weather.city.toLowerCase(),
+          country = this.config.weather.country.toLowerCase(),
+          unit = this.config.weather.unit.toLowerCase();
 
         this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+city+", "+country+"') and u='"+unit+"'&format=json&u=c", (function(data) {
 //        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 753692 and u='c'&format=json&u=c", (function(data) {

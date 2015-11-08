@@ -2,11 +2,12 @@
   .profile {
     display: inline-block;
     vertical-align: top;
+    margin-right: 20px;
   }
 
   .profile .img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     background: url(img/profile.png);
     background-position: center;
@@ -36,6 +37,8 @@
 var Vue = require('vue');
 
 module.exports = Vue.extend({
+
+  props: ["config"],
 
   data: function(){
     return {

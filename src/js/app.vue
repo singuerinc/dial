@@ -15,6 +15,7 @@
 
 html, body {
   font-family: 'Raleway';
+  -webkit-font-smoothing: antialiased;
   background-color: #222;
   color: #444;
   font-size: 10px;
@@ -120,7 +121,7 @@ header {
   height: 100vh;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   color: #777;
 }
 
@@ -140,7 +141,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 120px #000;
+  box-shadow: 0 0 80px #000;
   padding: 50px;
 }
 
@@ -184,14 +185,80 @@ header {
   clear: both;
 }
 
+.configure-window hr {
+  border: 0;
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 10px;
+}
+
+.configure-window .save {
+  margin-top: 20px;
+}
+
+
+.configure-window .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  background: black;
+  font-size: 2rem;
+  color: white;
+}
+
+.configure-window .btn:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.configure-window .config_save {
+  float: right;
+}
+
+.configure-window input[type="radio"] {
+  font-size: 3rem;
+  float: left;
+  display: inline-block;
+  height: 27px;
+  width: 27px;
+  margin: 5px 5px 0;
+  -webkit-appearance: none;
+  border: 1px solid #EEE;
+  cursor: pointer;
+  opacity: 1;
+  position: relative;
+}
+
+.configure-window input[type="radio"]:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27px;
+  height: 27px;
+  content: '';
+  display: block;
+  background: url(../img/ic_clear_black_48px.svg);
+  background-size: 100%;
+  background-position: -1px -1px;
+  opacity: 0;
+}
+
+.configure-window input[type="radio"]:checked:after {
+  opacity: 1;
+}
+
+.configure-window input[type="radio"]:not(:checked):hover:after {
+  opacity: 0.3;
+}
+
 </style>
 
 <template>
 
     <header>
       <search-bar :search.sync="search" :selidx.sync="selectedIndex" :filtered.sync="filteredItems"></search-bar>
-      <profile></profile>
-      <clock></clock>
+      <profile v-bind:config.sync="config"></profile>
+      <clock v-bind:config.sync="config"></clock>
       <weather v-bind:config.sync="config"></weather>
     </header>
 
@@ -279,10 +346,16 @@ header {
         items: [],
         onlyItems: [],
         config: {
-          countries: require('../countries.json'),
-          city: 'Barcelona',
-          country: 'ES',
-          unit: 'c',
+          weather: {
+            countries: require('../countries.json'),
+            city: 'Barcelona',
+            country: 'ES',
+            unit: 'c'
+          },
+          clock: {
+            format: 24
+          }
+
         }
       }
     },

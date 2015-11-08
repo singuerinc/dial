@@ -4,11 +4,11 @@
     font-family: "Raleway";
     font-weight: 100;
     margin: 0 0 40px 0;
-    font-size: 5rem;
+    font-size: 6rem;
     background: transparent;
     border: 0;
     color: #25FFB4;
-    width: 50%;
+    width: 100%;
     vertical-align: top;
   }
 
