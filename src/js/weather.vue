@@ -13,6 +13,10 @@
     display: inline-block;
   }
 
+  .icon i {
+    font-style: normal;
+  }
+
   .temperature {
     width: 62px;
     display: inline-block;
