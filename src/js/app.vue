@@ -150,13 +150,7 @@ header, footer {
       </li>
     </ul>
   </div>
-
-  <footer>
-
-  </footer>
-
 </template>
-
 <script>
 
   var Vue = require('vue');
@@ -165,11 +159,10 @@ header, footer {
   var Profile = require('./profile.vue');
   var Clock = require('./clock.vue');
   var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
-  //var data = require('../data.json');
 
+  //var data = require('../data.json');
   // chrome.storage.sync.set({'singuerinc__dial_data': []
   // }, (function(){
-  //
   // }).bind(this));
 
   var App = Vue.extend({
@@ -202,6 +195,10 @@ header, footer {
           }
 
         }).bind(this)]);
+
+        document.body.addEventListener('click', function(){
+          document.getElementsByClassName('search-bar')[0].focus();
+        });
 
     },
 
@@ -246,14 +243,14 @@ header, footer {
         var obj = this.filteredItems[sIdx];
         if(typeof(obj) == 'undefined'){
           if(this.search.match(urlRegExp) != null){
-            window.open('//' + this.search);
+            chrome.tabs.create({ url: '//' + this.search });
           } else {
-            window.open('https://www.google.com/search?q=' + this.search);
+            chrome.tabs.create({ url: 'https://www.google.com/search?q=' + this.search });
           }
 
           this.search = '';
         } else {
-          window.open(obj.href);
+          chrome.tabs.create({ url: obj.href });
         }
       }
     }

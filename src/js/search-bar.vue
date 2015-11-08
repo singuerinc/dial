@@ -21,7 +21,7 @@
 </style>
 
 <template>
-  <input placeholder="Search" class="search-bar" type="text" v-el:searchinput v-model="search" v-on:keydown="key($event)">
+  <input id="search-bar-input" placeholder="Search" autofocus class="search-bar" type="text" v-el:searchinput v-model="search" v-on:keydown="key($event)">
 </template>
 
 <script>

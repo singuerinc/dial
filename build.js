@@ -10761,11 +10761,10 @@ var Weather = require('./weather.vue');
 var Profile = require('./profile.vue');
 var Clock = require('./clock.vue');
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
-//var data = require('../data.json');
 
+//var data = require('../data.json');
 // chrome.storage.sync.set({'singuerinc__dial_data': []
 // }, (function(){
-//
 // }).bind(this));
 
 var App = Vue.extend({
@@ -10797,6 +10796,10 @@ var App = Vue.extend({
         this.onlyItems = this.onlyItems.concat(this.items[i].links);
       }
     }).bind(this)]);
+
+    document.body.addEventListener('click', function () {
+      document.getElementsByClassName('search-bar')[0].focus();
+    });
   },
 
   data: function data() {
@@ -10840,21 +10843,21 @@ var App = Vue.extend({
       var obj = this.filteredItems[sIdx];
       if (typeof obj == 'undefined') {
         if (this.search.match(urlRegExp) != null) {
-          window.open('//' + this.search);
+          chrome.tabs.create({ url: '//' + this.search });
         } else {
-          window.open('https://www.google.com/search?q=' + this.search);
+          chrome.tabs.create({ url: 'https://www.google.com/search?q=' + this.search });
         }
 
         this.search = '';
       } else {
-        window.open(obj.href);
+        chrome.tabs.create({ url: obj.href });
       }
     }
   }
 });
 
 module.exports = App;
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n\n  <footer>\n\n  </footer>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -10989,7 +10992,7 @@ module.exports = Vue.extend({
   }
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <input placeholder=\"Search\" class=\"search-bar\" type=\"text\" v-el:searchinput=\"\" v-model=\"search\" v-on:keydown=\"key($event)\">\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <input id=\"search-bar-input\" placeholder=\"Search\" autofocus=\"\" class=\"search-bar\" type=\"text\" v-el:searchinput=\"\" v-model=\"search\" v-on:keydown=\"key($event)\">\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
