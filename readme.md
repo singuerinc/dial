@@ -37,8 +37,8 @@ watchify -t vueify -e _src/main.js -o build.js
 
 ### TODO
 - [x] Navigate through results with keys
-- [x] Better options page
-- [x] Change default sites
-- [ ] Profile image?
+- [ ] Options page
+- [ ] Add/Edit/Remove links
+- [ ] Profile image upload
 - [x] Sync
-- [ ] Backgrounds
+- [ ] Backgrounds?
