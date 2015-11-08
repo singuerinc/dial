@@ -241,16 +241,25 @@ header, footer {
     events: {
       'link-selected': function(sIdx){
         var obj = this.filteredItems[sIdx];
+        var url;
         if(typeof(obj) == 'undefined'){
           if(this.search.match(urlRegExp) != null){
-            chrome.tabs.create({ url: '//' + this.search });
+            url = '//' + this.search;
           } else {
-            chrome.tabs.create({ url: 'https://www.google.com/search?q=' + this.search });
+            url = 'https://www.google.com/search?q=' + this.search;
           }
 
           this.search = '';
         } else {
-          chrome.tabs.create({ url: obj.href });
+          url = obj.href;
+        }
+
+        if(typeof(chrome.tabs) == 'undefined'){
+          console.log('with window.open');
+          window.open(url);
+        } else {
+          console.log('with tabs.create');
+          chrome.tabs.create({ url: url });
         }
       }
     }
