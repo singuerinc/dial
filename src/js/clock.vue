@@ -3,7 +3,7 @@
     position: relative;
     font-size: 3.5rem;
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 20px;
     vertical-align: top;
     line-height: 4rem;
     cursor: pointer;

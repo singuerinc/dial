@@ -2,7 +2,7 @@
 
   .weather {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 20px;
     font-size: 3.5rem;
     line-height: 3rem;
     cursor: pointer;

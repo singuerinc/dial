@@ -19,7 +19,7 @@
       <hr>
       <div class="row">
         <label for="config_country">YOUR COUNTRY</label>
-        <select name="config_country" id="config_country" v-model="configTmp.country">
+        <select name="config_country" id="config_country" v-on:change="configTmp.city=''" v-model="configTmp.country">
           <option v-for="country in config.weather.countries" value="{{country.code}}">{{country.name}}</option>
         </select>
       </div>

@@ -11142,7 +11142,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"../countries.json":70,"../data.json":71,"./clock.vue":73,"./profile.vue":76,"./search-bar.vue":77,"./weather.vue":78,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],73:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 10px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 20px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11195,7 +11195,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/clock.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 10px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 20px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11299,7 +11299,7 @@ module.exports = Vue.extend({
   computed: {}
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">WEATHER</h1>\n      <hr>\n      <div class=\"row\">\n        <label for=\"config_country\">YOUR COUNTRY</label>\n        <select name=\"config_country\" id=\"config_country\" v-model=\"configTmp.country\">\n          <option v-for=\"country in config.weather.countries\" value=\"{{country.code}}\">{{country.name}}</option>\n        </select>\n      </div>\n      <div class=\"row\">\n        <label for=\"config_city\">YOUR CITY</label>\n        <input id=\"config_city\" type=\"text\" v-model=\"configTmp.city\">\n      </div>\n      <div class=\"row weather_units\">\n        <label for=\"config_city\">UNIT</label>\n        <span class=\"weather_unit unit_f\">°F</span>\n        <input type=\"radio\" id=\"unit_f\" value=\"f\" v-model=\"configTmp.unit\">\n        <span class=\"weather_unit unit_c\">°C</span>\n        <input type=\"radio\" id=\"unit_c\" value=\"c\" v-model=\"configTmp.unit\">\n      </div>\n      <div class=\"row save\">\n        <button class=\"btn config_save\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">WEATHER</h1>\n      <hr>\n      <div class=\"row\">\n        <label for=\"config_country\">YOUR COUNTRY</label>\n        <select name=\"config_country\" id=\"config_country\" v-on:change=\"configTmp.city=''\" v-model=\"configTmp.country\">\n          <option v-for=\"country in config.weather.countries\" value=\"{{country.code}}\">{{country.name}}</option>\n        </select>\n      </div>\n      <div class=\"row\">\n        <label for=\"config_city\">YOUR CITY</label>\n        <input id=\"config_city\" type=\"text\" v-model=\"configTmp.city\">\n      </div>\n      <div class=\"row weather_units\">\n        <label for=\"config_city\">UNIT</label>\n        <span class=\"weather_unit unit_f\">°F</span>\n        <input type=\"radio\" id=\"unit_f\" value=\"f\" v-model=\"configTmp.unit\">\n        <span class=\"weather_unit unit_c\">°C</span>\n        <input type=\"radio\" id=\"unit_c\" value=\"c\" v-model=\"configTmp.unit\">\n      </div>\n      <div class=\"row save\">\n        <button class=\"btn config_save\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -11404,7 +11404,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],78:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    padding: 0 10px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    padding: 0 20px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11491,7 +11491,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    padding: 0 10px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    padding: 0 20px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
