@@ -255,10 +255,8 @@ header, footer {
         }
 
         if(typeof(chrome.tabs) == 'undefined'){
-          console.log('with window.open');
           window.open(url);
         } else {
-          console.log('with tabs.create');
           chrome.tabs.create({ url: url });
         }
       }
