@@ -10752,7 +10752,7 @@ module.exports=[
 ]
 
 },{}],71:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.6em;\n  font-size: 1.6em;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 5em;\n  font-weight: 300;\n  margin-top: 10px;\n}\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.6em;\n  font-size: 1.6em;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 3rem;\n  font-weight: 300;\n  margin-top: 10px;\n}\n\n.go-to-url small {\n  font-size: 1.5rem;\n  color: white;\n}\n")
 'use strict';
 
 var Vue = require('vue');
@@ -10760,6 +10760,7 @@ var SearchBar = require('./search-bar.vue');
 var Weather = require('./weather.vue');
 var Profile = require('./profile.vue');
 var Clock = require('./clock.vue');
+var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 //var data = require('../data.json');
 
 // chrome.storage.sync.set({'singuerinc__dial_data': []
@@ -10818,7 +10819,11 @@ var App = Vue.extend({
       if (this.search.match(/http[s]?:\/\//)) {
         return this.search;
       } else {
-        return 'http://' + this.search;
+        if (this.search.match(urlRegExp) != null) {
+          return this.search;
+        } else {
+          return this.search + '<small> - Google search</small>';
+        }
       }
     }
   },
@@ -10834,7 +10839,12 @@ var App = Vue.extend({
     'link-selected': function linkSelected(sIdx) {
       var obj = this.filteredItems[sIdx];
       if (typeof obj == 'undefined') {
-        window.open('//' + this.search);
+        if (this.search.match(urlRegExp) != null) {
+          window.open('//' + this.search);
+        } else {
+          window.open('https://www.google.com/search?q=' + this.search);
+        }
+
         this.search = '';
       } else {
         window.open(obj.href);
@@ -10844,14 +10854,14 @@ var App = Vue.extend({
 });
 
 module.exports = App;
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{ go_to_url }}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n\n  <footer>\n\n  </footer>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n\n  <footer>\n\n  </footer>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.6em;\n  font-size: 1.6em;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 5em;\n  font-weight: 300;\n  margin-top: 10px;\n}\n"] = false
+    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.6em;\n  font-size: 1.6em;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 3rem;\n  font-weight: 300;\n  margin-top: 10px;\n}\n\n.go-to-url small {\n  font-size: 1.5rem;\n  color: white;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -10996,7 +11006,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],75:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 4em;\n    line-height: 50px;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 4em;\n    line-height: 50px;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11066,7 +11076,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 4em;\n    line-height: 50px;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 4em;\n    line-height: 50px;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {

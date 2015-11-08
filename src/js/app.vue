@@ -105,9 +105,14 @@ header, footer {
 
 .go-to-url {
   color: #0094FF;
-  font-size: 5em;
+  font-size: 3rem;
   font-weight: 300;
   margin-top: 10px;
+}
+
+.go-to-url small {
+  font-size: 1.5rem;
+  color: white;
 }
 </style>
 
@@ -131,7 +136,7 @@ header, footer {
 
     <div class="result-list" v-if="filteredItems.length == 0">
       <h1 class="category-title">GO TO</h1>
-      <h2 class="go-to-url">{{ go_to_url }}</h2>
+      <h2 class="go-to-url">{{{ go_to_url }}}</h2>
     </div>
 
     <ul v-if="search == ''" class="category-list">
@@ -159,6 +164,7 @@ header, footer {
   var Weather = require('./weather.vue');
   var Profile = require('./profile.vue');
   var Clock = require('./clock.vue');
+  var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
   //var data = require('../data.json');
 
   // chrome.storage.sync.set({'singuerinc__dial_data': []
@@ -219,7 +225,11 @@ header, footer {
         if(this.search.match(/http[s]?:\/\//)){
           return this.search;
         } else {
-          return 'http://' + this.search;
+          if(this.search.match(urlRegExp) != null){
+            return this.search;
+          } else {
+            return this.search + '<small> - Google search</small>';
+          }
         }
       }
     },
@@ -235,7 +245,12 @@ header, footer {
       'link-selected': function(sIdx){
         var obj = this.filteredItems[sIdx];
         if(typeof(obj) == 'undefined'){
-          window.open('//' + this.search);
+          if(this.search.match(urlRegExp) != null){
+            window.open('//' + this.search);
+          } else {
+            window.open('https://www.google.com/search?q=' + this.search);
+          }
+
           this.search = '';
         } else {
           window.open(obj.href);
