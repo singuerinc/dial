@@ -90,8 +90,9 @@ header, footer {
 }
 
 .link a {
-  line-height: 1.6em;
-  font-size: 1.6em;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.2px;
   color: #888;
 }
 
@@ -107,7 +108,7 @@ header, footer {
   color: #0094FF;
   font-size: 3rem;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .go-to-url small {
@@ -150,6 +151,10 @@ header, footer {
       </li>
     </ul>
   </div>
+
+  <footer>
+    <configure></configure>
+  </footer>
 </template>
 <script>
 
@@ -158,6 +163,7 @@ header, footer {
   var Weather = require('./weather.vue');
   var Profile = require('./profile.vue');
   var Clock = require('./clock.vue');
+  var Configure = require('./configure.vue');
   var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
   //var data = require('../data.json');
@@ -235,7 +241,8 @@ header, footer {
       'search-bar': SearchBar,
       'clock': Clock,
       'weather': Weather,
-      'profile': Profile
+      'profile': Profile,
+      'configure': Configure
     },
 
     events: {

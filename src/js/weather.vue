@@ -3,8 +3,8 @@
   .weather {
     display: inline-block;
     margin: 0;
-    font-size: 4em;
-    line-height: 50px;
+    font-size: 2.2rem;
+    line-height: 3.1rem;
     width: 135px;
   }
 

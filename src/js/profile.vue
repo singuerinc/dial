@@ -17,10 +17,10 @@
   }
 
   .profile .name {
-    font-size: 4em;
+    font-size: 4rem;
     display: inline-block;
     vertical-align: top;
-    line-height: 40px;
+    line-height: 4rem;
   }
 </style>
 

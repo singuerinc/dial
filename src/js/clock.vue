@@ -1,12 +1,12 @@
 <style>
   .clock {
-    font-size: 4em;
+    font-size: 2.2rem;
     display: inline-block;
     margin: 0 20px;
     width: 120px;
     text-align: center;
     vertical-align: top;
-    line-height: 50px;
+    line-height: 3.1rem;
     border-right: 1px solid #444;
     border-left: 1px solid #444;
   }
