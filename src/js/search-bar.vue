@@ -4,7 +4,7 @@
     font-family: "Raleway";
     font-weight: 100;
     margin: 0 0 40px 0;
-    font-size: 3rem;
+    font-size: 5rem;
     background: transparent;
     border: 0;
     color: #25FFB4;

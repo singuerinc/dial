@@ -954,7 +954,7 @@ config._assetTypes.forEach(function (type) {
 })
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../config":13,"../directives/internal":20,"../fragment/factory":42,"../parsers/directive":52,"../parsers/expression":53,"../parsers/path":54,"../parsers/template":55,"../parsers/text":56,"../util":64,"_process":78}],6:[function(require,module,exports){
+},{"../compiler":11,"../config":13,"../directives/internal":20,"../fragment/factory":42,"../parsers/directive":52,"../parsers/expression":53,"../parsers/path":54,"../parsers/template":55,"../parsers/text":56,"../util":64,"_process":79}],6:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var compiler = require('../compiler')
@@ -1026,7 +1026,7 @@ exports.$compile = function (el, host, scope, frag) {
 }
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../util":64,"_process":78}],7:[function(require,module,exports){
+},{"../compiler":11,"../util":64,"_process":79}],7:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var config = require('./config')
@@ -1135,7 +1135,7 @@ exports.push = function (watcher) {
 }
 
 }).call(this,require('_process'))
-},{"./config":13,"./util":64,"_process":78}],8:[function(require,module,exports){
+},{"./config":13,"./util":64,"_process":79}],8:[function(require,module,exports){
 /**
  * A doubly linked list-based Least Recently Used (LRU)
  * cache. Will keep most recently used items while
@@ -1460,7 +1460,7 @@ function getDefault (vm, options) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"../directives/internal/prop":21,"../parsers/directive":52,"../parsers/path":54,"../util":64,"_process":78}],10:[function(require,module,exports){
+},{"../config":13,"../directives/internal/prop":21,"../parsers/directive":52,"../parsers/path":54,"../util":64,"_process":79}],10:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var publicDirectives = require('../directives/public')
@@ -2207,7 +2207,7 @@ function makeNodeLinkFn (directives) {
 }
 
 }).call(this,require('_process'))
-},{"../directives/internal":20,"../directives/public":30,"../parsers/directive":52,"../parsers/template":55,"../parsers/text":56,"../util":64,"./compile-props":9,"_process":78}],11:[function(require,module,exports){
+},{"../directives/internal":20,"../directives/public":30,"../parsers/directive":52,"../parsers/template":55,"../parsers/text":56,"../util":64,"./compile-props":9,"_process":79}],11:[function(require,module,exports){
 var _ = require('../util')
 
 _.extend(exports, require('./compile'))
@@ -2365,7 +2365,7 @@ function mergeAttrs (from, to) {
 }
 
 }).call(this,require('_process'))
-},{"../parsers/template":55,"../util":64,"_process":78}],13:[function(require,module,exports){
+},{"../parsers/template":55,"../util":64,"_process":79}],13:[function(require,module,exports){
 module.exports = {
 
   /**
@@ -2795,7 +2795,7 @@ Directive.prototype._teardown = function () {
 module.exports = Directive
 
 }).call(this,require('_process'))
-},{"./parsers/expression":53,"./util":64,"./watcher":68,"_process":78}],15:[function(require,module,exports){
+},{"./parsers/expression":53,"./util":64,"./watcher":68,"_process":79}],15:[function(require,module,exports){
 exports.slot = require('./slot')
 exports.partial = require('./partial')
 
@@ -2846,7 +2846,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"../public/if":29,"_process":78}],17:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"../public/if":29,"_process":79}],17:[function(require,module,exports){
 var _ = require('../../util')
 var templateParser = require('../../parsers/template')
 
@@ -3390,7 +3390,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../parsers/template":55,"../../util":64,"_process":78}],20:[function(require,module,exports){
+},{"../../parsers/template":55,"../../util":64,"_process":79}],20:[function(require,module,exports){
 exports.style = require('./style')
 exports['class'] = require('./class')
 exports.component = require('./component')
@@ -3726,7 +3726,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"../internal/style":22,"_process":78}],25:[function(require,module,exports){
+},{"../../util":64,"../internal/style":22,"_process":79}],25:[function(require,module,exports){
 module.exports = {
   bind: function () {
     var el = this.el
@@ -4358,7 +4358,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"_process":78}],28:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"_process":79}],28:[function(require,module,exports){
 var _ = require('../../util')
 var templateParser = require('../../parsers/template')
 
@@ -4470,7 +4470,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../fragment/factory":42,"../../util":64,"_process":78}],30:[function(require,module,exports){
+},{"../../fragment/factory":42,"../../util":64,"_process":79}],30:[function(require,module,exports){
 // text & html
 exports.text = require('./text')
 exports.html = require('./html')
@@ -4646,7 +4646,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../../util":64,"./checkbox":31,"./radio":33,"./select":34,"./text":35,"_process":78}],33:[function(require,module,exports){
+},{"../../../util":64,"./checkbox":31,"./radio":33,"./select":34,"./text":35,"_process":79}],33:[function(require,module,exports){
 var _ = require('../../../util')
 
 module.exports = {
@@ -5058,7 +5058,7 @@ module.exports = {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"_process":78}],37:[function(require,module,exports){
+},{"../../util":64,"_process":79}],37:[function(require,module,exports){
 (function (process){
 if (process.env.NODE_ENV !== 'production') {
   module.exports = {
@@ -5072,7 +5072,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../../util":64,"_process":78}],38:[function(require,module,exports){
+},{"../../util":64,"_process":79}],38:[function(require,module,exports){
 var _ = require('../../util')
 var transition = require('../../transition')
 
@@ -5772,7 +5772,7 @@ exports._callHook = function (hook) {
 }
 
 }).call(this,require('_process'))
-},{"../util":64,"_process":78}],45:[function(require,module,exports){
+},{"../util":64,"_process":79}],45:[function(require,module,exports){
 var mergeOptions = require('../util').mergeOptions
 var uid = 0
 
@@ -6222,7 +6222,7 @@ exports._resolveComponent = function (id, cb) {
 }
 
 }).call(this,require('_process'))
-},{"../util":64,"_process":78}],48:[function(require,module,exports){
+},{"../util":64,"_process":79}],48:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var compiler = require('../compiler')
@@ -6467,7 +6467,7 @@ exports._initMeta = function () {
 }
 
 }).call(this,require('_process'))
-},{"../compiler":11,"../observer":51,"../observer/dep":50,"../util":64,"../watcher":68,"_process":78}],49:[function(require,module,exports){
+},{"../compiler":11,"../observer":51,"../observer/dep":50,"../util":64,"../watcher":68,"_process":79}],49:[function(require,module,exports){
 var _ = require('../util')
 var arrayProto = Array.prototype
 var arrayMethods = Object.create(arrayProto)
@@ -7234,7 +7234,7 @@ exports.isSimplePath = function (exp) {
 }
 
 }).call(this,require('_process'))
-},{"../cache":8,"../util":64,"./path":54,"_process":78}],54:[function(require,module,exports){
+},{"../cache":8,"../util":64,"./path":54,"_process":79}],54:[function(require,module,exports){
 (function (process){
 var _ = require('../util')
 var Cache = require('../cache')
@@ -7596,7 +7596,7 @@ exports.set = function (obj, path, val) {
 }
 
 }).call(this,require('_process'))
-},{"../cache":8,"../util":64,"_process":78}],55:[function(require,module,exports){
+},{"../cache":8,"../util":64,"_process":79}],55:[function(require,module,exports){
 var _ = require('../util')
 var Cache = require('../cache')
 var templateCache = new Cache(1000)
@@ -8689,7 +8689,7 @@ function formatValue (val) {
 }
 
 }).call(this,require('_process'))
-},{"./index":64,"_process":78}],61:[function(require,module,exports){
+},{"./index":64,"_process":79}],61:[function(require,module,exports){
 (function (process){
 /**
  * Enable debug utilities.
@@ -8740,7 +8740,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"_process":78}],62:[function(require,module,exports){
+},{"../config":13,"_process":79}],62:[function(require,module,exports){
 (function (process){
 var _ = require('./index')
 var config = require('../config')
@@ -9106,7 +9106,7 @@ exports.removeNodeRange = function (start, end, vm, frag, cb) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"../transition":57,"./index":64,"_process":78}],63:[function(require,module,exports){
+},{"../config":13,"../transition":57,"./index":64,"_process":79}],63:[function(require,module,exports){
 // can we use __proto__?
 exports.hasProto = '__proto__' in {}
 
@@ -9954,7 +9954,7 @@ exports.resolveAsset = function resolve (options, type, id) {
 }
 
 }).call(this,require('_process'))
-},{"../config":13,"./index":64,"_process":78}],67:[function(require,module,exports){
+},{"../config":13,"./index":64,"_process":79}],67:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var extend = _.extend
@@ -10054,7 +10054,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./api/data":2,"./api/dom":3,"./api/events":4,"./api/global":5,"./api/lifecycle":6,"./directives/element":15,"./directives/public":30,"./filters":41,"./instance/events":44,"./instance/init":45,"./instance/lifecycle":46,"./instance/misc":47,"./instance/state":48,"./util":64,"_process":78}],68:[function(require,module,exports){
+},{"./api/data":2,"./api/dom":3,"./api/events":4,"./api/global":5,"./api/lifecycle":6,"./directives/element":15,"./directives/public":30,"./filters":41,"./instance/events":44,"./instance/init":45,"./instance/lifecycle":46,"./instance/misc":47,"./instance/state":48,"./util":64,"_process":79}],68:[function(require,module,exports){
 (function (process){
 var _ = require('./util')
 var config = require('./config')
@@ -10401,7 +10401,7 @@ function traverse (val) {
 module.exports = Watcher
 
 }).call(this,require('_process'))
-},{"./batcher":7,"./config":13,"./observer/dep":50,"./parsers/expression":53,"./util":64,"_process":78}],69:[function(require,module,exports){
+},{"./batcher":7,"./config":13,"./observer/dep":50,"./parsers/expression":53,"./util":64,"_process":79}],69:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 exports.insert = function (css) {
@@ -10422,6 +10422,255 @@ exports.insert = function (css) {
 }
 
 },{}],70:[function(require,module,exports){
+module.exports=[
+        { "name": "Afghanistan", "code": "AF" },
+        { "name": "Åland Islands", "code": "AX" },
+        { "name": "Albania", "code": "AL" },
+        { "name": "Algeria", "code": "DZ" },
+        { "name": "American Samoa", "code": "AS" },
+        { "name": "Andorra", "code": "AD" },
+        { "name": "Angola", "code": "AO" },
+        { "name": "Anguilla", "code": "AI" },
+        { "name": "Antarctica", "code": "AQ" },
+        { "name": "Antigua and Barbuda", "code": "AG" },
+        { "name": "Argentina", "code": "AR" },
+        { "name": "Armenia", "code": "AM" },
+        { "name": "Aruba", "code": "AW" },
+        { "name": "Australia", "code": "AU" },
+        { "name": "Austria", "code": "AT" },
+        { "name": "Azerbaijan", "code": "AZ" },
+        { "name": "Bahamas", "code": "BS" },
+        { "name": "Bahrain", "code": "BH" },
+        { "name": "Bangladesh", "code": "BD" },
+        { "name": "Barbados", "code": "BB" },
+        { "name": "Belarus", "code": "BY" },
+        { "name": "Belgium", "code": "BE" },
+        { "name": "Belize", "code": "BZ" },
+        { "name": "Benin", "code": "BJ" },
+        { "name": "Bermuda", "code": "BM" },
+        { "name": "Bhutan", "code": "BT" },
+        { "name": "Bolivia", "code": "BO" },
+        { "name": "Bosnia and Herzegovina", "code": "BA" },
+        { "name": "Botswana", "code": "BW" },
+        { "name": "Bouvet Island", "code": "BV" },
+        { "name": "Brazil", "code": "BR" },
+        { "name": "British Indian Ocean Territory", "code": "IO" },
+        { "name": "Brunei Darussalam", "code": "BN" },
+        { "name": "Bulgaria", "code": "BG" },
+        { "name": "Burkina Faso", "code": "BF" },
+        { "name": "Burundi", "code": "BI" },
+        { "name": "Cambodia", "code": "KH" },
+        { "name": "Cameroon", "code": "CM" },
+        { "name": "Canada", "code": "CA" },
+        { "name": "Cape Verde", "code": "CV" },
+        { "name": "Cayman Islands", "code": "KY" },
+        { "name": "Central African Republic", "code": "CF" },
+        { "name": "Chad", "code": "TD" },
+        { "name": "Chile", "code": "CL" },
+        { "name": "China", "code": "CN" },
+        { "name": "Christmas Island", "code": "CX" },
+        { "name": "Cocos (Keeling) Islands", "code": "CC" },
+        { "name": "Colombia", "code": "CO" },
+        { "name": "Comoros", "code": "KM" },
+        { "name": "Congo", "code": "CG" },
+        { "name": "Congo, The Democratic Republic of the", "code": "CD" },
+        { "name": "Cook Islands", "code": "CK" },
+        { "name": "Costa Rica", "code": "CR" },
+        { "name": "Cote D'Ivoire", "code": "CI" },
+        { "name": "Croatia", "code": "HR" },
+        { "name": "Cuba", "code": "CU" },
+        { "name": "Cyprus", "code": "CY" },
+        { "name": "Czech Republic", "code": "CZ" },
+        { "name": "Denmark", "code": "DK" },
+        { "name": "Djibouti", "code": "DJ" },
+        { "name": "Dominica", "code": "DM" },
+        { "name": "Dominican Republic", "code": "DO" },
+        { "name": "Ecuador", "code": "EC" },
+        { "name": "Egypt", "code": "EG" },
+        { "name": "El Salvador", "code": "SV" },
+        { "name": "Equatorial Guinea", "code": "GQ" },
+        { "name": "Eritrea", "code": "ER" },
+        { "name": "Estonia", "code": "EE" },
+        { "name": "Ethiopia", "code": "ET" },
+        { "name": "Falkland Islands (Malvinas)", "code": "FK" },
+        { "name": "Faroe Islands", "code": "FO" },
+        { "name": "Fiji", "code": "FJ" },
+        { "name": "Finland", "code": "FI" },
+        { "name": "France", "code": "FR" },
+        { "name": "French Guiana", "code": "GF" },
+        { "name": "French Polynesia", "code": "PF" },
+        { "name": "French Southern Territories", "code": "TF" },
+        { "name": "Gabon", "code": "GA" },
+        { "name": "Gambia", "code": "GM" },
+        { "name": "Georgia", "code": "GE" },
+        { "name": "Germany", "code": "DE" },
+        { "name": "Ghana", "code": "GH" },
+        { "name": "Gibraltar", "code": "GI" },
+        { "name": "Greece", "code": "GR" },
+        { "name": "Greenland", "code": "GL" },
+        { "name": "Grenada", "code": "GD" },
+        { "name": "Guadeloupe", "code": "GP" },
+        { "name": "Guam", "code": "GU" },
+        { "name": "Guatemala", "code": "GT" },
+        { "name": "Guernsey", "code": "GG" },
+        { "name": "Guinea", "code": "GN" },
+        { "name": "Guinea-Bissau", "code": "GW" },
+        { "name": "Guyana", "code": "GY" },
+        { "name": "Haiti", "code": "HT" },
+        { "name": "Heard Island and Mcdonald Islands", "code": "HM" },
+        { "name": "Holy See (Vatican City State)", "code": "VA" },
+        { "name": "Honduras", "code": "HN" },
+        { "name": "Hong Kong", "code": "HK" },
+        { "name": "Hungary", "code": "HU" },
+        { "name": "Iceland", "code": "IS" },
+        { "name": "India", "code": "IN" },
+        { "name": "Indonesia", "code": "ID" },
+        { "name": "Iran, Islamic Republic Of", "code": "IR" },
+        { "name": "Iraq", "code": "IQ" },
+        { "name": "Ireland", "code": "IE" },
+        { "name": "Isle of Man", "code": "IM" },
+        { "name": "Israel", "code": "IL" },
+        { "name": "Italy", "code": "IT" },
+        { "name": "Jamaica", "code": "JM" },
+        { "name": "Japan", "code": "JP" },
+        { "name": "Jersey", "code": "JE" },
+        { "name": "Jordan", "code": "JO" },
+        { "name": "Kazakhstan", "code": "KZ" },
+        { "name": "Kenya", "code": "KE" },
+        { "name": "Kiribati", "code": "KI" },
+        { "name": "Democratic People's Republic of Korea", "code": "KP" },
+        { "name": "Korea, Republic of", "code": "KR" },
+        { "name": "Kosovo", "code": "XK" },
+        { "name": "Kuwait", "code": "KW" },
+        { "name": "Kyrgyzstan", "code": "KG" },
+        { "name": "Lao People's Democratic Republic", "code": "LA" },
+        { "name": "Latvia", "code": "LV" },
+        { "name": "Lebanon", "code": "LB" },
+        { "name": "Lesotho", "code": "LS" },
+        { "name": "Liberia", "code": "LR" },
+        { "name": "Libyan Arab Jamahiriya", "code": "LY" },
+        { "name": "Liechtenstein", "code": "LI" },
+        { "name": "Lithuania", "code": "LT" },
+        { "name": "Luxembourg", "code": "LU" },
+        { "name": "Macao", "code": "MO" },
+        { "name": "Macedonia, The Former Yugoslav Republic of", "code": "MK" },
+        { "name": "Madagascar", "code": "MG" },
+        { "name": "Malawi", "code": "MW" },
+        { "name": "Malaysia", "code": "MY" },
+        { "name": "Maldives", "code": "MV" },
+        { "name": "Mali", "code": "ML" },
+        { "name": "Malta", "code": "MT" },
+        { "name": "Marshall Islands", "code": "MH" },
+        { "name": "Martinique", "code": "MQ" },
+        { "name": "Mauritania", "code": "MR" },
+        { "name": "Mauritius", "code": "MU" },
+        { "name": "Mayotte", "code": "YT" },
+        { "name": "Mexico", "code": "MX" },
+        { "name": "Micronesia, Federated States of", "code": "FM" },
+        { "name": "Moldova, Republic of", "code": "MD" },
+        { "name": "Monaco", "code": "MC" },
+        { "name": "Mongolia", "code": "MN" },
+        { "name": "Montenegro", "code": "ME" },
+        { "name": "Montserrat", "code": "MS" },
+        { "name": "Morocco", "code": "MA" },
+        { "name": "Mozambique", "code": "MZ" },
+        { "name": "Myanmar", "code": "MM" },
+        { "name": "Namibia", "code": "NA" },
+        { "name": "Nauru", "code": "NR" },
+        { "name": "Nepal", "code": "NP" },
+        { "name": "Netherlands", "code": "NL" },
+        { "name": "Netherlands Antilles", "code": "AN" },
+        { "name": "New Caledonia", "code": "NC" },
+        { "name": "New Zealand", "code": "NZ" },
+        { "name": "Nicaragua", "code": "NI" },
+        { "name": "Niger", "code": "NE" },
+        { "name": "Nigeria", "code": "NG" },
+        { "name": "Niue", "code": "NU" },
+        { "name": "Norfolk Island", "code": "NF" },
+        { "name": "Northern Mariana Islands", "code": "MP" },
+        { "name": "Norway", "code": "NO" },
+        { "name": "Oman", "code": "OM" },
+        { "name": "Pakistan", "code": "PK" },
+        { "name": "Palau", "code": "PW" },
+        { "name": "Palestinian Territory, Occupied", "code": "PS" },
+        { "name": "Panama", "code": "PA" },
+        { "name": "Papua New Guinea", "code": "PG" },
+        { "name": "Paraguay", "code": "PY" },
+        { "name": "Peru", "code": "PE" },
+        { "name": "Philippines", "code": "PH" },
+        { "name": "Pitcairn", "code": "PN" },
+        { "name": "Poland", "code": "PL" },
+        { "name": "Portugal", "code": "PT" },
+        { "name": "Puerto Rico", "code": "PR" },
+        { "name": "Qatar", "code": "QA" },
+        { "name": "Reunion", "code": "RE" },
+        { "name": "Romania", "code": "RO" },
+        { "name": "Russian Federation", "code": "RU" },
+        { "name": "Rwanda", "code": "RW" },
+        { "name": "Saint Helena", "code": "SH" },
+        { "name": "Saint Kitts and Nevis", "code": "KN" },
+        { "name": "Saint Lucia", "code": "LC" },
+        { "name": "Saint Pierre and Miquelon", "code": "PM" },
+        { "name": "Saint Vincent and the Grenadines", "code": "VC" },
+        { "name": "Samoa", "code": "WS" },
+        { "name": "San Marino", "code": "SM" },
+        { "name": "Sao Tome and Principe", "code": "ST" },
+        { "name": "Saudi Arabia", "code": "SA" },
+        { "name": "Senegal", "code": "SN" },
+        { "name": "Serbia", "code": "RS" },
+        { "name": "Seychelles", "code": "SC" },
+        { "name": "Sierra Leone", "code": "SL" },
+        { "name": "Singapore", "code": "SG" },
+        { "name": "Slovakia", "code": "SK" },
+        { "name": "Slovenia", "code": "SI" },
+        { "name": "Solomon Islands", "code": "SB" },
+        { "name": "Somalia", "code": "SO" },
+        { "name": "South Africa", "code": "ZA" },
+        { "name": "South Georgia and the South Sandwich Islands", "code": "GS" },
+        { "name": "Spain", "code": "ES" },
+        { "name": "Sri Lanka", "code": "LK" },
+        { "name": "Sudan", "code": "SD" },
+        { "name": "Suriname", "code": "SR" },
+        { "name": "Svalbard and Jan Mayen", "code": "SJ" },
+        { "name": "Swaziland", "code": "SZ" },
+        { "name": "Sweden", "code": "SE" },
+        { "name": "Switzerland", "code": "CH" },
+        { "name": "Syrian Arab Republic", "code": "SY" },
+        { "name": "Taiwan", "code": "TW" },
+        { "name": "Tajikistan", "code": "TJ" },
+        { "name": "Tanzania, United Republic of", "code": "TZ" },
+        { "name": "Thailand", "code": "TH" },
+        { "name": "Timor-Leste", "code": "TL" },
+        { "name": "Togo", "code": "TG" },
+        { "name": "Tokelau", "code": "TK" },
+        { "name": "Tonga", "code": "TO" },
+        { "name": "Trinidad and Tobago", "code": "TT" },
+        { "name": "Tunisia", "code": "TN" },
+        { "name": "Turkey", "code": "TR" },
+        { "name": "Turkmenistan", "code": "TM" },
+        { "name": "Turks and Caicos Islands", "code": "TC" },
+        { "name": "Tuvalu", "code": "TV" },
+        { "name": "Uganda", "code": "UG" },
+        { "name": "Ukraine", "code": "UA" },
+        { "name": "United Arab Emirates", "code": "AE" },
+        { "name": "United Kingdom", "code": "GB" },
+        { "name": "United States", "code": "US" },
+        { "name": "United States Minor Outlying Islands", "code": "UM" },
+        { "name": "Uruguay", "code": "UY" },
+        { "name": "Uzbekistan", "code": "UZ" },
+        { "name": "Vanuatu", "code": "VU" },
+        { "name": "Venezuela", "code": "VE" },
+        { "name": "Viet Nam", "code": "VN" },
+        { "name": "Virgin Islands, British", "code": "VG" },
+        { "name": "Virgin Islands, U.S", "code": "VI" },
+        { "name": "Wallis and Futuna", "code": "WF" },
+        { "name": "Western Sahara", "code": "EH" },
+        { "name": "Yemen", "code": "YE" },
+        { "name": "Zambia", "code": "ZM" },
+        { "name": "Zimbabwe", "code": "Z"  }
+    ]
+
+},{}],71:[function(require,module,exports){
 module.exports=[
   {
     "title": "Other",
@@ -10751,8 +11000,8 @@ module.exports=[
   }
 ]
 
-},{}],71:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.7rem;\n  font-size: 1.1rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 3rem;\n  font-weight: 300;\n  margin-top: 1rem;\n}\n\n.go-to-url small {\n  font-size: 1.5rem;\n  color: white;\n}\n")
+},{}],72:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.1);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 120px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n")
 'use strict';
 
 var Vue = require('vue');
@@ -10760,7 +11009,6 @@ var SearchBar = require('./search-bar.vue');
 var Weather = require('./weather.vue');
 var Profile = require('./profile.vue');
 var Clock = require('./clock.vue');
-var Configure = require('./configure.vue');
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
 //var data = require('../data.json');
@@ -10798,9 +11046,9 @@ var App = Vue.extend({
       }
     }).bind(this)]);
 
-    document.body.addEventListener('click', function () {
-      document.getElementsByClassName('search-bar')[0].focus();
-    });
+    // document.body.addEventListener('click', function(){
+    //   document.getElementsByClassName('search-bar')[0].focus();
+    // });
   },
 
   data: function data() {
@@ -10808,7 +11056,13 @@ var App = Vue.extend({
       search: '',
       selectedIndex: 0,
       items: [],
-      onlyItems: []
+      onlyItems: [],
+      config: {
+        countries: require('../countries.json'),
+        city: 'Barcelona',
+        country: 'ES',
+        unit: 'c'
+      }
     };
   },
 
@@ -10836,8 +11090,7 @@ var App = Vue.extend({
     'search-bar': SearchBar,
     'clock': Clock,
     'weather': Weather,
-    'profile': Profile,
-    'configure': Configure
+    'profile': Profile
   },
 
   events: {
@@ -10866,14 +11119,14 @@ var App = Vue.extend({
 });
 
 module.exports = App;
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n\n  <footer>\n    <configure></configure>\n  </footer>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile></profile>\n      <clock></clock>\n      <weather v-bind:config.sync=\"config\"></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-id=\"{{link.id}}\" data-index=\"{{$index}}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\" data-id=\"{{category.id}}\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\" data-id=\"{{link.id}}\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n}\n\nbody {\n  font-size: 10px;\n  font-family: Raleway;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader, footer {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 1.7rem;\n  font-size: 1.1rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 3rem;\n  font-weight: 300;\n  margin-top: 1rem;\n}\n\n.go-to-url small {\n  font-size: 1.5rem;\n  color: white;\n}\n"] = false
+    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n       -moz-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n       -moz-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n       -moz-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n         -moz-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n         -moz-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n         -moz-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n         -moz-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.1);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 120px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -10882,8 +11135,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../data.json":70,"./clock.vue":72,"./configure.vue":73,"./profile.vue":74,"./search-bar.vue":75,"./weather.vue":76,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],72:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    font-size: 2.2rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n")
+},{"../countries.json":70,"../data.json":71,"./clock.vue":73,"./profile.vue":75,"./search-bar.vue":76,"./weather.vue":77,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],73:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    font-size: 3.5rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -10922,42 +11175,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/clock.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .clock {\n    font-size: 2.2rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
-  if (!module.hot.data) {
-    hotAPI.createRecord(id, module.exports)
-  } else {
-    hotAPI.update(id, module.exports, module.exports.template)
-  }
-})()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],73:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .configure {\n\n  }\n")
-'use strict';
-
-var Vue = require('vue');
-
-module.exports = Vue.extend({
-
-  ready: function ready() {},
-
-  data: function data() {
-    return {};
-  },
-
-  methods: {},
-
-  computed: {}
-
-});
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"configure\">\n      <div class=\"add\">+</div>\n      <div class=\"config-btn\">CONFIGURE</div>\n  </div>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/configure.vue"
-  module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .configure {\n\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .clock {\n    font-size: 3.5rem;\n    display: inline-block;\n    margin: 0 20px;\n    width: 120px;\n    text-align: center;\n    vertical-align: top;\n    line-height: 3.1rem;\n    border-right: 1px solid #444;\n    border-left: 1px solid #444;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -10967,6 +11185,63 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],74:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  footer {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 20px;\n  }\n\n  .configure-window .weather_units .weather_unit, .configure-window .weather_units input[type=\"radio\"] {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"] {\n    height: 27px;\n    width: 27px;\n    margin: 1px 5px 0;\n    -webkit-appearance: none;\n    border: 1px solid #EEE;\n    cursor: pointer;\n    opacity: 1;\n    position: relative;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:after {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 27px;\n    height: 27px;\n    content: '';\n    display: block;\n    background: url(../img/ic_clear_black_48px.svg);\n    background-size: 100%;\n    background-position: -1px -1px;\n    opacity: 0;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:checked:after {\n    opacity: 1;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:not(:checked):hover:after {\n    opacity: 0.3;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n\n  .configure-window hr {\n    border: 0;\n    border-bottom: 1px solid #EEE;\n    margin-bottom: 10px;\n  }\n\n  .configure-window .save {\n    margin-top: 20px;\n  }\n\n  .configure-window #config_save {\n    float: right;\n  }\n\n  .configure-window .btn {\n    display: inline-block;\n    padding: 10px 20px;\n    border: 1px solid transparent;\n    background: black;\n    font-size: 2rem;\n    color: white;\n  }\n\n  .configure-window .btn:hover {\n    background: white;\n    color: black;\n    border: 1px solid black;\n  }\n")
+'use strict';
+
+var Vue = require('vue');
+
+module.exports = Vue.extend({
+
+  props: ["config"],
+
+  data: function data() {
+    return {
+      configTmp: {
+        unit: this.config.unit,
+        country: this.config.country,
+        city: this.config.city
+      }
+    };
+  },
+
+  methods: {
+    open: function open() {
+      this.$els.modal.classList.add('on');
+    },
+    save: function save() {
+      this.config.unit = this.configTmp.unit;
+      this.config.country = this.configTmp.country;
+      this.config.city = this.configTmp.city;
+      this.close();
+    },
+    close: function close() {
+      this.configTmp.unit = this.config.unit;
+      this.configTmp.country = this.config.country;
+      this.configTmp.city = this.config.city;
+      this.$els.modal.classList.remove('on');
+    }
+  },
+
+  computed: {}
+
+});
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div v-el:modal=\"\" class=\"configure-modal modal\">\n    <div class=\"configure-window window\">\n      <div class=\"close-btn\" v-on:click=\"close()\"></div>\n      <h1 class=\"title\">WEATHER</h1>\n      <hr>\n      <div class=\"row\">\n        <label for=\"config_country\">YOUR COUNTRY</label>\n        <select name=\"config_country\" id=\"config_country\" v-model=\"configTmp.country\">\n          <option v-for=\"country in config.countries\" value=\"{{country.code}}\">{{country.name}}</option>\n        </select>\n      </div>\n      <div class=\"row\">\n        <label for=\"config_city\">YOUR CITY</label>\n        <input id=\"config_city\" type=\"text\" v-model=\"configTmp.city\">\n      </div>\n      <div class=\"row weather_units\">\n        <label for=\"config_city\">UNIT</label>\n        <span class=\"weather_unit unit_f\">°F</span>\n        <input type=\"radio\" id=\"unit_f\" value=\"f\" v-model=\"configTmp.unit\">\n        <span class=\"weather_unit unit_c\">°C</span>\n        <input type=\"radio\" id=\"unit_c\" value=\"c\" v-model=\"configTmp.unit\">\n      </div>\n      <div class=\"row save\">\n        <button id=\"config_save\" class=\"btn\" v-on:click=\"save()\">SAVE</button>\n      </div>\n    </div>\n  </div>\n  <div class=\"icon-config\" v-on:click=\"open()\"></div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/configure-weather.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n  footer {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: 20px;\n  }\n\n  .configure-window .weather_units .weather_unit, .configure-window .weather_units input[type=\"radio\"] {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"] {\n    height: 27px;\n    width: 27px;\n    margin: 1px 5px 0;\n    -webkit-appearance: none;\n    border: 1px solid #EEE;\n    cursor: pointer;\n    opacity: 1;\n    position: relative;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:after {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 27px;\n    height: 27px;\n    content: '';\n    display: block;\n    background: url(../img/ic_clear_black_48px.svg);\n    background-size: 100%;\n    background-position: -1px -1px;\n    opacity: 0;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:checked:after {\n    opacity: 1;\n  }\n\n  .configure-window .weather_units input[type=\"radio\"]:not(:checked):hover:after {\n    opacity: 0.3;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n\n  .configure-window hr {\n    border: 0;\n    border-bottom: 1px solid #EEE;\n    margin-bottom: 10px;\n  }\n\n  .configure-window .save {\n    margin-top: 20px;\n  }\n\n  .configure-window #config_save {\n    float: right;\n  }\n\n  .configure-window .btn {\n    display: inline-block;\n    padding: 10px 20px;\n    border: 1px solid transparent;\n    background: black;\n    font-size: 2rem;\n    color: white;\n  }\n\n  .configure-window .btn:hover {\n    background: white;\n    color: black;\n    border: 1px solid black;\n  }\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],75:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n  }\n\n  .profile .img {\n    width: 50px;\n    height: 50px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n")
 'use strict';
 
@@ -10997,8 +11272,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],75:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 3rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n")
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],76:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 5rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11043,7 +11318,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/search-bar.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 3rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 5rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 50%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11052,17 +11327,29 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],76:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 2.2rem;\n    line-height: 3.1rem;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n")
+},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],77:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: default;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n\n  .icon-config {\n    opacity: 0.1;\n    width: 22px;\n    height: 22px;\n    display: none;\n    background: url(../img/ic_settings.svg);\n    background-size: 100%;\n    cursor: pointer;\n  }\n\n  .icon-config:hover {\n    opacity: 1;\n  }\n\n  .weather:hover .icon-config {\n    display: inline-block;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
+var ConfigureWeather = require('./configure-weather.vue');
+Vue.config.debug = true;
 
 module.exports = Vue.extend({
 
+  props: ["config"],
+
+  components: {
+    'configure-weather': ConfigureWeather
+  },
+
   ready: function ready() {
-    this.interval = setInterval(this.getWeather.bind(this), 300000);
+    this.interval = setInterval(this.getWeather.bind(this), 6000);
     this.getWeather();
+
+    this.$watch('config.unit + config.city + config.country', (function () {
+      this.getWeather();
+    }).bind(this));
   },
 
   data: function data() {
@@ -11106,9 +11393,13 @@ module.exports = Vue.extend({
 
     getWeather: function getWeather() {
 
-      var city = "barcelona";
-      var country = "es";
-      this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + ", " + country + "') and u='c'&format=json&u=c", (function (data) {
+      var city, country, unit;
+
+      city = this.config.city.toLowerCase();
+      country = this.config.country.toLowerCase();
+      unit = this.config.unit.toLowerCase();
+
+      this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + ", " + country + "') and u='" + unit + "'&format=json&u=c", (function (data) {
         //        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 753692 and u='c'&format=json&u=c", (function(data) {
         this.weather = data.query.results.channel.item.condition;
       }).bind(this));
@@ -11116,14 +11407,14 @@ module.exports = Vue.extend({
   }
 
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n  </div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n    <div class=\"description\">{{ description }}</div>\n    <configure-weather v-bind:config.sync=\"config\"></configure-weather>\n  </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/singuerinc/Documents/code/singuerinc/dial/src/js/weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 2.2rem;\n    line-height: 3.1rem;\n    width: 135px;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    width: 62px;\n    display: inline-block;\n  }\n\n  .description {\n    display: block;\n    font-size: 0.3em;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    margin: 0;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: default;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n\n  .icon-config {\n    opacity: 0.1;\n    width: 22px;\n    height: 22px;\n    display: none;\n    background: url(../img/ic_settings.svg);\n    background-size: 100%;\n    cursor: pointer;\n  }\n\n  .icon-config:hover {\n    opacity: 1;\n  }\n\n  .weather:hover .icon-config {\n    display: inline-block;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11132,7 +11423,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],77:[function(require,module,exports){
+},{"./configure-weather.vue":74,"vue":67,"vue-hot-reload-api":1,"vueify-insert-css":69}],78:[function(require,module,exports){
 var Vue = require('vue');
 var App = require('./js/app.vue');
 
@@ -11143,7 +11434,7 @@ new Vue({
   }
 });
 
-},{"./js/app.vue":71,"vue":67}],78:[function(require,module,exports){
+},{"./js/app.vue":72,"vue":67}],79:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -11236,4 +11527,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[77]);
+},{}]},{},[78]);

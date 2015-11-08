@@ -10,17 +10,14 @@
 
 * {
   outline: none;
+  box-sizing: border-box;
 }
 
 html, body {
   font-family: 'Raleway';
   background-color: #222;
   color: #444;
-}
-
-body {
   font-size: 10px;
-  font-family: Raleway;
 }
 
 .app {
@@ -73,7 +70,7 @@ ul {
   }
 }
 
-header, footer {
+header {
   width: 100%;
 }
 
@@ -90,8 +87,8 @@ header, footer {
 }
 
 .link a {
-  line-height: 1.7rem;
-  font-size: 1.1rem;
+  line-height: 2.6rem;
+  font-size: 1.8rem;
   letter-spacing: 0.2px;
   color: #888;
 }
@@ -106,15 +103,87 @@ header, footer {
 
 .go-to-url {
   color: #0094FF;
-  font-size: 3rem;
+  font-size: 6rem;
   font-weight: 300;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .go-to-url small {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: white;
 }
+
+.modal {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  color: #777;
+}
+
+.modal.on {
+  display: block;
+}
+
+.modal .title {
+  font-size: 2rem;
+}
+
+.window {
+  position: absolute;
+  display: block;
+  width: 500px;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 120px #000;
+  padding: 50px;
+}
+
+.window input[type="text"], .window select {
+  font-size: 3rem;
+  padding: 10px;
+  width: 100%;
+  -webkit-appearance: none;
+  border: 1px solid grey;
+  border-radius: 0;
+}
+
+.window label {
+  font-size: 2rem;
+  margin: 30px 0 10px;
+  display: block;
+}
+
+.window .close-btn {
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/ic_clear_black_48px.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.window .close-btn:hover {
+  opacity: 0.4;
+}
+
+.window .row:after {
+  display: block;
+  height: 0;
+  width: 100%;
+  content: '';
+  clear: both;
+}
+
 </style>
 
 <template>
@@ -123,7 +192,7 @@ header, footer {
       <search-bar :search.sync="search" :selidx.sync="selectedIndex" :filtered.sync="filteredItems"></search-bar>
       <profile></profile>
       <clock></clock>
-      <weather></weather>
+      <weather v-bind:config.sync="config"></weather>
     </header>
 
     <div class="result-list" v-if="search != '' && filteredItems.length > 0">
@@ -151,10 +220,6 @@ header, footer {
       </li>
     </ul>
   </div>
-
-  <footer>
-    <configure></configure>
-  </footer>
 </template>
 <script>
 
@@ -163,7 +228,6 @@ header, footer {
   var Weather = require('./weather.vue');
   var Profile = require('./profile.vue');
   var Clock = require('./clock.vue');
-  var Configure = require('./configure.vue');
   var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
   //var data = require('../data.json');
@@ -202,9 +266,9 @@ header, footer {
 
         }).bind(this)]);
 
-        document.body.addEventListener('click', function(){
-          document.getElementsByClassName('search-bar')[0].focus();
-        });
+        // document.body.addEventListener('click', function(){
+        //   document.getElementsByClassName('search-bar')[0].focus();
+        // });
 
     },
 
@@ -213,7 +277,13 @@ header, footer {
         search: '',
         selectedIndex: 0,
         items: [],
-        onlyItems: []
+        onlyItems: [],
+        config: {
+          countries: require('../countries.json'),
+          city: 'Barcelona',
+          country: 'ES',
+          unit: 'c',
+        }
       }
     },
 
@@ -241,8 +311,7 @@ header, footer {
       'search-bar': SearchBar,
       'clock': Clock,
       'weather': Weather,
-      'profile': Profile,
-      'configure': Configure
+      'profile': Profile
     },
 
     events: {

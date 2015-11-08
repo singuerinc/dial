@@ -1,6 +1,6 @@
 <style>
   .clock {
-    font-size: 2.2rem;
+    font-size: 3.5rem;
     display: inline-block;
     margin: 0 20px;
     width: 120px;
