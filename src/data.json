@@ -152,6 +152,11 @@
     "title": "Tech News",
     "links": [
       {
+        "href": "https://www.producthunt.com/",
+        "label": "Product Hunt",
+        "id": "f8e7a171-c6cc-11e4-9595-31499535076f"
+      },
+      {
         "href": "https://news.layervault.com/",
         "label": "Designer News",
         "id": "f7e7a070-c5cc-11e4-9595-31499535076f"
