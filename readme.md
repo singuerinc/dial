@@ -8,16 +8,16 @@ If you want to check how it works, check out this demo:
 [Demo](http://singuerinc.github.io/dial/)
 
 ## Search
-![search](https://dl.dropboxusercontent.com/u/311265/dial/search_anim.gif)
+![search](https://dl.dropbox.com/s/3mlciiqo2myc9m7/search_anim.gif)
 
 > Tip: Search and press enter: navigates to the first occurrence.
 
 ## Themes
 ### Dark
-![dark](https://dl.dropboxusercontent.com/u/311265/dial/theme_dark.png)
+![dark](https://dl.dropboxusercontent.com/s/6pc8wnrl6iwkyk5/theme_dark.png)
 
 ### Light
-![light](https://dl.dropboxusercontent.com/u/311265/dial/theme_light.png)
+![light](https://dl.dropboxusercontent.com/s/6qubb6481o5a2ry/theme_light.png)
 
 ## Installation
 If you want to test Dial you have to install it manually in Chrome.
