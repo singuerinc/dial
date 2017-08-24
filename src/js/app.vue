@@ -297,8 +297,9 @@ header {
   var Clock = require('./clock.vue');
   var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
 
-  //var data = require('../data.json');
-  // chrome.storage.sync.set({'singuerinc__dial_data': []
+  // var data = require('../data.json');
+  // console.log(data);
+  // chrome.storage.sync.set({'singuerinc__dial_data': data
   // }, (function(){
   // }).bind(this));
 
@@ -311,7 +312,6 @@ header {
         if(typeof(chrome.storage) != 'undefined'){
           self = chrome.storage.sync;
           loadFunc = chrome.storage.sync.get;
-          console.log('from chrome storage');
         } else {
           self = this;
           loadFunc = function(label, callback){
@@ -320,7 +320,6 @@ header {
             };
             callback(payload);
           }
-          console.log('from data.json');
         }
 
         loadFunc.apply(self, ['singuerinc__dial_data', (function(data){
@@ -348,8 +347,8 @@ header {
         config: {
           weather: {
             countries: require('../countries.json'),
-            city: 'Barcelona',
-            country: 'ES',
+            city: 'Stockholm',
+            country: 'SE',
             unit: 'c'
           },
           clock: {

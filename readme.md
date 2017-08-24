@@ -32,7 +32,7 @@ If you want to test Dial you have to install it manually in Chrome.
 
 ```sh
 # compile js
-watchify -t vueify -e _src/main.js -o build.js
+yarn run build
 ```
 
 ### TODO

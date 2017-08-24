@@ -106,9 +106,14 @@
     "title": "Web Dev",
     "links": [
       {
+        "href": "https://dev.to/",
+        "label": "DEV",
+        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da7"
+      },
+      {
         "href": "https://ponyfoo.com/",
         "label": "PonyFoo",
-        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da6"
+        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da8"
       },
       {
         "href": "http://davidwalsh.name/",
