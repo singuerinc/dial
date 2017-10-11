@@ -11206,13 +11206,13 @@ module.exports=[
         "href": "https://github.com/singuerinc"
       },
       {
-        "label": "Bitbucket",
-        "href": "http://bitbucket.com",
+        "label": "GitLab",
+        "href": "https://gitlab.com/singuerinc",
         "id": "b43cc99e-bd30-11e4-9832-c55bcc7a9c94"
       },
       {
-        "label": "OpenShift",
-        "href": "http://openshift.com",
+        "label": "Carbon - Code images",
+        "href": "https://carbon.now.sh/",
         "id": "b43cc99f-bd30-11e4-9832-c55bcc7a9c94"
       },
       {
@@ -11295,33 +11295,6 @@ module.exports=[
       }
     ],
     "id": "b43cc9aa-bd30-11e4-9832-c55bcc7a9c94"
-  },
-  {
-    "title": "Hack + Torrents",
-    "links": [
-      {
-        "label": "Kickass.to",
-        "href": "http://kickass.to",
-        "id": "e2000c60-be07-11e4-98cf-d5049f287d80"
-      },
-      {
-        "label": "Mac Serial Junkie",
-        "href": "http://www.macserialjunkie.com",
-        "id": "b43cc9af-bd30-11e4-9832-c55bcc7a9c94"
-      }
-    ],
-    "id": "b43cc9ae-bd30-11e4-9832-c55bcc7a9c94"
-  },
-  {
-    "id": "b88cc9b1-bd30-11e4-9832-c55bcc7a9c94",
-    "title": "Tech",
-    "links": [
-      {
-        "label": "http://lmelinux.net/",
-        "href": "http://lmelinux.net/",
-        "id": "b43cc9b1-ce30-11e4-9832-c55bcc7a9c94"
-      }
-    ]
   },
   {
     "title": "Inspiration",
