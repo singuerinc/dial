@@ -149,7 +149,22 @@
         "label": "Egghead.io",
         "href": "https://egghead.io",
         "id": "b43cc994-bd30-11e4-9832-c55bcc7a9c94"
-      }
+      },
+      {
+        "label": "reddit #javascript",
+        "href": "https://www.reddit.com/r/javascript/",
+        "id": "b43cc994-bd30-11e4-9832-c66bcc7a9c94"
+      },
+      {
+        "label": "reddit #node",
+        "href": "https://www.reddit.com/r/node/",
+        "id": "b43cc994-ad30-12e4-9832-c66bcc7a9c94"
+      },
+      {
+        "label": "News JS",
+        "href": "https://news.js.org/",
+        "id": "b43cc994-ad30-11e4-9832-c66bcc7a9c94"
+      }    
     ],
     "id": "b43cc98f-bd30-11e4-9832-c55bcc7a9c94"
   },
