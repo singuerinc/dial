@@ -244,31 +244,6 @@
     "title": "Social",
     "links": [
       {
-        "label": "Facebook",
-        "href": "http://facebook.com",
-        "id": "b43cc9a2-bd30-11e4-9832-c55bcc7a9c95"
-      },
-      {
-        "label": "Twitter",
-        "href": "http://twitter.com",
-        "id": "b43cc9a3-bd30-11e4-9832-c55bcc7a9c96"
-      },
-      {
-        "label": "Google+",
-        "href": "http://plus.google.com",
-        "id": "b43cc9a4-bd30-11e4-9832-c55bcc7a9c97"
-      },
-      {
-        "label": "Instagram",
-        "href": "http://instagram.com",
-        "id": "b43cc9a5-bd30-11e4-9832-c55bcc7a9c98"
-      },
-      {
-        "label": "Pinterest",
-        "href": "http://pinterest.com",
-        "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9c99"
-      },
-      {
         "label": "Trakt.tv",
         "href": "https://trakt.tv/dashboard",
         "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9d00"
@@ -338,5 +313,16 @@
       }
     ],
     "id": "b43cc9b0-bd30-11e4-9832-c55bcc7a9c94"
+  },
+  {
+    "id": "b43cc9b0-bd30-11e4-9832-c55bcc7a9c10",
+    "title": "Music",
+    "links": [
+      {
+        "label": "musicradar",
+        "href": "http://www.musicradar.com/",
+        "id": "b43cc9b3-bd31-11e4-9832-c43bcc7a9c94"
+      }
+    ]
   }
 ]
