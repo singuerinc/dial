@@ -42,6 +42,11 @@
         "label": "Dropbox",
         "href": "https://www.dropbox.com/home",
         "id": "b43cc986-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "Tweetdeck",
+        "href": "https://tweetdeck.twitter.com",
+        "id": "b43cc986-bd30-11e4-9832-c55bcc8y0c94"
       }
     ],
     "id": "b43cc980-bd30-11e4-9832-c55bcc7a9c94"
@@ -49,6 +54,11 @@
   {
     "title": "News + Blogs",
     "links": [
+      {
+        "href": "https://www.wired.com/",
+        "label": "Wired",
+        "id": "17f20d30-edda-11e4-8416-1920a3d34f2b"
+      },
       {
         "href": "http://www.ted.com/",
         "label": "Ted Talks",
@@ -164,7 +174,7 @@
         "label": "News JS",
         "href": "https://news.js.org/",
         "id": "b43cc994-ad30-11e4-9832-c66bcc7a9c94"
-      }    
+      }
     ],
     "id": "b43cc98f-bd30-11e4-9832-c55bcc7a9c94"
   },

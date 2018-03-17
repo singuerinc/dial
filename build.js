@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -11040,6 +11040,11 @@ module.exports=[
         "label": "Dropbox",
         "href": "https://www.dropbox.com/home",
         "id": "b43cc986-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "Tweetdeck",
+        "href": "https://tweetdeck.twitter.com",
+        "id": "b43cc986-bd30-11e4-9832-c55bcc8y0c94"
       }
     ],
     "id": "b43cc980-bd30-11e4-9832-c55bcc7a9c94"
@@ -11047,6 +11052,11 @@ module.exports=[
   {
     "title": "News + Blogs",
     "links": [
+      {
+        "href": "https://www.wired.com/",
+        "label": "Wired",
+        "id": "17f20d30-edda-11e4-8416-1920a3d34f2b"
+      },
       {
         "href": "http://www.ted.com/",
         "label": "Ted Talks",
@@ -11162,7 +11172,7 @@ module.exports=[
         "label": "News JS",
         "href": "https://news.js.org/",
         "id": "b43cc994-ad30-11e4-9832-c66bcc7a9c94"
-      }    
+      }
     ],
     "id": "b43cc98f-bd30-11e4-9832-c55bcc7a9c94"
   },
@@ -11326,7 +11336,7 @@ module.exports=[
 ]
 
 },{}],7:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #EEE;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #EEE;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00ff, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc,\n    U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n    -webkit-column-count: 2;\n            column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type='text'],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type='radio'] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type='radio']:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type='radio']:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type='radio']:not(:checked):hover:after {\n  opacity: 0.3;\n}\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11334,7 +11344,7 @@ var SearchBar = require('./search-bar.vue');
 var Weather = require('./weather.vue');
 var Profile = require('./profile.vue');
 var Clock = require('./clock.vue');
-var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig;
+var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 
 // var data = require('../data.json');
 // console.log(data);
@@ -11343,9 +11353,7 @@ var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}
 // }).bind(this));
 
 var App = Vue.extend({
-
   ready: function ready() {
-
     var self, loadFunc;
 
     if (typeof chrome.storage != 'undefined') {
@@ -11362,7 +11370,6 @@ var App = Vue.extend({
     }
 
     loadFunc.apply(self, ['singuerinc__dial_data', (function (data) {
-
       this.items = data.singuerinc__dial_data;
 
       for (var i = 0; i < this.items.length; i++) {
@@ -11391,7 +11398,6 @@ var App = Vue.extend({
         clock: {
           format: 24
         }
-
       }
     };
   },
@@ -11418,9 +11424,9 @@ var App = Vue.extend({
 
   components: {
     'search-bar': SearchBar,
-    'clock': Clock,
-    'weather': Weather,
-    'profile': Profile
+    clock: Clock,
+    weather: Weather,
+    profile: Profile
   },
 
   events: {
@@ -11454,9 +11460,9 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/app.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'), url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml, body {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #222;\n  color: #444;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n    overflow: hidden;\n    width: 100%;\n    -webkit-column-fill: auto;\n            column-fill: auto;\n    -webkit-column-count: 1;\n            column-count: 1;\n    -webkit-column-gap: 0;\n            column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n      -webkit-column-count: 2;\n              column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n      -webkit-column-count: 3;\n              column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n      -webkit-column-count: 4;\n              column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n      -webkit-column-count: 5;\n              column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list, .category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25FFB4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094FF;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"], .window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #EEE;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #EEE;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n\n"] = false
+    require("vueify-insert-css").cache["\n@font-face {\n  font-family: 'Raleway';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Raleway'),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');\n  unicode-range: U+0000-00ff, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc,\n    U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: 'Raleway';\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n    -webkit-column-count: 2;\n            column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type='text'],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: '';\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type='radio'] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type='radio']:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: '';\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type='radio']:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type='radio']:not(:checked):hover:after {\n  opacity: 0.3;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11517,7 +11523,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/clock.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/clock.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 20px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11571,7 +11577,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/configure-clock.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/configure-clock.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11628,7 +11634,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/configure-weather.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/configure-weather.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11661,7 +11667,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/profile.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/profile.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n  .profile {\n    display: inline-block;\n    vertical-align: top;\n    margin-right: 20px;\n  }\n\n  .profile .img {\n    width: 40px;\n    height: 40px;\n    display: inline-block;\n    background: url(img/profile.png);\n    background-position: center;\n    background-size: 100%;\n    border-radius: 50%;\n    vertical-align: top;\n    opacity: 0.6;\n  }\n\n  .profile .name {\n    font-size: 4rem;\n    display: inline-block;\n    vertical-align: top;\n    line-height: 4rem;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11716,7 +11722,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/search-bar.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/search-bar.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 6rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 100%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11813,7 +11819,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuelscotti/code/singuerinc/labs/dial/src/js/weather.vue"
+  var id = "/Users/singuerinc/code/dial/src/js/weather.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    padding: 0 20px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
