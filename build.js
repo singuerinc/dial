@@ -11045,6 +11045,11 @@ module.exports=[
         "label": "Tweetdeck",
         "href": "https://tweetdeck.twitter.com",
         "id": "b43cc986-bd30-11e4-9832-c55bcc8y0c94"
+      },
+      {
+        "label": "Feedly",
+        "href": "https://feedly.com",
+        "id": "b43cc986-bd30-11e4-1132-c55bcc8y0a10"
       }
     ],
     "id": "b43cc980-bd30-11e4-9832-c55bcc7a9c94"
@@ -11244,6 +11249,11 @@ module.exports=[
         "label": "Stackoverflow",
         "href": "http://stackoverflow.com",
         "id": "b43cc9a0-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "Product Hunt",
+        "href": "https://www.producthunt.com/",
+        "id": "b43cc9a0-bd30-11e4-9832-c55basd87612"
       }
     ],
     "id": "b43cc99c-bd30-11e4-9832-c55bcc7a9c94"
@@ -11255,6 +11265,11 @@ module.exports=[
         "label": "Trakt.tv",
         "href": "https://trakt.tv/dashboard",
         "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9d00"
+      },
+      {
+        "label": "Ello",
+        "href": "https://ello.co/",
+        "id": "b43cc9a6-1111-11e4-9832-c55bcc7a9d00"
       }
     ],
     "id": "b43cc9a1-bd30-11e4-9832-c55bcc7a9c94"
