@@ -4,6 +4,9 @@
   "description": "Dial is a (beta) Chrome Extension. It's a launcher of frequent websites that you define. It replaces the newtab page on Chrome.",
   "main": "index.js",
   "scripts": {
+    "build:watch": "watchify -t vueify -e src/main.js -o build.js",
+    "build": "browserify -t vueify -e src/main.js -o build.js",
+    "start": "serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,10 +21,13 @@
   "homepage": "https://github.com/singuerinc/dial#readme",
   "devDependencies": {
     "babel-runtime": "^5.8.29",
+    "browserify": "^14.4.0",
+    "serve": "^6.2.0",
     "vue": "^1.0.6",
     "vue-hot-reload-api": "^1.2.1",
     "vue-router": "^0.7.5",
     "vueify": "^5.0.3",
-    "vueify-insert-css": "^1.0.0"
+    "vueify-insert-css": "^1.0.0",
+    "watchify": "^3.9.0"
   }
 }

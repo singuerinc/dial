@@ -42,6 +42,16 @@
         "label": "Dropbox",
         "href": "https://www.dropbox.com/home",
         "id": "b43cc986-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "Tweetdeck",
+        "href": "https://tweetdeck.twitter.com",
+        "id": "b43cc986-bd30-11e4-9832-c55bcc8y0c94"
+      },
+      {
+        "label": "Feedly",
+        "href": "https://feedly.com",
+        "id": "b43cc986-bd30-11e4-1132-c55bcc8y0a10"
       }
     ],
     "id": "b43cc980-bd30-11e4-9832-c55bcc7a9c94"
@@ -49,6 +59,11 @@
   {
     "title": "News + Blogs",
     "links": [
+      {
+        "href": "https://www.wired.com/",
+        "label": "Wired",
+        "id": "17f20d30-edda-11e4-8416-1920a3d34f2b"
+      },
       {
         "href": "http://www.ted.com/",
         "label": "Ted Talks",
@@ -106,6 +121,21 @@
     "title": "Web Dev",
     "links": [
       {
+        "href": "https://dzone.com/",
+        "label": "DZone",
+        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da6"
+      },
+      {
+        "href": "https://dev.to/",
+        "label": "DEV",
+        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da7"
+      },
+      {
+        "href": "https://ponyfoo.com/",
+        "label": "PonyFoo",
+        "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da8"
+      },
+      {
         "href": "http://davidwalsh.name/",
         "label": "David Walsh",
         "id": "5a2d6a40-c5d1-11e4-8518-6db6bb3e2da6"
@@ -139,6 +169,21 @@
         "label": "Egghead.io",
         "href": "https://egghead.io",
         "id": "b43cc994-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "reddit #javascript",
+        "href": "https://www.reddit.com/r/javascript/",
+        "id": "b43cc994-bd30-11e4-9832-c66bcc7a9c94"
+      },
+      {
+        "label": "reddit #node",
+        "href": "https://www.reddit.com/r/node/",
+        "id": "b43cc994-ad30-12e4-9832-c66bcc7a9c94"
+      },
+      {
+        "label": "News JS",
+        "href": "https://news.js.org/",
+        "id": "b43cc994-ad30-11e4-9832-c66bcc7a9c94"
       }
     ],
     "id": "b43cc98f-bd30-11e4-9832-c55bcc7a9c94"
@@ -146,6 +191,11 @@
   {
     "title": "Tech News",
     "links": [
+      {
+        "href": "https://www.producthunt.com/",
+        "label": "Product Hunt",
+        "id": "f8e7a171-c6cc-11e4-9595-31499535076f"
+      },
       {
         "href": "https://news.layervault.com/",
         "label": "Designer News",
@@ -193,19 +243,24 @@
         "href": "https://github.com/singuerinc"
       },
       {
-        "label": "Bitbucket",
-        "href": "http://bitbucket.com",
+        "label": "GitLab",
+        "href": "https://gitlab.com/singuerinc",
         "id": "b43cc99e-bd30-11e4-9832-c55bcc7a9c94"
       },
       {
-        "label": "OpenShift",
-        "href": "http://openshift.com",
+        "label": "Carbon - Code images",
+        "href": "https://carbon.now.sh/",
         "id": "b43cc99f-bd30-11e4-9832-c55bcc7a9c94"
       },
       {
         "label": "Stackoverflow",
         "href": "http://stackoverflow.com",
         "id": "b43cc9a0-bd30-11e4-9832-c55bcc7a9c94"
+      },
+      {
+        "label": "Product Hunt",
+        "href": "https://www.producthunt.com/",
+        "id": "b43cc9a0-bd30-11e4-9832-c55basd87612"
       }
     ],
     "id": "b43cc99c-bd30-11e4-9832-c55bcc7a9c94"
@@ -214,34 +269,14 @@
     "title": "Social",
     "links": [
       {
-        "label": "Facebook",
-        "href": "http://facebook.com",
-        "id": "b43cc9a2-bd30-11e4-9832-c55bcc7a9c95"
-      },
-      {
-        "label": "Twitter",
-        "href": "http://twitter.com",
-        "id": "b43cc9a3-bd30-11e4-9832-c55bcc7a9c96"
-      },
-      {
-        "label": "Google+",
-        "href": "http://plus.google.com",
-        "id": "b43cc9a4-bd30-11e4-9832-c55bcc7a9c97"
-      },
-      {
-        "label": "Instagram",
-        "href": "http://instagram.com",
-        "id": "b43cc9a5-bd30-11e4-9832-c55bcc7a9c98"
-      },
-      {
-        "label": "Pinterest",
-        "href": "http://pinterest.com",
-        "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9c99"
-      },
-      {
         "label": "Trakt.tv",
         "href": "https://trakt.tv/dashboard",
         "id": "b43cc9a6-bd30-11e4-9832-c55bcc7a9d00"
+      },
+      {
+        "label": "Ello",
+        "href": "https://ello.co/",
+        "id": "b43cc9a6-1111-11e4-9832-c55bcc7a9d00"
       }
     ],
     "id": "b43cc9a1-bd30-11e4-9832-c55bcc7a9c94"
@@ -284,22 +319,6 @@
     "id": "b43cc9aa-bd30-11e4-9832-c55bcc7a9c94"
   },
   {
-    "title": "Hack + Torrents",
-    "links": [
-      {
-        "label": "Kickass.to",
-        "href": "http://kickass.to",
-        "id": "e2000c60-be07-11e4-98cf-d5049f287d80"
-      },
-      {
-        "label": "Mac Serial Junkie",
-        "href": "http://www.macserialjunkie.com",
-        "id": "b43cc9af-bd30-11e4-9832-c55bcc7a9c94"
-      }
-    ],
-    "id": "b43cc9ae-bd30-11e4-9832-c55bcc7a9c94"
-  },
-  {
     "title": "Inspiration",
     "links": [
       {
@@ -324,5 +343,16 @@
       }
     ],
     "id": "b43cc9b0-bd30-11e4-9832-c55bcc7a9c94"
+  },
+  {
+    "id": "b43cc9b0-bd30-11e4-9832-c55bcc7a9c10",
+    "title": "Music",
+    "links": [
+      {
+        "label": "musicradar",
+        "href": "http://www.musicradar.com/",
+        "id": "b43cc9b3-bd31-11e4-9832-c43bcc7a9c94"
+      }
+    ]
   }
 ]
