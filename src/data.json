@@ -322,6 +322,11 @@
     "title": "Inspiration",
     "links": [
       {
+        "label": "ArtStation",
+        "href": "https://www.artstation.com/",
+        "id": "b43cc9b1-bd30-22e4-9832-c55bcc7a9c94"
+      },
+      {
         "label": "The Ultralinx",
         "href": "http://theultralinx.com",
         "id": "b43cc9b1-bd30-11e4-9832-c55bcc7a9c94"
