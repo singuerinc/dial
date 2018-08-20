@@ -1,0 +1,297 @@
+[
+  {
+    "title": "Other",
+    "links": [
+      {
+        "label": "Rotten Tomatoes",
+        "href": "http://rottentomatoes.com"
+      }
+    ]
+  },
+  {
+    "title": "main",
+    "links": [
+      {
+        "label": "Mail",
+        "href": "https://mail.google.com"
+      },
+      {
+        "label": "Whatsapp",
+        "href": "https://web.whatsapp.com"
+      },
+      {
+        "label": "Inbox",
+        "href": "https://inbox.google.com"
+      },
+      {
+        "label": "Drive",
+        "href": "https://drive.google.com/drive/#my-drive"
+      },
+      {
+        "label": "Calendar",
+        "href": "https://calendar.google.com"
+      },
+      {
+        "label": "Dropbox",
+        "href": "https://www.dropbox.com/home"
+      },
+      {
+        "label": "Tweetdeck",
+        "href": "https://tweetdeck.twitter.com"
+      },
+      {
+        "label": "Feedly",
+        "href": "https://feedly.com"
+      }
+    ]
+  },
+  {
+    "title": "News + Blogs",
+    "links": [
+      {
+        "href": "https://www.wired.com/",
+        "label": "Wired"
+      },
+      {
+        "href": "http://www.ted.com/",
+        "label": "Ted Talks"
+      },
+      {
+        "href": "http://www.forbes.com/technology/",
+        "label": "Forbes Tech"
+      },
+      {
+        "label": "El Pais",
+        "href": "http://elpais.com"
+      },
+      {
+        "label": "New York Times",
+        "href": "http://www.nytimes.com"
+      },
+      {
+        "label": "Diario Olé",
+        "href": "http://www.ole.com.ar"
+      },
+      {
+        "label": "Planeta Boca Juniors",
+        "href": "http://www.planetabocajuniors.com.ar"
+      },
+      {
+        "label": "Medium",
+        "href": "https://medium.com"
+      },
+      {
+        "label": "Ciencia de Sofá",
+        "href": "http://cienciadesofa.com"
+      },
+      {
+        "label": "Vice News",
+        "href": "https://news.vice.com/es"
+      },
+      {
+        "label": "TyC Sports",
+        "href": "http://www.tycsports.com/SubSecciones/clubes/boca/"
+      }
+    ]
+  },
+  {
+    "title": "Web Dev",
+    "links": [
+      {
+        "href": "https://changelog.com/podcasts",
+        "label": "Changelog Podcasts"
+      },
+      {
+        "href": "https://dzone.com/",
+        "label": "DZone"
+      },
+      {
+        "href": "https://dev.to/",
+        "label": "DEV"
+      },
+      {
+        "href": "https://ponyfoo.com/",
+        "label": "PonyFoo"
+      },
+      {
+        "href": "http://davidwalsh.name/",
+        "label": "David Walsh"
+      },
+      {
+        "href": "http://derickbailey.com/",
+        "label": "Derick Bailey"
+      },
+      {
+        "href": "http://alistapart.com/",
+        "label": "A List Apart"
+      },
+      {
+        "label": "Can I use",
+        "href": "http://caniuse.com/"
+      },
+      {
+        "label": "HTML5 Updates",
+        "href": "http://updates.html5rocks.com"
+      },
+      {
+        "label": "codrops",
+        "href": "http://tympanus.net/codrops"
+      },
+      {
+        "label": "Egghead.io",
+        "href": "https://egghead.io"
+      },
+      {
+        "label": "reddit #javascript",
+        "href": "https://www.reddit.com/r/javascript/"
+      },
+      {
+        "label": "reddit #node",
+        "href": "https://www.reddit.com/r/node/"
+      },
+      {
+        "label": "News JS",
+        "href": "https://news.js.org/"
+      }
+    ]
+  },
+  {
+    "title": "Tech News",
+    "links": [
+      {
+        "href": "https://www.producthunt.com/",
+        "label": "Product Hunt"
+      },
+      {
+        "href": "https://news.layervault.com/",
+        "label": "Designer News"
+      },
+      {
+        "label": "Hacker News",
+        "href": "http://news.ycombinator.com"
+      },
+      {
+        "label": "The Verge",
+        "href": "http://theverge.com"
+      },
+      {
+        "label": "The Next Web",
+        "href": "http://thenextweb.com"
+      },
+      {
+        "label": "JetBrains Blog",
+        "href": "http://blog.jetbrains.com"
+      },
+      {
+        "label": "Engadget",
+        "href": "http://www.engadget.com"
+      },
+      {
+        "label": "Gizmodo ES",
+        "href": "http://es.gizmodo.com"
+      }
+    ]
+  },
+  {
+    "title": "Tech",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/singuerinc"
+      },
+      {
+        "label": "GitLab",
+        "href": "https://gitlab.com/singuerinc"
+      },
+      {
+        "label": "Carbon - Code images",
+        "href": "https://carbon.now.sh/"
+      },
+      {
+        "label": "Stackoverflow",
+        "href": "http://stackoverflow.com"
+      },
+      {
+        "label": "Product Hunt",
+        "href": "https://www.producthunt.com/"
+      }
+    ]
+  },
+  {
+    "title": "Social",
+    "links": [
+      {
+        "label": "Trakt.tv",
+        "href": "https://trakt.tv/dashboard"
+      },
+      {
+        "label": "Ello",
+        "href": "https://ello.co/"
+      }
+    ]
+  },
+  {
+    "title": "Funny",
+    "links": [
+      {
+        "label": "Commit Strip",
+        "href": "http://commitstrip.com"
+      },
+      {
+        "label": "The Coding Love",
+        "href": "http://thecodinglove.com"
+      }
+    ]
+  },
+  {
+    "title": "Android",
+    "links": [
+      {
+        "label": "Android Central",
+        "href": "http://www.androidcentral.com"
+      },
+      {
+        "label": "Android Headlines",
+        "href": "http://androidheadlines.com"
+      },
+      {
+        "label": "Android and Me",
+        "href": "http://androidandme.com"
+      }
+    ]
+  },
+  {
+    "title": "Inspiration",
+    "links": [
+      {
+        "label": "ArtStation",
+        "href": "https://www.artstation.com/"
+      },
+      {
+        "label": "The Ultralinx",
+        "href": "http://theultralinx.com"
+      },
+      {
+        "label": "Linxspiration",
+        "href": "http://linxspiration.com"
+      },
+      {
+        "label": "Designspiration",
+        "href": "http://designspiration.net"
+      },
+      {
+        "label": "Unsplash",
+        "href": "https://unsplash.com/"
+      }
+    ]
+  },
+  {
+    "title": "Music",
+    "links": [
+      {
+        "label": "musicradar",
+        "href": "http://www.musicradar.com/"
+      }
+    ]
+  }
+]

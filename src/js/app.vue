@@ -1,12 +1,13 @@
 <style media="screen">
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  src: local('Raleway'),
-    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
-  unicode-range: U+0000-00ff, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc,
-    U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+  src: local("Raleway"),
+    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format("woff2");
+  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,
+    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,
+    U + EFFD, U + F000;
 }
 
 * {
@@ -16,7 +17,7 @@
 
 html,
 body {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   -webkit-font-smoothing: antialiased;
   background-color: #111;
   color: #777;
@@ -148,7 +149,7 @@ header {
   padding: 50px;
 }
 
-.window input[type='text'],
+.window input[type="text"],
 .window select {
   font-size: 3rem;
   padding: 10px;
@@ -185,7 +186,7 @@ header {
   display: block;
   height: 0;
   width: 100%;
-  content: '';
+  content: "";
   clear: both;
 }
 
@@ -218,7 +219,7 @@ header {
   float: right;
 }
 
-.configure-window input[type='radio'] {
+.configure-window input[type="radio"] {
   font-size: 3rem;
   float: left;
   display: inline-block;
@@ -232,13 +233,13 @@ header {
   position: relative;
 }
 
-.configure-window input[type='radio']:after {
+.configure-window input[type="radio"]:after {
   position: absolute;
   top: 0;
   left: 0;
   width: 27px;
   height: 27px;
-  content: '';
+  content: "";
   display: block;
   background: url(../img/ic_clear_black_48px.svg);
   background-size: 100%;
@@ -246,11 +247,11 @@ header {
   opacity: 0;
 }
 
-.configure-window input[type='radio']:checked:after {
+.configure-window input[type="radio"]:checked:after {
   opacity: 1;
 }
 
-.configure-window input[type='radio']:not(:checked):hover:after {
+.configure-window input[type="radio"]:not(:checked):hover:after {
   opacity: 0.3;
 }
 </style>
@@ -267,7 +268,7 @@ header {
     <div class="result-list" v-if="search != '' && filteredItems.length > 0">
       <h1 class="category-title">SEARCH</h1>
       <ul class="links-list">
-        <li class="link" v-for="link in filteredItems" data-id="{{link.id}}" data-index="{{$index}}" v-bind:class="{on: $index == selectedIndex}">
+        <li class="link" v-for="link in filteredItems" data-index="{{$index}}" v-bind:key="{link}" v-bind:class="{on: $index == selectedIndex}">
           <a v-bind:href="link.href" target="_blank">{{link.label}}</a>
         </li>
       </ul>
@@ -279,10 +280,10 @@ header {
     </div>
 
     <ul v-if="search == ''" class="category-list">
-      <li v-for="category in items" data-id="{{category.id}}">
+      <li v-for="category in items">
         <h1 class="category-title">{{category.title|uppercase}}</h1>
         <ul class="links">
-          <li class="link" v-for="link in category.links" data-id="{{link.id}}">
+          <li class="link" v-for="link in category.links">
             <a v-bind:href="link.href" target="_blank">{{link.label}}</a>
           </li>
         </ul>
@@ -291,11 +292,11 @@ header {
   </div>
 </template>
 <script>
-var Vue = require('vue');
-var SearchBar = require('./search-bar.vue');
-var Weather = require('./weather.vue');
-var Profile = require('./profile.vue');
-var Clock = require('./clock.vue');
+var Vue = require("vue");
+var SearchBar = require("./search-bar.vue");
+var Weather = require("./weather.vue");
+var Profile = require("./profile.vue");
+var Clock = require("./clock.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 
 // var data = require('../data.json');
@@ -308,21 +309,21 @@ var App = Vue.extend({
   ready: function() {
     var self, loadFunc;
 
-    if (typeof chrome.storage != 'undefined') {
+    if (typeof chrome.storage != "undefined") {
       self = chrome.storage.sync;
       loadFunc = chrome.storage.sync.get;
     } else {
       self = this;
       loadFunc = function(label, callback) {
         var payload = {
-          singuerinc__dial_data: require('../data.json')
+          singuerinc__dial_data: require("../../data.json")
         };
         callback(payload);
       };
     }
 
     loadFunc.apply(self, [
-      'singuerinc__dial_data',
+      "singuerinc__dial_data",
       function(data) {
         this.items = data.singuerinc__dial_data;
 
@@ -339,16 +340,19 @@ var App = Vue.extend({
 
   data: function() {
     return {
-      search: '',
+      search: "",
       selectedIndex: 0,
       items: [],
       onlyItems: [],
       config: {
+        user: {
+          image: "./user.jpeg"
+        },
         weather: {
-          countries: require('../countries.json'),
-          city: 'Stockholm',
-          country: 'SE',
-          unit: 'c'
+          countries: require("../countries.json"),
+          city: "Stockholm",
+          country: "SE",
+          unit: "c"
         },
         clock: {
           format: 24
@@ -359,9 +363,9 @@ var App = Vue.extend({
 
   computed: {
     filteredItems: function() {
-      var filterBy = Vue.filter('filterBy');
-      var orderBy = Vue.filter('orderBy');
-      return orderBy(filterBy(this.onlyItems, this.search, 'label'), 'label');
+      var filterBy = Vue.filter("filterBy");
+      var orderBy = Vue.filter("orderBy");
+      return orderBy(filterBy(this.onlyItems, this.search, "label"), "label");
     },
 
     go_to_url: function() {
@@ -371,36 +375,36 @@ var App = Vue.extend({
         if (this.search.match(urlRegExp) != null) {
           return this.search;
         } else {
-          return this.search + '<small> - Google search</small>';
+          return this.search + "<small> - Google search</small>";
         }
       }
     }
   },
 
   components: {
-    'search-bar': SearchBar,
+    "search-bar": SearchBar,
     clock: Clock,
     weather: Weather,
     profile: Profile
   },
 
   events: {
-    'link-selected': function(sIdx) {
+    "link-selected": function(sIdx) {
       var obj = this.filteredItems[sIdx];
       var url;
-      if (typeof obj == 'undefined') {
+      if (typeof obj == "undefined") {
         if (this.search.match(urlRegExp) != null) {
-          url = '//' + this.search;
+          url = "//" + this.search;
         } else {
-          url = 'https://www.google.com/search?q=' + this.search;
+          url = "https://www.google.com/search?q=" + this.search;
         }
 
-        this.search = '';
+        this.search = "";
       } else {
         url = obj.href;
       }
 
-      if (typeof chrome.tabs == 'undefined') {
+      if (typeof chrome.tabs == "undefined") {
         window.open(url);
       } else {
         chrome.tabs.create({ url: url });

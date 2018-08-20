@@ -39,14 +39,16 @@ If you want to test Dial you have to install it manually in Chrome.
 # install
 yarn
 # compile js
-yarn run build:watch
+yarn build:watch
+# serve at :5000
+yarn start
 ```
 
 ### TODO
 
-* [x] Navigate through results with keys
-* [ ] Options page
-* [ ] Add/Edit/Remove links
-* [ ] Profile image upload
-* [x] Sync
-* [ ] Backgrounds?
+- [x] Navigate through results with keys
+- [ ] Options page
+- [ ] Add/Edit/Remove links
+- [ ] Profile image upload
+- [x] Sync
+- [ ] Backgrounds?
