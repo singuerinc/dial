@@ -5,7 +5,7 @@ It replaces the newtab page on Chrome.
 
 If you want to check how it works, check out this demo:
 
-[Demo](http://singuerinc.github.io/dial/)
+[Demo](https://home.singuerinc.com/)
 
 ## Search
 
