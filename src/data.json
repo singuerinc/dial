@@ -121,6 +121,10 @@
     "title": "Web Dev",
     "links": [
       {
+        "href": "https://changelog.com/podcasts",
+        "label": "Changelog Podcasts"
+      },
+      {
         "href": "https://dzone.com/",
         "label": "DZone",
         "id": "6b2d6a40-c5d1-11e4-8518-6db6bb3e2da6"
