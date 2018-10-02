@@ -244,19 +244,27 @@
     ]
   },
   {
-    "title": "Android",
+    "title": "Projects",
     "links": [
       {
-        "label": "Android Central",
-        "href": "http://www.androidcentral.com"
+        "label": "Artstagram",
+        "href": "https://artstagram.singuerinc.com/"
       },
       {
-        "label": "Android Headlines",
-        "href": "http://androidheadlines.com"
+        "label": "Bi",
+        "href": "https://bi.singuerinc.com/"
       },
       {
-        "label": "Android and Me",
-        "href": "http://androidandme.com"
+        "label": "Swedish word of the day",
+        "href": "https://swotd.singuerinc.com/"
+      },
+      {
+        "label": "Bashtards",
+        "href": "https://www.bashtards.com/"
+      },
+      {
+        "label": "Subway",
+        "href": "https://singuerinc-labs.gitlab.io/subway/"
       }
     ]
   },
