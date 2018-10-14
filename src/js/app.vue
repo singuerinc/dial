@@ -50,12 +50,6 @@ ul {
   column-gap: 0;
 }
 
-@media (min-width: 320px) {
-  .category-list {
-    column-count: 2;
-  }
-}
-
 @media (min-width: 768px) {
   .category-list {
     column-count: 3;
