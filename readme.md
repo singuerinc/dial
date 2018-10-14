@@ -1,11 +1,12 @@
 ## About
 
-Dial is a (beta) Chrome Extension. It's my launcher for frequent websites.
+Dial(beta) is a Chrome Extension for convience for the user.It's a launcher for frequently used websites.
+It has many features like Weather information, timing and shortcuts to many websites.
 It replaces the newtab page on Chrome.
 
 If you want to check how it works, check out this demo:
 
-[Demo](https://home.singuerinc.com/)
+[Demo]( /)
 
 ## Search
 
