@@ -2,7 +2,6 @@
 
   .configure-window .weather_units .weather_unit {
     font-size: 3rem;
-    float: left;
     display: inline-block;
   }
 
