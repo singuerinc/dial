@@ -1,7 +1,10 @@
+## Note
+
+This is not a chrome extension anymore, but a regular webpage that can be added as homepage in chrome or any browser.
+
 ## About
 
-Dial is a (beta) Chrome Extension. It's my launcher for frequent websites.
-It replaces the newtab page on Chrome.
+Dial is a (beta) web app. It's my launcher for frequent websites.
 
 If you want to check how it works, check out this demo:
 
@@ -9,32 +12,16 @@ If you want to check how it works, check out this demo:
 
 ## Search
 
-![search](https://dl.dropbox.com/s/3mlciiqo2myc9m7/search_anim.gif)
+![search](https://media.giphy.com/media/2irESalr4WWUWf6b4j/giphy.gif)
 
 > Tip: Search and press enter: navigates to the first occurrence. Or search and use the arrows keys to navigate.
-
+<!---
 ## Themes
-
 ### Dark
-
 ![dark](https://dl.dropboxusercontent.com/s/6pc8wnrl6iwkyk5/theme_dark.png)
-
 ### Light
-
 ![light](https://dl.dropboxusercontent.com/s/6qubb6481o5a2ry/theme_light.png)
-
-## Installation
-
-If you want to test Dial you have to install it manually in Chrome.
-
-1.  Clone/Download the repo
-2.  Go to [Chrome extensions settings](chrome://extensions/)
-3.  Click on "Load unpacked extension..."
-4.  Select the folder that contains Dial files.
-5.  Open a new tab in Chrome.
-
 ## develop
-
 ```sh
 # install
 yarn
@@ -43,7 +30,7 @@ yarn build:watch
 # serve at :5000
 yarn start
 ```
-
+--->
 ### TODO
 
 - [x] Navigate through results with keys
