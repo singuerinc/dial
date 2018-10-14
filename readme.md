@@ -1,6 +1,5 @@
 ## About
 Dial used to be a Chrome Extension, but now is a webpage that can be added as homepage in any browser. It's my launcher for frequent websites, that can replace the newtab page on Chrome.
-
 If you want to check how it works, check out this demo:
 
 [Demo](https://home.singuerinc.com/)
