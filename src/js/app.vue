@@ -56,7 +56,6 @@ ul {
 .category-list {
   overflow: hidden;
   width: 100%;
-  column-fill: auto;
   column-count: 1;
   column-gap: 0;
 }
