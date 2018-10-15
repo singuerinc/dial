@@ -18,6 +18,10 @@
   font-family: "Raleway";
   font-weight: 100;
 }
+
+body.light .search-bar {
+  color: #ff5500;
+}
 </style>
 
 <template>

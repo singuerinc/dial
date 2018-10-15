@@ -19,9 +19,20 @@ html,
 body {
   font-family: "Raleway";
   -webkit-font-smoothing: antialiased;
-  background-color: #111;
   color: #777;
   font-size: 10px;
+}
+
+body.dark {
+  background-color: #111;
+}
+
+body.light {
+  background-color: #eee;
+}
+
+body.light .theme-btn {
+  color: #999;
 }
 
 .app {
@@ -100,6 +111,10 @@ header {
   color: white;
 }
 
+body.light .link a:hover {
+  color: #ff5500;
+}
+
 .go-to-url {
   color: #0094ff;
   font-size: 6rem;
@@ -107,9 +122,13 @@ header {
   margin-top: 2rem;
 }
 
-.go-to-url small {
+body.light .go-to-url {
   font-size: 3rem;
-  color: white;
+  color: #0066ff;
+}
+
+body .go-to-url small {
+  color: #999;
 }
 
 .modal {
