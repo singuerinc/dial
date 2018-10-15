@@ -13,7 +13,7 @@ If you want to have your own links, fork this repo, change the `data.json` file 
 
 ## Search
 
-![search](https://dl.dropbox.com/s/3mlciiqo2myc9m7/search_anim.gif)
+![search](./dial.gif)
 
 > Tip: Search and press enter: navigates to the first occurrence. Or search and use the arrows keys to navigate.
 
