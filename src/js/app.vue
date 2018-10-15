@@ -283,6 +283,10 @@ header {
         </ul>
       </li>
     </ul>
+
+    <footer>
+      <theme-chooser v-bind:config.sync="config" />
+    </footer>
   </div>
 </template>
 <script>
@@ -291,6 +295,7 @@ var SearchBar = require("./search-bar.vue");
 var Weather = require("./weather.vue");
 var Profile = require("./profile.vue");
 var Clock = require("./clock.vue");
+var ThemeChooser = require("./theme-chooser.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 
 // var data = require('../data.json');
@@ -350,7 +355,8 @@ var App = Vue.extend({
         },
         clock: {
           format: 24
-        }
+        },
+        theme: "dark"
       }
     };
   },
@@ -379,7 +385,8 @@ var App = Vue.extend({
     "search-bar": SearchBar,
     clock: Clock,
     weather: Weather,
-    profile: Profile
+    profile: Profile,
+    "theme-chooser": ThemeChooser
   },
 
   events: {
@@ -403,6 +410,10 @@ var App = Vue.extend({
       } else {
         chrome.tabs.create({ url: url });
       }
+    },
+    "theme-selected": function(theme) {
+      document.body.classList.toggle("dark", theme === "dark");
+      document.body.classList.toggle("light", theme === "light");
     }
   }
 });

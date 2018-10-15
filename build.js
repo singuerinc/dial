@@ -41,8 +41,8 @@ module.exports=[
         "href": "https://tweetdeck.twitter.com"
       },
       {
-        "label": "Feedly",
-        "href": "https://feedly.com"
+        "label": "Trello",
+        "href": "https://trello.com/"
       }
     ]
   },
@@ -245,19 +245,27 @@ module.exports=[
     ]
   },
   {
-    "title": "Android",
+    "title": "Projects",
     "links": [
       {
-        "label": "Android Central",
-        "href": "http://www.androidcentral.com"
+        "label": "Artstagram",
+        "href": "https://artstagram.singuerinc.com/"
       },
       {
-        "label": "Android Headlines",
-        "href": "http://androidheadlines.com"
+        "label": "Bi",
+        "href": "https://bi.singuerinc.com/"
       },
       {
-        "label": "Android and Me",
-        "href": "http://androidandme.com"
+        "label": "Swedish word of the day",
+        "href": "https://swotd.singuerinc.com/"
+      },
+      {
+        "label": "Bashtards",
+        "href": "https://www.bashtards.com/"
+      },
+      {
+        "label": "Subway",
+        "href": "https://singuerinc-labs.gitlab.io/subway/"
       }
     ]
   },
@@ -11295,7 +11303,7 @@ module.exports=[
 ]
 
 },{}],7:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n@font-face {\n  font-family: \"Raleway\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"Raleway\"),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format(\"woff2\");\n  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,\n    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,\n    U + EFFD, U + F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: \"Raleway\";\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n    -webkit-column-count: 2;\n            column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: \"\";\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: \"\";\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n@font-face {\n  font-family: \"Raleway\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"Raleway\"),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format(\"woff2\");\n  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,\n    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,\n    U + EFFD, U + F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: \"Raleway\";\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 100%;\n  max-width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: \"\";\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: \"\";\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n")
 "use strict";
 
 var Vue = require("vue");
@@ -11303,6 +11311,7 @@ var SearchBar = require("./search-bar.vue");
 var Weather = require("./weather.vue");
 var Profile = require("./profile.vue");
 var Clock = require("./clock.vue");
+var ThemeChooser = require("./theme-chooser.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 
 // var data = require('../data.json');
@@ -11359,7 +11368,8 @@ var App = Vue.extend({
         },
         clock: {
           format: 24
-        }
+        },
+        theme: "dark"
       }
     };
   },
@@ -11388,7 +11398,8 @@ var App = Vue.extend({
     "search-bar": SearchBar,
     clock: Clock,
     weather: Weather,
-    profile: Profile
+    profile: Profile,
+    "theme-chooser": ThemeChooser
   },
 
   events: {
@@ -11412,19 +11423,23 @@ var App = Vue.extend({
       } else {
         chrome.tabs.create({ url: url });
       }
+    },
+    "theme-selected": function themeSelected(theme) {
+      document.body.classList.toggle("dark", theme === "dark");
+      document.body.classList.toggle("light", theme === "light");
     }
   }
 });
 
 module.exports = App;
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile v-bind:config.sync=\"config\"></profile>\n      <clock v-bind:config.sync=\"config\"></clock>\n      <weather v-bind:config.sync=\"config\"></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-index=\"{{$index}}\" v-bind:key=\"{link}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n  \n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div>\n    <header>\n      <search-bar :search.sync=\"search\" :selidx.sync=\"selectedIndex\" :filtered.sync=\"filteredItems\"></search-bar>\n      <profile v-bind:config.sync=\"config\"></profile>\n      <clock v-bind:config.sync=\"config\"></clock>\n      <weather v-bind:config.sync=\"config\"></weather>\n    </header>\n\n    <div class=\"result-list\" v-if=\"search != '' &amp;&amp; filteredItems.length > 0\">\n      <h1 class=\"category-title\">SEARCH</h1>\n      <ul class=\"links-list\">\n        <li class=\"link\" v-for=\"link in filteredItems\" data-index=\"{{$index}}\" v-bind:key=\"{link}\" v-bind:class=\"{on: $index == selectedIndex}\">\n          <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"result-list\" v-if=\"filteredItems.length == 0\">\n      <h1 class=\"category-title\">GO TO</h1>\n      <h2 class=\"go-to-url\">{{{ go_to_url }}}</h2>\n    </div>\n\n    <ul v-if=\"search == ''\" class=\"category-list\">\n      <li v-for=\"category in items\">\n        <h1 class=\"category-title\">{{category.title|uppercase}}</h1>\n        <ul class=\"links\">\n          <li class=\"link\" v-for=\"link in category.links\">\n            <a v-bind:href=\"link.href\" target=\"_blank\">{{link.label}}</a>\n          </li>\n        </ul>\n      </li>\n    </ul>\n\n    <footer>\n      <theme-chooser v-bind:config.sync=\"config\">\n    </theme-chooser></footer>\n  </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/app.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n@font-face {\n  font-family: \"Raleway\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"Raleway\"),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format(\"woff2\");\n  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,\n    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,\n    U + EFFD, U + F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: \"Raleway\";\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 320px) {\n  .category-list {\n    -webkit-column-count: 2;\n            column-count: 2;\n  }\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: \"\";\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  float: left;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: \"\";\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n"] = false
+    require("vueify-insert-css").cache["\n@font-face {\n  font-family: \"Raleway\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"Raleway\"),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format(\"woff2\");\n  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,\n    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,\n    U + EFFD, U + F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: \"Raleway\";\n  -webkit-font-smoothing: antialiased;\n  background-color: #111;\n  color: #777;\n  font-size: 10px;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\n.go-to-url small {\n  font-size: 3rem;\n  color: white;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 100%;\n  max-width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: \"\";\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: \"\";\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11433,7 +11448,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"../../data.json":1,"../countries.json":6,"./clock.vue":8,"./profile.vue":11,"./search-bar.vue":12,"./weather.vue":13,"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],8:[function(require,module,exports){
+},{"../../data.json":1,"../countries.json":6,"./clock.vue":8,"./profile.vue":11,"./search-bar.vue":12,"./theme-chooser.vue":13,"./weather.vue":14,"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],8:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 20px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n")
 'use strict';
 
@@ -11497,7 +11512,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"./configure-clock.vue":9,"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],9:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11541,7 +11556,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/configure-clock.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n"] = false
+    require("vueify-insert-css").cache["\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11551,7 +11566,7 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],10:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n")
+var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n")
 'use strict';
 
 var Vue = require('vue');
@@ -11598,7 +11613,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/configure-weather.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    float: left;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11641,26 +11656,16 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],12:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 6rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 100%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n")
-'use strict';
+var __vueify_style__ = require("vueify-insert-css").insert("\n.search-bar {\n  display: block;\n  font-family: \"Raleway\";\n  font-weight: 100;\n  margin: 0 0 40px 0;\n  font-size: 6rem;\n  background: transparent;\n  border: 0;\n  color: #25ffb4;\n  width: 100%;\n  vertical-align: top;\n}\n\n::-webkit-input-placeholder {\n  color: white;\n  opacity: 0.04;\n  font-family: \"Raleway\";\n  font-weight: 100;\n}\n")
+"use strict";
 
-var Vue = require('vue');
+var Vue = require("vue");
 
 module.exports = Vue.extend({
-
-  props: ['selidx', 'search', 'filtered'],
-
-  ready: function ready() {
-
-    Vue.nextTick((function () {
-      this.$els.searchinput.focus();
-    }).bind(this));
-  },
+  props: ["selidx", "search", "filtered"],
 
   methods: {
-
     key: function key($event) {
-
       if ($event.keyCode == 38) {
         this.selidx--;
         this.selidx = Math.max(0, this.selidx);
@@ -11670,14 +11675,13 @@ module.exports = Vue.extend({
         this.selidx = Math.min(this.filtered.length - 1, this.selidx);
         $event.preventDefault();
       } else if ($event.keyCode == 13) {
-        this.$dispatch('link-selected', this.selidx);
+        this.$dispatch("link-selected", this.selidx);
         $event.preventDefault();
       } else {
         this.selidx = 0;
       }
     }
   }
-
 });
 ;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <input id=\"search-bar-input\" placeholder=\"Search\" autofocus=\"\" class=\"search-bar\" type=\"text\" v-el:searchinput=\"\" v-model=\"search\" v-on:keydown=\"key($event)\">\n"
 if (module.hot) {(function () {  module.hot.accept()
@@ -11686,7 +11690,7 @@ if (module.hot) {(function () {  module.hot.accept()
   if (!hotAPI.compatible) return
   var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/search-bar.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n  .search-bar {\n    display: block;\n    font-family: \"Raleway\";\n    font-weight: 100;\n    margin: 0 0 40px 0;\n    font-size: 6rem;\n    background: transparent;\n    border: 0;\n    color: #25FFB4;\n    width: 100%;\n    vertical-align: top;\n  }\n\n  ::-webkit-input-placeholder {\n   color: white;\n   opacity: 0.04;\n   font-family: \"Raleway\";\n   font-weight: 100;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n.search-bar {\n  display: block;\n  font-family: \"Raleway\";\n  font-weight: 100;\n  margin: 0 0 40px 0;\n  font-size: 6rem;\n  background: transparent;\n  border: 0;\n  color: #25ffb4;\n  width: 100%;\n  vertical-align: top;\n}\n\n::-webkit-input-placeholder {\n  color: white;\n  opacity: 0.04;\n  font-family: \"Raleway\";\n  font-weight: 100;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11696,94 +11700,29 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],13:[function(require,module,exports){
-var __vueify_style__ = require("vueify-insert-css").insert("\n\n  .weather {\n    display: inline-block;\n    padding: 0 20px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n")
-'use strict';
+var __vueify_style__ = require("vueify-insert-css").insert("\n.theme-btn {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n}\n")
+"use strict";
 
-var Vue = require('vue');
-var ConfigureWeather = require('./configure-weather.vue');
+var Vue = require("vue");
 
 module.exports = Vue.extend({
-
   props: ["config"],
-
-  components: {
-    'configure-weather': ConfigureWeather
-  },
-
-  ready: function ready() {
-    this.interval = setInterval(this.getWeather.bind(this), 6000);
-    this.getWeather();
-
-    this.$watch('config.unit + config.city + config.country', (function () {
-      this.getWeather();
-    }).bind(this));
-  },
-
-  data: function data() {
-    return {
-      weather: {
-        code: '',
-        date: '',
-        temp: '',
-        text: ''
-      }
-    };
-  },
-
-  computed: {
-    temperature: function temperature() {
-      var temp = this.weather.temp;
-      return temp == '' ? '' : parseInt(temp) + '°';
-    },
-    icon: function icon() {
-      return 'wi-yahoo-' + this.weather.code;
-    },
-    description: function description() {
-      return this.weather.text;
-    }
-  },
-
   methods: {
-
-    openConf: function openConf() {
-      this.$refs.configurator.open();
-    },
-
-    jsonp: function jsonp(url, callback) {
-      var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-      window[callbackName] = function (data) {
-        delete window[callbackName];
-        document.body.removeChild(script);
-        callback(data);
-      };
-
-      var script = document.createElement('script');
-      script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-      document.body.appendChild(script);
-    },
-
-    getWeather: function getWeather() {
-
-      var city = this.config.weather.city.toLowerCase(),
-          country = this.config.weather.country.toLowerCase(),
-          unit = this.config.weather.unit.toLowerCase();
-
-      this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + ", " + country + "') and u='" + unit + "'&format=json&u=c", (function (data) {
-        //        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 753692 and u='c'&format=json&u=c", (function(data) {
-        this.weather = data.query.results.channel.item.condition;
-      }).bind(this));
+    toggle: function toggle() {
+      var theme = this.config.theme === "dark" ? "light" : "dark";
+      this.config.theme = theme;
+      this.$dispatch("theme-selected", theme);
     }
   }
-
 });
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\" v-on:click=\"openConf()\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n    <div class=\"description\">{{ description }}</div>\n  </div>\n  <configure-weather v-ref:configurator=\"\" v-bind:config.sync=\"config\"></configure-weather>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"theme-btn\" v-on:click=\"toggle()\">\n    Toggle theme\n  </div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/weather.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/theme-chooser.vue"
   module.hot.dispose(function () {
-    require("vueify-insert-css").cache["\n\n  .weather {\n    display: inline-block;\n    padding: 0 20px;\n    font-size: 3.5rem;\n    line-height: 3rem;\n    cursor: pointer;\n  }\n\n  .weather:hover {\n    color: grey;\n  }\n\n  .icon {\n    font-family: 'weathericons';\n    display: inline-block;\n  }\n\n  .icon i {\n    font-style: normal;\n  }\n\n  .temperature {\n    vertical-align: text-top;\n    line-height: 4rem;\n    display: inline-block;\n  }\n\n  .description {\n    display: inline-block;\n    font-size: 2rem;\n    line-height: 4rem;\n    vertical-align: top;\n  }\n"] = false
+    require("vueify-insert-css").cache["\n.theme-btn {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
@@ -11792,7 +11731,99 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, module.exports.template)
   }
 })()}
-},{"./configure-weather.vue":10,"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],14:[function(require,module,exports){
+},{"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],14:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n.weather {\n  display: inline-block;\n  padding: 0 20px;\n  font-size: 3.5rem;\n  line-height: 3rem;\n  cursor: pointer;\n}\n\n.weather:hover {\n  color: grey;\n}\n\n.icon {\n  font-family: \"weathericons\";\n  display: inline-block;\n}\n\n.icon i {\n  font-style: normal;\n}\n\n.temperature {\n  vertical-align: text-top;\n  line-height: 4rem;\n  display: inline-block;\n}\n\n.description {\n  display: inline-block;\n  font-size: 2rem;\n  line-height: 4rem;\n  vertical-align: top;\n}\n")
+"use strict";
+
+var Vue = require("vue");
+var ConfigureWeather = require("./configure-weather.vue");
+
+module.exports = Vue.extend({
+  props: ["config"],
+
+  components: {
+    "configure-weather": ConfigureWeather
+  },
+
+  ready: function ready() {
+    this.interval = setInterval(this.getWeather.bind(this), 60000);
+    this.getWeather();
+
+    this.$watch("config.unit + config.city + config.country", (function () {
+      this.getWeather();
+    }).bind(this));
+  },
+
+  data: function data() {
+    return {
+      weather: {
+        code: "",
+        date: "",
+        temp: "",
+        text: ""
+      }
+    };
+  },
+
+  computed: {
+    temperature: function temperature() {
+      var temp = this.weather.temp;
+      return temp == "" ? "" : parseInt(temp) + "°";
+    },
+    icon: function icon() {
+      return "wi-yahoo-" + this.weather.code;
+    },
+    description: function description() {
+      return this.weather.text;
+    }
+  },
+
+  methods: {
+    openConf: function openConf() {
+      this.$refs.configurator.open();
+    },
+
+    jsonp: function jsonp(url, callback) {
+      var callbackName = "jsonp_callback_" + Math.round(100000 * Math.random());
+      window[callbackName] = function (data) {
+        delete window[callbackName];
+        document.body.removeChild(script);
+        callback(data);
+      };
+
+      var script = document.createElement("script");
+      script.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "callback=" + callbackName;
+      document.body.appendChild(script);
+    },
+
+    getWeather: function getWeather() {
+      var city = this.config.weather.city.toLowerCase(),
+          country = this.config.weather.country.toLowerCase(),
+          unit = this.config.weather.unit.toLowerCase();
+
+      this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + ", " + country + "') and u='" + unit + "'&format=json&u=c", (function (data) {
+        this.weather = data.query.results.channel.item.condition;
+      }).bind(this));
+    }
+  }
+});
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n  <div class=\"weather\" v-on:click=\"openConf()\">\n    <div class=\"icon\">\n      <i v-bind:class=\"icon\"></i>\n    </div>\n    <div class=\"temperature\">{{ temperature }}</div>\n    <div class=\"description\">{{ description }}</div>\n  </div>\n  <configure-weather v-ref:configurator=\"\" v-bind:config.sync=\"config\"></configure-weather>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/weather.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n.weather {\n  display: inline-block;\n  padding: 0 20px;\n  font-size: 3.5rem;\n  line-height: 3rem;\n  cursor: pointer;\n}\n\n.weather:hover {\n  color: grey;\n}\n\n.icon {\n  font-family: \"weathericons\";\n  display: inline-block;\n}\n\n.icon i {\n  font-style: normal;\n}\n\n.temperature {\n  vertical-align: text-top;\n  line-height: 4rem;\n  display: inline-block;\n}\n\n.description {\n  display: inline-block;\n  font-size: 2rem;\n  line-height: 4rem;\n  vertical-align: top;\n}\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, module.exports.template)
+  }
+})()}
+},{"./configure-weather.vue":10,"vue":4,"vue-hot-reload-api":3,"vueify-insert-css":5}],15:[function(require,module,exports){
 var Vue = require('vue');
 var App = require('./js/app.vue');
 
@@ -11803,4 +11834,4 @@ new Vue({
   }
 });
 
-},{"./js/app.vue":7,"vue":4}]},{},[14]);
+},{"./js/app.vue":7,"vue":4}]},{},[15]);
