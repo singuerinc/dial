@@ -315,6 +315,7 @@ var Profile = require("./profile.vue");
 var Clock = require("./clock.vue");
 var ThemeChooser = require("./theme-chooser.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
+var chrome = chrome || {};
 
 // var data = require('../data.json');
 // console.log(data);

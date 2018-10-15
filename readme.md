@@ -1,9 +1,7 @@
 # Dial
 
-## About
-
 Dial it's my launcher for frequent websites.
-It could replace the newtab page on Chrome.
+It could replace the newtab page on Chrome or any browser.
 
 If you want to see how it works, check out this demo:
 
