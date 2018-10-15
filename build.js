@@ -3210,73 +3210,73 @@ function defineReactive(obj, key, val) {
 
 
 var util = Object.freeze({
-	defineReactive: defineReactive,
-	set: set,
-	del: del,
-	hasOwn: hasOwn,
-	isLiteral: isLiteral,
-	isReserved: isReserved,
-	_toString: _toString,
-	toNumber: toNumber,
-	toBoolean: toBoolean,
-	stripQuotes: stripQuotes,
-	camelize: camelize,
-	hyphenate: hyphenate,
-	classify: classify,
-	bind: bind,
-	toArray: toArray,
-	extend: extend,
-	isObject: isObject,
-	isPlainObject: isPlainObject,
-	def: def,
-	debounce: _debounce,
-	indexOf: indexOf,
-	cancellable: cancellable,
-	looseEqual: looseEqual,
-	isArray: isArray,
-	hasProto: hasProto,
-	inBrowser: inBrowser,
-	devtools: devtools,
-	isIE: isIE,
-	isIE9: isIE9,
-	isAndroid: isAndroid,
-	isIOS: isIOS,
-	get transitionProp () { return transitionProp; },
-	get transitionEndEvent () { return transitionEndEvent; },
-	get animationProp () { return animationProp; },
-	get animationEndEvent () { return animationEndEvent; },
-	nextTick: nextTick,
-	get _Set () { return _Set; },
-	query: query,
-	inDoc: inDoc,
-	getAttr: getAttr,
-	getBindAttr: getBindAttr,
-	hasBindAttr: hasBindAttr,
-	before: before,
-	after: after,
-	remove: remove,
-	prepend: prepend,
-	replace: replace,
-	on: on,
-	off: off,
-	setClass: setClass,
-	addClass: addClass,
-	removeClass: removeClass,
-	extractContent: extractContent,
-	trimNode: trimNode,
-	isTemplate: isTemplate,
-	createAnchor: createAnchor,
-	findRef: findRef,
-	mapNodeRange: mapNodeRange,
-	removeNodeRange: removeNodeRange,
-	isFragment: isFragment,
-	getOuterHTML: getOuterHTML,
-	mergeOptions: mergeOptions,
-	resolveAsset: resolveAsset,
-	checkComponentAttr: checkComponentAttr,
-	commonTagRE: commonTagRE,
-	reservedTagRE: reservedTagRE,
-	get warn () { return warn; }
+  defineReactive: defineReactive,
+  set: set,
+  del: del,
+  hasOwn: hasOwn,
+  isLiteral: isLiteral,
+  isReserved: isReserved,
+  _toString: _toString,
+  toNumber: toNumber,
+  toBoolean: toBoolean,
+  stripQuotes: stripQuotes,
+  camelize: camelize,
+  hyphenate: hyphenate,
+  classify: classify,
+  bind: bind,
+  toArray: toArray,
+  extend: extend,
+  isObject: isObject,
+  isPlainObject: isPlainObject,
+  def: def,
+  debounce: _debounce,
+  indexOf: indexOf,
+  cancellable: cancellable,
+  looseEqual: looseEqual,
+  isArray: isArray,
+  hasProto: hasProto,
+  inBrowser: inBrowser,
+  devtools: devtools,
+  isIE: isIE,
+  isIE9: isIE9,
+  isAndroid: isAndroid,
+  isIOS: isIOS,
+  get transitionProp () { return transitionProp; },
+  get transitionEndEvent () { return transitionEndEvent; },
+  get animationProp () { return animationProp; },
+  get animationEndEvent () { return animationEndEvent; },
+  nextTick: nextTick,
+  get _Set () { return _Set; },
+  query: query,
+  inDoc: inDoc,
+  getAttr: getAttr,
+  getBindAttr: getBindAttr,
+  hasBindAttr: hasBindAttr,
+  before: before,
+  after: after,
+  remove: remove,
+  prepend: prepend,
+  replace: replace,
+  on: on,
+  off: off,
+  setClass: setClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  extractContent: extractContent,
+  trimNode: trimNode,
+  isTemplate: isTemplate,
+  createAnchor: createAnchor,
+  findRef: findRef,
+  mapNodeRange: mapNodeRange,
+  removeNodeRange: removeNodeRange,
+  isFragment: isFragment,
+  getOuterHTML: getOuterHTML,
+  mergeOptions: mergeOptions,
+  resolveAsset: resolveAsset,
+  checkComponentAttr: checkComponentAttr,
+  commonTagRE: commonTagRE,
+  reservedTagRE: reservedTagRE,
+  get warn () { return warn; }
 });
 
 var uid = 0;
@@ -8783,11 +8783,11 @@ function extractFragment(nodes, parent) {
 
 
 var compiler = Object.freeze({
-	compile: compile,
-	compileAndLinkProps: compileAndLinkProps,
-	compileRoot: compileRoot,
-	transclude: transclude,
-	resolveSlots: resolveSlots
+  compile: compile,
+  compileAndLinkProps: compileAndLinkProps,
+  compileRoot: compileRoot,
+  transclude: transclude,
+  resolveSlots: resolveSlots
 });
 
 function stateMixin (Vue) {
@@ -11313,7 +11313,6 @@ var Profile = require("./profile.vue");
 var Clock = require("./clock.vue");
 var ThemeChooser = require("./theme-chooser.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
-var chrome = chrome || {};
 
 // var data = require('../data.json');
 // console.log(data);
@@ -11438,7 +11437,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/app.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/app.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n@font-face {\n  font-family: \"Raleway\";\n  font-style: normal;\n  font-weight: 400;\n  src: local(\"Raleway\"),\n    url(css/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format(\"woff2\");\n  unicode-range: U + 0000-00ff, U + 0131, U + 0152-0153, U + 02c6, U + 02da,\n    U + 02dc, U + 2000-206f, U + 2074, U + 20ac, U + 2212, U + 2215, U + E0FF,\n    U + EFFD, U + F000;\n}\n\n* {\n  outline: none;\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  font-family: \"Raleway\";\n  -webkit-font-smoothing: antialiased;\n  color: #777;\n  font-size: 10px;\n}\n\nbody.dark {\n  background-color: #111;\n}\n\nbody.light {\n  background-color: #eee;\n}\n\nbody.light .theme-btn {\n  color: #999;\n}\n\n.app {\n  width: 90vw;\n  margin: 0 5vw;\n  position: absolute;\n  top: 50px;\n}\n\na {\n  font-size: 1.4em;\n  text-decoration: none;\n}\n\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.category-list {\n  overflow: hidden;\n  width: 100%;\n  -webkit-column-fill: auto;\n          column-fill: auto;\n  -webkit-column-count: 1;\n          column-count: 1;\n  -webkit-column-gap: 0;\n          column-gap: 0;\n}\n\n@media (min-width: 768px) {\n  .category-list {\n    -webkit-column-count: 3;\n            column-count: 3;\n  }\n}\n\n@media (min-width: 1200px) {\n  .category-list {\n    -webkit-column-count: 4;\n            column-count: 4;\n  }\n}\n\n@media (min-width: 1440px) {\n  .category-list {\n    -webkit-column-count: 5;\n            column-count: 5;\n  }\n}\n\nheader {\n  width: 100%;\n}\n\n.result-list,\n.category-list {\n  margin: 40px 0;\n}\n\n.category-title {\n  margin-top: 0;\n}\n\n.links {\n  margin-bottom: 30px;\n}\n\n.link a {\n  line-height: 2.6rem;\n  font-size: 1.8rem;\n  letter-spacing: 0.2px;\n  color: #888;\n}\n\n.link a:hover {\n  color: #25ffb4;\n}\n\n.link.on a {\n  color: white;\n}\n\nbody.light .link a:hover {\n  color: #ff5500;\n}\n\n.go-to-url {\n  color: #0094ff;\n  font-size: 6rem;\n  font-weight: 300;\n  margin-top: 2rem;\n}\n\nbody.light .go-to-url {\n  font-size: 3rem;\n  color: #0066ff;\n}\n\nbody .go-to-url small {\n  color: #999;\n}\n\n.modal {\n  position: fixed;\n  display: none;\n  width: 100vw;\n  height: 100vh;\n  top: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.3);\n  color: #777;\n}\n\n.modal.on {\n  display: block;\n}\n\n.modal .title {\n  font-size: 2rem;\n}\n\n.window {\n  position: absolute;\n  display: block;\n  width: 100%;\n  max-width: 500px;\n  background: white;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  box-shadow: 0 0 80px #000;\n  padding: 50px;\n}\n\n.window input[type=\"text\"],\n.window select {\n  font-size: 3rem;\n  padding: 10px;\n  width: 100%;\n  -webkit-appearance: none;\n  border: 1px solid grey;\n  border-radius: 0;\n}\n\n.window label {\n  font-size: 2rem;\n  margin: 30px 0 10px;\n  display: block;\n}\n\n.window .close-btn {\n  position: absolute;\n  display: block;\n  top: 10px;\n  right: 10px;\n  width: 20px;\n  height: 20px;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-repeat: no-repeat;\n  cursor: pointer;\n}\n\n.window .close-btn:hover {\n  opacity: 0.4;\n}\n\n.window .row:after {\n  display: block;\n  height: 0;\n  width: 100%;\n  content: \"\";\n  clear: both;\n}\n\n.configure-window hr {\n  border: 0;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 10px;\n}\n\n.configure-window .save {\n  margin-top: 20px;\n}\n\n.configure-window .btn {\n  display: inline-block;\n  padding: 10px 20px;\n  border: 1px solid transparent;\n  background: black;\n  font-size: 2rem;\n  color: white;\n}\n\n.configure-window .btn:hover {\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n\n.configure-window .config_save {\n  float: right;\n}\n\n.configure-window input[type=\"radio\"] {\n  font-size: 3rem;\n  display: inline-block;\n  height: 27px;\n  width: 27px;\n  margin: 5px 5px 0;\n  -webkit-appearance: none;\n  border: 1px solid #eee;\n  cursor: pointer;\n  opacity: 1;\n  position: relative;\n}\n\n.configure-window input[type=\"radio\"]:after {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 27px;\n  height: 27px;\n  content: \"\";\n  display: block;\n  background: url(../img/ic_clear_black_48px.svg);\n  background-size: 100%;\n  background-position: -1px -1px;\n  opacity: 0;\n}\n\n.configure-window input[type=\"radio\"]:checked:after {\n  opacity: 1;\n}\n\n.configure-window input[type=\"radio\"]:not(:checked):hover:after {\n  opacity: 0.3;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11501,7 +11500,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/clock.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/clock.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n  .clock {\n    position: relative;\n    font-size: 3.5rem;\n    display: inline-block;\n    padding: 0 20px;\n    vertical-align: top;\n    line-height: 4rem;\n    cursor: pointer;\n  }\n\n  .clock:hover {\n    color: grey;\n  }\n\n  .clock .time {\n    display: inline-block;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11555,7 +11554,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/configure-clock.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/configure-clock.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n\n  .configure-window .clock_formats .clock_format {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .clock_formats .format24 {\n    margin-left: 20px;\n  }\n\n\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11612,7 +11611,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/configure-weather.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/configure-weather.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n\n  .configure-window .weather_units .weather_unit {\n    font-size: 3rem;\n    display: inline-block;\n  }\n\n  .configure-window .weather_units .unit_c {\n    margin-left: 20px;\n  }\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11645,7 +11644,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/profile.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/profile.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n.profile {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 20px;\n}\n\n.profile .img {\n  width: 40px;\n  height: 40px;\n  display: inline-block;\n  background-position: center;\n  background-size: 100%;\n  border-radius: 50%;\n  vertical-align: top;\n  opacity: 0.6;\n}\n\n.profile .name {\n  font-size: 4rem;\n  display: inline-block;\n  vertical-align: top;\n  line-height: 4rem;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11689,7 +11688,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/search-bar.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/search-bar.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n.search-bar {\n  display: block;\n  font-family: \"Raleway\";\n  font-weight: 100;\n  margin: 0 0 40px 0;\n  font-size: 6rem;\n  background: transparent;\n  border: 0;\n  color: #25ffb4;\n  width: 100%;\n  vertical-align: top;\n}\n\n::-webkit-input-placeholder {\n  color: white;\n  opacity: 0.04;\n  font-family: \"Raleway\";\n  font-weight: 100;\n}\n\nbody.light .search-bar {\n  color: #ff5500;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11721,7 +11720,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/theme-chooser.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/theme-chooser.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n.theme-btn {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
@@ -11813,7 +11812,7 @@ if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/oyvind/dummy/dial/src/js/weather.vue"
+  var id = "/Users/nahuel.scotti/code/singuerinc/dial/src/js/weather.vue"
   module.hot.dispose(function () {
     require("vueify-insert-css").cache["\n.weather {\n  display: inline-block;\n  padding: 0 20px;\n  font-size: 3.5rem;\n  line-height: 3rem;\n  cursor: pointer;\n}\n\n.weather:hover {\n  color: grey;\n}\n\n.icon {\n  font-family: \"weathericons\";\n  display: inline-block;\n}\n\n.icon i {\n  font-style: normal;\n}\n\n.temperature {\n  vertical-align: text-top;\n  line-height: 4rem;\n  display: inline-block;\n}\n\n.description {\n  display: inline-block;\n  font-size: 2rem;\n  line-height: 4rem;\n  vertical-align: top;\n}\n"] = false
     document.head.removeChild(__vueify_style__)
