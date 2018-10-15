@@ -23,7 +23,6 @@
   "devDependencies": {
     "babel-runtime": "^5.8.29",
     "browserify": "^14.4.0",
-    "concurrently": "^4.0.1",
     "serve": "^9.6.0",
     "vue": "^1.0.6",
     "vue-hot-reload-api": "^1.2.1",
