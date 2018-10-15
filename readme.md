@@ -1,6 +1,6 @@
 ## About
 
-Dial is a (beta) Chrome Extension. It's my launcher for frequent websites.
+Dial is a webpage that can be added as homepage in any browser. It's my launcher for frequent websites.
 It replaces the newtab page on Chrome.
 
 If you want to check how it works, check out this demo:
