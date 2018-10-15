@@ -19,9 +19,20 @@ html,
 body {
   font-family: "Raleway";
   -webkit-font-smoothing: antialiased;
-  background-color: #111;
   color: #777;
   font-size: 10px;
+}
+
+body.dark {
+  background-color: #111;
+}
+
+body.light {
+  background-color: #eee;
+}
+
+body.light .theme-btn {
+  color: #999;
 }
 
 .app {
@@ -100,6 +111,10 @@ header {
   color: white;
 }
 
+body.light .link a:hover {
+  color: #ff5500;
+}
+
 .go-to-url {
   color: #0094ff;
   font-size: 6rem;
@@ -107,9 +122,13 @@ header {
   margin-top: 2rem;
 }
 
-.go-to-url small {
+body.light .go-to-url {
   font-size: 3rem;
-  color: white;
+  color: #0066ff;
+}
+
+body .go-to-url small {
+  color: #999;
 }
 
 .modal {
@@ -283,6 +302,10 @@ header {
         </ul>
       </li>
     </ul>
+
+    <footer>
+      <theme-chooser v-bind:config.sync="config" />
+    </footer>
   </div>
 </template>
 <script>
@@ -291,6 +314,7 @@ var SearchBar = require("./search-bar.vue");
 var Weather = require("./weather.vue");
 var Profile = require("./profile.vue");
 var Clock = require("./clock.vue");
+var ThemeChooser = require("./theme-chooser.vue");
 var urlRegExp = /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi;
 
 // var data = require('../data.json');
@@ -350,7 +374,8 @@ var App = Vue.extend({
         },
         clock: {
           format: 24
-        }
+        },
+        theme: "dark"
       }
     };
   },
@@ -379,7 +404,8 @@ var App = Vue.extend({
     "search-bar": SearchBar,
     clock: Clock,
     weather: Weather,
-    profile: Profile
+    profile: Profile,
+    "theme-chooser": ThemeChooser
   },
 
   events: {
@@ -403,6 +429,10 @@ var App = Vue.extend({
       } else {
         chrome.tabs.create({ url: url });
       }
+    },
+    "theme-selected": function(theme) {
+      document.body.classList.toggle("dark", theme === "dark");
+      document.body.classList.toggle("light", theme === "light");
     }
   }
 });

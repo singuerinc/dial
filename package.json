@@ -6,7 +6,8 @@
   "scripts": {
     "build:watch": "watchify -t vueify -e src/main.js -o build.js",
     "build": "browserify -t vueify -e src/main.js -o build.js",
-    "start": "serve",
+    "serve": "serve",
+    "start": "concurrently 'yarn run serve' 'yarn run build:watch'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

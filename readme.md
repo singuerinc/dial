@@ -1,37 +1,41 @@
+# Dial
+
 ## About
 
-Dial is a (beta) Chrome Extension. It's my launcher for frequent websites.
-It replaces the newtab page on Chrome.
+Dial it's my launcher for frequent websites.
+It could replace the newtab page on Chrome.
 
-If you want to check how it works, check out this demo:
+If you want to see how it works, check out this demo:
 
 [Demo](https://home.singuerinc.com/)
 
-## Search
+If you want to have your own links, fork this repo, change the `data.json` file and build it.
 
-![search](https://dl.dropbox.com/s/3mlciiqo2myc9m7/search_anim.gif)
+### Search
+
+![search](./dial.gif)
 
 > Tip: Search and press enter: navigates to the first occurrence. Or search and use the arrows keys to navigate.
+
+### Weather config window
+
+![weather](./screen_weather.png)
+
+### Clock config window
+
+![clock](./screen_clock.png)
 
 ## Themes
 
 ### Dark
 
-![dark](https://dl.dropboxusercontent.com/s/6pc8wnrl6iwkyk5/theme_dark.png)
+![dark](./theme_dark.png)
 
 ### Light
 
-![light](https://dl.dropboxusercontent.com/s/6qubb6481o5a2ry/theme_light.png)
+![light](./theme_light.png)
 
 ## Installation
-
-If you want to test Dial you have to install it manually in Chrome.
-
-1.  Clone/Download the repo
-2.  Go to [Chrome extensions settings](chrome://extensions/)
-3.  Click on "Load unpacked extension..."
-4.  Select the folder that contains Dial files.
-5.  Open a new tab in Chrome.
 
 ## develop
 
@@ -44,11 +48,17 @@ yarn build:watch
 yarn start
 ```
 
+## build
+
+```sh
+yarn build
+```
+
 ### TODO
 
 - [x] Navigate through results with keys
 - [ ] Options page
 - [ ] Add/Edit/Remove links
 - [ ] Profile image upload
-- [x] Sync
+- [ ] Sync
 - [ ] Backgrounds?

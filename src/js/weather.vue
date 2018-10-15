@@ -1,38 +1,37 @@
 <style>
+.weather {
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 3.5rem;
+  line-height: 3rem;
+  cursor: pointer;
+}
 
-  .weather {
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 3.5rem;
-    line-height: 3rem;
-    cursor: pointer;
-  }
+.weather:hover {
+  color: grey;
+}
 
-  .weather:hover {
-    color: grey;
-  }
+.icon {
+  font-family: "weathericons";
+  display: inline-block;
+}
 
-  .icon {
-    font-family: 'weathericons';
-    display: inline-block;
-  }
+.icon i {
+  font-style: normal;
+}
 
-  .icon i {
-    font-style: normal;
-  }
+.temperature {
+  vertical-align: text-top;
+  line-height: 4rem;
+  display: inline-block;
+}
 
-  .temperature {
-    vertical-align: text-top;
-    line-height: 4rem;
-    display: inline-block;
-  }
-
-  .description {
-    display: inline-block;
-    font-size: 2rem;
-    line-height: 4rem;
-    vertical-align: top;
-  }
+.description {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 4rem;
+  vertical-align: top;
+}
 </style>
 
 <template>
@@ -47,84 +46,89 @@
 </template>
 
 <script>
+var Vue = require("vue");
+var ConfigureWeather = require("./configure-weather.vue");
 
-  var Vue = require('vue');
-  var ConfigureWeather = require('./configure-weather.vue');
+module.exports = Vue.extend({
+  props: ["config"],
 
-  module.exports = Vue.extend({
+  components: {
+    "configure-weather": ConfigureWeather
+  },
 
-    props: ["config"],
+  ready: function() {
+    this.interval = setInterval(this.getWeather.bind(this), 60000);
+    this.getWeather();
 
-    components: {
-      'configure-weather': ConfigureWeather
-    },
-
-    ready: function(){
-      this.interval = setInterval(this.getWeather.bind(this), 6000);
-      this.getWeather();
-
-      this.$watch('config.unit + config.city + config.country', (function(){
+    this.$watch(
+      "config.unit + config.city + config.country",
+      function() {
         this.getWeather();
-      }).bind(this));
-    },
+      }.bind(this)
+    );
+  },
 
-    data: function(){
-      return {
-        weather: {
-          code: '',
-          date: '',
-          temp: '',
-          text: ''
-        }
+  data: function() {
+    return {
+      weather: {
+        code: "",
+        date: "",
+        temp: "",
+        text: ""
       }
+    };
+  },
+
+  computed: {
+    temperature: function() {
+      var temp = this.weather.temp;
+      return temp == "" ? "" : parseInt(temp) + "°";
     },
-
-    computed: {
-      temperature: function(){
-        var temp = this.weather.temp;
-        return temp == '' ? '' : (parseInt(temp) + '°');
-      },
-      icon: function(){
-        return 'wi-yahoo-' + this.weather.code;
-      },
-      description: function(){
-        return this.weather.text;
-      }
+    icon: function() {
+      return "wi-yahoo-" + this.weather.code;
     },
-
-    methods: {
-
-      openConf: function(){
-        this.$refs.configurator.open();
-      },
-
-      jsonp: function(url, callback) {
-          var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
-          window[callbackName] = function(data) {
-              delete window[callbackName];
-              document.body.removeChild(script);
-              callback(data);
-          };
-
-          var script = document.createElement('script');
-          script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
-          document.body.appendChild(script);
-      },
-
-      getWeather: function(){
-
-        var city = this.config.weather.city.toLowerCase(),
-          country = this.config.weather.country.toLowerCase(),
-          unit = this.config.weather.unit.toLowerCase();
-
-        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='"+city+", "+country+"') and u='"+unit+"'&format=json&u=c", (function(data) {
-//        this.jsonp("https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid = 753692 and u='c'&format=json&u=c", (function(data) {
-           this.weather = data.query.results.channel.item.condition;
-        }).bind(this));
-
-      }
+    description: function() {
+      return this.weather.text;
     }
+  },
 
-  });
+  methods: {
+    openConf: function() {
+      this.$refs.configurator.open();
+    },
 
+    jsonp: function(url, callback) {
+      var callbackName = "jsonp_callback_" + Math.round(100000 * Math.random());
+      window[callbackName] = function(data) {
+        delete window[callbackName];
+        document.body.removeChild(script);
+        callback(data);
+      };
+
+      var script = document.createElement("script");
+      script.src =
+        url + (url.indexOf("?") >= 0 ? "&" : "?") + "callback=" + callbackName;
+      document.body.appendChild(script);
+    },
+
+    getWeather: function() {
+      var city = this.config.weather.city.toLowerCase(),
+        country = this.config.weather.country.toLowerCase(),
+        unit = this.config.weather.unit.toLowerCase();
+
+      this.jsonp(
+        "https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" +
+          city +
+          ", " +
+          country +
+          "') and u='" +
+          unit +
+          "'&format=json&u=c",
+        function(data) {
+          this.weather = data.query.results.channel.item.condition;
+        }.bind(this)
+      );
+    }
+  }
+});
 </script>
