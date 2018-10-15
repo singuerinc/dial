@@ -140,7 +140,8 @@ header {
 .window {
   position: absolute;
   display: block;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   background: white;
   top: 50%;
   left: 50%;
@@ -221,7 +222,6 @@ header {
 
 .configure-window input[type="radio"] {
   font-size: 3rem;
-  float: left;
   display: inline-block;
   height: 27px;
   width: 27px;
@@ -257,7 +257,7 @@ header {
 </style>
 
 <template>
-
+  <div>
     <header>
       <search-bar :search.sync="search" :selidx.sync="selectedIndex" :filtered.sync="filteredItems"></search-bar>
       <profile v-bind:config.sync="config"></profile>

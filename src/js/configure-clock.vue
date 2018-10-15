@@ -2,7 +2,6 @@
 
   .configure-window .clock_formats .clock_format {
     font-size: 3rem;
-    float: left;
     display: inline-block;
   }
 
