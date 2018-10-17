@@ -1,0 +1,57 @@
+{
+  "0": [
+    {
+      "id": "0",
+      "title": "Other",
+      "links": [
+        {
+          "id": "0",
+          "label": "Rotten Tomatoes",
+          "href": "http://rottentomatoes.com"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "main",
+      "links": [
+        {
+          "id": "0",
+          "label": "Mail",
+          "href": "https://mail.google.com"
+        },
+        {
+          "id": "1",
+          "label": "Whatsapp",
+          "href": "https://web.whatsapp.com"
+        },
+        {
+          "id": "2",
+          "label": "inbox",
+          "href": "https://inbox.google.com"
+        },
+        {
+          "id": "3",
+          "label": "Yahoo",
+          "href": "https://mail.yahoo.com"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "News + Blogs",
+      "links": [
+        {
+          "id": "0",
+          "label": "Yahoo",
+          "href": "https://mail.yahoo.com"
+        },
+        {
+          "id": "1",
+          "label": "Wired",
+          "href": "https://www.wired.com/"
+        }
+      ]
+    }
+  ]
+}

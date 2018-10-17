@@ -7,7 +7,15 @@ If you want to see how it works, check out this demo:
 
 [Demo](https://home.singuerinc.com/)
 
-If you want to have your own links, fork this repo, change the `data.json` file and build it.
+If you want to have your own links, fork this repo, and change the info in `data.json`.
+Fastest way to do this is to
+
+```sh
+# cd into repo and type
+json-server --watch data.json --port 3004
+```
+ Once local server is running, open updateData.html, and edit the content automatically in the web browser.
+ For more information about json-server, go [here](https://github.com/typicode/json-server).
 
 ### Search
 
