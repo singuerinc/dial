@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dial - Update data.json</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/weather-icons.min.css">
+</head>
+
+<body>
+  <div>
+    <h1>Edit Links By Category</h1>
+		<select id="mySelect" onchange="getData()">
+		<option>Pick a Category</option>
+		</select>
+	<div id="catDisplay">
+	</div>
+  </div>
+  <div>
+  <h1>Add Links</h1>
+  <form id="addInfo">
+  <input type='text' placeholder='Category' id='category'/>
+  <input type='text' placeholder='Website Name' id='label'/>
+  <input type='text' placeholder='URL' id='href'/>
+  <button type='submit'>Save Link</button>
+  </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="updateData.js"></script>
+</body>
+
+</html>
