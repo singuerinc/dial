@@ -2,12 +2,9 @@
 
 Dial it's my launcher for frequent websites.
 It could replace the newtab page on Chrome or any browser.
-
-If you want to see how it works, check out this demo:
+If you want to have your own links, fork this repo, change the `data.json` file and build it.
 
 [Demo](https://home.singuerinc.com/)
-
-If you want to have your own links, fork this repo, change the `data.json` file and build it.
 
 ### Search
 
