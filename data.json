@@ -89,8 +89,12 @@
         "href": "https://news.vice.com/es"
       },
       {
-        "label": "TyC Sports",
-        "href": "http://www.tycsports.com/SubSecciones/clubes/boca/"
+        "label": "TED",
+        "href": "https://www.ted.com/"
+      },
+      {
+        "label": "Recode",
+        "href": "https://www.recode.net/"
       }
     ]
   },
