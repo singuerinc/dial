@@ -5,6 +5,7 @@ import * as data from "../../data.json";
 import { Search } from "./Search";
 import { Category } from "./Category";
 import { ICategory } from "../ICategory";
+import styled from "styled-components";
 
 const contains = (value: string, label: string) => {
   const labelLower = label.toLocaleLowerCase();
@@ -13,7 +14,7 @@ const contains = (value: string, label: string) => {
   return hasValue;
 };
 
-export function Dial() {
+function DialComponent({ className }: { className: string }) {
   const theme = useContext(defaultTheme);
   // @ts-ignore
   const initData: ICategory[] = data.default;
@@ -35,7 +36,7 @@ export function Dial() {
   }
 
   return (
-    <>
+    <div className={className}>
       <Search onChange={handleSearchChange} />
       <ul>
         {categories.map((cat, index) => (
@@ -44,6 +45,14 @@ export function Dial() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
+
+export const Dial = styled(DialComponent)`
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+`;
