@@ -1,0 +1,21 @@
+{
+  "name": "dial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:singuerinc/dial.git",
+  "author": "singuerinc <nahuel.scotti@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.8.5",
+    "@types/react-dom": "^16.8.2",
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  }
+}
