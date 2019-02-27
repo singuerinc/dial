@@ -51,7 +51,6 @@ export function Dial() {
 
 const List = styled.ul`
   width: 100%;
-  text-align: center;
 
   li {
     list-style: none;
