@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 interface IProps {
@@ -11,10 +11,19 @@ const Input = styled.input``;
 
 export function Search({ onChange }: IProps) {
   const ref = useRef<HTMLInputElement>();
+  const [value, setValue] = useState<string>("");
 
   useEffect(() => {
     ref.current!.focus();
   });
 
-  return <Input ref={ref} onChange={e => onChange(e.target.value)} />;
+  useEffect(() => {
+    onChange(value);
+  }, [value]);
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setValue(event.target.value);
+  }
+
+  return <Input ref={ref} value={value} onChange={handleChange} />;
 }
