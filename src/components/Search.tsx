@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import console = require("console");
 
 interface IProps {
   onChange: (value: string) => void;
@@ -47,6 +46,6 @@ const Input = styled.input`
   border: 0;
   padding: 0.3em 0;
   background-color: transparent;
-  color: var(--oc-teal-3);
+  color: #fff;
   font-weight: 300;
 `;
