@@ -6,23 +6,21 @@ interface IProps extends ICategory {}
 
 export function Category({ title, links }: IProps) {
   return (
-    <List>
+    <ul>
       <li>
-        <h1>{title}</h1>
+        <Title>{title}</Title>
       </li>
       {links.map((link, index) => (
         <li key={index}>
           <a href={link.href}>{link.label}</a>
         </li>
       ))}
-    </List>
+    </ul>
   );
 }
 
-const List = styled.ul`
-  h1 {
-    font-size: 1.7em;
-    font-weight: 300;
-    color: var(--oc-gray-7);
-  }
+const Title = styled.h1`
+  font-size: 1.7em;
+  font-weight: 300;
+  color: var(--oc-gray-7);
 `;
