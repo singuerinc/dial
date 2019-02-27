@@ -50,8 +50,6 @@ export function Dial() {
 }
 
 const List = styled.ul`
-  margin: 0;
-  padding: 0;
   width: 100%;
   text-align: center;
 
