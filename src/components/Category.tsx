@@ -2,19 +2,6 @@ import * as React from "react";
 import { ICategory } from "../ICategory";
 import styled from "styled-components";
 
-const colors = [
-  "#e6fcf5",
-  "#c3fae8",
-  "#96f2d7",
-  "#63e6be",
-  "#38d9a9",
-  "#20c997",
-  "#12b886",
-  "#0ca678",
-  "#099268",
-  "#087f5b"
-];
-
 interface IProps extends ICategory {
   index: number;
 }
@@ -23,7 +10,7 @@ export function Category({ index, title, links }: IProps) {
   return (
     <List>
       <li>
-        <Title style={{ color: colors[9 - (index % 9)] }}>{title}</Title>
+        <Title>{title}</Title>
       </li>
       {links.map((link, index) => (
         <li key={index}>
@@ -36,8 +23,8 @@ export function Category({ index, title, links }: IProps) {
 
 const Title = styled.h1`
   font-size: 2.5em;
-  font-weight: 500;
-  color: var(--oc-gray-7);
+  font-weight: 400;
+  color: #fab005;
   text-transform: capitalize;
 
   @media (min-width: 992px) {
@@ -50,8 +37,15 @@ const List = styled.ul`
 `;
 
 const Link = styled.a`
-  display: block;
   font-size: 1.7em;
+  font-weight: 400;
+  color: var(--oc-gray-6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  :hover {
+    color: #fff;
+  }
 
   @media (min-width: 992px) {
     font-size: 1.3em;

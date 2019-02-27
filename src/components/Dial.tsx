@@ -23,12 +23,16 @@ export function Dial() {
   function handleSearchChange(value: string) {
     // select those categories that contains results
     const filteredCats = initData.filter(cat => {
-      return cat.links.some(link => contains(value, link.label));
+      return cat.links.some(
+        link => contains(value, link.label) || contains(value, link.href)
+      );
     });
 
     // select only those links that matches the search
     const onlyWithLinks = filteredCats.map(cat => {
-      const links = cat.links.filter(link => contains(value, link.label));
+      const links = cat.links.filter(
+        link => contains(value, link.label) || contains(value, link.href)
+      );
       return { ...cat, links };
     });
 

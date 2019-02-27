@@ -20,17 +20,6 @@ body {
   padding: 0;
 }
 
-a {
-  font-weight: 400;
-  color: var(--oc-gray-6);
-  text-decoration: none;
-  transition: color 0.4s ease;
-}
-
-a:hover {
-  color: var(--oc-teal-3);
-}
-
 textarea,
 select,
 input,
