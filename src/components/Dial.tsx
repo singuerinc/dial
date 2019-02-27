@@ -41,7 +41,7 @@ export function Dial() {
       <List>
         {categories.map((cat, index) => (
           <li key={index}>
-            <Category title={cat.title} links={cat.links} />
+            <Category index={index} title={cat.title} links={cat.links} />
           </li>
         ))}
       </List>
