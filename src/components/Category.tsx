@@ -21,6 +21,6 @@ export function Category({ title, links }: IProps) {
 
 const Title = styled.h1`
   font-size: 1.7em;
-  font-weight: 300;
+  font-weight: 500;
   color: var(--oc-gray-7);
 `;
