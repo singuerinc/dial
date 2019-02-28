@@ -2,8 +2,10 @@ import * as React from "react";
 import { ICategory } from "./bookmarks/ICategory";
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { Clock } from "./clock/Clock";
+import { UserProfile } from "./userProfile/UserProfile";
 import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
+import path from "../../user.jpeg";
 
 // TODO: move this to a service
 // @ts-ignore
@@ -20,6 +22,7 @@ export function Dial() {
   return (
     <div>
       <Clock />
+      <UserProfile name="singuerinc" picture={path} />
       <Bookmarks list={sortedList} />
     </div>
   );
