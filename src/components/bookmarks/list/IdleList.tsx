@@ -21,8 +21,4 @@ export function IdleList({ list }: IProps) {
 
 const List = styled.ul`
   width: 100%;
-
-  li {
-    list-style: none;
-  }
 `;
