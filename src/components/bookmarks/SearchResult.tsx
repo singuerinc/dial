@@ -4,7 +4,7 @@ import { ICategory } from "./ICategory";
 import { Category } from "./Category";
 
 interface IProps {
-  result: ICategory;
+  result?: ICategory;
   navIndex: number;
 }
 

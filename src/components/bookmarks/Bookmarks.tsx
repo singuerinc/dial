@@ -8,6 +8,11 @@ import { IdleList } from "./IdleList";
 import { ACTIONS, searchService as machine, STATES } from "./states";
 import { reduceToOne, withLabelOrHref } from "./utils";
 
+const resultTpl: ICategory = {
+  title: "Results",
+  links: []
+};
+
 interface IProps {
   list: ICategory[];
 }
@@ -17,7 +22,7 @@ const canNavigate = (state: string) =>
 
 export function Bookmarks({ list: feed }: IProps) {
   const [list, setList] = useState(feed);
-  const [result, setResult] = useState<ICategory>();
+  const [result, setResult] = useState<ICategory>(resultTpl);
   const [navIndex, setNavIndex] = useState(0);
   const [machineState, setMachineState] = useState();
 
@@ -37,12 +42,12 @@ export function Bookmarks({ list: feed }: IProps) {
 
         machine.send(ACTIONS.NAVIGATE);
 
-        const totalResults = result!.links.length - 1;
+        const totalResults = result.links.length - 1;
         const x = event.key === "ArrowUp" ? -1 : 1;
 
         setNavIndex(i => Math.max(0, Math.min(totalResults, i + x)));
       } else if (event.key === "Enter") {
-        window.open(result!.links[navIndex].href);
+        window.open(result.links[navIndex].href);
       }
     };
 
@@ -78,10 +83,7 @@ export function Bookmarks({ list: feed }: IProps) {
     });
 
     // create a new category "Results" with all the links that match the search
-    const results: ICategory = onlyWithLinks.reduce(reduceToOne, {
-      title: "Results",
-      links: []
-    });
+    const results: ICategory = onlyWithLinks.reduce(reduceToOne, resultTpl);
 
     setResult(results);
   };
@@ -92,8 +94,8 @@ export function Bookmarks({ list: feed }: IProps) {
 
   return (
     <div>
-      <pre>{machineState}</pre>
-      <pre>{navIndex}</pre>
+      {/* <pre>{machineState}</pre> */}
+      {/* <pre>{navIndex}</pre> */}
       <Search onChange={handleSearchChange} />
       {isIdle && <IdleList list={list} />}
       {notIdle && <SearchResult navIndex={navIndex} result={result} />}
