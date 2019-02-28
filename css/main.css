@@ -38,3 +38,8 @@ li {
   flex-direction: column;
   margin: 2em;
 }
+
+pre {
+  background-color: bisque;
+  padding: 2em;
+}

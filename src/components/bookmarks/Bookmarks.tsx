@@ -1,10 +1,12 @@
 import * as React from "react";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import styled from "styled-components";
+import { DefaultContext, State } from "xstate";
 import { Category } from "./Category";
 import { ICategory } from "./ICategory";
 import { Search } from "./Search";
-import { withLabelOrHref, reduceToOne } from "./utils";
+import { ACTIONS, searchService as machine, STATES } from "./states";
+import { reduceToOne, withLabelOrHref } from "./utils";
 
 interface IProps {
   list: ICategory[];
@@ -12,12 +14,27 @@ interface IProps {
 
 export function Bookmarks({ list }: IProps) {
   const [categories, setCategories] = useState(list);
+  const [result, setResult] = useState();
+  const [machineState, setMachineState] = useState();
+
+  useLayoutEffect(() => {
+    const onTransition = (state: State<DefaultContext>) =>
+      setMachineState(state.value.toString());
+
+    machine.onTransition(onTransition).start();
+
+    return () => void machine.stop();
+  }, []);
 
   const handleSearchChange = (value: string) => {
     if (value === "") {
       // when the value is empty, return the original list
-      return setCategories(list);
+      machine.send(ACTIONS.EXIT);
+      setCategories(list);
+      return;
     }
+
+    machine.send(ACTIONS.SEARCH);
 
     const withValue = withLabelOrHref(value);
     // select those categories that contains links with a title
@@ -37,19 +54,29 @@ export function Bookmarks({ list }: IProps) {
       links: []
     });
 
-    setCategories([results]);
+    setResult(results);
   };
 
   return (
     <div>
+      <pre>{machineState}</pre>
       <Search onChange={handleSearchChange} />
-      <List>
-        {categories.map((cat, index) => (
-          <li key={index}>
-            <Category title={cat.title} links={cat.links} />
+      {machineState === STATES.idle && (
+        <List>
+          {categories.map((cat, index) => (
+            <li key={index}>
+              <Category title={cat.title} links={cat.links} />
+            </li>
+          ))}
+        </List>
+      )}
+      {machineState === STATES.searching && (
+        <List>
+          <li>
+            <Category title={result.title} links={result.links} />
           </li>
-        ))}
-      </List>
+        </List>
+      )}
     </div>
   );
 }
