@@ -5,11 +5,12 @@ import { Category } from "./Category";
 
 interface IProps {
   result: ICategory;
+  navIndex: number;
 }
 
-export function SearchResult({ result }: IProps) {
+export function SearchResult({ result, navIndex }: IProps) {
   return (
-    <List>
+    <List navIndex={navIndex}>
       <li>
         <Category title={result.title} links={result.links} />
       </li>
@@ -17,10 +18,14 @@ export function SearchResult({ result }: IProps) {
   );
 }
 
-const List = styled.ul`
+const List = styled.ul<{ navIndex: number }>`
   width: 100%;
 
   li {
     list-style: none;
+  }
+
+  > li > ul > li:nth-child(${({ navIndex }) => navIndex + 1}) > a {
+    color: white;
   }
 `;
