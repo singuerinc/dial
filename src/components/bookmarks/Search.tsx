@@ -8,8 +8,23 @@ interface IProps {
 
 export function Search({ onChange }: IProps) {
   const ref = useRef<HTMLInputElement>(null);
+
   const [value, setValue] = useState<string>("");
   const [hasFocus, setFocus] = useState<boolean>(false);
+
+  const handleBlur = () => setFocus(false);
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Escape" || (event.key === "/" && !hasFocus)) {
+      event.preventDefault();
+      setValue("");
+      setFocus(true);
+    }
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
 
   useEffect(() => {
     ref.current!.focus();
@@ -20,21 +35,6 @@ export function Search({ onChange }: IProps) {
   }, [value]);
 
   useEffect(() => {
-    const handleBlur = () => setFocus(false);
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "/" && !hasFocus) {
-        event.preventDefault();
-        setValue("");
-        setFocus(true);
-      }
-
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setValue("");
-        setFocus(true);
-      }
-    };
-
     ref.current!.addEventListener("blur", handleBlur);
     document.addEventListener("keydown", handleKeyDown);
 
@@ -43,10 +43,6 @@ export function Search({ onChange }: IProps) {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
 
   return <Input ref={ref} autoFocus value={value} onChange={handleChange} />;
 }
