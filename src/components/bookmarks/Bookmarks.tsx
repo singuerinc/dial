@@ -44,6 +44,7 @@ export function Bookmarks({ list: feed }: IProps) {
 
         const totalResults = result.links.length - 1;
         const x = event.key === "ArrowUp" ? -1 : 1;
+        // TODO: use inc/dec
 
         setNavIndex(i => Math.max(0, Math.min(totalResults, i + x)));
       } else if (event.key === "Enter") {
