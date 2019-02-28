@@ -8,6 +8,7 @@ import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
 // TODO: ignore
 import path from "../../user.jpeg";
+import styled from "styled-components";
 
 // TODO: move this to a service
 // @ts-ignore
@@ -22,11 +23,33 @@ const sortedList: ICategory[] = data.default
 
 export function Dial() {
   return (
-    <div>
-      <Clock />
-      <UserProfile name="singuerinc" picture={path} />
-      <HackerNewsFeed />
-      <Bookmarks list={sortedList} />
-    </div>
+    <View>
+      <section>
+        <UserProfile name="singuerinc" picture={path} />
+        <Clock />
+      </section>
+      <section>
+        <Bookmarks list={sortedList} />
+      </section>
+      <section>
+        <HackerNewsFeed />
+      </section>
+    </View>
   );
 }
+
+const View = styled.div`
+  display: flex;
+
+  section:nth-child(1) {
+    flex: 0 0 15%;
+  }
+
+  section:nth-child(2) {
+    flex: 0 0 35%;
+  }
+
+  section:nth-child(3) {
+    flex: 0 0 50%;
+  }
+`;
