@@ -2,9 +2,9 @@ import * as React from "react";
 import { useLayoutEffect, useState, useEffect } from "react";
 import { DefaultContext, State } from "xstate";
 import { ICategory } from "./ICategory";
-import { Search } from "./Search";
-import { SearchResult } from "./SearchResult";
-import { IdleList } from "./IdleList";
+import { Search } from "./search/Search";
+import { SearchResult } from "./search/SearchResult";
+import { IdleList } from "./list/IdleList";
 import { ACTIONS, searchService as machine, STATES } from "./states";
 import { reduceToOne, withLabelOrHref } from "./utils";
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-import { ICategory } from "./ICategory";
-import { Category } from "./Category";
+import { ICategory } from "../ICategory";
+import { Category } from "../list/Category";
 
 interface IProps {
   result?: ICategory;
@@ -12,7 +12,7 @@ export function SearchResult({ result, navIndex }: IProps) {
   return (
     <List navIndex={navIndex}>
       <li>
-        <Category title={result.title} links={result.links} />
+        <Category title={result!.title} links={result!.links} />
       </li>
     </List>
   );

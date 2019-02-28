@@ -4,6 +4,7 @@ import { Bookmarks } from "./bookmarks/Bookmarks";
 import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
 
+// TODO: move this to a service
 // @ts-ignore
 const sortedList: ICategory[] = data.default
   .sort((x: ICategory, y: ICategory) => (x.title > y.title ? 1 : -1))

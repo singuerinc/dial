@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ICategory } from "./ICategory";
+import { ICategory } from "../ICategory";
 import styled from "styled-components";
 
 interface IProps extends ICategory {}
