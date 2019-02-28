@@ -20,17 +20,28 @@ export function Search({ onChange }: IProps) {
   }, [value]);
 
   useEffect(() => {
+    const handleBlur = () => setFocus(false);
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.keyCode === 191 && !hasFocus) {
-        // the "/" key
+      if (event.key === "/" && !hasFocus) {
         event.preventDefault();
+        setValue("");
+        setFocus(true);
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setValue("");
         setFocus(true);
       }
     };
 
+    ref.current!.addEventListener("blur", handleBlur);
     document.addEventListener("keydown", handleKeyDown);
 
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      ref.current!.removeEventListener("blur", handleBlur);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
