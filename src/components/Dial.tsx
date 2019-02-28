@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ICategory } from "./bookmarks/ICategory";
 import { Bookmarks } from "./bookmarks/Bookmarks";
+import { Clock } from "./clock/Clock";
 import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
 
@@ -18,6 +19,7 @@ const sortedList: ICategory[] = data.default
 export function Dial() {
   return (
     <div>
+      <Clock />
       <Bookmarks list={sortedList} />
     </div>
   );
