@@ -14,7 +14,8 @@
     "typescript": "^3.3.3333"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "ramda": "^0.26.1",
