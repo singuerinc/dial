@@ -3,8 +3,10 @@ import { ICategory } from "./bookmarks/ICategory";
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { Clock } from "./clock/Clock";
 import { UserProfile } from "./userProfile/UserProfile";
+import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
 import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
+// TODO: ignore
 import path from "../../user.jpeg";
 
 // TODO: move this to a service
@@ -23,6 +25,7 @@ export function Dial() {
     <div>
       <Clock />
       <UserProfile name="singuerinc" picture={path} />
+      <HackerNewsFeed />
       <Bookmarks list={sortedList} />
     </div>
   );
