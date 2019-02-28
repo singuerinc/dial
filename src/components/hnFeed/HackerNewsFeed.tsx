@@ -1,4 +1,4 @@
-import ky from "ky";
+import axios from "axios";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
@@ -24,10 +24,9 @@ export function HackerNewsFeed() {
 
   useEffect(() => {
     (async () => {
-      await ky
+      await axios
         .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-        .json()
-        .then((all: number[]) => {
+        .then(({ data: all }) => {
           setTop(take(10, all));
         });
     })();
@@ -37,9 +36,9 @@ export function HackerNewsFeed() {
     const result = of(...top).pipe(
       mergeMap(
         id =>
-          ky
+          axios
             .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-            .then(e => e.json()),
+            .then(({ data }) => data),
         undefined,
         1
       )
