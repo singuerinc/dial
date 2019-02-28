@@ -23,7 +23,5 @@ export const sortByLabelCaseInsensitive = sortBy(
 
 export const reduceToOne = (acc: ICategory, y: ICategory) => ({
   title: acc.title,
-  links: sortLinks([...acc.links, ...y.links])
+  links: sortByLabelCaseInsensitive([...acc.links, ...y.links])
 });
-
-export const sortLinks = (links: ILink[]) => sortByLabelCaseInsensitive(links);
