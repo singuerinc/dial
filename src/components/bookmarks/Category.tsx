@@ -1,12 +1,10 @@
 import * as React from "react";
-import { ICategory } from "../ICategory";
+import { ICategory } from "./ICategory";
 import styled from "styled-components";
 
-interface IProps extends ICategory {
-  index: number;
-}
+interface IProps extends ICategory {}
 
-export function Category({ index, title, links }: IProps) {
+export function Category({ title, links }: IProps) {
   return (
     <List>
       <li>

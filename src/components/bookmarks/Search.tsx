@@ -49,3 +49,11 @@ const Input = styled.input`
   color: #fff;
   font-weight: 300;
 `;
+
+const List = styled.ul`
+  width: 100%;
+
+  li {
+    list-style: none;
+  }
+`;
