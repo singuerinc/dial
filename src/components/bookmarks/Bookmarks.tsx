@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useLayoutEffect, useState } from "react";
-import styled from "styled-components";
 import { DefaultContext, State } from "xstate";
-import { Category } from "./Category";
 import { ICategory } from "./ICategory";
 import { Search } from "./Search";
+import { SearchResult } from "./SearchResult";
+import { IdleList } from "./IdleList";
 import { ACTIONS, searchService as machine, STATES } from "./states";
 import { reduceToOne, withLabelOrHref } from "./utils";
 
@@ -12,8 +12,8 @@ interface IProps {
   list: ICategory[];
 }
 
-export function Bookmarks({ list }: IProps) {
-  const [categories, setCategories] = useState(list);
+export function Bookmarks({ list: feed }: IProps) {
+  const [list, setList] = useState(feed);
   const [result, setResult] = useState();
   const [machineState, setMachineState] = useState();
 
@@ -30,7 +30,7 @@ export function Bookmarks({ list }: IProps) {
     if (value === "") {
       // when the value is empty, return the original list
       machine.send(ACTIONS.EXIT);
-      setCategories(list);
+      setList(list);
       return;
     }
 
@@ -61,30 +61,8 @@ export function Bookmarks({ list }: IProps) {
     <div>
       <pre>{machineState}</pre>
       <Search onChange={handleSearchChange} />
-      {machineState === STATES.idle && (
-        <List>
-          {categories.map((cat, index) => (
-            <li key={index}>
-              <Category title={cat.title} links={cat.links} />
-            </li>
-          ))}
-        </List>
-      )}
-      {machineState === STATES.searching && (
-        <List>
-          <li>
-            <Category title={result.title} links={result.links} />
-          </li>
-        </List>
-      )}
+      {machineState === STATES.idle && <IdleList list={list} />}
+      {machineState === STATES.searching && <SearchResult result={result} />}
     </div>
   );
 }
-
-const List = styled.ul`
-  width: 100%;
-
-  li {
-    list-style: none;
-  }
-`;
