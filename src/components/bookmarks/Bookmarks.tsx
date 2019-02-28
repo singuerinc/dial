@@ -1,36 +1,44 @@
 import * as React from "react";
-import { useContext, useState, useRef, useEffect } from "react";
-import { Search } from "./Search";
-import { Category } from "./Category";
-import { contains } from "./utils";
-import { ICategory } from "./ICategory";
+import { useState } from "react";
 import styled from "styled-components";
+import { Category } from "./Category";
+import { ICategory } from "./ICategory";
+import { Search } from "./Search";
+import { withLabelOrHref, reduceToOne } from "./utils";
 
 interface IProps {
-  feed: ICategory[];
+  list: ICategory[];
 }
 
-export function Bookmarks({ feed }: IProps) {
-  const [categories, setCategories] = useState(feed);
+export function Bookmarks({ list }: IProps) {
+  const [categories, setCategories] = useState(list);
 
-  function handleSearchChange(value: string) {
-    // select those categories that contains results
-    const filteredCats = feed.filter(cat => {
-      return cat.links.some(
-        link => contains(value, link.label) || contains(value, link.href)
-      );
-    });
+  const handleSearchChange = (value: string) => {
+    if (value === "") {
+      // when the value is empty, return the original list
+      return setCategories(list);
+    }
 
-    // select only those links that matches the search
+    const withValue = withLabelOrHref(value);
+    // select those categories that contains links with a title
+    // or href that partially matches the value we are currently searching
+    const filteredCats = list.filter(x => x.links.some(withValue));
+
+    // on those filtered categories take only the links that
+    // contains a partial match with the value we are looking for
     const onlyWithLinks = filteredCats.map(cat => {
-      const links = cat.links.filter(
-        link => contains(value, link.label) || contains(value, link.href)
-      );
+      const links = cat.links.filter(withValue);
       return { ...cat, links };
     });
 
-    setCategories(onlyWithLinks);
-  }
+    // create a new category "Results" with all the links that match the search
+    const results: ICategory = onlyWithLinks.reduce(reduceToOne, {
+      title: "Results",
+      links: []
+    });
+
+    setCategories([results]);
+  };
 
   return (
     <div>
