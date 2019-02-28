@@ -12,9 +12,12 @@ interface IProps {
   list: ICategory[];
 }
 
+const canNavigate = (state: string) =>
+  state === STATES.searching || state === STATES.navigating;
+
 export function Bookmarks({ list: feed }: IProps) {
   const [list, setList] = useState(feed);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState<ICategory>();
   const [navIndex, setNavIndex] = useState(0);
   const [machineState, setMachineState] = useState();
 
@@ -34,32 +37,32 @@ export function Bookmarks({ list: feed }: IProps) {
 
         machine.send(ACTIONS.NAVIGATE);
 
-        const totalResults = result.links.length - 1;
+        const totalResults = result!.links.length - 1;
         const x = event.key === "ArrowUp" ? -1 : 1;
 
         setNavIndex(i => Math.max(0, Math.min(totalResults, i + x)));
+      } else if (event.key === "Enter") {
+        window.open(result!.links[navIndex].href);
       }
     };
 
-    if (
-      machineState === STATES.searching ||
-      machineState === STATES.navigating
-    ) {
+    if (canNavigate(machineState)) {
       document.addEventListener("keydown", handleUpDown);
     }
 
     return () => document.removeEventListener("keydown", handleUpDown);
-  }, [machineState]);
+  }, [machineState, navIndex]);
 
   const handleSearchChange = (value: string) => {
     if (value === "") {
-      console.log("value!");
-      // when the value is empty, return the original list
       machine.send(ACTIONS.EXIT);
+
+      // when the value is empty, return the original list
       setList(list);
       return;
     }
 
+    setNavIndex(0);
     machine.send(ACTIONS.SEARCH);
 
     const withValue = withLabelOrHref(value);
@@ -83,14 +86,17 @@ export function Bookmarks({ list: feed }: IProps) {
     setResult(results);
   };
 
+  const isIdle = machineState === STATES.idle;
+  const notIdle =
+    machineState === STATES.searching || machineState === STATES.navigating;
+
   return (
     <div>
       <pre>{machineState}</pre>
       <pre>{navIndex}</pre>
       <Search onChange={handleSearchChange} />
-      {machineState === STATES.idle && <IdleList list={list} />}
-      {(machineState === STATES.searching ||
-        machineState === STATES.navigating) && <SearchResult result={result} />}
+      {isIdle && <IdleList list={list} />}
+      {notIdle && <SearchResult navIndex={navIndex} result={result} />}
     </div>
   );
 }
