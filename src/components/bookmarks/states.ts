@@ -27,7 +27,7 @@ const machine = Machine({
         [ACTIONS.NAVIGATE]: STATES.navigating
       }
     },
-    navigating: {
+    [STATES.navigating]: {
       on: {
         [ACTIONS.EXIT]: STATES.idle,
         [ACTIONS.SEARCH]: STATES.searching

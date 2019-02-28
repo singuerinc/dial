@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 import { DefaultContext, State } from "xstate";
 import { ICategory } from "./ICategory";
 import { Search } from "./Search";
@@ -15,6 +15,7 @@ interface IProps {
 export function Bookmarks({ list: feed }: IProps) {
   const [list, setList] = useState(feed);
   const [result, setResult] = useState();
+  const [navIndex, setNavIndex] = useState(0);
   const [machineState, setMachineState] = useState();
 
   useLayoutEffect(() => {
@@ -26,8 +27,33 @@ export function Bookmarks({ list: feed }: IProps) {
     return () => void machine.stop();
   }, []);
 
+  useEffect(() => {
+    const handleUpDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        event.preventDefault();
+
+        machine.send(ACTIONS.NAVIGATE);
+
+        const totalResults = result.links.length - 1;
+        const x = event.key === "ArrowUp" ? -1 : 1;
+
+        setNavIndex(i => Math.max(0, Math.min(totalResults, i + x)));
+      }
+    };
+
+    if (
+      machineState === STATES.searching ||
+      machineState === STATES.navigating
+    ) {
+      document.addEventListener("keydown", handleUpDown);
+    }
+
+    return () => document.removeEventListener("keydown", handleUpDown);
+  }, [machineState]);
+
   const handleSearchChange = (value: string) => {
     if (value === "") {
+      console.log("value!");
       // when the value is empty, return the original list
       machine.send(ACTIONS.EXIT);
       setList(list);
@@ -60,9 +86,11 @@ export function Bookmarks({ list: feed }: IProps) {
   return (
     <div>
       <pre>{machineState}</pre>
+      <pre>{navIndex}</pre>
       <Search onChange={handleSearchChange} />
       {machineState === STATES.idle && <IdleList list={list} />}
-      {machineState === STATES.searching && <SearchResult result={result} />}
+      {(machineState === STATES.searching ||
+        machineState === STATES.navigating) && <SearchResult result={result} />}
     </div>
   );
 }
