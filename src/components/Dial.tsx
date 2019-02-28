@@ -5,7 +5,7 @@ import * as data from "./bookmarks/data.json";
 import { ILink } from "./bookmarks/ILink";
 
 // @ts-ignore
-const sortedFeed: ICategory[] = data.default
+const sortedList: ICategory[] = data.default
   .sort((x: ICategory, y: ICategory) => (x.title > y.title ? 1 : -1))
   .map((cat: ICategory) => {
     const links = cat.links.sort((x: ILink, y: ILink) =>
@@ -17,7 +17,7 @@ const sortedFeed: ICategory[] = data.default
 export function Dial() {
   return (
     <div>
-      <Bookmarks feed={sortedFeed} />
+      <Bookmarks list={sortedList} />
     </div>
   );
 }

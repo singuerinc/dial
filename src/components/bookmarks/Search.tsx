@@ -23,7 +23,9 @@ export function Search({ onChange }: IProps) {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    const txt = event.target.value;
+    console.log("handleChange!", txt);
+    setValue(txt);
   };
 
   useEffect(() => {
@@ -31,6 +33,8 @@ export function Search({ onChange }: IProps) {
   }, [hasFocus]);
 
   useEffect(() => {
+    console.log("onChange!", value);
+
     onChange(value);
   }, [value]);
 
