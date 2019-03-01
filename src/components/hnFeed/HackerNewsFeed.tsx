@@ -80,21 +80,36 @@ export function HackerNewsFeed() {
 }
 
 const View = styled.ul`
+  font-family: "Roboto";
+  letter-spacing: 0.1em;
   h1 {
     font-size: 2em;
     font-weight: 400;
     color: var(--oc-gray-7);
   }
 
-  li {
-    margin: 0.5em 0;
-    a {
-      font-weight: 300;
-      color: grey;
-      text-decoration: none;
-
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5em;
+    li {
+      background-color: var(--oc-gray-9);
+      border-radius: 3px;
+      flex: 0 1 calc(25% - 1em);
+      margin: 0.5em;
+      transition: background-color 0.3s ease;
+      display: flex;
       &:hover {
-        text-decoration: underline;
+        background-color: var(--oc-gray-8);
+      }
+      a {
+        flex: 0 0 100%;
+        padding: 1em;
+        font-weight: 300;
+        display: block;
+        color: var(--oc-gray-6);
+        text-decoration: none;
       }
     }
   }
