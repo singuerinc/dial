@@ -26,12 +26,10 @@ export function HackerNewsFeed() {
   const [feed, setFeed] = useState<IFeedItem[]>([]);
 
   useEffect(() => {
-    // load the top histories ids and get first 10
+    // load the Top 10 histories ids
     loadTop().then(maybeTop => {
-      compose(
-        setTop,
-        take10
-      )(maybeTop.getOrElse([]));
+      const top = maybeTop.map(take10).getOrElse([]);
+      setTop(top);
     });
   }, []);
 
@@ -66,9 +64,9 @@ export function HackerNewsFeed() {
   }, [top]);
 
   return (
-    <>
+    <View>
       <h1>Hacker News Feed</h1>
-      <View>
+      <ul>
         {feed.map((item: IFeedItem, index) => (
           <li key={index}>
             <a href={item.url} target="_blank">
@@ -76,17 +74,25 @@ export function HackerNewsFeed() {
             </a>
           </li>
         ))}
-      </View>
-    </>
+      </ul>
+    </View>
   );
 }
 
 const View = styled.ul`
-  > li {
-    margin: 1em 0;
-    > a {
+  h1 {
+    color: white;
+  }
+
+  li {
+    margin: 0.5em 0;
+    a {
       color: grey;
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;

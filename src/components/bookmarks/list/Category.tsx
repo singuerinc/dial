@@ -22,7 +22,7 @@ export function Category({ title, links }: IProps) {
 const Title = styled.h1`
   font-size: 2.5em;
   font-weight: 400;
-  color: #fab005;
+  color: var(--oc-gray-7);
   text-transform: capitalize;
 
   @media (min-width: 992px) {
