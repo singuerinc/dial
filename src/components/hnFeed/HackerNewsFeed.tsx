@@ -1,51 +1,62 @@
 import axios from "axios";
+import take from "ramda/es/take";
+import compose from "ramda/es/compose";
+import join from "ramda/es/join";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import styled from "styled-components";
-import take from "ramda/es/take";
+import { IFeedItem } from "./IFeedItem";
+import { load, save } from "./_storage";
+import * as Maybe from "folktale/maybe";
 
-interface IFeedItem {
-  by: string;
-  descendants: number;
-  id: number;
-  kids: number[];
-  score: number;
-  time: number;
-  title: string;
-  type: string;
-  url: string;
-}
+const take10 = take<number>(10);
+
+const loadTop = async () => {
+  return axios
+    .get("https://hacker-news.firebaseio.com/v0/topstories.json")
+    .then(({ data }) => Maybe.Just(data))
+    .catch(() => Maybe.Nothing());
+};
 
 export function HackerNewsFeed() {
   const [top, setTop] = useState<number[]>([]);
   const [feed, setFeed] = useState<IFeedItem[]>([]);
 
   useEffect(() => {
-    (async () => {
-      await axios
-        .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-        .then(({ data: all }) => {
-          setTop(take(10, all));
-        });
-    })();
+    // load the top histories ids and get first 10
+    loadTop()
+      .then(maybeTop => maybeTop.map(take10))
+      .then(maybeTop10 => {
+        if (!Maybe.Nothing.hasInstance(maybeTop10)) {
+          setTop(maybeTop10.getOrElse());
+        }
+      });
   }, []);
 
   useEffect(() => {
-    const result = of(...top).pipe(
-      mergeMap(
-        id =>
-          axios
-            .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-            .then(({ data }) => data),
-        undefined,
-        1
-      )
-    );
+    const loadItem = (id: number) => {
+      // let's try to get the item from localStorage
+      const stored = load(id);
 
-    const subscription = result.subscribe((x: IFeedItem) => {
-      setFeed(feed => [...feed, x]);
+      // if we got Nothing, let's loaded with the API
+      if (Maybe.Nothing.hasInstance(stored)) {
+        return axios
+          .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+          .then(({ data }) => Maybe.Just(data))
+          .catch(() => Maybe.Nothing());
+      }
+      return [stored];
+    };
+
+    const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
+    const subscription = result.subscribe((maybeItem: Maybe) => {
+      if (!Maybe.Nothing.hasInstance(maybeItem)) {
+        const item: IFeedItem = maybeItem.getOrElse();
+        save(item);
+        setFeed(feed => [...feed, item]);
+      }
     });
 
     return () => {
@@ -54,23 +65,27 @@ export function HackerNewsFeed() {
   }, [top]);
 
   return (
-    <View>
-      {feed.map((item: IFeedItem, index) => (
-        <li key={index}>
-          <a href={item.url} target="_blank">
-            {item.title}
-          </a>
-        </li>
-      ))}
-    </View>
+    <>
+      <h1>Hacker News Feed</h1>
+      <View>
+        {feed.map((item: IFeedItem, index) => (
+          <li key={index}>
+            <a href={item.url} target="_blank">
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </View>
+    </>
   );
 }
 
 const View = styled.ul`
-  > li > a {
-    color: grey;
-  }
-
-  @media (min-width: 992px) {
+  > li {
+    margin: 1em 0;
+    > a {
+      color: grey;
+      text-decoration: none;
+    }
   }
 `;
