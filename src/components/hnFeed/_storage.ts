@@ -1,8 +1,9 @@
 import * as Maybe from "folktale/maybe";
 import { IFeedItem } from "./IFeedItem";
 
-export const save = (x: IFeedItem) => {
-  return localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
+export const save = (x: IFeedItem): IFeedItem => {
+  localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
+  return x;
 };
 
 export const load = (id: number): Maybe => {

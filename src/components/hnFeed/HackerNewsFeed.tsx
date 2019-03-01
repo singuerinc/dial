@@ -1,7 +1,7 @@
 import axios from "axios";
 import take from "ramda/es/take";
 import compose from "ramda/es/compose";
-import join from "ramda/es/join";
+import concat from "ramda/es/concat";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
@@ -12,6 +12,7 @@ import { load, save } from "./_storage";
 import * as Maybe from "folktale/maybe";
 
 const take10 = take<number>(10);
+const isNothing = Maybe.Nothing.hasInstance;
 
 const loadTop = async () => {
   return axios
@@ -26,33 +27,33 @@ export function HackerNewsFeed() {
 
   useEffect(() => {
     // load the top histories ids and get first 10
-    loadTop()
-      .then(maybeTop => maybeTop.map(take10))
-      .then(maybeTop10 => {
-        if (!Maybe.Nothing.hasInstance(maybeTop10)) {
-          setTop(maybeTop10.getOrElse());
-        }
-      });
+    loadTop().then(maybeTop => {
+      compose(
+        setTop,
+        take10
+      )(maybeTop.getOrElse([]));
+    });
   }, []);
 
   useEffect(() => {
     const loadItem = (id: number) => {
       // let's try to get the item from localStorage
-      const stored = load(id);
+      const maybeStored = load(id);
 
       // if we got Nothing, let's loaded with the API
-      if (Maybe.Nothing.hasInstance(stored)) {
+      if (isNothing(maybeStored)) {
         return axios
           .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
           .then(({ data }) => Maybe.Just(data))
           .catch(() => Maybe.Nothing());
       }
-      return [stored];
+
+      return [maybeStored];
     };
 
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
-    const subscription = result.subscribe((maybeItem: Maybe) => {
-      if (!Maybe.Nothing.hasInstance(maybeItem)) {
+    const subscription = result.subscribe(maybeItem => {
+      if (!isNothing(maybeItem)) {
         const item: IFeedItem = maybeItem.getOrElse();
         save(item);
         setFeed(feed => [...feed, item]);
