@@ -7,6 +7,7 @@ import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
 import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
 import { UserProfile } from "./userProfile/UserProfile";
+import { Weather } from "./weather/Weather";
 
 export function Dial() {
   return (
@@ -14,6 +15,7 @@ export function Dial() {
       <section>
         <UserProfile name="singuerinc" picture={path} />
         <Clock />
+        <Weather />
       </section>
       <section>
         <HackerNewsFeed />

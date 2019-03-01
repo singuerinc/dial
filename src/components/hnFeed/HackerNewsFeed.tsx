@@ -79,7 +79,7 @@ export function HackerNewsFeed() {
   );
 }
 
-const View = styled.ul`
+const View = styled.div`
   font-family: "Roboto";
   letter-spacing: 0.1em;
   h1 {
