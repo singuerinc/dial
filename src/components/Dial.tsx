@@ -16,10 +16,10 @@ export function Dial() {
         <Clock />
       </section>
       <section>
-        <Bookmarks list={bookmarks} />
+        <HackerNewsFeed />
       </section>
       <section>
-        <HackerNewsFeed />
+        <Bookmarks list={bookmarks} />
       </section>
     </View>
   );
@@ -27,16 +27,5 @@ export function Dial() {
 
 const View = styled.div`
   display: flex;
-
-  section:nth-child(1) {
-    flex: 1 1 25%;
-  }
-
-  section:nth-child(2) {
-    flex: 1 1 35%;
-  }
-
-  section:nth-child(3) {
-    flex: 1 1 50%;
-  }
+  flex-direction: column;
 `;

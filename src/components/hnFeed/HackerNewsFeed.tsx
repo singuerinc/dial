@@ -81,12 +81,15 @@ export function HackerNewsFeed() {
 
 const View = styled.ul`
   h1 {
-    color: white;
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--oc-gray-7);
   }
 
   li {
     margin: 0.5em 0;
     a {
+      font-weight: 300;
       color: grey;
       text-decoration: none;
 
