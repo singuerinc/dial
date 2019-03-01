@@ -3,13 +3,13 @@ import { none, some } from "fp-ts/lib/Option";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ICurrent, IWeather } from "./IWeather";
+import { IWeather } from "./IWeather";
 
 const load = async () => {
+  const KEY = "a4040e11aa1644489e0191018190103";
+  const CITY = "Stockholm";
   return axios
-    .get(
-      "https://api.apixu.com/v1/current.json?key=a4040e11aa1644489e0191018190103&q=Stockholm"
-    )
+    .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${CITY}`)
     .then(({ data }) => some<IWeather>(data))
     .catch(() => none);
 };
