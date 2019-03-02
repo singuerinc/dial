@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
-interface IProps {}
-
-export function Clock({  }: IProps) {
+export function Clock() {
   const [date, setDate] = useState(new Date());
   const update = () => setDate(new Date());
 
@@ -15,11 +13,12 @@ export function Clock({  }: IProps) {
     return () => clearInterval(i);
   }, []);
 
-  return (
-    <View>
-      {to2(date.getHours())}:{to2(date.getMinutes())}
-    </View>
-  );
+  const HH = to2(date.getHours());
+  const mm = to2(date.getMinutes());
+
+  const clock = `${HH}:${mm}`;
+
+  return <View>{clock}</View>;
 }
 
 const View = styled.h1`
