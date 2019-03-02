@@ -1,15 +1,15 @@
-import * as Maybe from "folktale/maybe";
+import { none, some, Option } from "fp-ts/lib/Option";
 import { IFeedItem } from "./IFeedItem";
 
-export const save = (x: IFeedItem): IFeedItem => {
+export const save = (x: IFeedItem): Option<IFeedItem> => {
   localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
-  return x;
+  return some(x);
 };
 
-export const load = (id: number): Maybe => {
+export const load = (id: number): Option<IFeedItem> => {
   const stored = localStorage.getItem(`hn-item-${id}`);
   if (stored !== null) {
-    return Maybe.Just(JSON.parse(stored));
+    return some(JSON.parse(stored));
   }
-  return Maybe.Nothing();
+  return none;
 };
