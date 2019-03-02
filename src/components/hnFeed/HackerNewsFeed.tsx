@@ -1,7 +1,7 @@
 import axios from "axios";
+import { none, some, Option } from "fp-ts/lib/Option";
+import curry from "ramda/es/curry";
 import take from "ramda/es/take";
-import compose from "ramda/es/compose";
-import concat from "ramda/es/concat";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
@@ -9,16 +9,14 @@ import { mergeMap } from "rxjs/operators";
 import styled from "styled-components";
 import { IFeedItem } from "./IFeedItem";
 import { load, save } from "./_storage";
-import * as Maybe from "folktale/maybe";
 
 const take10 = take<number>(10);
-const isNothing = Maybe.Nothing.hasInstance;
 
-const loadTop = async () => {
+const loadTop = async (): Promise<Option<number[]>> => {
   return axios
     .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-    .then(({ data }) => Maybe.Just(data))
-    .catch(() => Maybe.Nothing());
+    .then(({ data }) => some(data))
+    .catch(() => none);
 };
 
 export function HackerNewsFeed() {
@@ -27,9 +25,8 @@ export function HackerNewsFeed() {
 
   useEffect(() => {
     // load the Top 10 histories ids
-    loadTop().then(maybeTop => {
-      const top = maybeTop.map(take10).getOrElse([]);
-      setTop(top);
+    loadTop().then(maybeData => {
+      maybeData.map(take10).map(setTop);
     });
   }, []);
 
@@ -39,11 +36,11 @@ export function HackerNewsFeed() {
       const maybeStored = load(id);
 
       // if we got Nothing, let's loaded with the API
-      if (isNothing(maybeStored)) {
+      if (maybeStored.isNone()) {
         return axios
           .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-          .then(({ data }) => Maybe.Just(data))
-          .catch(() => Maybe.Nothing());
+          .then(({ data }) => some(data))
+          .catch(() => none);
       }
 
       return [maybeStored];
@@ -51,11 +48,9 @@ export function HackerNewsFeed() {
 
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
     const subscription = result.subscribe(maybeItem => {
-      if (!isNothing(maybeItem)) {
-        const item: IFeedItem = maybeItem.getOrElse();
-        save(item);
-        setFeed(feed => [...feed, item]);
-      }
+      maybeItem.map(save).map((x: Option<IFeedItem>) => {
+        setFeed(y => [...y, x.getOrElse()]);
+      });
     });
 
     return () => {

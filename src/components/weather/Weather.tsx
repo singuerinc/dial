@@ -4,8 +4,8 @@ import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { IWeather } from "./IWeather";
 import { CONDITIONS } from "./conditions";
+import { IWeather } from "./IWeather";
 
 const pathToIcon = path<number>(["current", "condition", "code"]);
 const pathToTemp = path<number>(["current", "feelslike_c"]);
