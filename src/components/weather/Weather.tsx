@@ -5,44 +5,45 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IWeather } from "./IWeather";
-import { ICONS } from "./conditions";
+import { CONDITIONS } from "./conditions";
 
-const loadWeather = async (): Promise<Option<IWeather>> => {
+const loadWeather = async (city: string): Promise<Option<IWeather>> => {
   const KEY = "a4040e11aa1644489e0191018190103";
-  const CITY = "Stockholm";
   return axios
-    .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${CITY}`)
+    .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${city}`)
     .then(({ data }) => some(data))
     .catch(() => none);
 };
 
 export function Weather() {
   const [temp, setTemp] = useState<number>();
-  const [icon, setIcon] = useState<number>();
+  const [icon, setIcon] = useState<number>(0);
 
   useEffect(() => {
-    loadWeather().then(data => {
+    const CITY = "Stockholm"; // TODO: dynamic
+
+    loadWeather(CITY).then(data => {
       // feels like temperature
       const pathToTemp = path<number>(["current", "feelslike_c"]);
       const t = data.map(pathToTemp);
-      setTemp(t.getOrElse(1)); // TODO: else should be something else
+      setTemp(t.getOrElse(1)); // TODO: temp should be something else
 
       // icon
       const pathToIcon = path<number>(["current", "condition", "code"]);
       const icon = data.map(pathToIcon);
-      setIcon(icon.getOrElse(-1)); // TODO: else should be something else
+      setIcon(icon.getOrElse(0)!);
     });
   }, []);
 
   return (
-    <V>
-      <i className={`wi wi-${ICONS[icon]}`} />
+    <Wrapper>
+      <i className={`wi wi-${CONDITIONS[icon]}`} />
       <h2>{temp} °C</h2>
-    </V>
+    </Wrapper>
   );
 }
 
-const V = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex: 1 0 auto;
   flex-direction: row;
