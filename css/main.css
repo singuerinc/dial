@@ -1,3 +1,5 @@
+@import url("../node_modules/weather-icons/css/weather-icons.min.css");
+
 :root {
   --oc-gray-0: #f8f9fa;
   --oc-gray-1: #f1f3f5;
