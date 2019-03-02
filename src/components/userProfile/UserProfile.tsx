@@ -23,8 +23,8 @@ const View = styled.div`
   align-items: center;
 
   > picture {
-    flex: 0 0 50px;
-    height: 50px;
+    flex: 0 0 55px;
+    height: 55px;
     display: block;
     border-radius: 50%;
 
@@ -35,8 +35,8 @@ const View = styled.div`
       position: absolute;
       top: -4px;
       left: -4px;
-      width: 54px;
-      height: 54px;
+      width: 59px;
+      height: 59px;
       border: 2px solid #444;
       content: "";
       border-radius: 50%;
