@@ -1,6 +1,7 @@
-export const ICONS: {
+export const CONDITIONS: {
   [code: number]: string;
 } = {
+  0: "",
   1000: "day-sunny",
   1003: "day-cloudy",
   1006: "cloud",

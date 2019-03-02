@@ -12,12 +12,10 @@ import { Weather } from "./weather/Weather";
 export function Dial() {
   return (
     <View>
-      <section>
-        <div className="flex">
-          <UserProfile name="singuerinc" picture={path} />
-          <Clock />
-          <Weather />
-        </div>
+      <section className="flex">
+        <UserProfile name="singuerinc" picture={path} />
+        <Clock />
+        <Weather />
       </section>
       <section>
         <HackerNewsFeed />
