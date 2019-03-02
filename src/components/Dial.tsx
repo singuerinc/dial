@@ -13,9 +13,11 @@ export function Dial() {
   return (
     <View>
       <section>
-        <UserProfile name="singuerinc" picture={path} />
-        <Clock />
-        <Weather />
+        <div className="flex">
+          <UserProfile name="singuerinc" picture={path} />
+          <Clock />
+          <Weather />
+        </div>
       </section>
       <section>
         <HackerNewsFeed />
@@ -30,4 +32,9 @@ export function Dial() {
 const View = styled.div`
   display: flex;
   flex-direction: column;
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
 `;

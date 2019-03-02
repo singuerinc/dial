@@ -27,7 +27,7 @@ const View = styled.h1`
   margin: 0;
   font-size: 3em;
   font-weight: 400;
-  color: #fff;
+  color: var(--oc-gray-1);
   text-transform: capitalize;
 
   @media (min-width: 992px) {
