@@ -7,6 +7,9 @@ import styled from "styled-components";
 import { IWeather } from "./IWeather";
 import { CONDITIONS } from "./conditions";
 
+const pathToIcon = path<number>(["current", "condition", "code"]);
+const pathToTemp = path<number>(["current", "feelslike_c"]);
+
 const loadWeather = async (city: string): Promise<Option<IWeather>> => {
   const KEY = "a4040e11aa1644489e0191018190103";
   return axios
@@ -17,21 +20,14 @@ const loadWeather = async (city: string): Promise<Option<IWeather>> => {
 
 export function Weather() {
   const [temp, setTemp] = useState<number>();
-  const [icon, setIcon] = useState<number>(0);
+  const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
     const CITY = "Stockholm"; // TODO: dynamic
 
     loadWeather(CITY).then(data => {
-      // feels like temperature
-      const pathToTemp = path<number>(["current", "feelslike_c"]);
-      const t = data.map(pathToTemp);
-      setTemp(t.getOrElse(1)); // TODO: temp should be something else
-
-      // icon
-      const pathToIcon = path<number>(["current", "condition", "code"]);
-      const icon = data.map(pathToIcon);
-      setIcon(icon.getOrElse(0)!);
+      data.map(pathToTemp).map(setTemp);
+      data.map(pathToIcon).map(setIcon);
     });
   }, []);
 
