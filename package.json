@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "folktale": "^2.3.2",
     "fp-ts": "^1.14.3",
     "ramda": "^0.26.1",
     "react": "^16.8.3",

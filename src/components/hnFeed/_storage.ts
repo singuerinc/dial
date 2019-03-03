@@ -1,9 +1,9 @@
 import { none, some, Option } from "fp-ts/lib/Option";
 import { IFeedItem } from "./IFeedItem";
 
-export const save = (x: IFeedItem): Option<IFeedItem> => {
+export const save = (x: IFeedItem) => {
   localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
-  return some(x);
+  return x;
 };
 
 export const load = (id: number): Option<IFeedItem> => {
