@@ -6,9 +6,9 @@ const to2 = (x: number) => String(x).padStart(2, "0");
 
 export function Clock() {
   const [date, setDate] = useState(new Date());
-  const update = () => setDate(new Date());
 
   useEffect(() => {
+    const update = () => setDate(new Date());
     const i = setInterval(update, 10000);
     return () => clearInterval(i);
   }, []);
@@ -16,9 +16,9 @@ export function Clock() {
   const HH = to2(date.getHours());
   const mm = to2(date.getMinutes());
 
-  const clock = `${HH}:${mm}`;
+  const time = `${HH}:${mm}`;
 
-  return <View>{clock}</View>;
+  return <View>{time}</View>;
 }
 
 const View = styled.h1`
