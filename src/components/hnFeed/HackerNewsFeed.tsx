@@ -49,17 +49,9 @@ export function HackerNewsFeed() {
 
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
     const subscription = result.subscribe(maybeItem => {
-      console.log(
-        maybeItem.map(save).map(x => {
-          setFeed(feed => [...feed, x]);
-          return x;
-        })
-        // compose(
-        //   setFeed,
-        //   concat(feed)
-        // )
-        // )
-      );
+      maybeItem.map(save).map(x => {
+        setFeed(feed => [...feed, x]);
+      });
     });
 
     return () => {
