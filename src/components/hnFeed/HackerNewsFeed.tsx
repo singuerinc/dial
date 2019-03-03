@@ -9,6 +9,7 @@ import { mergeMap } from "rxjs/operators";
 import styled from "styled-components";
 import { IFeedItem } from "./IFeedItem";
 import { load, save } from "./_storage";
+import { compose, concat } from "fp-ts/lib/function";
 
 const take10 = take<number>(10);
 
@@ -48,9 +49,17 @@ export function HackerNewsFeed() {
 
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
     const subscription = result.subscribe(maybeItem => {
-      maybeItem.map(save).map((x: Option<IFeedItem>) => {
-        setFeed(y => [...y, x.getOrElse()]);
-      });
+      console.log(
+        maybeItem.map(save).map(x => {
+          setFeed(feed => [...feed, x]);
+          return x;
+        })
+        // compose(
+        //   setFeed,
+        //   concat(feed)
+        // )
+        // )
+      );
     });
 
     return () => {
