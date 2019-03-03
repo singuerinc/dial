@@ -1,5 +1,5 @@
 import axios from "axios";
-import { none, some, Option } from "fp-ts/lib/Option";
+import { none, some, Option, Some } from "fp-ts/lib/Option";
 import curry from "ramda/es/curry";
 import take from "ramda/es/take";
 import * as React from "react";
@@ -32,7 +32,9 @@ export function HackerNewsFeed() {
   }, []);
 
   useEffect(() => {
-    const loadItem = (id: number) => {
+    const loadItem = (
+      id: number
+    ): Some<IFeedItem>[] | Promise<Option<IFeedItem>> => {
       // let's try to get the item from localStorage
       const maybeStored = load(id);
 
