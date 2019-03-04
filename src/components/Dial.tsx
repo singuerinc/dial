@@ -12,8 +12,8 @@ import { Weather } from "./weather/Weather";
 
 export function Dial() {
   return (
-    <View>
-      <section className="flex">
+    <div className="flex flex-column">
+      <section className="flex items-center">
         <UserProfile name="singuerinc" picture={path} />
         <Clock />
         <Weather />
@@ -24,11 +24,6 @@ export function Dial() {
       <section>
         <Bookmarks list={bookmarks} />
       </section>
-    </View>
+    </div>
   );
 }
-
-const View = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
