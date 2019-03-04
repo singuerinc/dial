@@ -28,7 +28,7 @@ export const getItemFromLocalStorage = <T>(key: string): Either<Error, T> => {
 //   return x;
 // };
 
-// export const saveInLocalStorage = (x: IFeedItem) => {
-//   localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
-//   return x;
-// };
+export const saveInLocalStorage = (x: IFeedItem) => {
+  localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));
+  return x;
+};
