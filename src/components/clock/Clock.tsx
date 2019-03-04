@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
@@ -18,17 +17,5 @@ export function Clock() {
 
   const time = `${HH}:${mm}`;
 
-  return <View className="fw4">{time}</View>;
+  return <h2 className="ma0 fw4 f1 f-5-l near-white">{time}</h2>;
 }
-
-const View = styled.h1`
-  padding: 0;
-  margin: 0;
-  font-size: 3em;
-  color: var(--oc-gray-1);
-  text-transform: capitalize;
-
-  @media (min-width: 992px) {
-    font-size: 4em;
-  }
-`;
