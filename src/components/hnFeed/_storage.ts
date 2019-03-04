@@ -1,8 +1,8 @@
-import { IO } from "fp-ts/lib/IO";
-import { fromNullable, none, Option, some } from "fp-ts/lib/Option";
-import { IFeedItem } from "./IFeedItem";
 import { Either, tryCatch2v } from "fp-ts/lib/Either";
+import { IO } from "fp-ts/lib/IO";
+import { fromNullable } from "fp-ts/lib/Option";
 import uniq from "ramda/es/uniq";
+import { IFeedItem } from "./IFeedItem";
 
 export const parse = <T>(s: string): Either<Error, T> => {
   return tryCatch2v(() => JSON.parse(s), reason => new Error(String(reason)));
@@ -22,11 +22,6 @@ export const getItemFromLocalStorage = <T>(key: string): Either<Error, T> => {
   const value = task.run().getOrElse("");
   return parse(value);
 };
-
-// export const saveIdsInLocalStorage = (x: number) => {
-//   localStorage.setItem(`hn-item-ids`, JSON.stringify(x));
-//   return x;
-// };
 
 export const saveInLocalStorage = (x: IFeedItem) => {
   localStorage.setItem(`hn-item-${x.id}`, JSON.stringify(x));

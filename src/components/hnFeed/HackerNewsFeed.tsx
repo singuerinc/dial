@@ -1,6 +1,6 @@
-import without from "ramda/es/without";
-import take from "ramda/es/take";
 import curry from "ramda/es/curry";
+import take from "ramda/es/take";
+import without from "ramda/es/without";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
@@ -9,11 +9,10 @@ import styled from "styled-components";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem } from "./IFeedItem";
 import {
-  setViewedInLocalStorage,
+  getItemFromLocalStorage,
   saveInLocalStorage,
-  getItemFromLocalStorage
+  setViewedInLocalStorage
 } from "./_storage";
-import { Either } from "fp-ts/lib/Either";
 
 const take10 = take<number>(10);
 
