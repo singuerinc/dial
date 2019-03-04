@@ -8,7 +8,12 @@ import { mergeMap } from "rxjs/operators";
 import styled from "styled-components";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem } from "./IFeedItem";
-import { setViewedInLocalStorage, getItemFromLocalStorage } from "./_storage";
+import {
+  setViewedInLocalStorage,
+  saveInLocalStorage,
+  getItemFromLocalStorage
+} from "./_storage";
+import { Either } from "fp-ts/lib/Either";
 
 const take10 = take<number>(10);
 
@@ -22,9 +27,17 @@ const setAsNotViewed = (x: IFeedItem): IFeedItem => ({
 });
 
 const loadItem = (id: number) => {
-  return fetch<IFeedItem>(
-    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-  ).run();
+  // let's try to get it from localStorage
+  const maybeItem = getItemFromLocalStorage<IFeedItem>(`hn-item-${id}`);
+
+  if (maybeItem.isLeft()) {
+    // the item is not in cache, let's load it from the API
+    return fetch<IFeedItem>(
+      `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+    ).run();
+  }
+
+  return [maybeItem];
 };
 
 export function HackerNewsFeed() {
@@ -53,9 +66,12 @@ export function HackerNewsFeed() {
   useEffect(() => {
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
     const subscription = result.subscribe(maybeItem => {
-      maybeItem.map(setAsNotViewed).map(x => {
-        setFeed(feed => [...feed, x]);
-      });
+      maybeItem
+        .map(saveInLocalStorage)
+        .map(setAsNotViewed)
+        .map(x => {
+          setFeed(feed => [...feed, x]);
+        });
     });
 
     return () => {
