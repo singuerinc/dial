@@ -3,7 +3,6 @@ import { none, Option, some } from "fp-ts/lib/Option";
 import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
 
@@ -32,28 +31,9 @@ export function Weather() {
   }, []);
 
   return (
-    <Wrapper>
-      <i className={`wi wi-${CONDITIONS[icon]}`} />
-      <h2 className="fw4">{temp} °C</h2>
-    </Wrapper>
+    <div className="flex flex-grow-1 flex-shrink-0 flex-row items-center mh3">
+      <i className={`silver mr2 f2 wi wi-${CONDITIONS[icon || 0]}`} />
+      <h2 className="ma0 fw4 f1 f-5-l near-white">{temp} °C</h2>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: row;
-  align-items: center;
-  margin: 0 1em;
-
-  i {
-    color: white;
-    font-size: 3em;
-  }
-
-  h2 {
-    font-size: 4em;
-    margin: 0 0 0 0.2em;
-    color: var(--oc-gray-1);
-  }
-`;
