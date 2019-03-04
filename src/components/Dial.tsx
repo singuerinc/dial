@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "styled-components";
 import "tachyons/css/tachyons.min.css";
 // @ts-ignore
 import path from "../../user.jpeg";
