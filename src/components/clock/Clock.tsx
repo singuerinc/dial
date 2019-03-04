@@ -18,14 +18,13 @@ export function Clock() {
 
   const time = `${HH}:${mm}`;
 
-  return <View>{time}</View>;
+  return <View className="fw4">{time}</View>;
 }
 
 const View = styled.h1`
   padding: 0;
   margin: 0;
   font-size: 3em;
-  font-weight: 400;
   color: var(--oc-gray-1);
   text-transform: capitalize;
 

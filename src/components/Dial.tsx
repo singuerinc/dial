@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import "tachyons/css/tachyons.min.css";
 // @ts-ignore
 import path from "../../user.jpeg";
 import { Bookmarks } from "./bookmarks/Bookmarks";
@@ -30,9 +31,4 @@ export function Dial() {
 const View = styled.div`
   display: flex;
   flex-direction: column;
-
-  .flex {
-    display: flex;
-    align-items: center;
-  }
 `;

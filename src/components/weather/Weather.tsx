@@ -34,7 +34,7 @@ export function Weather() {
   return (
     <Wrapper>
       <i className={`wi wi-${CONDITIONS[icon]}`} />
-      <h2>{temp} °C</h2>
+      <h2 className="fw4">{temp} °C</h2>
     </Wrapper>
   );
 }
@@ -53,7 +53,6 @@ const Wrapper = styled.div`
 
   h2 {
     font-size: 4em;
-    font-weight: 400;
     margin: 0 0 0 0.2em;
     color: var(--oc-gray-1);
   }

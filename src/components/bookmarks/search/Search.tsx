@@ -44,7 +44,15 @@ export function Search({ onChange }: IProps) {
     };
   }, []);
 
-  return <Input ref={ref} autoFocus value={value} onChange={handleChange} />;
+  return (
+    <Input
+      className="fw3"
+      ref={ref}
+      autoFocus
+      value={value}
+      onChange={handleChange}
+    />
+  );
 }
 
 const Input = styled.input`
@@ -54,13 +62,4 @@ const Input = styled.input`
   padding: 0.3em 0;
   background-color: transparent;
   color: #fff;
-  font-weight: 300;
-`;
-
-const List = styled.ul`
-  width: 100%;
-
-  li {
-    list-style: none;
-  }
 `;

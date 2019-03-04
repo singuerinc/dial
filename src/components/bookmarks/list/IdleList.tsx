@@ -9,16 +9,12 @@ interface IProps {
 
 export function IdleList({ list }: IProps) {
   return (
-    <List>
+    <ul className="list ma0 pa0">
       {list.map((x, index) => (
         <li key={index}>
           <Category title={x.title} links={x.links} />
         </li>
       ))}
-    </List>
+    </ul>
   );
 }
-
-const List = styled.ul`
-  width: 100%;
-`;

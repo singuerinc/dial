@@ -89,11 +89,15 @@ export function HackerNewsFeed() {
 
   return (
     <View>
-      <h1>Hacker News Feed</h1>
-      <ul>
+      <h1 className="fw4">Hacker News Feed</h1>
+      <ul className="list pa0">
         {feed.map((item: IFeedItem, index) => (
           <li key={index}>
-            <Link viewed={item.viewed} onClick={handleClick(item)}>
+            <Link
+              className="fw3"
+              viewed={item.viewed}
+              onClick={handleClick(item)}
+            >
               {item.title}
             </Link>
           </li>
@@ -104,11 +108,8 @@ export function HackerNewsFeed() {
 }
 
 const View = styled.div`
-  font-family: "Roboto";
   letter-spacing: 0.1em;
   h1 {
-    font-size: 2em;
-    font-weight: 400;
     color: var(--oc-gray-7);
   }
 
@@ -134,7 +135,6 @@ const View = styled.div`
 const Link = styled.a<{ viewed: boolean }>`
   flex: 0 0 100%;
   padding: 1em;
-  font-weight: 300;
   display: block;
   color: ${({ viewed }) => (viewed ? "var(--oc-gray-8)" : "var(--oc-gray-6)")};
   text-decoration: ${({ viewed }) => (viewed ? "line-through" : "none")};
