@@ -87,19 +87,23 @@ export function HackerNewsFeed() {
     window.open(item.url);
   };
 
+  const textColor = (x: boolean) => (x ? "white" : "moon-gray");
+  const textDecoration = (x: boolean) => (x ? "strike" : "no-underline");
+
   return (
-    <View>
-      <h1 className="fw4">Hacker News Feed</h1>
-      <ul className="list pa0">
+    <View className="tracked">
+      <h1 className="fw4 near-white">Hacker News Feed</h1>
+      <ul className="list pa0 w-100 flex flex-wrap">
         {feed.map((item: IFeedItem, index) => (
-          <li key={index}>
-            <Link
-              className="fw3"
-              viewed={item.viewed}
+          <li key={index} className="flex br2 hover-bg-black bg-animate">
+            <a
+              className={`w-100 flex-shrink-0 flex-grown-0 pointer fw3 f5 db pa3 ${textColor(
+                item.viewed
+              )} ${textDecoration(item.viewed)}`}
               onClick={handleClick(item)}
             >
               {item.title}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -108,35 +112,11 @@ export function HackerNewsFeed() {
 }
 
 const View = styled.div`
-  letter-spacing: 0.1em;
-  h1 {
-    color: var(--oc-gray-7);
-  }
-
   ul {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 -0.5em;
     li {
-      background-color: var(--oc-gray-9);
-      border-radius: 3px;
       flex: 0 1 calc(25% - 1em);
       margin: 0.5em;
-      transition: background-color 0.3s ease;
-      display: flex;
-      &:hover {
-        background-color: var(--oc-gray-8);
-      }
     }
   }
-`;
-
-const Link = styled.a<{ viewed: boolean }>`
-  flex: 0 0 100%;
-  padding: 1em;
-  display: block;
-  color: ${({ viewed }) => (viewed ? "var(--oc-gray-8)" : "var(--oc-gray-6)")};
-  text-decoration: ${({ viewed }) => (viewed ? "line-through" : "none")};
-  cursor: pointer;
 `;
