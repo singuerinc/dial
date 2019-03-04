@@ -8,4 +8,5 @@ export interface IFeedItem {
   title: string;
   type: string;
   url: string;
+  viewed: boolean;
 }

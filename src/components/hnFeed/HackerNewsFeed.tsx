@@ -1,23 +1,30 @@
-import axios from "axios";
-import { none, some, Option, Some } from "fp-ts/lib/Option";
-import curry from "ramda/es/curry";
+import without from "ramda/es/without";
 import take from "ramda/es/take";
+import curry from "ramda/es/curry";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import styled from "styled-components";
+import { fetch } from "../../utils/fetch";
 import { IFeedItem } from "./IFeedItem";
-import { load, save } from "./_storage";
-import { compose, concat } from "fp-ts/lib/function";
+import { setViewedInLocalStorage, getItemFromLocalStorage } from "./_storage";
 
 const take10 = take<number>(10);
 
-const loadTop = async (): Promise<Option<number[]>> => {
-  return axios
-    .get("https://hacker-news.firebaseio.com/v0/topstories.json")
-    .then(({ data }) => some(data))
-    .catch(() => none);
+const rejectViewed = curry((arr1: number[], arr2: number[]) => {
+  return without(arr1, arr2);
+});
+
+const setAsNotViewed = (x: IFeedItem): IFeedItem => ({
+  ...x,
+  viewed: false
+});
+
+const loadItem = (id: number) => {
+  return fetch<IFeedItem>(
+    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+  ).run();
 };
 
 export function HackerNewsFeed() {
@@ -25,33 +32,28 @@ export function HackerNewsFeed() {
   const [feed, setFeed] = useState<IFeedItem[]>([]);
 
   useEffect(() => {
-    // load the Top 10 histories ids
-    loadTop().then(maybeData => {
-      maybeData.map(take10).map(setTop);
-    });
+    // get from localStorage those ids that already viewed
+    const viewedIDs = getItemFromLocalStorage<number[]>("hn-viewed").getOrElse(
+      []
+    );
+
+    const task = fetch<number[]>(
+      "https://hacker-news.firebaseio.com/v0/topstories.json"
+    );
+
+    // top 10 IDs and not viewed
+    task.run().then(num =>
+      num
+        .map(rejectViewed(viewedIDs))
+        .map(take10)
+        .map(setTop)
+    );
   }, []);
 
   useEffect(() => {
-    const loadItem = (
-      id: number
-    ): Some<IFeedItem>[] | Promise<Option<IFeedItem>> => {
-      // let's try to get the item from localStorage
-      const maybeStored = load(id);
-
-      // if we got Nothing, let's loaded with the API
-      if (maybeStored.isNone()) {
-        return axios
-          .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-          .then(({ data }) => some(data))
-          .catch(() => none);
-      }
-
-      return [maybeStored];
-    };
-
     const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
     const subscription = result.subscribe(maybeItem => {
-      maybeItem.map(save).map(x => {
+      maybeItem.map(setAsNotViewed).map(x => {
         setFeed(feed => [...feed, x]);
       });
     });
@@ -61,15 +63,24 @@ export function HackerNewsFeed() {
     };
   }, [top]);
 
+  const handleClick = (item: IFeedItem) => () => {
+    setViewedInLocalStorage(item.id);
+
+    const updated = feed.map(x => (x === item ? { ...x, viewed: true } : x));
+    setFeed(updated);
+
+    window.open(item.url);
+  };
+
   return (
     <View>
       <h1>Hacker News Feed</h1>
       <ul>
         {feed.map((item: IFeedItem, index) => (
           <li key={index}>
-            <a href={item.url} target="_blank">
+            <Link viewed={item.viewed} onClick={handleClick(item)}>
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -101,14 +112,16 @@ const View = styled.div`
       &:hover {
         background-color: var(--oc-gray-8);
       }
-      a {
-        flex: 0 0 100%;
-        padding: 1em;
-        font-weight: 300;
-        display: block;
-        color: var(--oc-gray-6);
-        text-decoration: none;
-      }
     }
   }
+`;
+
+const Link = styled.a<{ viewed: boolean }>`
+  flex: 0 0 100%;
+  padding: 1em;
+  font-weight: 300;
+  display: block;
+  color: ${({ viewed }) => (viewed ? "var(--oc-gray-8)" : "var(--oc-gray-6)")};
+  text-decoration: ${({ viewed }) => (viewed ? "line-through" : "none")};
+  cursor: pointer;
 `;
