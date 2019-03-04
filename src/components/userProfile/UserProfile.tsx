@@ -9,48 +9,28 @@ interface IProps {
 
 export function UserProfile({ name, picture }: IProps) {
   return (
-    <View>
-      <picture>
-        <img className="w-100" src={picture} />
-      </picture>
-      <h1 className="fw4">{name}</h1>
-    </View>
+    <div className="flex items-center">
+      <Picture className="db br-100 mr3 relative">
+        <img className="w-100 br-100 overflow-hidden" src={picture} />
+      </Picture>
+      <h1 className="fw4 flex-auto yellow">{name}</h1>
+    </div>
   );
 }
 
-const View = styled.div`
-  display: flex;
-  align-items: center;
+const Picture = styled.picture`
+  flex: 0 0 55px;
+  height: 55px;
 
-  > picture {
-    flex: 0 0 55px;
-    height: 55px;
-    display: block;
+  &:after {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 59px;
+    height: 59px;
+    border: 2px solid #444;
+    content: "";
     border-radius: 50%;
-
-    margin-right: 1em;
-    position: relative;
-
-    &:after {
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      width: 59px;
-      height: 59px;
-      border: 2px solid #444;
-      content: "";
-      border-radius: 50%;
-      z-index: 2;
-    }
-  }
-
-  > picture > img {
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  > h1 {
-    flex: 1 1 auto;
-    color: #fab005;
+    z-index: 2;
   }
 `;
