@@ -11,9 +11,9 @@ export function UserProfile({ name, picture }: IProps) {
   return (
     <View>
       <picture>
-        <img src={picture} />
+        <img className="w-100" src={picture} />
       </picture>
-      <h1>{name}</h1>
+      <h1 className="fw4">{name}</h1>
     </View>
   );
 }
@@ -47,15 +47,10 @@ const View = styled.div`
   > picture > img {
     border-radius: 50%;
     overflow: hidden;
-    width: 100%;
   }
 
   > h1 {
     flex: 1 1 auto;
     color: #fab005;
-    font-weight: 400;
-  }
-
-  @media (min-width: 992px) {
   }
 `;

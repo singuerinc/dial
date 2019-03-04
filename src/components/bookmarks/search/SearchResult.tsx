@@ -10,7 +10,7 @@ interface IProps {
 
 export function SearchResult({ result, navIndex }: IProps) {
   return (
-    <List navIndex={navIndex}>
+    <List navIndex={navIndex} className="list">
       <li>
         <Category title={result!.title} links={result!.links} />
       </li>
