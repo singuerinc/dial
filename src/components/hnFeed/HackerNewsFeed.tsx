@@ -91,13 +91,13 @@ export function HackerNewsFeed() {
   const textDecoration = (x: boolean) => (x ? "strike" : "no-underline");
 
   return (
-    <View className="tracked">
-      <h1 className="fw4 near-white">Hacker News Feed</h1>
-      <ul className="list pa0 w-100 flex flex-wrap">
+    <div>
+      <h1 className="fw4 f3">Hacker News Feed</h1>
+      <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
-          <li key={index} className="flex br2 hover-bg-black bg-animate">
+          <li key={index} className="flex w-100 mv2">
             <a
-              className={`w-100 flex-shrink-0 flex-grown-0 pointer fw3 f5 db pa3 ${textColor(
+              className={`sans pointer underline-hover link fw3 f6 db ${textColor(
                 item.viewed
               )} ${textDecoration(item.viewed)}`}
               onClick={handleClick(item)}
@@ -107,16 +107,6 @@ export function HackerNewsFeed() {
           </li>
         ))}
       </ul>
-    </View>
+    </div>
   );
 }
-
-const View = styled.div`
-  ul {
-    margin: 0 -0.5em;
-    li {
-      flex: 0 1 calc(25% - 1em);
-      margin: 0.5em;
-    }
-  }
-`;

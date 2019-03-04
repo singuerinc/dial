@@ -7,40 +7,16 @@ interface IProps extends ICategory {}
 export function Category({ title, links }: IProps) {
   return (
     <>
-      <Title className="ttc fw4">{title}</Title>
+      <h1 className="ttc fw4 moon-gray">{title}</h1>
       <ul className="list ma0 pa0 mb2">
         {links.map((link, index) => (
           <li key={index}>
-            <Link className="fw4" href={link.href}>
+            <a className="f3 f4-l fw4 silver hover-white link" href={link.href}>
               {link.label}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
     </>
   );
 }
-
-const Title = styled.h1`
-  font-size: 2.5em;
-  color: var(--oc-gray-7);
-
-  @media (min-width: 992px) {
-    font-size: 2em;
-  }
-`;
-
-const Link = styled.a`
-  font-size: 1.7em;
-  color: var(--oc-gray-6);
-  text-decoration: none;
-  transition: color 0.1s ease;
-
-  :hover {
-    color: #fff;
-  }
-
-  @media (min-width: 992px) {
-    font-size: 1.3em;
-  }
-`;

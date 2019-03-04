@@ -13,17 +13,19 @@ import { Weather } from "./weather/Weather";
 export function Dial() {
   return (
     <div className="flex flex-column">
-      <section className="flex items-center">
-        <UserProfile name="singuerinc" picture={path} />
-        <Clock />
-        <Weather />
-      </section>
-      <section>
-        <HackerNewsFeed />
-      </section>
-      <section>
-        <Bookmarks list={bookmarks} />
-      </section>
+      <div className="flex flex-row">
+        <section className="flex flex-column w-34">
+          <UserProfile name="singuerinc" picture={path} />
+          <Weather />
+          <Clock />
+        </section>
+        <section className="flex w-50">
+          <Bookmarks list={bookmarks} />
+        </section>
+        <section>
+          <HackerNewsFeed />
+        </section>
+      </div>
     </div>
   );
 }
