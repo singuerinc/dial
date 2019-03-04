@@ -10,7 +10,7 @@ interface IProps {
 
 export function SearchResult({ result, navIndex }: IProps) {
   return (
-    <List navIndex={navIndex} className="list">
+    <List navIndex={navIndex} className="list ma0 pa0 w-100">
       <li>
         <Category title={result!.title} links={result!.links} />
       </li>
@@ -19,12 +19,6 @@ export function SearchResult({ result, navIndex }: IProps) {
 }
 
 const List = styled.ul<{ navIndex: number }>`
-  width: 100%;
-
-  li {
-    list-style: none;
-  }
-
   > li > ul > li:nth-child(${({ navIndex }) => navIndex + 1}) > a {
     color: white;
   }

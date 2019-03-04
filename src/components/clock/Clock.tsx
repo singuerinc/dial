@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
@@ -17,5 +18,7 @@ export function Clock() {
 
   const time = `${HH}:${mm}`;
 
-  return <h2 className="ma0 fw4 f1 f-5-l near-white">{time}</h2>;
+  return <Time className="flex ma0 fw4 f2">{time}</Time>;
 }
+
+const Time = styled.h2``;

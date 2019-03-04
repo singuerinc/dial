@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 interface IProps {
   onChange: (value: string) => void;
+  visible: boolean;
 }
 
-export function Search({ onChange }: IProps) {
+export function Search({ onChange, visible }: IProps) {
   const ref = useRef<HTMLInputElement>(null);
 
   const [value, setValue] = useState<string>("");
@@ -46,10 +47,11 @@ export function Search({ onChange }: IProps) {
 
   return (
     <Input
+      placeholder="Search..."
       className="fw3"
       ref={ref}
-      autoFocus
       value={value}
+      autoFocus
       onChange={handleChange}
     />
   );

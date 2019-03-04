@@ -9,11 +9,11 @@ interface IProps {
 
 export function UserProfile({ name, picture }: IProps) {
   return (
-    <div className="flex items-center">
+    <div className="flex w-33 items-center">
       <Picture className="db br-100 mr3 relative">
-        <img className="w-100 br-100 overflow-hidden" src={picture} />
+        <img className="br-100 img overflow-hidden" src={picture} />
       </Picture>
-      <h1 className="fw4 flex-auto yellow">{name}</h1>
+      <h1 className="fw4">{name}</h1>
     </div>
   );
 }
@@ -21,6 +21,10 @@ export function UserProfile({ name, picture }: IProps) {
 const Picture = styled.picture`
   flex: 0 0 55px;
   height: 55px;
+
+  > img {
+    width: 55px;
+  }
 
   &:after {
     position: absolute;

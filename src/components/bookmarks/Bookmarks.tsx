@@ -95,9 +95,9 @@ export function Bookmarks({ list: feed }: IProps) {
 
   return (
     <div>
-      {/* <pre>{machineState}</pre> */}
-      {/* <pre>{navIndex}</pre> */}
-      <Search onChange={handleSearchChange} />
+      {/* <pre>{machineState}</pre>
+      <pre>{navIndex}</pre> */}
+      <Search visible={notIdle} onChange={handleSearchChange} />
       {isIdle && <IdleList list={list} />}
       {notIdle && <SearchResult navIndex={navIndex} result={result} />}
     </div>
