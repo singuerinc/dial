@@ -24,10 +24,17 @@ export function Weather() {
   const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
-    loadWeather(CITY).then(data => {
-      data.map(pathToTemp).map(setTemp);
-      data.map(pathToIcon).map(setIcon);
-    });
+    const load = () =>
+      loadWeather(CITY).then(data => {
+        data.map(pathToTemp).map(setTemp);
+        data.map(pathToIcon).map(setIcon);
+      });
+
+    const interval = setInterval(() => load(), 1000 * 60 * 2);
+
+    load();
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
