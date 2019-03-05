@@ -6,11 +6,13 @@ import { useEffect, useState } from "react";
 import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
 
+const CITY = "Stockholm"; // TODO: dynamic
+const KEY = "a4040e11aa1644489e0191018190103"; // TODO: dynamic
+
 const pathToIcon = path<number>(["current", "condition", "code"]);
 const pathToTemp = path<number>(["current", "feelslike_c"]);
 
 const loadWeather = async (city: string): Promise<Option<IWeather>> => {
-  const KEY = "a4040e11aa1644489e0191018190103";
   return axios
     .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${city}`)
     .then(({ data }) => some(data))
@@ -22,8 +24,6 @@ export function Weather() {
   const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
-    const CITY = "Stockholm"; // TODO: dynamic
-
     loadWeather(CITY).then(data => {
       data.map(pathToTemp).map(setTemp);
       data.map(pathToIcon).map(setIcon);
@@ -31,7 +31,7 @@ export function Weather() {
   }, []);
 
   return (
-    <div className="flex flex-shrink-0 flex-row items-center">
+    <div className="flex flex-row flex-shrink-0 items-center">
       <i className={`mr2 f2 wi wi-${CONDITIONS[icon || 0]}`} />
       <h2 className="ma0 fw4 f1">{temp} °C</h2>
     </div>

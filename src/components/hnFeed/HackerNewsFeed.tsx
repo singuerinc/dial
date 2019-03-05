@@ -1,11 +1,11 @@
 import curry from "ramda/es/curry";
+import map from "ramda/es/map";
 import take from "ramda/es/take";
 import without from "ramda/es/without";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { of } from "rxjs";
 import { mergeMap } from "rxjs/operators";
-import styled from "styled-components";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem } from "./IFeedItem";
 import {
@@ -14,11 +14,14 @@ import {
   setViewedInLocalStorage
 } from "./_storage";
 
-const take10 = take<number>(10);
+const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
+const ITEM_URL = (id: number) =>
+  `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
-const rejectViewed = curry((arr1: number[], arr2: number[]) => {
-  return without(arr1, arr2);
-});
+const take10 = take<number>(10);
+const rejectViewed = curry((arr1: number[], arr2: number[]) =>
+  without(arr1, arr2)
+);
 
 const setAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
@@ -31,9 +34,7 @@ const loadItem = (id: number) => {
 
   if (maybeItem.isLeft()) {
     // the item is not in cache, let's load it from the API
-    return fetch<IFeedItem>(
-      `https://hacker-news.firebaseio.com/v0/item/${id}.json`
-    ).run();
+    return fetch<IFeedItem>(ITEM_URL(id)).run();
   }
 
   return [maybeItem];
@@ -49,9 +50,7 @@ export function HackerNewsFeed() {
       []
     );
 
-    const task = fetch<number[]>(
-      "https://hacker-news.firebaseio.com/v0/topstories.json"
-    );
+    const task = fetch<number[]>(TOP_STORIES_URL);
 
     // top 10 IDs and not viewed
     task.run().then(num =>
@@ -81,7 +80,7 @@ export function HackerNewsFeed() {
   const handleClick = (item: IFeedItem) => () => {
     setViewedInLocalStorage(item.id);
 
-    const updated = feed.map(x => (x === item ? { ...x, viewed: true } : x));
+    const updated = map(x => (x === item ? { ...x, viewed: true } : x), feed);
     setFeed(updated);
 
     window.open(item.url);

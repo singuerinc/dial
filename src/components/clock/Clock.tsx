@@ -18,7 +18,5 @@ export function Clock() {
 
   const time = `${HH}:${mm}`;
 
-  return <Time className="flex ma0 fw4 f2">{time}</Time>;
+  return <h2 className="flex ma0 fw4 f2">{time}</h2>;
 }
-
-const Time = styled.h2``;
