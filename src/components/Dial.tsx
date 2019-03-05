@@ -11,16 +11,19 @@ import { Weather } from "./weather/Weather";
 
 export function Dial() {
   return (
-    <div className="flex flex-row">
-      <section className="flex flex-column w-25">
+    <div className="flex flex-row vh-100">
+      <section
+        className="flex flex-column w-25 white pa4"
+        style={{ backgroundColor: "#6200EE" }}
+      >
         <UserProfile name="singuerinc" picture={path} />
         <Clock />
         <Weather />
       </section>
-      <section className="flex w-30">
+      <section className="flex w-30 pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
       </section>
-      <section>
+      <section className="pa4">
         <HackerNewsFeed />
       </section>
     </div>

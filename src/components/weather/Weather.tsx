@@ -32,7 +32,7 @@ export function Weather() {
 
   return (
     <div className="flex flex-row flex-shrink-0 items-end">
-      <i className={`mr2 f2 yellow wi wi-${CONDITIONS[icon || 0]}`} />
+      <i className={`mr2 f2 wi wi-${CONDITIONS[icon || 0]}`} />
       <h2 className="ma0 fw4 f3">{temp} °C</h2>
     </div>
   );

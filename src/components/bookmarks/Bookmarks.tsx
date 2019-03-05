@@ -85,8 +85,15 @@ export function Bookmarks({ list: feed }: IProps) {
 
     // create a new category "Results" with all the links that match the search
     const results: ICategory = onlyWithLinks.reduce(reduceToOne, resultTpl);
+    const totalResults = results.links.length;
+    const title =
+      totalResults === 0
+        ? "No results"
+        : totalResults === 1
+        ? `1 result`
+        : `${totalResults} results`;
 
-    setResult(results);
+    setResult({ ...results, title });
   };
 
   const isIdle = machineState === STATES.idle;
@@ -97,7 +104,7 @@ export function Bookmarks({ list: feed }: IProps) {
     <div>
       {/* <pre>{machineState}</pre>
       <pre>{navIndex}</pre> */}
-      <Search visible={notIdle} onChange={handleSearchChange} />
+      <Search onChange={handleSearchChange} />
       {isIdle && <IdleList list={list} />}
       {notIdle && <SearchResult navIndex={navIndex} result={result} />}
     </div>
