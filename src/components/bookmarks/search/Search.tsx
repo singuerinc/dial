@@ -1,13 +1,11 @@
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
 
 interface IProps {
   onChange: (value: string) => void;
-  visible: boolean;
 }
 
-export function Search({ onChange, visible }: IProps) {
+export function Search({ onChange }: IProps) {
   const ref = useRef<HTMLInputElement>(null);
 
   const [value, setValue] = useState<string>("");
@@ -46,9 +44,9 @@ export function Search({ onChange, visible }: IProps) {
   }, []);
 
   return (
-    <Input
+    <input
       placeholder="Search..."
-      className="fw3"
+      className="f1 fw3 w-100 bn pv1 bg-transparent orange"
       ref={ref}
       value={value}
       autoFocus
@@ -56,12 +54,3 @@ export function Search({ onChange, visible }: IProps) {
     />
   );
 }
-
-const Input = styled.input`
-  width: 100%;
-  font-size: 3em;
-  border: 0;
-  padding: 0.3em 0;
-  background-color: transparent;
-  color: #fff;
-`;
