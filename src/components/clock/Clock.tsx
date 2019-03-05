@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
