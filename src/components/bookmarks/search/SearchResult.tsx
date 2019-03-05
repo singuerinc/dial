@@ -9,17 +9,11 @@ interface IProps {
 }
 
 export function SearchResult({ result, navIndex }: IProps) {
-  return (
-    <List navIndex={navIndex} className="list ma0 pa0 w-100">
-      <li>
-        <Category title={result!.title} links={result!.links} />
-      </li>
-    </List>
-  );
-}
+  const Wrapper = styled(Category)`
+    > li:nth-child(${navIndex + 1}) > a {
+      color: white;
+    }
+  `;
 
-const List = styled.ul<{ navIndex: number }>`
-  > li > ul > li:nth-child(${({ navIndex }) => navIndex + 1}) > a {
-    color: white;
-  }
-`;
+  return <Wrapper title={result!.title} links={result!.links} />;
+}
