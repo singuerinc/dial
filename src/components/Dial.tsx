@@ -12,12 +12,12 @@ import { Weather } from "./weather/Weather";
 export function Dial() {
   return (
     <div className="flex flex-row">
-      <section className="flex flex-column w-34">
+      <section className="flex flex-column w-25">
         <UserProfile name="singuerinc" picture={path} />
-        <Weather />
         <Clock />
+        <Weather />
       </section>
-      <section className="flex w-50">
+      <section className="flex w-30">
         <Bookmarks list={bookmarks} />
       </section>
       <section>
