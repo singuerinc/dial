@@ -38,9 +38,10 @@ export function Weather() {
   }, []);
 
   return (
-    <div className="flex flex-row flex-shrink-0 items-end">
-      <i className={`mr2 f2 wi wi-${CONDITIONS[icon || 0]}`} />
-      <h2 className="ma0 fw4 f3">{temp} °C</h2>
+    <div className="flex flex-column flex-shrink-0 items-center mv2">
+      <i className={`f2 wi wi-${CONDITIONS[icon || 0]}`} />
+      <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
+      <h2 className="f6 fw5 tracked ma0 fw2 ttu">{CITY}</h2>
     </div>
   );
 }
