@@ -1,14 +1,46 @@
+import axios from "axios";
+import path from "ramda/es/path";
 import * as React from "react";
+import { useEffect, useState } from "react";
+import { Option, some, none } from "fp-ts/lib/Option";
+import { IGitHubUser } from "./IGitHubUser";
 
 interface IProps {
-  link: string;
-  name: string;
-  picture: string;
+  username: string;
+  onChange: (user: Option<IGitHubUser>) => void;
 }
 
-export function UserProfile({ link, name, picture }: IProps) {
+const loadProfile = async (username: string): Promise<Option<IGitHubUser>> => {
+  return axios
+    .get(`https://api.github.com/users/${username}`)
+    .then(({ data }) => some(data))
+    .catch(() => none);
+};
+
+const pathToBio = path<string>(["bio"]);
+const pathToName = path<string>(["name"]);
+const pathToPicture = path<string>(["avatar_url"]);
+const pathToUrl = path<string>(["html_url"]);
+
+export function UserProfile({ username, onChange }: IProps) {
+  const [bio, setBio] = useState<string>();
+  const [name, setName] = useState<string>();
+  const [picture, setPicture] = useState<string>();
+  const [url, setUrl] = useState<string>();
+
+  useEffect(() => {
+    loadProfile(username).then(user => {
+      user.map(pathToBio).map(setBio);
+      user.map(pathToName).map(setName);
+      user.map(pathToPicture).map(setPicture);
+      user.map(pathToUrl).map(setUrl);
+
+      onChange(user);
+    });
+  }, []);
+
   const handleClick = () => {
-    window.open(link);
+    window.open(url);
   };
 
   return (
@@ -23,7 +55,7 @@ export function UserProfile({ link, name, picture }: IProps) {
           title={name}
         />
         <h1 className="f3 mb2 black">{name}</h1>
-        <h2 className="f5 fw4 gray mt0">Developer</h2>
+        <h2 className="f5 fw4 gray mt0">{bio}</h2>
       </div>
     </article>
   );
