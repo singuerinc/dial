@@ -96,7 +96,7 @@ export function HackerNewsFeed() {
         {feed.map((item: IFeedItem, index) => (
           <li key={index} className="flex w-100 mv1">
             <a
-              className={`pointer underline-hover link fw3 f6 db ${textColor(
+              className={`pointer underline-hover link fw3 f5 db ${textColor(
                 item.viewed
               )} ${textDecoration(item.viewed)}`}
               onClick={handleClick(item)}
