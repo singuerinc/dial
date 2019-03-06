@@ -41,6 +41,7 @@ const loadItem = (id: number) => {
 };
 
 export function HackerNewsFeed() {
+  const [isLoading, setIsLoading] = useState(true);
   const [top, setTop] = useState<number[]>([]);
   const [feed, setFeed] = useState<IFeedItem[]>([]);
 
@@ -62,18 +63,31 @@ export function HackerNewsFeed() {
   }, []);
 
   useEffect(() => {
-    const result = of(...top).pipe(mergeMap(loadItem, undefined, 1));
-    const subscription = result.subscribe(maybeItem => {
-      maybeItem
-        .map(saveInLocalStorage)
-        .map(setAsNotViewed)
-        .map(x => {
-          setFeed(feed => [...feed, x]);
-        });
-    });
+    if (top.length === 0) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    const poll$ = of(...top)
+      .pipe(mergeMap(loadItem, undefined, 1))
+      .subscribe({
+        next(item) {
+          item
+            .map(saveInLocalStorage)
+            .map(setAsNotViewed)
+            .map(x => {
+              setFeed(feed => [...feed, x]);
+            });
+        },
+        complete() {
+          console.log("complete");
+          setIsLoading(false);
+        }
+      });
 
     return () => {
-      subscription.unsubscribe();
+      poll$.unsubscribe();
     };
   }, [top]);
 
@@ -91,7 +105,10 @@ export function HackerNewsFeed() {
 
   return (
     <div>
-      <h1 className="fw4 f3">Hacker News Feed</h1>
+      <h1 className="fw4 f3">
+        Hacker News
+        {isLoading && <small className="f5 ml2 light-gray">Loading...</small>}
+      </h1>
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
           <li key={index} className="flex w-100 mv1">
