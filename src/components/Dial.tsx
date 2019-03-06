@@ -13,7 +13,7 @@ export function Dial() {
   return (
     <div className="bg-white flex flex-row vh-100">
       <section
-        className="flex flex-column w-25 white pa4"
+        className="flex flex-column white pv3 ph4"
         style={{ backgroundColor: "#6200EE" }}
       >
         <UserProfile name="singuerinc" picture={path} />
