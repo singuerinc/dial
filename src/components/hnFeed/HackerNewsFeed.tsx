@@ -81,7 +81,6 @@ export function HackerNewsFeed() {
             });
         },
         complete() {
-          console.log("complete");
           setIsLoading(false);
         }
       });
