@@ -3,9 +3,12 @@ import { none, Option, some } from "fp-ts/lib/Option";
 import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
+import { timer } from "rxjs";
 import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
+import { tap, flatMap } from "rxjs/operators";
 
+const INTERVAL_UPDATE = 5 * 60000;
 const CITY = "Stockholm"; // TODO: dynamic
 const KEY = "a4040e11aa1644489e0191018190103"; // TODO: dynamic
 
@@ -24,17 +27,16 @@ export function Weather() {
   const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
-    const load = () =>
-      loadWeather(CITY).then(data => {
-        data.map(pathToTemp).map(setTemp);
-        data.map(pathToIcon).map(setIcon);
+    const tick = () => {
+      loadWeather(CITY).then((maybeData: Option<IWeather>) => {
+        maybeData.map(pathToTemp).map(setTemp);
+        maybeData.map(pathToIcon).map(setIcon);
       });
+    };
 
-    const interval = setInterval(() => load(), 1000 * 60 * 2);
+    const poll$ = timer(0, INTERVAL_UPDATE).subscribe(tick);
 
-    load();
-
-    return () => clearInterval(interval);
+    return () => poll$.unsubscribe();
   }, []);
 
   return (
