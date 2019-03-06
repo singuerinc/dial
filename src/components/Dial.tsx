@@ -16,7 +16,11 @@ export function Dial() {
         className="flex flex-column white pv3 ph4"
         style={{ backgroundColor: "#6200EE" }}
       >
-        <UserProfile name="singuerinc" picture={path} />
+        <UserProfile
+          link="https://github.com/singuerinc/"
+          name="@singuerinc"
+          picture={path}
+        />
         <Clock />
         <Weather />
       </section>
