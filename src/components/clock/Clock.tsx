@@ -8,14 +8,15 @@ export function Clock() {
 
   useEffect(() => {
     const update = () => setDate(new Date());
-    const i = setInterval(update, 10000);
+    const i = setInterval(update, 1000);
     return () => clearInterval(i);
   }, []);
 
   const HH = to2(date.getHours());
   const mm = to2(date.getMinutes());
+  const ss = to2(date.getSeconds());
 
-  const time = `${HH}:${mm}`;
+  const time = `${HH}:${mm}:${ss}`;
 
-  return <h2 className="flex ma0 fw4 f2">{time}</h2>;
+  return <h2 className="tc mv2 fw6 f2">{time}</h2>;
 }
