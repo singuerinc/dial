@@ -11,7 +11,7 @@ import { Weather } from "./weather/Weather";
 
 export function Dial() {
   return (
-    <div className="flex flex-row vh-100">
+    <div className="bg-white flex flex-row vh-100">
       <section
         className="flex flex-column w-25 white pa4"
         style={{ backgroundColor: "#6200EE" }}
@@ -20,10 +20,10 @@ export function Dial() {
         <Clock />
         <Weather />
       </section>
-      <section className="flex w-30 pa4 overflow-scroll">
+      <section className="bg-near-black flex w-30 pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
       </section>
-      <section className="pa4">
+      <section className="bg-white pa4">
         <HackerNewsFeed />
       </section>
     </div>
