@@ -18,7 +18,7 @@ const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
 const ITEM_URL = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
-const take10 = take<number>(10);
+const take20 = take<number>(20);
 const rejectViewed = curry((arr1: number[], arr2: number[]) =>
   without(arr1, arr2)
 );
@@ -56,7 +56,7 @@ export function HackerNewsFeed() {
     task.run().then(num =>
       num
         .map(rejectViewed(viewedIDs))
-        .map(take10)
+        .map(take20)
         .map(setTop)
     );
   }, []);
@@ -86,7 +86,7 @@ export function HackerNewsFeed() {
     window.open(item.url);
   };
 
-  const textColor = (x: boolean) => (x ? "white" : "moon-gray");
+  const textColor = (x: boolean) => (x ? "moon-gray" : "black");
   const textDecoration = (x: boolean) => (x ? "strike" : "no-underline");
 
   return (
@@ -94,9 +94,9 @@ export function HackerNewsFeed() {
       <h1 className="fw4 f3">Hacker News Feed</h1>
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
-          <li key={index} className="flex w-100 mv2">
+          <li key={index} className="flex w-100 mv1">
             <a
-              className={`sans pointer underline-hover link fw3 f6 db ${textColor(
+              className={`pointer underline-hover link fw3 f6 db ${textColor(
                 item.viewed
               )} ${textDecoration(item.viewed)}`}
               onClick={handleClick(item)}
