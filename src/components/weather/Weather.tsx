@@ -4,9 +4,9 @@ import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { timer } from "rxjs";
+import { mergeMap } from "rxjs/operators";
 import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
-import { tap, flatMap } from "rxjs/operators";
 
 const INTERVAL_UPDATE = 5 * 60000;
 const CITY = "Stockholm"; // TODO: dynamic
@@ -27,14 +27,12 @@ export function Weather() {
   const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
-    const tick = () => {
-      loadWeather(CITY).then((maybeData: Option<IWeather>) => {
-        maybeData.map(pathToTemp).map(setTemp);
-        maybeData.map(pathToIcon).map(setIcon);
+    const poll$ = timer(0, INTERVAL_UPDATE)
+      .pipe(mergeMap(() => loadWeather(CITY)))
+      .subscribe((weather: Option<IWeather>) => {
+        weather.map(pathToTemp).map(setTemp);
+        weather.map(pathToIcon).map(setIcon);
       });
-    };
-
-    const poll$ = timer(0, INTERVAL_UPDATE).subscribe(tick);
 
     return () => poll$.unsubscribe();
   }, []);
