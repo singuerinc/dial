@@ -10,7 +10,10 @@ export function Category({ title, links, className }: IProps) {
       <ul className={`${className} list ma0 pa0 mb2`}>
         {links.map((link, index) => (
           <li key={index} className="pv1">
-            <a className="f3 f4-l fw4 white hover-white link" href={link.href}>
+            <a
+              className="f3 f4-l fw4 moon-gray hover-white link"
+              href={link.href}
+            >
               {link.label}
             </a>
           </li>
