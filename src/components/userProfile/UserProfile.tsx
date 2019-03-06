@@ -12,7 +12,7 @@ export function UserProfile({ name, picture }: IProps) {
         <div className="tc">
           <img
             src={picture}
-            className="br-100 h4 w4 dib ba b--black-05 pa2"
+            className="br-100 w4 dib ba b--black-05 pa2"
             title={name}
           />
           <h1 className="f3 mb2">{name}</h1>
