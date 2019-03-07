@@ -41,8 +41,8 @@ export function UserRepos({ username }: IProps) {
 
   return (
     <>
-      <h1 className="fw4 tc tl-ns">Repositories</h1>
-      <ul className="list tc tl-ns ma0 pa0">
+      <h1 className="fw4 tc tl-l">Repositories</h1>
+      <ul className="list tc tl-l ma0 pa0">
         {repos.map(r => (
           <li key={pathToId(r)}>
             <a
