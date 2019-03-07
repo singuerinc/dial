@@ -31,14 +31,14 @@ export function Dial() {
   };
 
   return (
-    <div className="bg-white flex flex-row vh-100">
+    <div className="bg-white flex flex-column flex-row-l vh-100-l">
       <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll">
         <UserProfile username={username} onChange={handleUserChange} />
         <Clock />
         <Weather city={city} />
         <UserRepos username={username} />
       </section>
-      <section className="bg-near-black flex w-30 pa4 overflow-scroll">
+      <section className="bg-near-black flex w-30-l pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
       </section>
       <section className="bg-white pa4 overflow-scroll">
