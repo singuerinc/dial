@@ -1,5 +1,6 @@
 import curry from "ramda/es/curry";
 import map from "ramda/es/map";
+import path from "ramda/es/path";
 import take from "ramda/es/take";
 import without from "ramda/es/without";
 import * as React from "react";
@@ -18,7 +19,9 @@ const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
 const ITEM_URL = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
+const pathToCommentsUrl = path<string>(["comments_url"]);
 const take20 = take<number>(20);
+
 const rejectViewed = curry((arr1: number[], arr2: number[]) =>
   without(arr1, arr2)
 );
@@ -26,6 +29,11 @@ const rejectViewed = curry((arr1: number[], arr2: number[]) =>
 const setAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
   viewed: false
+});
+
+const addLinkToComments = (x: IFeedItem): IFeedItem => ({
+  ...x,
+  comments_url: `https://news.ycombinator.com/item?id=${x.id}`
 });
 
 const loadItem = (id: number) => {
@@ -76,6 +84,7 @@ export function HackerNewsFeed() {
           item
             .map(saveInLocalStorage)
             .map(setAsNotViewed)
+            .map(addLinkToComments)
             .map(x => {
               setFeed(feed => [...feed, x]);
             });
@@ -110,7 +119,7 @@ export function HackerNewsFeed() {
       </h1>
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
-          <li key={index} className="flex w-100 mv1">
+          <li key={index} className="flex items-end w-100 mv1">
             <a
               className={`pointer underline-hover link fw3 f5 db ${textColor(
                 item.viewed
@@ -118,6 +127,13 @@ export function HackerNewsFeed() {
               onClick={handleClick(item)}
             >
               {item.title}
+            </a>
+            <a
+              className={`pointer gray underline-hover link f7 db ml2`}
+              href={pathToCommentsUrl(item)}
+              target="_blank"
+            >
+              Comments
             </a>
           </li>
         ))}

@@ -9,4 +9,5 @@ export interface IFeedItem {
   type: string;
   url: string;
   viewed: boolean;
+  comments_url?: string;
 }
