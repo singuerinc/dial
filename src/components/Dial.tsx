@@ -1,17 +1,16 @@
+import { fromNullable, Option } from "fp-ts/lib/Option";
+import path from "ramda/es/path";
 import * as React from "react";
+import { useState } from "react";
 import "tachyons/css/tachyons.min.css";
-// @ts-ignore
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
 import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
-import { UserProfile } from "./userProfile/UserProfile";
-import { Weather } from "./weather/Weather";
-import { useState } from "react";
-import { Option } from "fp-ts/lib/Option";
 import { IGitHubUser } from "./userProfile/IGitHubUser";
-import path from "ramda/es/path";
-import { fromNullable } from "fp-ts/lib/Option";
+import { UserProfile } from "./userProfile/UserProfile";
+import { UserRepos } from "./userRepos/UserRepos";
+import { Weather } from "./weather/Weather";
 
 const DEFAULT_USERNAME = "singuerinc";
 
@@ -33,10 +32,11 @@ export function Dial() {
 
   return (
     <div className="bg-white flex flex-row vh-100">
-      <section className="flex flex-column white pv3 ph4 bg-purple">
+      <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll">
         <UserProfile username={username} onChange={handleUserChange} />
         <Clock />
         <Weather city={city} />
+        <UserRepos username={username} />
       </section>
       <section className="bg-near-black flex w-30 pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
