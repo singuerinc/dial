@@ -41,7 +41,7 @@ export function Dial() {
       <section className="bg-near-black flex w-30 pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
       </section>
-      <section className="bg-white pa4">
+      <section className="bg-white pa4 overflow-scroll">
         <HackerNewsFeed />
       </section>
     </div>
