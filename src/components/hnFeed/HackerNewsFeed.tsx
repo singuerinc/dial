@@ -20,7 +20,7 @@ const ITEM_URL = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
 const pathToCommentsUrl = path<string>(["comments_url"]);
-const take20 = take<number>(20);
+const take25 = take<number>(25);
 
 const rejectViewed = curry((arr1: number[], arr2: number[]) =>
   without(arr1, arr2)
@@ -65,7 +65,7 @@ export function HackerNewsFeed() {
     task.run().then(num =>
       num
         .map(rejectViewed(viewedIDs))
-        .map(take20)
+        .map(take25)
         .map(setTop)
     );
   }, []);
