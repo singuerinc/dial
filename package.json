@@ -22,7 +22,7 @@
     "fp-ts": "^1.14.3",
     "ramda": "^0.26.1",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react-dom": "^16.8.6",
     "rxjs": "^6.4.0",
     "styled-components": "^4.2.1",
     "tachyons": "^4.11.1",
