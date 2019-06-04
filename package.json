@@ -6,9 +6,9 @@
   "author": "singuerinc <nahuel.scotti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/ramda": "^0.25.51",
+    "@types/ramda": "^0.26.9",
     "@types/react": "^16.8.19",
-    "@types/react-dom": "^16.8.2",
+    "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.15",
     "parcel-bundler": "^1.12.3",
     "typescript": "^3.5.1"
