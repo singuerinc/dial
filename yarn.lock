@@ -5384,10 +5384,10 @@ xml-name-validator@^3.0.0:
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
 
-xstate@^4.3.3:
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.3.3.tgz#e7712aa48285c8900cd62020953313a0aac8d82e"
-  integrity sha512-63os3bXeN0oaEsYwtHuqR6N71m6Ro/dZpVNgef9vez7skeabbaVh5hOCVLXPwZqQ9QLUlxAQuc38wlsIibdFkw==
+xstate@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.6.1.tgz#81d45d7e0a71358a1d8b8c80af90e3a50f98bb18"
+  integrity sha512-f4HqFkGYVN03kDgxIM3Vp4zC9yDvunN6FHhEjbusEuAqwMFkyWg0VOUKdj/K7+W5fDcDHox7OgPYYfGIGWyJ8Q==
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
