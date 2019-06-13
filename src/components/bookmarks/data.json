@@ -5,6 +5,10 @@
       {
         "label": "Rotten Tomatoes",
         "href": "http://rottentomatoes.com"
+      },
+      {
+        "label": "mnmll.ist",
+        "href": "https://mnmll.ist/"
       }
     ]
   },
