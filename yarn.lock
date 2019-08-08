@@ -2323,10 +2323,10 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
-fp-ts@^1.19.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-1.19.0.tgz#04500951acc078ce0f7a8232d12e43e7bab9b394"
-  integrity sha512-8I22IXnAQbNzShKhrk506iHXftsJLDjyLMyaNYJwvY9jWhDUVghQZ0F9QX0XU9wRM1NzQpOCTYN39NBQq/2Gxw==
+fp-ts@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.0.4.tgz#a07ceef59c2460616fcf70367708ebe4d1c2212f"
+  integrity sha512-oRQbFqqGcvorkEj92dAcM4/RH1TARJCt8wVgynRIp8v4uOzVCe4kCs7vKSYpIXQsvtpyCt9nVVFqufSX8VYghg==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
