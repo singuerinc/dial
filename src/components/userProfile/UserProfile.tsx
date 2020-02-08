@@ -2,19 +2,18 @@ import axios from "axios";
 import path from "ramda/es/path";
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { Option, some, none } from "fp-ts/lib/Option";
 import { IGitHubUser } from "./IGitHubUser";
 
 interface IProps {
   username: string;
-  onChange: (user: Option<IGitHubUser>) => void;
+  onChange: (user: IGitHubUser | null) => void;
 }
 
-const loadProfile = async (username: string): Promise<Option<IGitHubUser>> => {
+const loadProfile = async (username: string): Promise<IGitHubUser | null> => {
   return axios
     .get(`https://api.github.com/users/${username}`)
-    .then(({ data }) => some(data))
-    .catch(() => none);
+    .then(({ data }) => data)
+    .catch(() => null);
 };
 
 const pathToBio = path<string>(["bio"]);
@@ -30,10 +29,10 @@ export function UserProfile({ username, onChange }: IProps) {
 
   useEffect(() => {
     loadProfile(username).then(user => {
-      user.map(pathToBio).map(setBio);
-      user.map(pathToName).map(setName);
-      user.map(pathToPicture).map(setPicture);
-      user.map(pathToUrl).map(setUrl);
+      setBio(user?.bio);
+      setName(user?.name);
+      setPicture(user?.avatar_url);
+      setUrl(user?.html_url);
 
       onChange(user);
     });

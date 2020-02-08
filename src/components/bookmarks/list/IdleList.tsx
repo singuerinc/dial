@@ -8,9 +8,9 @@ interface IProps {
 
 export function IdleList({ list }: IProps) {
   return (
-    <ul className="list ma0 pa0">
+    <ul className="list ma0 pa0 w-100">
       {list.map((x, index) => (
-        <li key={index}>
+        <li key={index} className="fl w-third">
           <Category title={x.title} links={x.links} />
         </li>
       ))}

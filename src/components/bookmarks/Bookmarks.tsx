@@ -101,7 +101,7 @@ export function Bookmarks({ list: feed }: IProps) {
     machineState === STATES.searching || machineState === STATES.navigating;
 
   return (
-    <div>
+    <div className="w-100">
       {/* <pre>{machineState}</pre>
       <pre>{navIndex}</pre> */}
       <Search onChange={handleSearchChange} />

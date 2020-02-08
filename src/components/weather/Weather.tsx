@@ -1,5 +1,4 @@
 import axios from "axios";
-import { none, Option, some } from "fp-ts/lib/Option";
 import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
@@ -14,11 +13,11 @@ const KEY = "a4040e11aa1644489e0191018190103"; // TODO: dynamic
 const pathToIcon = path<number>(["current", "condition", "code"]);
 const pathToTemp = path<number>(["current", "feelslike_c"]);
 
-const loadWeather = async (city: string): Promise<Option<IWeather>> => {
+const loadWeather = async (city: string): Promise<IWeather | null> => {
   return axios
     .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${city}`)
-    .then(({ data }) => some(data))
-    .catch(() => none);
+    .then(({ data }) => data)
+    .catch(() => null);
 };
 
 interface IProps {
@@ -36,9 +35,9 @@ export function Weather({ city }: IProps) {
 
     const poll$ = timer(0, INTERVAL_UPDATE)
       .pipe(mergeMap(() => loadWeather(city)))
-      .subscribe((weather: Option<IWeather>) => {
-        weather.map(pathToTemp).map(setTemp);
-        weather.map(pathToIcon).map(setIcon);
+      .subscribe((weather: IWeather) => {
+        setTemp(pathToTemp(weather));
+        setIcon(pathToIcon(weather));
       });
 
     return () => poll$.unsubscribe();

@@ -1,6 +1,7 @@
 import curry from "ramda/es/curry";
 import map from "ramda/es/map";
 import path from "ramda/es/path";
+import pipe from "ramda/es/pipe";
 import take from "ramda/es/take";
 import without from "ramda/es/without";
 import * as React from "react";
@@ -20,7 +21,7 @@ const ITEM_URL = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
 const pathToCommentsUrl = path<string>(["comments_url"]);
-const take25 = take<number>(25);
+const take25 = take(25);
 
 const rejectViewed = curry((arr1: number[], arr2: number[]) =>
   without(arr1, arr2)
@@ -38,14 +39,14 @@ const addLinkToComments = (x: IFeedItem): IFeedItem => ({
 
 const loadItem = (id: number) => {
   // let's try to get it from localStorage
-  const maybeItem = getItemFromLocalStorage<IFeedItem>(`hn-item-${id}`);
+  const maybeItem = getItemFromLocalStorage(`hn-item-${id}`);
 
-  if (maybeItem.isLeft()) {
+  if (maybeItem === null) {
     // the item is not in cache, let's load it from the API
-    return fetch<IFeedItem>(ITEM_URL(id)).run();
+    return fetch(ITEM_URL(id));
   }
 
-  return [maybeItem];
+  return maybeItem;
 };
 
 export function HackerNewsFeed() {
@@ -55,19 +56,16 @@ export function HackerNewsFeed() {
 
   useEffect(() => {
     // get from localStorage those ids that already viewed
-    const viewedIDs = getItemFromLocalStorage<number[]>("hn-viewed").getOrElse(
-      []
-    );
-
-    const task = fetch<number[]>(TOP_STORIES_URL);
+    const viewedIDs = getItemFromLocalStorage("hn-viewed") ?? [];
+    const task = fetch(TOP_STORIES_URL);
 
     // top 10 IDs and not viewed
-    task.run().then(num =>
-      num
-        .map(rejectViewed(viewedIDs))
-        .map(take25)
-        .map(setTop)
-    );
+    task.then((num: number[]) => {
+      const top25 = pipe(rejectViewed(viewedIDs), take25)(num);
+      console.log({ top25 });
+
+      setTop(top25);
+    });
   }, []);
 
   useEffect(() => {
@@ -76,18 +74,20 @@ export function HackerNewsFeed() {
     }
 
     setIsLoading(true);
+    console.log({ top });
 
     const poll$ = of(...top)
       .pipe(mergeMap(loadItem, undefined, 1))
       .subscribe({
         next(item) {
-          item
-            .map(saveInLocalStorage)
-            .map(setAsNotViewed)
-            .map(addLinkToComments)
-            .map(x => {
-              setFeed(feed => [...feed, x]);
-            });
+          console.log(item);
+
+          const itemFeed = pipe(
+            saveInLocalStorage,
+            setAsNotViewed,
+            addLinkToComments
+          )(item);
+          setFeed([...feed, itemFeed]);
         },
         complete() {
           setIsLoading(false);
@@ -97,7 +97,7 @@ export function HackerNewsFeed() {
     return () => {
       poll$.unsubscribe();
     };
-  }, [top]);
+  }, [top, feed]);
 
   const handleClick = (item: IFeedItem) => () => {
     setViewedInLocalStorage(item.id);
