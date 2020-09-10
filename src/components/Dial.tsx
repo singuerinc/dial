@@ -32,7 +32,7 @@ export function Dial() {
       {/* <Weather city={city} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
-      <section className="bg-near-black flex w-100-l pa4 overflow-scroll">
+      <section className="bg-near-black flex w-100-l justify-center pa4 overflow-scroll">
         <Bookmarks list={bookmarks} />
       </section>
       {/* <section className="bg-white pa4 overflow-scroll">
