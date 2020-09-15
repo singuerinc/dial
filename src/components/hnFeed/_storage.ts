@@ -1,9 +1,7 @@
 import uniq from "ramda/es/uniq";
 import { IFeedItem } from "./IFeedItem";
 
-export const parse = (s: string) => {
-  return JSON.parse(s);
-};
+export const parse = (s: string) => JSON.parse(s);
 
 export const setViewedInLocalStorage = (id: number) => {
   const task = localStorage.getItem("hn-viewed") ?? "[]";

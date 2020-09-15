@@ -36,10 +36,10 @@ export function Dial() {
           <Clock />
           <Weather city={city} />
         </div>
+        <HackerNewsFeed />
         <Bookmarks list={bookmarks} />
       </section>
       {/* <section className="bg-white pa4 overflow-scroll">
-        <HackerNewsFeed />
       </section> */}
     </div>
   );
