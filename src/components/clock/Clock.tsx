@@ -18,12 +18,14 @@ export function Clock() {
   const mm = to2(date.getMinutes());
   const ss = to2(date.getSeconds());
 
-  const time = `${HH}:${mm}:${ss}`;
+  // const time = `${HH}:${mm}:${ss}`;
+  const time = `${HH}:${mm}`;
 
   return (
     <h2
-      className="tr ma0 fw6 f2 near-white"
+      className="tr ma0 fw3 teal f2 near-white"
       style={{
+        color: "#03DAC5",
         fontVariantNumeric: "tabular-nums"
       }}
     >

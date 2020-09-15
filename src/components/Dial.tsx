@@ -26,13 +26,7 @@ export function Dial() {
   // };
 
   return (
-    <div
-      className="flex flex-column flex-row-l justify-center"
-      style={{
-        background:
-          "linear-gradient(135deg, hsla(0, 0%, 8%, 1) 0%, hsla(0, 0%, 21%, 1) 100%)"
-      }}
-    >
+    <div className="flex flex-column flex-row-l justify-center">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
       {/* <UserRepo username={username} /> */}
