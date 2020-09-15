@@ -20,19 +20,19 @@ export function Dial() {
   const username = me(document.location);
   const [city, setCity] = useState();
 
-  const handleUserChange = (user: IGitHubUser | null) => {
-    setCity(user?.location);
-  };
+  // const handleUserChange = (user: IGitHubUser | null) => {
+  //   setCity(user?.location);
+  // };
 
   return (
-    <div className="bg-white flex flex-column flex-row-l vh-100-l">
+    <div className="bg-white flex flex-column flex-row-l justify-center">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
-      {/* <Clock /> */}
       {/* <Weather city={city} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
-      <section className="bg-near-black flex w-100-l justify-center pa4 overflow-scroll">
+      <section className="bg-near-black flex w-75-l pa4 overflow-scroll flex-column">
+        <Clock />
         <Bookmarks list={bookmarks} />
       </section>
       {/* <section className="bg-white pa4 overflow-scroll">

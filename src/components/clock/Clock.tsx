@@ -20,5 +20,14 @@ export function Clock() {
 
   const time = `${HH}:${mm}:${ss}`;
 
-  return <h2 className="tc mv2 fw6 f2">{time}</h2>;
+  return (
+    <h2
+      className="tr mv2 fw6 f2 near-white"
+      style={{
+        fontVariantNumeric: "tabular-nums"
+      }}
+    >
+      {time}
+    </h2>
+  );
 }
