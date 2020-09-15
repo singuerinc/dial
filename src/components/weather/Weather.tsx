@@ -8,14 +8,16 @@ import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
 
 const INTERVAL_UPDATE = 5 * 60000;
-const KEY = "a4040e11aa1644489e0191018190103"; // TODO: dynamic
+const KEY = "f0b007379b26039149c9e4957236fdb1"; // TODO: dynamic
 
-const pathToIcon = path<number>(["current", "condition", "code"]);
-const pathToTemp = path<number>(["current", "feelslike_c"]);
+const pathToIcon = path<number>(["weather", 0, "icon"]);
+const pathToTemp = path<number>(["main", "temp"]);
 
 const loadWeather = async (city: string): Promise<IWeather | null> => {
   return axios
-    .get(`https://api.apixu.com/v1/current.json?key=${KEY}&q=${city}`)
+    .get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}&units=metric`
+    )
     .then(({ data }) => data)
     .catch(() => null);
 };
@@ -29,10 +31,6 @@ export function Weather({ city }: IProps) {
   const [icon, setIcon] = useState<number>();
 
   useEffect(() => {
-    if (typeof city === "undefined") {
-      return;
-    }
-
     const poll$ = timer(0, INTERVAL_UPDATE)
       .pipe(mergeMap(() => loadWeather(city)))
       .subscribe((weather: IWeather) => {
@@ -44,8 +42,8 @@ export function Weather({ city }: IProps) {
   }, [city]);
 
   return (
-    <div className="flex flex-column flex-shrink-0 items-center mv2">
-      <i className={`f2 wi wi-${CONDITIONS[icon || 0]}`} />
+    <div className="flex flex-column flex-shrink-0 items-center mv2 white">
+      <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
       <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
       <h2 className="f6 fw5 tracked ma0 fw2 ttu">{city}</h2>
     </div>

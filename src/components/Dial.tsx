@@ -4,6 +4,7 @@ import "tachyons/css/tachyons.min.css";
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
+import { Weather } from "./weather/Weather";
 import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
 import { IGitHubUser } from "./userProfile/IGitHubUser";
 import { UserProfile } from "./userProfile/UserProfile";
@@ -18,7 +19,7 @@ const me = (location: Location) => {
 
 export function Dial() {
   const username = me(document.location);
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("Stockholm");
 
   // const handleUserChange = (user: IGitHubUser | null) => {
   //   setCity(user?.location);
@@ -28,10 +29,10 @@ export function Dial() {
     <div className="bg-white flex flex-column flex-row-l justify-center">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
-      {/* <Weather city={city} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
       <section className="bg-near-black flex w-75-l pa4 overflow-scroll flex-column">
+        <Weather city={city} />
         <Clock />
         <Bookmarks list={bookmarks} />
       </section>
