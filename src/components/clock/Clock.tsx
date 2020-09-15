@@ -22,7 +22,7 @@ export function Clock() {
 
   return (
     <h2
-      className="tr mv2 fw6 f2 near-white"
+      className="tr ma0 fw6 f2 near-white"
       style={{
         fontVariantNumeric: "tabular-nums"
       }}

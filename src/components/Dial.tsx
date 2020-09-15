@@ -26,14 +26,22 @@ export function Dial() {
   // };
 
   return (
-    <div className="bg-white flex flex-column flex-row-l justify-center">
+    <div
+      className="flex flex-column flex-row-l justify-center"
+      style={{
+        background:
+          "linear-gradient(135deg, hsla(0, 0%, 8%, 1) 0%, hsla(0, 0%, 21%, 1) 100%)"
+      }}
+    >
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
-      <section className="bg-near-black flex w-75-l pa4 overflow-scroll flex-column">
-        <Weather city={city} />
-        <Clock />
+      <section className="flex w-75-l pa4 overflow-scroll flex-column">
+        <div className="flex w-100 items-center justify-between">
+          <Clock />
+          <Weather city={city} />
+        </div>
         <Bookmarks list={bookmarks} />
       </section>
       {/* <section className="bg-white pa4 overflow-scroll">

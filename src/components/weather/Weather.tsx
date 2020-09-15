@@ -42,10 +42,12 @@ export function Weather({ city }: IProps) {
   }, [city]);
 
   return (
-    <div className="flex flex-column flex-shrink-0 items-center mv2 white">
+    <div className="flex flex-row flex-shrink-0 items-center ma0 white">
+      <div className="tr">
+        <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
+        <h2 className="f6 fw5 tracked ma0 fw2 ttu">{city}</h2>
+      </div>
       <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
-      <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
-      <h2 className="f6 fw5 tracked ma0 fw2 ttu">{city}</h2>
     </div>
   );
 }
