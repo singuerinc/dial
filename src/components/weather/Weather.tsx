@@ -8,7 +8,7 @@ import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
 
 const INTERVAL_UPDATE = 5 * 60000;
-const KEY = "f0b007379b26039149c9e4957236fdb1"; // TODO: dynamic
+const KEY = localStorage.getItem("weather");
 
 const pathToIcon = path<number>(["weather", 0, "icon"]);
 const pathToTemp = path<number>(["main", "temp"]);
