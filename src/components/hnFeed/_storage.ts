@@ -3,12 +3,10 @@ import { IFeedItem } from "./IFeedItem";
 
 export const parse = (s: string) => JSON.parse(s);
 
-export const setViewedInLocalStorage = (id: number) => {
-  const task = localStorage.getItem("hn-viewed") ?? "[]";
-  const stored = parse(task);
-  const viewed = uniq([...stored, id]);
-
+export const setViewedInLocalStorage = (stored: number[]) => {
+  const viewed = uniq(stored);
   localStorage.setItem("hn-viewed", JSON.stringify(viewed));
+  return viewed;
 };
 
 export const getItemFromLocalStorage = (key: string) => {

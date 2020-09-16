@@ -10,7 +10,7 @@ export function IdleList({ list }: IProps) {
   return (
     <ul className="list ma0 pa0 w-100">
       {list.map((x, index) => (
-        <li key={index} className="fl w-100 w-50-m w-25-l">
+        <li key={index} className="fl w-100 w-50-m w-33-l">
           <Category title={x.title} links={x.links} />
         </li>
       ))}

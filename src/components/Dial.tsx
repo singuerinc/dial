@@ -36,8 +36,14 @@ export function Dial() {
           <Clock />
           <Weather city={city} />
         </div>
-        <HackerNewsFeed />
-        <Bookmarks list={bookmarks} />
+        <div className="flex flex-wrap">
+          <div className="w-100 w-75-l">
+            <Bookmarks list={bookmarks} />
+          </div>
+          <div className="w-100 w-25-l">
+            <HackerNewsFeed />
+          </div>
+        </div>
       </section>
       {/* <section className="bg-white pa4 overflow-scroll">
       </section> */}

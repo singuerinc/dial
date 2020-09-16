@@ -1,16 +1,25 @@
 import { useMachine } from "@xstate/react";
-import { compose, curry, path, take, without } from "lodash/fp";
+import { compose, take, without } from "lodash/fp";
 import * as React from "react";
 import { of } from "rxjs";
-import { mergeMap, map as rxMap, take as rxTake } from "rxjs/operators";
+import { map as rxMap, mergeMap } from "rxjs/operators";
 import { assign, Machine } from "xstate";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
-import { getItemFromLocalStorage, saveInLocalStorage } from "./_storage";
+import {
+  getItemFromLocalStorage,
+  setViewedInLocalStorage,
+  saveInLocalStorage
+} from "./_storage";
 
+const NUM_OF_STORIES = 10;
 const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
 const toItemUrl = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
+
+const textColor = (isViewed: boolean) => (isViewed ? "moon-gray" : "yellow");
+const textDecoration = (isViewed: boolean) =>
+  isViewed ? "strike" : "no-underline";
 
 const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
@@ -33,30 +42,34 @@ const loadItem = async (id: number): Promise<IFeedItem> => {
 };
 
 interface Context {
-  top5: number[];
-  feed: IHackerNewsStory[];
+  top: number[];
+  feed: IFeedItem[];
+  viewed: number[];
 }
 
 const machine = Machine<Context>(
   {
     initial: "loadTop",
     context: {
-      top5: [],
+      viewed: getItemFromLocalStorage("hn-viewed") ?? [],
+      top: [],
       feed: []
     },
     states: {
       loadTop: {
+        entry: assign(_ => ({ top: [], feed: [] })),
         invoke: {
-          src: "loadTop5",
+          src: "loadTopService",
           onDone: {
             target: "loadFeed",
-            actions: assign({ top5: (_, event) => event.data })
+            actions: assign({ top: (_, event) => event.data })
           }
         }
       },
       loadFeed: {
+        entry: assign(_ => ({ feed: [] })),
         invoke: {
-          src: "loadFeed",
+          src: "loadFeedService",
           onDone: "idle"
         },
         on: {
@@ -65,16 +78,39 @@ const machine = Machine<Context>(
           }
         }
       },
-      idle: {}
+      idle: {
+        on: {
+          MARK_AS_VIEWED: {
+            actions: ["markAsViewedInStorage", "markAsViewed"]
+          },
+          REFRESH: "loadTop"
+        }
+      }
     }
   },
   {
+    actions: {
+      markAsViewedInStorage: (ctx, event) =>
+        setViewedInLocalStorage([...ctx.viewed, event.data.id]),
+      markAsViewed: assign((ctx, event) => {
+        const item: IHackerNewsStory = event.data;
+        const feed = ctx.feed.map(x => {
+          if (x.id === item.id) {
+            x.viewed = true;
+          }
+          return x;
+        });
+        return { viewed: [...ctx.viewed, item.id], feed };
+      })
+    },
     services: {
-      loadTop5: () =>
-        fetch(TOP_STORIES_URL).then(compose(take(5), without([]))),
-      loadFeed: ctx =>
-        of(...ctx.top5)
-          .pipe(mergeMap(loadItem, 1))
+      loadTopService: ctx =>
+        fetch(TOP_STORIES_URL)
+          .then(without(ctx.viewed))
+          .then(take(NUM_OF_STORIES)),
+      loadFeedService: ctx =>
+        of(...ctx.top)
+          .pipe(mergeMap(loadItem, 2))
           .pipe(
             rxMap(item => ({
               type: "SAVE_ITEM",
@@ -88,48 +124,46 @@ const machine = Machine<Context>(
 export function HackerNewsFeed() {
   const [state, send] = useMachine(machine);
   const { feed } = state.context;
-  console.log(state.value);
 
-  const isLoading = !state.matches("idle");
+  const handleRefresh = () => send("REFRESH");
 
-  // const handleClick = (item: IFeedItem) => () => {
-  //   setViewedInLocalStorage(item.id);
+  const handleRemove = (item: IFeedItem) => () => {
+    send({ type: "MARK_AS_VIEWED", data: item });
+  };
 
-  //   const updated = map(x => (x === item ? { ...x, viewed: true } : x), feed);
-  //   setFeed(updated);
-
-  //   window.open(item.url);
-  // };
-
-  const textColor = (x: boolean) => (x ? "moon-gray" : "white");
-  const textDecoration = (x: boolean) => (x ? "strike" : "no-underline");
+  const handleClick = (item: IFeedItem) => () => {
+    send({ type: "MARK_AS_VIEWED", data: item });
+    window.open(item.url);
+  };
 
   return (
-    <div>
-      <h1 className="fw4 f3">
-        Hacker News
-        {isLoading && <small className="f5 ml2 light-gray">Loading...</small>}
-      </h1>
+    <div className="w-100">
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
-          <li key={index} className="flex items-end w-100 mv1">
+          <li key={index} className="w-100 mv1">
             <a
-              className={`pointer underline-hover link fw5 f5 db ${textColor(
+              onClick={handleClick(item)}
+              className={`pointer underline-hover link fw5 f5 ${textColor(
                 item.viewed
               )} ${textDecoration(item.viewed)}`}
             >
               {item.title}
             </a>
             <a
-              className={`pointer gray underline-hover link f7 db ml2`}
-              href={item.comments_url}
-              target="_blank"
+              className="pointer underline-hover f6 moon-gray mh2"
+              onClick={handleRemove(item)}
             >
-              Comments
+              remove
             </a>
           </li>
         ))}
       </ul>
+      <a
+        onClick={handleRefresh}
+        className="pointer underline-hover f5 db mv3 light-gray"
+      >
+        Refresh
+      </a>
     </div>
   );
 }
