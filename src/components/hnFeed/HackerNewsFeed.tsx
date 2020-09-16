@@ -1,79 +1,67 @@
-import curry from "ramda/es/curry";
-import map from "ramda/es/map";
-import path from "ramda/es/path";
-import pipe from "ramda/es/pipe";
-import compose from "ramda/es/compose";
-import take from "ramda/es/take";
-import without from "ramda/es/without";
+import { useMachine } from "@xstate/react";
+import { compose, curry, path, take, without } from "lodash/fp";
 import * as React from "react";
-import { useEffect, useState } from "react";
 import { of } from "rxjs";
-import { mergeMap } from "rxjs/operators";
+import { mergeMap, map as rxMap, take as rxTake } from "rxjs/operators";
 import { assign, Machine } from "xstate";
 import { fetch } from "../../utils/fetch";
-import { IFeedItem } from "./IFeedItem";
-import { useMachine } from "@xstate/react";
-import {
-  getItemFromLocalStorage,
-  saveInLocalStorage,
-  setViewedInLocalStorage
-} from "./_storage";
+import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
+import { getItemFromLocalStorage, saveInLocalStorage } from "./_storage";
 
 const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
 const toItemUrl = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
-const pathToCommentsUrl = path<string>(["comments_url"]);
-
-const rejectViewed = curry((arr1: number[], arr2: number[]) =>
-  without(arr1, arr2)
-);
-
-const setAsNotViewed = (x: IFeedItem): IFeedItem => ({
+const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
   viewed: false
 });
 
-const addLinkToComments = (x: IFeedItem): IFeedItem => ({
-  ...x,
-  comments_url: `https://news.ycombinator.com/item?id=${x.id}`
-});
-
-const loadItem = (id: number) => {
-  // let's try to get it from localStorage
-  const maybeItem = getItemFromLocalStorage(`hn-item-${id}`);
+const loadItem = async (id: number): Promise<IFeedItem> => {
+  const maybeItem: IFeedItem | null = getItemFromLocalStorage(`hn-item-${id}`);
 
   if (maybeItem === null) {
-    // the item is not in cache, let's load it from the API
-    return fetch(toItemUrl(id));
+    const story = await fetch<IHackerNewsStory>(toItemUrl(id));
+    return {
+      ...story,
+      viewed: false,
+      comments_url: `https://news.ycombinator.com/item?id=${story.id}`
+    };
+  } else {
+    return Promise.resolve(maybeItem);
   }
-
-  return maybeItem;
 };
 
-const machine = Machine(
+interface Context {
+  top5: number[];
+  feed: IHackerNewsStory[];
+}
+
+const machine = Machine<Context>(
   {
     initial: "loadTop",
     context: {
-      top25: [],
+      top5: [],
       feed: []
     },
     states: {
       loadTop: {
         invoke: {
-          src: "loadTop25",
+          src: "loadTop5",
           onDone: {
             target: "loadFeed",
-            actions: assign({ top25: (_, event) => event.data })
+            actions: assign({ top5: (_, event) => event.data })
           }
         }
       },
       loadFeed: {
         invoke: {
           src: "loadFeed",
-          onDone: {
-            target: "idle",
-            actions: assign({ feed: (_, event) => event.data })
+          onDone: "idle"
+        },
+        on: {
+          SAVE_ITEM: {
+            actions: assign({ feed: (ctx, event) => [...ctx.feed, event.data] })
           }
         }
       },
@@ -82,102 +70,38 @@ const machine = Machine(
   },
   {
     services: {
-      loadTop25: (ctx, event) => callback => {
-        return fetch(TOP_STORIES_URL).then((ids: number[]) => {
-          const nonViewedTop25 = compose<number[], number[], number[]>(
-            take(25),
-            rejectViewed([])
-          );
-
-          return nonViewedTop25(ids);
-        });
-      },
-      loadFeed: (ctx, event) => {
-        return of(ctx.top25)
-          .pipe(mergeMap(loadItem, undefined, 1))
-          .subscribe({
-            next(item) {
-              console.log(item);
-
-              // const itemFeed = pipe(
-              //   saveInLocalStorage,
-              //   setAsNotViewed,
-              //   addLinkToComments
-              // )(item);
-              // setFeed([...feed, itemFeed]);
-            }
-          });
-      }
+      loadTop5: () =>
+        fetch(TOP_STORIES_URL).then(compose(take(5), without([]))),
+      loadFeed: ctx =>
+        of(...ctx.top5)
+          .pipe(mergeMap(loadItem, 1))
+          .pipe(
+            rxMap(item => ({
+              type: "SAVE_ITEM",
+              data: compose(markAsNotViewed, saveInLocalStorage)(item)
+            }))
+          )
     }
   }
 );
 
 export function HackerNewsFeed() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [top, setTop] = useState<number[]>([]);
-  const [feed, setFeed] = useState<IFeedItem[]>([]);
-
   const [state, send] = useMachine(machine);
-
+  const { feed } = state.context;
   console.log(state.value);
 
-  // useEffect(() => {
-  //   // get from localStorage those ids that already viewed
-  //   const viewedIDs = getItemFromLocalStorage("hn-viewed") ?? [];
-  //   const task = fetch(TOP_STORIES_URL);
+  const isLoading = !state.matches("idle");
 
-  //   // top 10 IDs and not viewed
-  //   task.then((num: number[]) => {
-  //     const top25 = pipe(rejectViewed(viewedIDs), take(25), () => num);
-  //     // console.log({ top25 });
+  // const handleClick = (item: IFeedItem) => () => {
+  //   setViewedInLocalStorage(item.id);
 
-  //     console.log(top25());
+  //   const updated = map(x => (x === item ? { ...x, viewed: true } : x), feed);
+  //   setFeed(updated);
 
-  //     setTop(top25());
-  //   });
-  // }, []);
+  //   window.open(item.url);
+  // };
 
-  // useEffect(() => {
-  //   if (top.length === 0) {
-  //     return;
-  //   }
-
-  //   setIsLoading(true);
-  //   console.log({ top });
-
-  //   const poll$ = of(...top)
-  //     .pipe(mergeMap(loadItem, undefined, 1))
-  //     .subscribe({
-  //       next(item) {
-  //         console.log(item);
-
-  //         const itemFeed = pipe(
-  //           saveInLocalStorage,
-  //           setAsNotViewed,
-  //           addLinkToComments
-  //         )(item);
-  //         setFeed([...feed, itemFeed]);
-  //       },
-  //       complete() {
-  //         setIsLoading(false);
-  //       }
-  //     });
-
-  //   return () => {
-  //     poll$.unsubscribe();
-  //   };
-  // }, [top, feed]);
-
-  const handleClick = (item: IFeedItem) => () => {
-    setViewedInLocalStorage(item.id);
-
-    const updated = map(x => (x === item ? { ...x, viewed: true } : x), feed);
-    setFeed(updated);
-
-    window.open(item.url);
-  };
-
-  const textColor = (x: boolean) => (x ? "moon-gray" : "black");
+  const textColor = (x: boolean) => (x ? "moon-gray" : "white");
   const textDecoration = (x: boolean) => (x ? "strike" : "no-underline");
 
   return (
@@ -190,16 +114,15 @@ export function HackerNewsFeed() {
         {feed.map((item: IFeedItem, index) => (
           <li key={index} className="flex items-end w-100 mv1">
             <a
-              className={`pointer underline-hover link fw3 f5 db ${textColor(
+              className={`pointer underline-hover link fw5 f5 db ${textColor(
                 item.viewed
               )} ${textDecoration(item.viewed)}`}
-              onClick={handleClick(item)}
             >
               {item.title}
             </a>
             <a
               className={`pointer gray underline-hover link f7 db ml2`}
-              href={pathToCommentsUrl(item)}
+              href={item.comments_url}
               target="_blank"
             >
               Comments

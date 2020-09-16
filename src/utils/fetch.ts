@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export const fetch = (url: string) => {
-  return axios.get(url).then(({ data }) => data);
+export const fetch = <T>(url: string) => {
+  return axios.get(url).then(({ data }) => data as T);
 };
