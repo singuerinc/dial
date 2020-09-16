@@ -15,9 +15,7 @@ const pathToTemp = path<number>(["main", "temp"]);
 
 const loadWeather = async (city: string): Promise<IWeather | null> => {
   return axios
-    .get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}&units=metric`
-    )
+    .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}&units=metric`)
     .then(({ data }) => data)
     .catch(() => null);
 };
@@ -41,13 +39,17 @@ export function Weather({ city }: IProps) {
     return () => poll$.unsubscribe();
   }, [city]);
 
+  if (!icon) {
+    return null;
+  }
+
   return (
     <div className="flex flex-row flex-shrink-0 items-center ma0 white">
       <div className="tr">
         <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
         <h2 className="f6 fw5 tracked ma0 fw2 ttu">{city}</h2>
       </div>
-      <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
+      <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
     </div>
   );
 }
