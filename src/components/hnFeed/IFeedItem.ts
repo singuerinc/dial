@@ -1,4 +1,4 @@
-export interface IFeedItem {
+export interface IHackerNewsStory {
   by: string;
   descendants: number;
   id: number;
@@ -8,6 +8,9 @@ export interface IFeedItem {
   title: string;
   type: string;
   url: string;
+}
+
+export interface IFeedItem extends IHackerNewsStory {
   viewed: boolean;
   comments_url?: string;
 }
