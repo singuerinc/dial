@@ -1,25 +1,21 @@
-import { useMachine } from "@xstate/react";
+import { asEffect, useMachine } from "@xstate/react";
+import anime from "animejs";
 import { compose, take, without } from "lodash/fp";
 import * as React from "react";
+import { useRef } from "react";
 import { of } from "rxjs";
 import { map as rxMap, mergeMap } from "rxjs/operators";
 import { assign, Machine } from "xstate";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
-import {
-  getItemFromLocalStorage,
-  setViewedInLocalStorage,
-  saveInLocalStorage
-} from "./_storage";
+import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
 
 const NUM_OF_STORIES = 10;
 const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
-const toItemUrl = (id: number) =>
-  `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
+const toItemUrl = (id: number) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
 const textColor = (isViewed: boolean) => (isViewed ? "moon-gray" : "orange");
-const textDecoration = (isViewed: boolean) =>
-  isViewed ? "strike" : "no-underline";
+const textDecoration = (isViewed: boolean) => (isViewed ? "strike" : "no-underline");
 
 const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
@@ -30,15 +26,16 @@ const loadItem = async (id: number): Promise<IFeedItem> => {
   const maybeItem: IFeedItem | null = getItemFromLocalStorage(`hn-item-${id}`);
 
   if (maybeItem === null) {
-    const story = await fetch<IHackerNewsStory>(toItemUrl(id));
+    const url = toItemUrl(id);
+    const story = await fetch<IHackerNewsStory>(url);
     return {
       ...story,
       viewed: false,
       comments_url: `https://news.ycombinator.com/item?id=${story.id}`
     };
-  } else {
-    return Promise.resolve(maybeItem);
   }
+
+  return Promise.resolve(maybeItem);
 };
 
 interface Context {
@@ -57,7 +54,6 @@ const machine = Machine<Context>(
     },
     states: {
       loadTop: {
-        entry: assign(_ => ({ top: [], feed: [] })),
         invoke: {
           src: "loadTopService",
           onDone: {
@@ -79,6 +75,7 @@ const machine = Machine<Context>(
         }
       },
       idle: {
+        entry: "animateIn",
         on: {
           MARK_AS_VIEWED: {
             actions: ["markAsViewedInStorage", "markAsViewed"]
@@ -105,9 +102,7 @@ const machine = Machine<Context>(
     },
     services: {
       loadTopService: ctx =>
-        fetch(TOP_STORIES_URL)
-          .then(without(ctx.viewed))
-          .then(take(NUM_OF_STORIES)),
+        fetch(TOP_STORIES_URL).then(without(ctx.viewed)).then(take(NUM_OF_STORIES)),
       loadFeedService: ctx =>
         of(...ctx.top)
           .pipe(mergeMap(loadItem, 2))
@@ -122,22 +117,43 @@ const machine = Machine<Context>(
 );
 
 export function HackerNewsFeed() {
-  const [state, send] = useMachine(machine);
+  const listRef = useRef(null);
+
+  const [state, send] = useMachine(machine, {
+    actions: {
+      animateIn: asEffect(() => {
+        anime({
+          targets: listRef.current,
+          opacity: [0, 1],
+          easing: "easeOutQuad",
+          duration: 400,
+          delay: 300
+        });
+      })
+    }
+  });
+
   const { feed } = state.context;
 
-  const handleRefresh = () => send("REFRESH");
-
-  const handleRemove = (item: IFeedItem) => () => {
-    send({ type: "MARK_AS_VIEWED", data: item });
+  const handleRefresh = () => {
+    anime({
+      targets: listRef.current,
+      opacity: [1, 0],
+      easing: "easeOutQuad",
+      duration: 400,
+      complete: () => send("REFRESH")
+    });
   };
+  const handleRemove = (item: IFeedItem) => () => send({ type: "MARK_AS_VIEWED", data: item });
+  const handleCommentsLink = (item: IFeedItem) => () => window.open(item.comments_url);
 
   const handleClick = (item: IFeedItem) => () => {
-    send({ type: "MARK_AS_VIEWED", data: item });
+    handleRemove(item)();
     window.open(item.url);
   };
 
   return (
-    <div className="w-100" style={{ marginTop: "5.2em" }}>
+    <div ref={listRef} className="w-100 o-0" style={{ marginTop: "5.2em" }}>
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
           <li key={index} className="w-100 mv1">
@@ -151,17 +167,17 @@ export function HackerNewsFeed() {
             </a>
             <a
               className="pointer underline-hover f6 moon-gray mh2"
-              onClick={handleRemove(item)}
+              onClick={handleCommentsLink(item)}
             >
+              comments
+            </a>
+            <a className="pointer underline-hover f6 moon-gray mh2" onClick={handleRemove(item)}>
               remove
             </a>
           </li>
         ))}
       </ul>
-      <a
-        onClick={handleRefresh}
-        className="pointer underline-hover f5 db mv3 light-gray"
-      >
+      <a onClick={handleRefresh} className="pointer underline-hover f5 db mv3 light-gray">
         Refresh
       </a>
     </div>

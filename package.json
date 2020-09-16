@@ -6,8 +6,9 @@
   "author": "singuerinc <nahuel.scotti@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/animejs": "^3.1.2",
     "@types/lodash": "^4.14.161",
-    "@types/ramda": "^0.27.16",
+    "@types/ramda": "^0.27.17",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.3",
@@ -19,7 +20,8 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@xstate/react": "^0.8.1",
+    "@xstate/react": "^1.0.0-rc.6",
+    "animejs": "^3.2.0",
     "axios": "^0.20.0",
     "lodash": "^4.17.20",
     "ramda": "^0.27.1",
@@ -33,5 +35,11 @@
   },
   "browserslist": [
     "last 1 Chrome version"
-  ]
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "semi": true,
+    "arrowParens": "avoid",
+    "trailingComma": "none"
+  }
 }
