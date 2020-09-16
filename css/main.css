@@ -14,13 +14,13 @@ html {
     hsla(0, 0%, 8%, 1) 0%,
     hsla(0, 0%, 21%, 1) 100%
   );
-  height: 100%;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 #root {

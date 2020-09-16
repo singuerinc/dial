@@ -17,7 +17,7 @@ const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
 const toItemUrl = (id: number) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
 
-const textColor = (isViewed: boolean) => (isViewed ? "moon-gray" : "yellow");
+const textColor = (isViewed: boolean) => (isViewed ? "moon-gray" : "orange");
 const textDecoration = (isViewed: boolean) =>
   isViewed ? "strike" : "no-underline";
 
@@ -137,7 +137,7 @@ export function HackerNewsFeed() {
   };
 
   return (
-    <div className="w-100">
+    <div className="w-100" style={{ marginTop: "5.2em" }}>
       <ul className="list pa0 ma0 flex flex-column">
         {feed.map((item: IFeedItem, index) => (
           <li key={index} className="w-100 mv1">
