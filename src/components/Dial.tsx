@@ -1,14 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
-import "tachyons/css/tachyons.min.css";
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
-import { Weather } from "./weather/Weather";
 import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
-import { IGitHubUser } from "./userProfile/IGitHubUser";
-import { UserProfile } from "./userProfile/UserProfile";
-import { UserRepo } from "./userRepo/UserRepo";
+import { Weather } from "./weather/Weather";
 
 const DEFAULT_USERNAME = "singuerinc";
 
@@ -26,21 +22,21 @@ export function Dial() {
   // };
 
   return (
-    <div className="flex flex-column flex-row-l justify-center">
+    <div className="">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
-      <section className="flex w-75-l pa4 overflow-scroll flex-column">
-        <div className="flex w-100 items-center justify-between">
+      <section className="">
+        <div className="">
           <Clock />
           <Weather city={city} />
         </div>
         <div className="flex flex-wrap">
-          <div className="w-100 w-75-l">
+          <div className="sm:w-full md:w-1/2">
             <Bookmarks list={bookmarks} />
           </div>
-          <div className="w-100 w-25-l">
+          <div className="sm:w-full md:w-1/2 mt-32">
             <HackerNewsFeed />
           </div>
         </div>

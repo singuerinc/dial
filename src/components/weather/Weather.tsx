@@ -4,7 +4,6 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { timer } from "rxjs";
 import { mergeMap } from "rxjs/operators";
-import { CONDITIONS } from "./conditions";
 import { IWeather } from "./IWeather";
 
 const INTERVAL_UPDATE = 5 * 60000;
@@ -44,10 +43,10 @@ export function Weather({ city }: IProps) {
   }
 
   return (
-    <div className="flex flex-row flex-shrink-0 items-center ma0 white">
-      <div className="tr">
-        <h1 className="f5 mv1 f4-ns fw6">{temp} °C</h1>
-        <h2 className="f6 fw5 tracked ma0 fw2 ttu">{city}</h2>
+    <div className="">
+      <div className="">
+        <h1 className="">{temp} °C</h1>
+        <h2 className="">{city}</h2>
       </div>
       <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
     </div>

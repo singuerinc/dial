@@ -16,20 +16,7 @@ export function Clock() {
 
   const HH = to2(date.getHours());
   const mm = to2(date.getMinutes());
-  const ss = to2(date.getSeconds());
-
-  // const time = `${HH}:${mm}:${ss}`;
   const time = `${HH}:${mm}`;
 
-  return (
-    <h2
-      className="tr ma0 fw3 teal f2 near-white"
-      style={{
-        color: "#03DAC5",
-        fontVariantNumeric: "tabular-nums"
-      }}
-    >
-      {time}
-    </h2>
-  );
+  return <h2 className="text-gray-700 leading-none text-6xl font-variant-numeric">{time}</h2>;
 }
