@@ -46,8 +46,7 @@ export function Search({ onChange }: IProps) {
   return (
     <input
       placeholder="Search..."
-      className="f1 fw3 w-100 bn pv1 bg-transparent"
-      style={{ color: "#03DAC5" }}
+      className="w-full bg-transparent border-4 focus:border-teal-500 focus:outline-none border-gray-800 px-2 text-4xl -mx-2 my-2 font-light"
       ref={ref}
       value={value}
       autoFocus

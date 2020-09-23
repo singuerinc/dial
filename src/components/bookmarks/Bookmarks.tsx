@@ -17,8 +17,7 @@ interface IProps {
   list: ICategory[];
 }
 
-const canNavigate = (state: string) =>
-  state === STATES.searching || state === STATES.navigating;
+const canNavigate = (state: string) => state === STATES.searching || state === STATES.navigating;
 
 export function Bookmarks({ list: feed }: IProps) {
   const [list, setList] = useState(feed);
@@ -27,8 +26,7 @@ export function Bookmarks({ list: feed }: IProps) {
   const [machineState, setMachineState] = useState();
 
   useLayoutEffect(() => {
-    const onTransition = (state: State<DefaultContext>) =>
-      setMachineState(state.value.toString());
+    const onTransition = (state: State<DefaultContext>) => setMachineState(state.value.toString());
 
     machine.onTransition(onTransition).start();
 
@@ -97,16 +95,13 @@ export function Bookmarks({ list: feed }: IProps) {
   };
 
   const isIdle = machineState === STATES.idle;
-  const notIdle =
-    machineState === STATES.searching || machineState === STATES.navigating;
+  const notIdle = machineState === STATES.searching || machineState === STATES.navigating;
 
   return (
-    <div className="w-100">
-      {/* <pre>{machineState}</pre>
-      <pre>{navIndex}</pre> */}
+    <>
       <Search onChange={handleSearchChange} />
       {isIdle && <IdleList list={list} />}
       {notIdle && <SearchResult navIndex={navIndex} result={result} />}
-    </div>
+    </>
   );
 }

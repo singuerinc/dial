@@ -153,33 +153,33 @@ export function HackerNewsFeed() {
   };
 
   return (
-    <div ref={listRef} className="w-100 o-0" style={{ marginTop: "5.2em" }}>
-      <ul className="list pa0 ma0 flex flex-column">
-        {feed.map((item: IFeedItem, index) => (
-          <li key={index} className="w-100 mv1">
-            <a
-              onClick={handleClick(item)}
-              className={`pointer underline-hover link fw5 f5 ${textColor(
-                item.viewed
-              )} ${textDecoration(item.viewed)}`}
-            >
-              {item.title}
-            </a>
-            <a
-              className="pointer underline-hover f6 moon-gray mh2"
-              onClick={handleCommentsLink(item)}
-            >
-              comments
-            </a>
-            <a className="pointer underline-hover f6 moon-gray mh2" onClick={handleRemove(item)}>
-              remove
-            </a>
-          </li>
-        ))}
+    <div ref={listRef}>
+      <ul>
+        {feed
+          .filter(x => !x.viewed)
+          .map((item: IFeedItem, index) => (
+            <li key={index}>
+              <a target="#" onClick={handleClick(item)} className="cursor-pointer hover:underline">
+                {item.title}
+              </a>
+              <button
+                className="text-xs ml-2 hover:underline hover:text-gray-300 text-gray-600"
+                onClick={handleCommentsLink(item)}
+              >
+                discuss
+              </button>
+              <button
+                className="text-xs ml-2 hover:line-through hover:text-gray-300 text-gray-600"
+                onClick={handleRemove(item)}
+              >
+                remove
+              </button>
+            </li>
+          ))}
       </ul>
-      <a onClick={handleRefresh} className="pointer underline-hover f5 db mv3 light-gray">
+      <button onClick={handleRefresh} className="text-xs uppercase mt-4 hover:underline">
         Refresh
-      </a>
+      </button>
     </div>
   );
 }
