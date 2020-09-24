@@ -1,5 +1,4 @@
-import { asEffect, useMachine } from "@xstate/react";
-import anime from "animejs";
+import { useMachine } from "@xstate/react";
 import { compose, take, without } from "lodash/fp";
 import * as React from "react";
 import { useRef } from "react";
@@ -75,7 +74,6 @@ const machine = Machine<Context>(
         }
       },
       idle: {
-        entry: "animateIn",
         on: {
           MARK_AS_VIEWED: {
             actions: ["markAsViewedInStorage", "markAsViewed"]
@@ -119,32 +117,15 @@ const machine = Machine<Context>(
 export function HackerNewsFeed() {
   const listRef = useRef(null);
 
-  const [state, send] = useMachine(machine, {
-    actions: {
-      animateIn: asEffect(() => {
-        anime({
-          targets: listRef.current,
-          opacity: [0, 1],
-          easing: "easeOutQuad",
-          duration: 400,
-          delay: 300
-        });
-      })
-    }
-  });
+  const [state, send] = useMachine(machine);
 
   const { feed } = state.context;
 
-  const handleRefresh = () => {
-    anime({
-      targets: listRef.current,
-      opacity: [1, 0],
-      easing: "easeOutQuad",
-      duration: 400,
-      complete: () => send("REFRESH")
-    });
+  const handleRefresh = () => send("REFRESH");
+  const handleRemove = (item: IFeedItem) => () => {
+    send({ type: "MARK_AS_VIEWED", data: item });
+    send("REFRESH");
   };
-  const handleRemove = (item: IFeedItem) => () => send({ type: "MARK_AS_VIEWED", data: item });
   const handleCommentsLink = (item: IFeedItem) => () => window.open(item.comments_url);
 
   const handleClick = (item: IFeedItem) => () => {
@@ -158,8 +139,12 @@ export function HackerNewsFeed() {
         {feed
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
-            <li key={index}>
-              <a target="#" onClick={handleClick(item)} className="cursor-pointer hover:underline">
+            <li key={index} className="flex items-start border-b-2">
+              <a
+                target="#"
+                onClick={handleClick(item)}
+                className="w-full cursor-pointer hover:underline"
+              >
                 {item.title}
               </a>
               <button

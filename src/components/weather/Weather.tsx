@@ -9,6 +9,7 @@ import { IWeather } from "./IWeather";
 const INTERVAL_UPDATE = 5 * 60000;
 const KEY = localStorage.getItem("weather");
 
+const pathToDescription = path<string>(["weather", 0, "description"]);
 const pathToIcon = path<number>(["weather", 0, "icon"]);
 const pathToTemp = path<number>(["main", "temp"]);
 
@@ -26,6 +27,7 @@ interface IProps {
 export function Weather({ city }: IProps) {
   const [temp, setTemp] = useState<number>();
   const [icon, setIcon] = useState<number>();
+  const [description, setDescription] = useState<string>();
 
   useEffect(() => {
     const poll$ = timer(0, INTERVAL_UPDATE)
@@ -33,6 +35,7 @@ export function Weather({ city }: IProps) {
       .subscribe((weather: IWeather) => {
         setTemp(pathToTemp(weather));
         setIcon(pathToIcon(weather));
+        setDescription(pathToDescription(weather));
       });
 
     return () => poll$.unsubscribe();
@@ -43,12 +46,13 @@ export function Weather({ city }: IProps) {
   }
 
   return (
-    <div className="">
-      <div className="">
-        <h1 className="">{temp} °C</h1>
-        <h2 className="">{city}</h2>
+    <div className="flex items-center">
+      <div>
+        <h1 className="text-3xl leading-none">{temp} °C</h1>
+        <h2 className="capitalize">{description}</h2>
+        <h3 className="text-gray-500">{city}</h3>
       </div>
-      <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
+      <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} />
     </div>
   );
 }

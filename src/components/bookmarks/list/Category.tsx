@@ -3,19 +3,19 @@ import { ICategory } from "../ICategory";
 
 interface IProps extends ICategory {}
 
-export function Category({ title, links, className }: IProps) {
+export function Category({ title, links, index }: IProps) {
   return (
     <>
-      <h1 className="mt-8 mb-4 text-2xl font-light leading-none text-orange-300">{title}</h1>
-      <ul className={`${className}`}>
-        {links.map((link, index) => (
-          <li key={index}>
-            <a className="" href={link.href}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      {links.map((link, idx) => (
+        <li key={`${index}-${idx}`} className="py-2">
+          <a
+            className="bg-white text-gray-900 p-1 text-xl font-medium leading-snug hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white focus:outline-none"
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
     </>
   );
 }
