@@ -14,14 +14,4 @@ export const withLabelOrHref = curry((value: string, link: ILink) => {
   return includes(v, l) || includes(v, h);
 });
 
-export const sortByLabelCaseInsensitive = sortBy(
-  compose(
-    toLower,
-    prop("label")
-  )
-);
-
-export const reduceToOne = (acc: ICategory, y: ICategory) => ({
-  title: acc.title,
-  links: sortByLabelCaseInsensitive([...acc.links, ...y.links])
-});
+export const sortByLabelCaseInsensitive = sortBy(compose(toLower, prop("label")));
