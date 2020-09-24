@@ -15,28 +15,28 @@ const me = (location: Location) => {
 
 export function Dial() {
   const username = me(document.location);
-  const [city, setCity] = useState("Stockholm");
+  const [city, setCity] = useState("Hammarbyhöjden");
 
   // const handleUserChange = (user: IGitHubUser | null) => {
   //   setCity(user?.location);
   // };
 
   return (
-    <div className="">
+    <div className="flex">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
+      <section className="sm:w-full md:w-1/6 flex flex-col justify-items-center">
+        <Clock />
+        <Weather city={city} />
+      </section>
       <section className="">
-        <div className="">
-          <Clock />
-          <Weather city={city} />
-        </div>
         <div className="flex flex-wrap">
           <div className="sm:w-full md:w-1/2">
             <Bookmarks list={bookmarks} />
           </div>
-          <div className="sm:w-full md:w-1/2 mt-32">
+          <div className="sm:w-full md:w-1/3 mt-32">
             <HackerNewsFeed />
           </div>
         </div>
