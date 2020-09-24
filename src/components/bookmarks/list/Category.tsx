@@ -3,7 +3,7 @@ import { ICategory } from "../ICategory";
 
 interface IProps extends ICategory {}
 
-export function Category({ title, links, index }: IProps) {
+export function Category({ links, index }: IProps) {
   return (
     <>
       {links.map((link, idx) => (

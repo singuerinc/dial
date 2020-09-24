@@ -1,107 +1,69 @@
+import { useMachine } from "@xstate/react";
 import * as React from "react";
-import { useLayoutEffect, useState, useEffect } from "react";
-import { DefaultContext, State } from "xstate";
+import { useEffect } from "react";
 import { ICategory } from "./ICategory";
+import { IdleList } from "./list/IdleList";
 import { Search } from "./search/Search";
 import { SearchResult } from "./search/SearchResult";
-import { IdleList } from "./list/IdleList";
-import { ACTIONS, searchService as machine, STATES } from "./states";
-import { reduceToOne, withLabelOrHref } from "./utils";
-
-const resultTpl: ICategory = {
-  title: "Results",
-  links: []
-};
+import { machine } from "./states";
 
 interface IProps {
   list: ICategory[];
 }
 
-const canNavigate = (state: string) => state === STATES.searching || state === STATES.navigating;
-
-export function Bookmarks({ list: feed }: IProps) {
-  const [list, setList] = useState(feed);
-  const [result, setResult] = useState<ICategory>(resultTpl);
-  const [navIndex, setNavIndex] = useState(0);
-  const [machineState, setMachineState] = useState();
-
-  useLayoutEffect(() => {
-    const onTransition = (state: State<DefaultContext>) => setMachineState(state.value.toString());
-
-    machine.onTransition(onTransition).start();
-
-    return () => void machine.stop();
-  }, []);
+export function Bookmarks({ list }: IProps) {
+  const [state, send] = useMachine(machine, {
+    context: {
+      list
+    }
+  });
 
   useEffect(() => {
     const handleUpDown = (event: KeyboardEvent) => {
+      console.log(event);
+
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
         event.preventDefault();
-
-        machine.send(ACTIONS.NAVIGATE);
-
-        const totalResults = result.links.length - 1;
-        const x = event.key === "ArrowUp" ? -1 : 1;
-        // TODO: use inc/dec
-
-        setNavIndex(i => Math.max(0, Math.min(totalResults, i + x)));
+        event.stopPropagation();
+        const y = event.key === "ArrowUp" ? -1 : 1;
+        send("NAVIGATE", { direction: y });
+      } else if (event.key === "Escape") {
+        send("EXIT");
       } else if (event.key === "Enter") {
-        window.open(result.links[navIndex].href);
+        send("EXIT");
+        window.open(state.context.result[state.context.currentIndex].href);
       }
     };
 
-    if (canNavigate(machineState)) {
-      document.addEventListener("keydown", handleUpDown);
-    }
+    document.addEventListener("keydown", handleUpDown);
 
     return () => document.removeEventListener("keydown", handleUpDown);
-  }, [machineState, navIndex]);
+  }, []);
 
   const handleSearchChange = (value: string) => {
-    if (value === "") {
-      machine.send(ACTIONS.EXIT);
+    console.log({ value });
 
-      // when the value is empty, return the original list
-      setList(list);
+    if (value === "") {
+      send("EXIT");
       return;
     }
 
-    setNavIndex(0);
-    machine.send(ACTIONS.SEARCH);
-
-    const withValue = withLabelOrHref(value);
-    // select those categories that contains links with a title
-    // or href that partially matches the value we are currently searching
-    const filteredCats = list.filter(x => x.links.some(withValue));
-
-    // on those filtered categories take only the links that
-    // contains a partial match with the value we are looking for
-    const onlyWithLinks = filteredCats.map(cat => {
-      const links = cat.links.filter(withValue);
-      return { ...cat, links };
-    });
-
-    // create a new category "Results" with all the links that match the search
-    const results: ICategory = onlyWithLinks.reduce(reduceToOne, resultTpl);
-    const totalResults = results.links.length;
-    const title =
-      totalResults === 0
-        ? "No results"
-        : totalResults === 1
-        ? `1 result`
-        : `${totalResults} results`;
-
-    setResult({ ...results, title });
+    send("SEARCH", { lookup: value });
   };
 
-  const isIdle = machineState === STATES.idle;
-  const notIdle = machineState === STATES.searching || machineState === STATES.navigating;
+  const isIdle = state.matches("idle");
+  const isSearching = state.matches("searching");
 
   return (
     <>
+      <div>
+        {state.value} {state.context.currentIndex}
+      </div>
       <Search onChange={handleSearchChange} />
       {isIdle && <IdleList list={list} />}
-      {notIdle && <SearchResult navIndex={navIndex} result={result} />}
+      {isSearching && (
+        <SearchResult navIndex={state.context.currentIndex} result={state.context.result} />
+      )}
     </>
   );
 }
