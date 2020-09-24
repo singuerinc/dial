@@ -20,11 +20,9 @@ export function Bookmarks({ list }: IProps) {
 
   useEffect(() => {
     const handleUpDown = (event: KeyboardEvent) => {
-      console.log(event);
-
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        // prevent the scroll down/up of the page
         event.preventDefault();
-        event.stopPropagation();
         const y = event.key === "ArrowUp" ? -1 : 1;
         send("NAVIGATE", { direction: y });
       } else if (event.key === "Escape") {
@@ -32,6 +30,8 @@ export function Bookmarks({ list }: IProps) {
       } else if (event.key === "Enter") {
         send("EXIT");
         window.open(state.context.result[state.context.currentIndex].href);
+      } else if (event.key === "/") {
+        send("SEARCH");
       }
     };
 
@@ -41,8 +41,6 @@ export function Bookmarks({ list }: IProps) {
   }, []);
 
   const handleSearchChange = (value: string) => {
-    console.log({ value });
-
     if (value === "") {
       send("EXIT");
       return;

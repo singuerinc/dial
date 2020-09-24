@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { ILink } from "../ILink";
 
 interface IProps {
@@ -12,16 +12,18 @@ export function SearchResult({ result, navIndex }: IProps) {
   const title = total === 0 ? "No results" : total === 1 ? `1 result` : `${total} results`;
   const list = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    if (navIndex !== -1) {
-      // console.log({ navIndex });
+  useLayoutEffect(() => {
+    console.log({ navIndex });
 
+    if (navIndex !== -1) {
       const li = list.current!.children[navIndex] as HTMLLIElement;
       const a = li.children[0]! as HTMLAnchorElement;
 
+      console.log("focus!", a);
+
       a.focus();
     }
-  }, [result, navIndex]);
+  }, [list.current, result, navIndex]);
 
   return (
     <div>

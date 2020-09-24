@@ -46,29 +46,25 @@ export const machine = Machine<IContext>(
     actions: {
       navigate: assign({
         currentIndex: (context, event) => {
-          // console.log({ total });
           const total = context.result.length;
+          const current = context.currentIndex;
+
           if (total === 0) {
             return -1;
           }
 
           if (event.direction === 1) {
-            const current = context.currentIndex;
-            const next = current <= total - 2 ? current + 1 : 0;
-            console.log({ total, next });
-            return next;
+            return current <= total - 2 ? current + 1 : 0;
           } else {
-            const current = context.currentIndex;
-            const prev = current <= 0 ? total - 1 : current - 1;
-            console.log({ prev });
-
-            return prev;
+            return current <= 0 ? total - 1 : current - 1;
           }
         }
       }),
       search: assign({
         result: (context, event) => {
-          const value = event.lookup;
+          const value = event.lookup || "";
+          if (value === "") return [];
+
           const withValue = withLabelOrHref(value);
 
           // select those categories that contains links with a title
