@@ -11,37 +11,31 @@ export function Search({ onChange }: IProps) {
   const [value, setValue] = useState<string>("");
   // const [hasFocus, setFocus] = useState<boolean>(false);
 
-  // const handleBlur = () => setFocus(false);
-
-  // const handleKeyDown = (event: KeyboardEvent) => {
-  //   if (event.key === "Escape" || (event.key === "/" && !hasFocus)) {
-  //     event.preventDefault();
-  //     setValue("");
-  //     setFocus(true);
-  //   }
-  // };
-
+  const handleBlur = () => ref.current!.focus();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
+    onChange(event.target.value);
   };
 
-  // useEffect(() => {
-  //   ref.current!.focus();
-  // }, [hasFocus]);
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "/") {
+      event.preventDefault();
+      handleChange({ target: { value: "" } } as React.ChangeEvent<HTMLInputElement>);
+      ref.current!.focus();
+    }
+  };
 
   useEffect(() => {
-    onChange(value);
-  }, [value]);
+    document.addEventListener("keydown", handleKeyDown);
 
-  // useEffect(() => {
-  //   ref.current!.addEventListener("blur", handleBlur);
-  //   document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [ref.current]);
 
-  //   return () => {
-  //     ref.current!.removeEventListener("blur", handleBlur);
-  //     document.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
+  useEffect(() => {
+    ref.current!.focus();
+  }, []);
 
   return (
     <input

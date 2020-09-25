@@ -22,27 +22,25 @@ export function Dial() {
   // };
 
   return (
-    <div className="flex">
+    <div className="lg:flex">
       {/* <section className="flex flex-column white pv3 ph4 bg-purple overflow-scroll"> */}
       {/* <UserProfile username={username} onChange={handleUserChange} /> */}
       {/* <UserRepo username={username} /> */}
       {/* </section> */}
-      <section className="sm:w-full md:w-1/6 flex flex-col justify-items-center">
+      <section className="sm:w-full lg:w-2/6 xl:w-2/12 flex flex-col justify-items-center">
         <Clock />
         <Weather city={city} />
       </section>
-      <section className="">
+      <section className="sm:w-full lg:w-4/6 xl:w-10/12">
         <div className="flex flex-wrap">
-          <div className="sm:w-full md:w-1/2">
+          <div className="sm:w-full lg:w-2/3">
             <Bookmarks list={bookmarks} />
           </div>
-          <div className="sm:w-full md:w-1/3 mt-32">
+          <div className="sm:w-full lg:w-1/3 mt-32">
             <HackerNewsFeed />
           </div>
         </div>
       </section>
-      {/* <section className="bg-white pa4 overflow-scroll">
-      </section> */}
     </div>
   );
 }

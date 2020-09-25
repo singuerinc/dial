@@ -42,6 +42,8 @@ export function Bookmarks({ list }: IProps) {
 
   const handleSearchChange = (value: string) => {
     if (value === "") {
+      console.log("exit!");
+
       send("EXIT");
       return;
     }
