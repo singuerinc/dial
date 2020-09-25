@@ -10,11 +10,6 @@ import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
 import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
 
 const NUM_OF_STORIES = 10;
-const TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
-const toItemUrl = (id: number) => `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
-
-const textColor = (isViewed: boolean) => (isViewed ? "moon-gray" : "orange");
-const textDecoration = (isViewed: boolean) => (isViewed ? "strike" : "no-underline");
 
 const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
   ...x,
@@ -22,10 +17,12 @@ const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
 });
 
 const loadItem = async (id: number): Promise<IFeedItem> => {
+  // let's try to get it from cache
   const maybeItem: IFeedItem | null = getItemFromLocalStorage(`hn-item-${id}`);
 
   if (maybeItem === null) {
-    const url = toItemUrl(id);
+    // let's load it from the API
+    const url = `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
     const story = await fetch<IHackerNewsStory>(url);
     return {
       ...story,
@@ -100,7 +97,9 @@ const machine = Machine<Context>(
     },
     services: {
       loadTopService: ctx =>
-        fetch(TOP_STORIES_URL).then(without(ctx.viewed)).then(take(NUM_OF_STORIES)),
+        fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
+          .then(without(ctx.viewed))
+          .then(take(NUM_OF_STORIES)),
       loadFeedService: ctx =>
         of(...ctx.top)
           .pipe(mergeMap(loadItem, 2))
@@ -115,17 +114,14 @@ const machine = Machine<Context>(
 );
 
 export function HackerNewsFeed() {
-  const listRef = useRef(null);
-
   const [state, send] = useMachine(machine);
-
-  const { feed } = state.context;
 
   const handleRefresh = () => send("REFRESH");
   const handleRemove = (item: IFeedItem) => () => {
     send({ type: "MARK_AS_VIEWED", data: item });
     send("REFRESH");
   };
+
   const handleCommentsLink = (item: IFeedItem) => () => window.open(item.comments_url);
 
   const handleClick = (item: IFeedItem) => () => {
@@ -134,12 +130,12 @@ export function HackerNewsFeed() {
   };
 
   return (
-    <div ref={listRef}>
+    <div>
       <ul>
-        {feed
+        {state.context.feed
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
-            <li key={index} className="flex items-start border-b-2">
+            <li key={index} className="flex items-start">
               <a
                 target="#"
                 onClick={handleClick(item)}
@@ -147,22 +143,16 @@ export function HackerNewsFeed() {
               >
                 {item.title}
               </a>
-              <button
-                className="text-xs ml-2 hover:underline hover:text-gray-300 text-gray-600"
-                onClick={handleCommentsLink(item)}
-              >
+              <button className="hn__btn mr-2" onClick={handleCommentsLink(item)}>
                 discuss
               </button>
-              <button
-                className="text-xs ml-2 hover:line-through hover:text-gray-300 text-gray-600"
-                onClick={handleRemove(item)}
-              >
+              <button className="hn__btn" onClick={handleRemove(item)}>
                 remove
               </button>
             </li>
           ))}
       </ul>
-      <button onClick={handleRefresh} className="text-xs uppercase mt-4 hover:underline">
+      <button onClick={handleRefresh} className="uppercase mt-4 hn__btn">
         Refresh
       </button>
     </div>

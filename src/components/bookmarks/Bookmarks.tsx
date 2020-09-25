@@ -1,14 +1,13 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
 import { useEffect } from "react";
-import { ICategory } from "./ICategory";
-import { IdleList } from "./list/IdleList";
+import { ILink } from "./ILink";
 import { Search } from "./search/Search";
 import { SearchResult } from "./search/SearchResult";
 import { machine } from "./states";
 
 interface IProps {
-  list: ICategory[];
+  list: ILink[];
 }
 
 export function Bookmarks({ list }: IProps) {
@@ -28,8 +27,8 @@ export function Bookmarks({ list }: IProps) {
       } else if (event.key === "Escape") {
         send("EXIT");
       } else if (event.key === "Enter") {
-        send("EXIT");
         window.open(state.context.result[state.context.currentIndex].href);
+        send("EXIT");
       } else if (event.key === "/") {
         send("SEARCH");
       }
@@ -38,12 +37,10 @@ export function Bookmarks({ list }: IProps) {
     document.addEventListener("keydown", handleUpDown);
 
     return () => document.removeEventListener("keydown", handleUpDown);
-  }, []);
+  }, [state.context.result, state.context.currentIndex]);
 
   const handleSearchChange = (value: string) => {
     if (value === "") {
-      console.log("exit!");
-
       send("EXIT");
       return;
     }
@@ -51,19 +48,16 @@ export function Bookmarks({ list }: IProps) {
     send("SEARCH", { lookup: value });
   };
 
-  const isIdle = state.matches("idle");
   const isSearching = state.matches("searching");
 
   return (
     <>
-      <div>
-        {state.value} {state.context.currentIndex}
-      </div>
       <Search onChange={handleSearchChange} />
-      {isIdle && <IdleList list={list} />}
-      {isSearching && (
-        <SearchResult navIndex={state.context.currentIndex} result={state.context.result} />
-      )}
+      <SearchResult
+        isResult={isSearching}
+        navIndex={state.context.currentIndex}
+        result={isSearching ? state.context.result : state.context.list}
+      />
     </>
   );
 }

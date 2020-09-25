@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+.hn__btn {
+  @apply text-xs text-oc-gray-600;
+  &:hover {
+    @apply underline text-oc-gray-300;
+  }
+}
+
+.search__input {
+  @apply w-full bg-transparent border-4 border-gray-800 px-2 text-4xl -mx-2 my-2 font-light;
+  &:focus {
+    @apply border-oc-orange-700 outline-none;
+  }
+}
+
+.search__link {
+  @apply text-oc-orange-700 text-xl font-medium leading-snug;
+  &:hover {
+    @apply text-white;
+  }
+  &:focus {
+    @apply text-white outline-none;
+  }
+}
+
+/* bg-oc-gray-900 text-gray-200 p-1 text-xl font-medium leading-snug
+            hover:bg-gray-900 hover:text-white
+            focus:bg-gray-900 focus:text-white focus:outline-none" */

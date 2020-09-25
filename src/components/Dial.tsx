@@ -14,8 +14,8 @@ const me = (location: Location) => {
 };
 
 export function Dial() {
-  const username = me(document.location);
-  const [city, setCity] = useState("Hammarbyhöjden");
+  // const username = me(document.location);
+  // const [city, setCity] = useState();
 
   // const handleUserChange = (user: IGitHubUser | null) => {
   //   setCity(user?.location);
@@ -29,7 +29,7 @@ export function Dial() {
       {/* </section> */}
       <section className="sm:w-full lg:w-2/6 xl:w-2/12 flex flex-col justify-items-center">
         <Clock />
-        <Weather city={city} />
+        <Weather />
       </section>
       <section className="sm:w-full lg:w-4/6 xl:w-10/12">
         <div className="flex flex-wrap">

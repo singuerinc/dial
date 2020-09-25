@@ -1,10 +1,9 @@
 import compose from "ramda/es/compose";
-import sortBy from "ramda/es/sortBy";
-import prop from "ramda/es/prop";
 import curry from "ramda/es/curry";
 import includes from "ramda/es/includes";
+import prop from "ramda/es/prop";
+import sortBy from "ramda/es/sortBy";
 import toLower from "ramda/es/toLower";
-import { ICategory } from "./ICategory";
 import { ILink } from "./ILink";
 
 export const withLabelOrHref = curry((value: string, link: ILink) => {

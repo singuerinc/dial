@@ -1,10 +1,9 @@
 import { assign, Machine } from "xstate";
-import { ICategory } from "./ICategory";
 import { ILink } from "./ILink";
-import { sortByLabelCaseInsensitive, withLabelOrHref } from "./utils";
+import { withLabelOrHref } from "./utils";
 
 interface IContext {
-  list: ICategory[];
+  list: ILink[];
   result: ILink[];
   currentIndex: number;
 }
@@ -64,21 +63,7 @@ export const machine = Machine<IContext>(
         result: (context, event) => {
           const value = event.lookup || "";
           if (value === "") return [];
-
-          const withValue = withLabelOrHref(value);
-
-          // select those categories that contains links with a title
-          // or href that partially matches the value we are currently searching
-          const filteredCats = context.list.filter(x => x.links.some(withValue));
-
-          // on those filtered categories take only the links that
-          // contains a partial match with the value we are looking for
-          const onlyWithLinks = filteredCats.map(cat => {
-            const links = cat.links.filter(withValue);
-            return links;
-          });
-
-          return onlyWithLinks.flat();
+          return context.list.filter(withLabelOrHref(value));
         }
       })
     }

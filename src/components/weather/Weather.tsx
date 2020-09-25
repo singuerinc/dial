@@ -20,39 +20,35 @@ const loadWeather = async (city: string): Promise<IWeather | null> => {
     .catch(() => null);
 };
 
-interface IProps {
-  city: string;
-}
-
-export function Weather({ city }: IProps) {
-  const [temp, setTemp] = useState<number>();
-  const [icon, setIcon] = useState<number>();
-  const [description, setDescription] = useState<string>();
+export function Weather() {
+  const [weather, setWeather] = useState<IWeather>();
+  const city = "Hammarbyhöjden";
 
   useEffect(() => {
     const poll$ = timer(0, INTERVAL_UPDATE)
       .pipe(mergeMap(() => loadWeather(city)))
       .subscribe((weather: IWeather) => {
-        setTemp(pathToTemp(weather));
-        setIcon(pathToIcon(weather));
-        setDescription(pathToDescription(weather));
+        setWeather(weather);
       });
 
     return () => poll$.unsubscribe();
   }, [city]);
 
-  if (!icon) {
+  if (!weather) {
     return null;
   }
 
   return (
     <div className="flex items-center">
       <div>
-        <h1 className="text-3xl leading-none">{temp} °C</h1>
-        <h2 className="capitalize">{description}</h2>
+        <h1 className="text-3xl leading-none">{pathToTemp(weather)} °C</h1>
+        <h2 className="capitalize">{pathToDescription(weather)}</h2>
         <h3 className="text-gray-500">{city}</h3>
       </div>
-      <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt={description} />
+      <img
+        src={`https://openweathermap.org/img/wn/${pathToIcon(weather)}@2x.png`}
+        alt={pathToDescription(weather)}
+      />
     </div>
   );
 }

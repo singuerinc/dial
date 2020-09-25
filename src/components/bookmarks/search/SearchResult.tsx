@@ -5,9 +5,10 @@ import { ILink } from "../ILink";
 interface IProps {
   result: ILink[];
   navIndex: number;
+  isResult: boolean;
 }
 
-export function SearchResult({ result, navIndex }: IProps) {
+export function SearchResult({ result, navIndex, isResult }: IProps) {
   const total = result.length;
   const title = total === 0 ? "No results" : total === 1 ? `1 result` : `${total} results`;
   const list = useRef<HTMLUListElement>(null);
@@ -27,15 +28,11 @@ export function SearchResult({ result, navIndex }: IProps) {
 
   return (
     <div>
-      <div>{title}</div>
+      {isResult && <div>{title}</div>}
       <ul ref={list}>
         {result.map((link, idx) => (
-          <li key={`${idx}`} className="my-2">
-            <a
-              href={link.href}
-              target="blank"
-              className="bg-white text-gray-900 p-1 text-xl font-medium leading-snug hover:bg-gray-900 hover:text-white focus:bg-gray-900 focus:text-white focus:outline-none"
-            >
+          <li key={`${idx}`}>
+            <a href={link.href} target="blank" className="search__link">
               {link.label}
             </a>
           </li>
