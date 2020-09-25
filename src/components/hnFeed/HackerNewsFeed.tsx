@@ -130,7 +130,7 @@ export function HackerNewsFeed() {
   };
 
   return (
-    <div>
+    <div className="my-6">
       <ul>
         {state.context.feed
           .filter(x => !x.viewed)
