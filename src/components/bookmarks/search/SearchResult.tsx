@@ -14,13 +14,9 @@ export function SearchResult({ result, navIndex, isResult }: IProps) {
   const list = useRef<HTMLUListElement>(null);
 
   useLayoutEffect(() => {
-    console.log({ navIndex });
-
     if (navIndex !== -1) {
       const li = list.current!.children[navIndex] as HTMLLIElement;
       const a = li.children[0]! as HTMLAnchorElement;
-
-      console.log("focus!", a);
 
       a.focus();
     }

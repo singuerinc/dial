@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://rsms.me/inter/inter.css");
-
 html {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-  }
+
+body {
+  @apply text-oc-gray-200 bg-oc-gray-1000;
 }
 
 .hn__btn {
@@ -28,12 +25,12 @@ html {
 }
 
 .search__link {
-  @apply text-oc-orange-700 text-xl font-medium leading-snug;
+  @apply text-xl leading-snug;
   &:hover {
-    @apply text-white;
+    @apply text-oc-orange-700;
   }
   &:focus {
-    @apply text-white outline-none;
+    @apply text-oc-orange-700 outline-none;
   }
 }
 
