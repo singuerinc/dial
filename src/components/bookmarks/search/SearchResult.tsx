@@ -23,7 +23,7 @@ export function SearchResult({ result, navIndex, isResult }: IProps) {
   }, [list.current, result, navIndex]);
 
   return (
-    <div>
+    <div className="mx-3">
       {isResult && <div>{title}</div>}
       <ul ref={list}>
         {result.map((link, idx) => (

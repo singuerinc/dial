@@ -18,19 +18,19 @@ body {
 }
 
 .search__input {
-  @apply w-full bg-transparent border-4 border-gray-800 px-2 text-4xl -mx-2 my-2 font-light;
+  @apply w-full bg-transparent border-4 border-transparent px-2 text-4xl font-light;
   &:focus {
-    @apply border-oc-orange-700 outline-none;
+    @apply border-oc-red-800 bg-oc-gray-800 outline-none;
   }
 }
 
 .search__link {
   @apply text-xl leading-snug;
   &:hover {
-    @apply text-oc-orange-700;
+    @apply text-oc-gray-900;
   }
   &:focus {
-    @apply text-oc-orange-700 outline-none;
+    @apply text-oc-gray-900 outline-none;
   }
 }
 

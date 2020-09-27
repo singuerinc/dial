@@ -53,6 +53,10 @@
     "title": "News + Blogs",
     "links": [
       {
+        "href": "https://www.indiehackers.com/",
+        "label": "Indie Hackers"
+      },
+      {
         "href": "https://www.wired.com/",
         "label": "Wired"
       },

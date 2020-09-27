@@ -16,7 +16,8 @@ export function Clock() {
 
   const HH = to2(date.getHours());
   const mm = to2(date.getMinutes());
-  const time = `${HH}:${mm}`;
+  const ss = to2(date.getSeconds());
+  const time = `${HH}:${mm}:${ss}`;
 
-  return <h2 className="text-oc-orange-700 leading-none text-6xl font-variant-numeric">{time}</h2>;
+  return <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>;
 }
