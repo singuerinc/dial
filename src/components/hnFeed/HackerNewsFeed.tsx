@@ -135,11 +135,12 @@ export function HackerNewsFeed() {
         {state.context.feed
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
-            <li key={index} className="flex items-start">
+            <li key={index} className="flex items-baseline">
               <a
                 target="#"
                 onClick={handleClick(item)}
-                className="w-full cursor-pointer hover:underline"
+                className="w-full mr-4 cursor-pointer hover:underline whitespace-no-wrap overflow-hidden"
+                style={{ textOverflow: "ellipsis" }}
               >
                 {item.title}
               </a>
