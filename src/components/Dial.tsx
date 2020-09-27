@@ -10,8 +10,8 @@ export function Dial() {
     <div className="lg:flex">
       <section className="sm:w-full lg:w-3/6 xl:w-4/12 xl:mr-12 flex flex-col justify-items-center">
         <Clock />
-        <HackerNewsFeed />
         <Weather />
+        <HackerNewsFeed />
       </section>
       <section className="sm:w-full lg:w-3/6 xl:w-8/12">
         <Bookmarks list={bookmarks} />
