@@ -1,11 +1,13 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { interval } from "rxjs";
+import { ClockSettings, IClockInfo } from "./ClockSettings";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
 export function Clock() {
   const [date, setDate] = useState(new Date());
+  const [info, setInfo] = useState<IClockInfo>({ format: 12 });
 
   useEffect(() => {
     const tick = () => setDate(new Date());
@@ -14,10 +16,22 @@ export function Clock() {
     return () => clock$.unsubscribe();
   }, []);
 
-  const HH = to2(date.getHours());
+  function onCloseSettings(info: IClockInfo) {
+    setInfo(info);
+  }
+
+  const hours = date.getHours();
+  const hhWithFormat = info.format === 12 ? hours % 12 : hours;
+  const HH = to2(hhWithFormat);
   const mm = to2(date.getMinutes());
   const ss = to2(date.getSeconds());
+
   const time = `${HH}:${mm}:${ss}`;
 
-  return <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>;
+  return (
+    <div>
+      <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
+      <ClockSettings format={12} onClose={onCloseSettings} />
+    </div>
+  );
 }
