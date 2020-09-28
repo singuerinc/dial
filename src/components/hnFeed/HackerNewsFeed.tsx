@@ -1,10 +1,11 @@
 import { useMachine } from "@xstate/react";
 import { compose, take, without } from "lodash/fp";
 import * as React from "react";
-import { useRef } from "react";
 import { of } from "rxjs";
 import { map as rxMap, mergeMap } from "rxjs/operators";
 import { assign, Machine } from "xstate";
+import { CloseIcon } from "../../icons/CloseIcon";
+import { MessageIcon } from "../../icons/MessageIcon";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
 import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
@@ -131,11 +132,18 @@ export function HackerNewsFeed() {
 
   return (
     <div className="my-6">
+      <h1 className="text-2xl font-medium">Hacker news</h1>
       <ul>
         {state.context.feed
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
-            <li key={index} className="flex items-baseline">
+            <li key={index} className="flex">
+              <button
+                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300 mr-1"
+                onClick={handleRemove(item)}
+              >
+                <CloseIcon />
+              </button>
               <a
                 target="#"
                 onClick={handleClick(item)}
@@ -144,11 +152,11 @@ export function HackerNewsFeed() {
               >
                 {item.title}
               </a>
-              <button className="hn__btn mr-2" onClick={handleCommentsLink(item)}>
-                discuss
-              </button>
-              <button className="hn__btn" onClick={handleRemove(item)}>
-                remove
+              <button
+                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300"
+                onClick={handleCommentsLink(item)}
+              >
+                <MessageIcon />
               </button>
             </li>
           ))}

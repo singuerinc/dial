@@ -24,13 +24,21 @@ body {
   }
 }
 
+.search__li a span {
+  opacity: 0;
+}
+
+.search__li:hover a span {
+  opacity: 1;
+}
+
 .search__link {
   @apply text-xl leading-snug;
   &:hover {
-    @apply text-oc-gray-900;
+    @apply text-oc-red-900;
   }
   &:focus {
-    @apply text-oc-gray-900 outline-none;
+    @apply text-oc-red-900 outline-none;
   }
 }
 
