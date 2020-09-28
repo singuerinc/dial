@@ -60,7 +60,7 @@ const machine = Machine<Context>(
         }
       },
       loadFeed: {
-        entry: assign({ feed: () => [] }),
+        entry: assign<Context>(() => ({ feed: [] })),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"
@@ -131,7 +131,7 @@ export function HackerNewsFeed() {
   };
 
   return (
-    <div className="my-6">
+    <div>
       <h1 className="text-2xl font-medium">Hacker news</h1>
       <ul>
         {state.context.feed
@@ -139,7 +139,7 @@ export function HackerNewsFeed() {
           .map((item: IFeedItem, index) => (
             <li key={index} className="flex">
               <button
-                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300 mr-1"
+                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600 mr-1"
                 onClick={handleRemove(item)}
               >
                 <CloseIcon />
@@ -153,7 +153,7 @@ export function HackerNewsFeed() {
                 {item.title}
               </a>
               <button
-                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300"
+                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
                 onClick={handleCommentsLink(item)}
               >
                 <MessageIcon />

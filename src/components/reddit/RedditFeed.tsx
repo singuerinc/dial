@@ -23,7 +23,7 @@ const machine = Machine<Context>(
     },
     states: {
       load: {
-        entry: assign({ feed: () => [] }),
+        entry: assign<Context>({ feed: () => [] }),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"
@@ -93,7 +93,7 @@ export function RedditFeed() {
   };
 
   return (
-    <div className="my-6">
+    <div className="mt-6">
       <h1 className="text-2xl font-medium">Reddit</h1>
       <ul>
         {state.context.feed
@@ -101,7 +101,7 @@ export function RedditFeed() {
           .map((item: IFeedItem, index) => (
             <li key={index} className="flex">
               <button
-                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300 mr-1"
+                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600 mr-1"
                 onClick={handleRemove(item)}
               >
                 <CloseIcon />

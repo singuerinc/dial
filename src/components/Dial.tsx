@@ -10,14 +10,16 @@ import { Weather } from "./weather/Weather";
 export function Dial() {
   return (
     <div className="lg:flex">
-      <section className="sm:w-full lg:w-3/6 xl:w-8/12">
+      <section className="sm:w-full lg:w-3/6 xl:w-4/12">
         <Bookmarks list={bookmarks} />
       </section>
       <section className="sm:w-full lg:w-3/6 xl:w-4/12 xl:mr-12 flex flex-col justify-items-center p-6">
-        <Clock />
-        <UserProfile username="singuerinc" />
         <HackerNewsFeed />
         <RedditFeed />
+      </section>
+      <section className="sm:w-full lg:w-3/6 xl:w-4/12">
+        <Clock />
+        <UserProfile />
         <Weather />
       </section>
     </div>

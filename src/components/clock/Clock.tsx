@@ -3,6 +3,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { interval } from "rxjs";
 import { Machine } from "xstate";
+import { PreferencesIcon } from "../../icons/Preferences";
 import { ClockSettings, CLOCK_FORMAT, IClockInfo } from "./ClockSettings";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
@@ -59,7 +60,12 @@ export function Clock() {
       {state.matches("idle") && (
         <>
           <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
-          <button onClick={handleOnConfig}>Config</button>
+          <button
+            className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
+            onClick={handleOnConfig}
+          >
+            <PreferencesIcon />
+          </button>
         </>
       )}
       {state.matches("config") && (

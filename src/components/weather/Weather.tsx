@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 import { timer } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 import { Machine } from "xstate";
+import { PreferencesIcon } from "../../icons/Preferences";
 import { IWeather } from "./IWeather";
-import { WeatherSettings, IWeatherInfo } from "./WeatherSettings";
+import { IWeatherInfo, WeatherSettings } from "./WeatherSettings";
 
 const INTERVAL_UPDATE = 5 * 60000;
 
@@ -98,7 +99,12 @@ export function Weather() {
             src={`https://openweathermap.org/img/wn/${pathToIcon(weather)}@2x.png`}
             alt={pathToDescription(weather)}
           />
-          <button onClick={handleOnConfig}>Config</button>
+          <button
+            className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
+            onClick={handleOnConfig}
+          >
+            <PreferencesIcon />
+          </button>
         </>
       )}
     </div>
