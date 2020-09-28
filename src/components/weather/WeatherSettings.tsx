@@ -65,7 +65,6 @@ export function WeatherSettings({ onClose, city, country, unit }: IProps) {
 
   return (
     <div className="bg-white text-gray-800 p-6 flex flex-wrap flex-col">
-      <i onClick={handleOnClose}>Close</i>
       <h1 className="text-2xl font-bold">Weather</h1>
       <form className="w-full">
         <h2 className="text-lg font-bold">City</h2>
@@ -80,6 +79,7 @@ export function WeatherSettings({ onClose, city, country, unit }: IProps) {
           <option value="imperial">Imperial</option>
         </select>
       </form>
+      <button onClick={handleOnClose}>Save</button>
     </div>
   );
 }

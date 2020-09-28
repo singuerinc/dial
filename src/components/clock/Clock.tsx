@@ -7,7 +7,7 @@ const to2 = (x: number) => String(x).padStart(2, "0");
 
 export function Clock() {
   const [date, setDate] = useState(new Date());
-  const [info, setInfo] = useState<IClockInfo>({ format: 12 });
+  const [info, setInfo] = useState<IClockInfo>({ format: 12, withSeconds: true });
 
   useEffect(() => {
     const tick = () => setDate(new Date());
@@ -21,17 +21,21 @@ export function Clock() {
   }
 
   const hours = date.getHours();
-  const hhWithFormat = info.format === 12 ? hours % 12 : hours;
+  const hhWithFormat = info.format === 12 ? (hours === 12 ? 12 : hours % 12) : hours;
   const HH = to2(hhWithFormat);
   const mm = to2(date.getMinutes());
   const ss = to2(date.getSeconds());
 
-  const time = `${HH}:${mm}:${ss}`;
+  const time = info.withSeconds ? `${HH}:${mm}:${ss}` : `${HH}:${mm}`;
 
   return (
     <div>
       <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
-      <ClockSettings format={12} onClose={onCloseSettings} />
+      <ClockSettings
+        format={info.format}
+        withSeconds={info.withSeconds}
+        onClose={onCloseSettings}
+      />
     </div>
   );
 }
