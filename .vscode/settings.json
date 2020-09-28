@@ -8,7 +8,8 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "dist": true
+    "dist": true,
+    "node_modules": true
   },
   "tailwindCSS.includeLanguages": {
     "plaintext": "javascript",
