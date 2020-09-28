@@ -4,6 +4,7 @@ import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
 import { HackerNewsFeed } from "./hnFeed/HackerNewsFeed";
 import { RedditFeed } from "./reddit/RedditFeed";
+import { UserProfile } from "./userProfile/UserProfile";
 import { Weather } from "./weather/Weather";
 
 export function Dial() {
@@ -14,6 +15,7 @@ export function Dial() {
       </section>
       <section className="sm:w-full lg:w-3/6 xl:w-4/12 xl:mr-12 flex flex-col justify-items-center p-6">
         <Clock />
+        <UserProfile username="singuerinc" />
         <HackerNewsFeed />
         <RedditFeed />
         <Weather />
