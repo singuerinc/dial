@@ -26,9 +26,9 @@ const loadWeather = async ({ city, country, unit }: IWeatherInfo): Promise<IWeat
 export function Weather() {
   const [weather, setWeather] = useState<IWeather>();
   const [info, setInfo] = useState<IWeatherInfo>({
-    city: "Hammarbyhöjden",
-    country: "Sweden",
-    unit: "metric"
+    city: localStorage.getItem("dial/weather/city") || "New York",
+    country: localStorage.getItem("dial/weather/country") || "US",
+    unit: localStorage.getItem("dial/weather/unit") || "imperial"
   });
 
   useEffect(() => {
@@ -42,6 +42,9 @@ export function Weather() {
   }, [info]);
 
   function onCloseSettings(info: IWeatherInfo) {
+    localStorage.setItem("dial/weather/city", info.city);
+    localStorage.setItem("dial/weather/country", info.country);
+    localStorage.setItem("dial/weather/unit", info.unit);
     setInfo(info);
   }
 
