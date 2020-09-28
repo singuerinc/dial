@@ -86,7 +86,7 @@
         "label": "Forbes Tech"
       },
       {
-        "label": "El Pais",
+        "label": "El País",
         "href": "http://elpais.com"
       },
       {
@@ -260,10 +260,6 @@
       {
         "label": "Trakt.tv",
         "href": "https://trakt.tv/dashboard"
-      },
-      {
-        "label": "Ello",
-        "href": "https://ello.co/"
       }
     ]
   },
@@ -297,7 +293,7 @@
       },
       {
         "label": "Bashtards",
-        "href": "https://www.bashtards.com/"
+        "href": "https://bashtards.netlify.app/"
       },
       {
         "label": "Subway",
