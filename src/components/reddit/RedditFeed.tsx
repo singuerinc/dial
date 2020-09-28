@@ -5,6 +5,7 @@ import { assign, Machine } from "xstate";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IRedditStory } from "./IFeedItem";
 import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
+import { CloseIcon } from "../../icons/CloseIcon";
 
 const NUM_OF_STORIES = 10;
 
@@ -94,11 +95,18 @@ export function RedditFeed() {
 
   return (
     <div className="my-6">
+      <h1 className="text-2xl font-medium">Reddit</h1>
       <ul>
         {state.context.feed
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
-            <li key={index} className="flex items-baseline">
+            <li key={index} className="flex">
+              <button
+                className="w-6 h-6 stroke-current text-oc-red-600 hover:text-oc-red-300 mr-1"
+                onClick={handleRemove(item)}
+              >
+                <CloseIcon />
+              </button>
               <a
                 target="#"
                 onClick={handleClick(item)}
@@ -107,9 +115,6 @@ export function RedditFeed() {
               >
                 {item.title}
               </a>
-              <button className="hn__btn" onClick={handleRemove(item)}>
-                remove
-              </button>
             </li>
           ))}
       </ul>

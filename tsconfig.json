@@ -11,7 +11,8 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "jsx": "react"
+    "jsx": "react",
+    "sourceRoot": "./src"
   },
   "files": ["./src/main.tsx"]
 }

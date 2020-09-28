@@ -27,9 +27,9 @@ export function SearchResult({ result, navIndex, isResult }: IProps) {
       {isResult && <div>{title}</div>}
       <ul ref={list}>
         {result.map((link, idx) => (
-          <li key={`${idx}`}>
+          <li key={`${idx}`} className="search__li">
             <a href={link.href} target="blank" className="search__link">
-              {link.label}
+              {link.label} <span className="text-sm">{link.href}</span>
             </a>
           </li>
         ))}

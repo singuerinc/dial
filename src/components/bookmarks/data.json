@@ -1,5 +1,22 @@
 [
   {
+    "title": "Ports",
+    "links": [
+      {
+        "label": "1234",
+        "href": "http://localhost:1234/"
+      },
+      {
+        "label": "8080",
+        "href": "http://localhost:8080/"
+      },
+      {
+        "label": "8888",
+        "href": "http://localhost:8888/"
+      }
+    ]
+  },
+  {
     "title": "Other",
     "links": [
       {
@@ -284,7 +301,7 @@
       },
       {
         "label": "Subway",
-        "href": "https://singuerinc-labs.gitlab.io/subway/"
+        "href": "https://subway-singuerinc.netlify.app/"
       }
     ]
   },
