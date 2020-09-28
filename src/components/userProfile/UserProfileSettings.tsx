@@ -48,10 +48,10 @@ export function UserProfileSettings({ onClose, username }: IProps) {
     send({ type: "USERNAME_UPDATE", value: event.target.value });
 
   return (
-    <div className="bg-white text-gray-800 p-6 flex flex-wrap flex-col">
-      <h1 className="text-2xl font-bold">User</h1>
-      <form className="w-full">
-        <h2 className="text-lg font-bold">Username</h2>
+    <div className="settings">
+      <h1>User</h1>
+      <form>
+        <h2>Username</h2>
         <input value={state.context.username} onChange={handleUsernameChange} />
       </form>
       <button onClick={handleOnClose}>Save</button>

@@ -42,6 +42,33 @@ body {
   }
 }
 
-/* bg-oc-gray-900 text-gray-200 p-1 text-xl font-medium leading-snug
-            hover:bg-gray-900 hover:text-white
-            focus:bg-gray-900 focus:text-white focus:outline-none" */
+.settings {
+  @apply bg-white text-gray-800 p-6 flex flex-wrap flex-col w-full;
+  form {
+    @apply w-full;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply mt-4 mb-2 text-lg font-bold;
+  }
+
+  input {
+    @apply w-full border-2 px-2 py-1;
+  }
+
+  input[type="checkbox"] {
+    @apply w-auto border-none p-0;
+  }
+
+  button {
+    @apply bg-black text-white p-2 mt-6;
+  }
+
+  button:hover {
+    @apply bg-oc-teal-800;
+  }
+}

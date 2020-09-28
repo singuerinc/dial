@@ -78,16 +78,16 @@ export function WeatherSettings({ onClose, apiKey, city, country, unit }: IProps
     send({ type: "UNIT_UPDATE", value: event.target.value });
 
   return (
-    <div className="bg-white text-gray-800 p-6 flex flex-wrap flex-col">
-      <h1 className="text-2xl font-bold">Weather</h1>
-      <form className="w-full">
-        <h2 className="text-lg font-bold">API Key</h2>
+    <div className="settings">
+      <h1>Weather</h1>
+      <form>
+        <h2>API Key</h2>
         <input value={state.context.apiKey} onChange={handleApiKeyChange} />
-        <h2 className="text-lg font-bold">City</h2>
+        <h2>City</h2>
         <input value={state.context.city} onChange={handleCityChange} />
-        <h2 className="text-lg font-bold">Country</h2>
+        <h2>Country</h2>
         <input value={state.context.country} onChange={handleCountryChange} />
-        <h2 className="text-lg font-bold">Units</h2>
+        <h2>Units</h2>
         <select value={state.context.unit} onChange={handleUnitChange}>
           <option value="standard">Standard</option>
           <option value="metric">Metric</option>

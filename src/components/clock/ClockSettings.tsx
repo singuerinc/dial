@@ -61,15 +61,15 @@ export function ClockSettings({ onClose, format, withSeconds }: IProps) {
     send({ type: "WITH_SECONDS_UPDATE", value: event.target.checked });
 
   return (
-    <div className="bg-white text-gray-800 p-6 flex flex-wrap flex-col">
-      <h1 className="text-2xl font-bold">Clock</h1>
-      <form className="w-full">
-        <h2 className="text-lg font-bold">Format</h2>
+    <div className="settings">
+      <h1>Clock</h1>
+      <form>
+        <h2>Format</h2>
         <select value={state.context.format} onChange={handleFormatChange}>
           <option value={CLOCK_FORMAT.TWELVE}>12</option>
           <option value={CLOCK_FORMAT.TWENTY_FOUR}>24</option>
         </select>
-        <h2 className="text-lg font-bold">with seconds</h2>
+        <h2>with seconds</h2>
         <input
           type="checkbox"
           checked={state.context.withSeconds}
