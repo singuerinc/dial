@@ -70,21 +70,23 @@ export function UserProfile() {
       )}
       {state.matches("idle") && (
         <>
-          <img
-            src={state.context.user?.avatar_url}
-            className="w-16 h-16 rounded-full"
-            title={state.context.user?.name}
-          />
+          <div className="flex">
+            <img
+              src={state.context.user?.avatar_url}
+              className="w-16 h-16 rounded-full"
+              title={state.context.user?.name}
+            />
+            <button
+              className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
+              onClick={handleOnConfig}
+            >
+              <PreferencesIcon />
+            </button>
+          </div>
           <h1 className="text-lg cursor-pointer" onClick={handleClick}>
             {state.context.user?.name}
           </h1>
           <h2 className="text-base">{state.context.user?.bio}</h2>
-          <button
-            className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
-            onClick={handleOnConfig}
-          >
-            <PreferencesIcon />
-          </button>
         </>
       )}
     </div>

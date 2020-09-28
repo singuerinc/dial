@@ -37,7 +37,7 @@ export function Search({ onChange }: IProps) {
   return (
     <input
       placeholder="Search..."
-      className="search__input"
+      className="search__input my-6"
       ref={ref}
       value={value}
       onChange={handleChange}

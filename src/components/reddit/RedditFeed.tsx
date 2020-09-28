@@ -100,12 +100,6 @@ export function RedditFeed() {
           .filter(x => !x.viewed)
           .map((item: IFeedItem, index) => (
             <li key={index} className="flex">
-              <button
-                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600 mr-1"
-                onClick={handleRemove(item)}
-              >
-                <CloseIcon />
-              </button>
               <a
                 target="#"
                 onClick={handleClick(item)}

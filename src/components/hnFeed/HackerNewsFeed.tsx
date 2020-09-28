@@ -5,7 +5,6 @@ import { of } from "rxjs";
 import { map as rxMap, mergeMap } from "rxjs/operators";
 import { assign, Machine } from "xstate";
 import { CloseIcon } from "../../icons/CloseIcon";
-import { MessageIcon } from "../../icons/MessageIcon";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
 import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
@@ -123,41 +122,42 @@ export function HackerNewsFeed() {
     send("REFRESH");
   };
 
-  const handleCommentsLink = (item: IFeedItem) => () => window.open(item.comments_url);
-
   const handleClick = (item: IFeedItem) => () => {
     handleRemove(item)();
     window.open(item.url);
   };
 
+  const feed = state.context.feed.filter(x => !x.viewed);
+  const loadingItems = NUM_OF_STORIES - feed.length;
+
   return (
     <div>
       <h1 className="text-2xl font-medium">Hacker news</h1>
       <ul>
-        {state.context.feed
-          .filter(x => !x.viewed)
-          .map((item: IFeedItem, index) => (
-            <li key={index} className="flex">
-              <button
-                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600 mr-1"
-                onClick={handleRemove(item)}
-              >
-                <CloseIcon />
-              </button>
-              <a
-                target="#"
-                onClick={handleClick(item)}
-                className="w-full mr-4 cursor-pointer hover:underline whitespace-no-wrap overflow-hidden"
-                style={{ textOverflow: "ellipsis" }}
-              >
-                {item.title}
-              </a>
-              <button
-                className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
-                onClick={handleCommentsLink(item)}
-              >
-                <MessageIcon />
-              </button>
+        {feed.map((item: IFeedItem, index) => (
+          <li key={index} className="flex">
+            <a
+              target="#"
+              onClick={handleClick(item)}
+              className="w-full mr-4 cursor-pointer hover:underline whitespace-no-wrap overflow-hidden"
+              style={{ textOverflow: "ellipsis" }}
+            >
+              {item.title}
+            </a>
+            <button
+              className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600 ml-1"
+              onClick={handleRemove(item)}
+            >
+              <CloseIcon />
+            </button>
+          </li>
+        ))}
+        {Array(loadingItems)
+          .fill(1)
+          .map(() => (
+            <li className="flex h-6">
+              <div className="h-4 w-full mr-4 opacity-50">Loading...</div>
+              <div className="w-6 h-6 ml-1"></div>
             </li>
           ))}
       </ul>

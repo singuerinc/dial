@@ -14,7 +14,7 @@ export function Dial() {
         <UserProfile />
         <Bookmarks list={bookmarks} />
       </section>
-      <section className="sm:w-full lg:w-3/6 xl:w-4/12 xl:mr-12 flex flex-col justify-items-center">
+      <section className="px-6 sm:w-full lg:w-3/6 xl:w-4/12 xl:mr-12 flex flex-col justify-items-center">
         <HackerNewsFeed />
         <RedditFeed />
       </section>

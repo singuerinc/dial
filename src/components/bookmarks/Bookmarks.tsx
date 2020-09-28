@@ -27,6 +27,7 @@ export function Bookmarks({ list }: IProps) {
       } else if (event.key === "Escape") {
         send("EXIT");
       } else if (event.key === "Enter") {
+        event.preventDefault();
         window.open(state.context.result[state.context.currentIndex].href);
         send("EXIT");
       } else if (event.key === "/") {
