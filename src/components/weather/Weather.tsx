@@ -1,9 +1,11 @@
+import { useMachine } from "@xstate/react";
 import axios from "axios";
 import { path } from "ramda";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { timer } from "rxjs";
 import { mergeMap } from "rxjs/operators";
+import { Machine } from "xstate";
 import { IWeather } from "./IWeather";
 import { WeatherSettings, IWeatherInfo } from "./WeatherSettings";
 
@@ -27,7 +29,24 @@ const loadWeather = async ({
     .catch(() => null);
 };
 
+const machine = Machine({
+  initial: "idle",
+  states: {
+    idle: {
+      on: {
+        CONFIG: "config"
+      }
+    },
+    config: {
+      on: {
+        IDLE: "idle"
+      }
+    }
+  }
+});
+
 export function Weather() {
+  const [state, send] = useMachine(machine);
   const [weather, setWeather] = useState<IWeather>();
   const [info, setInfo] = useState<IWeatherInfo>({
     apiKey: JSON.parse(localStorage.getItem("dial/weather/api/key") ?? '""'),
@@ -50,18 +69,25 @@ export function Weather() {
 
   function onCloseSettings(info: IWeatherInfo) {
     setInfo(info);
+    send("IDLE");
+  }
+
+  function handleOnConfig() {
+    send("CONFIG");
   }
 
   return (
     <div className="flex items-center">
-      <WeatherSettings
-        apiKey={info.apiKey}
-        city={info.city}
-        country={info.country}
-        unit={info.unit}
-        onClose={onCloseSettings}
-      />
-      {weather && (
+      {state.matches("config") && (
+        <WeatherSettings
+          apiKey={info.apiKey}
+          city={info.city}
+          country={info.country}
+          unit={info.unit}
+          onClose={onCloseSettings}
+        />
+      )}
+      {state.matches("idle") && weather && (
         <>
           <div>
             <h1 className="text-3xl leading-none">{pathToTemp(weather)} °C</h1>
@@ -72,6 +98,7 @@ export function Weather() {
             src={`https://openweathermap.org/img/wn/${pathToIcon(weather)}@2x.png`}
             alt={pathToDescription(weather)}
           />
+          <button onClick={handleOnConfig}>Config</button>
         </>
       )}
     </div>

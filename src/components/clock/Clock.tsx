@@ -1,11 +1,30 @@
+import { useMachine } from "@xstate/react";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { interval } from "rxjs";
+import { Machine } from "xstate";
 import { ClockSettings, CLOCK_FORMAT, IClockInfo } from "./ClockSettings";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
+const machine = Machine({
+  initial: "idle",
+  states: {
+    idle: {
+      on: {
+        CONFIG: "config"
+      }
+    },
+    config: {
+      on: {
+        IDLE: "idle"
+      }
+    }
+  }
+});
+
 export function Clock() {
+  const [state, send] = useMachine(machine);
   const [date, setDate] = useState(new Date());
   const [info, setInfo] = useState<IClockInfo>({
     format: JSON.parse(localStorage.getItem("dial/clock/format") || `0`),
@@ -21,6 +40,7 @@ export function Clock() {
 
   function onCloseSettings(info: IClockInfo) {
     setInfo(info);
+    send("IDLE");
   }
 
   const hours = date.getHours();
@@ -32,14 +52,23 @@ export function Clock() {
 
   const time = info.withSeconds ? `${HH}:${mm}:${ss}` : `${HH}:${mm}`;
 
+  const handleOnConfig = () => send("CONFIG");
+
   return (
     <div>
-      <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
-      <ClockSettings
-        format={info.format}
-        withSeconds={info.withSeconds}
-        onClose={onCloseSettings}
-      />
+      {state.matches("idle") && (
+        <>
+          <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
+          <button onClick={handleOnConfig}>Config</button>
+        </>
+      )}
+      {state.matches("config") && (
+        <ClockSettings
+          format={info.format}
+          withSeconds={info.withSeconds}
+          onClose={onCloseSettings}
+        />
+      )}
     </div>
   );
 }
