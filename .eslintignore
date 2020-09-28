@@ -1,0 +1,6 @@
+node_modules
+dist
+coverage
+postcss.config.js
+.eslintrc.js
+tailwind.config.js

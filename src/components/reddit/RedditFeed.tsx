@@ -9,11 +9,6 @@ import { getItemFromLocalStorage, setViewedInLocalStorage } from "./_storage";
 
 const NUM_OF_STORIES = 10;
 
-const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
-  ...x,
-  viewed: false
-});
-
 interface Context {
   feed: IFeedItem[];
   viewed: number[];
@@ -28,7 +23,7 @@ const machine = Machine<Context>(
     },
     states: {
       load: {
-        entry: assign(_ => ({ feed: [] })),
+        entry: assign({ feed: () => [] }),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"
@@ -51,15 +46,18 @@ const machine = Machine<Context>(
 
       markAsViewedInStorage: (ctx, event) =>
         setViewedInLocalStorage([...ctx.viewed, event.data.id]),
-      markAsViewed: assign((ctx, event) => {
-        const item: IFeedItem = event.data;
-        const feed = ctx.feed.map(x => {
-          if (x.id === item.id) {
-            x.viewed = true;
-          }
-          return x;
-        });
-        return { viewed: [...ctx.viewed, item.id], feed };
+      markAsViewed: assign({
+        viewed: (ctx, event) => [...ctx.viewed, event.data.id],
+        feed: (ctx, event) => {
+          const item: IFeedItem = event.data;
+          const feed = ctx.feed.map(x => {
+            if (x.id === item.id) {
+              x.viewed = true;
+            }
+            return x;
+          });
+          return feed;
+        }
       })
     },
     services: {

@@ -60,7 +60,7 @@ const machine = Machine<Context>(
         }
       },
       loadFeed: {
-        entry: assign(_ => ({ feed: [] })),
+        entry: assign({ feed: () => [] }),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"

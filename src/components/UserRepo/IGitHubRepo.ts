@@ -92,7 +92,7 @@ export interface IGitHubRepo {
   has_wiki: boolean;
   has_pages: boolean;
   forks_count: number;
-  mirror_url?: any;
+  mirror_url?: string;
   archived: boolean;
   open_issues_count: number;
   license: License;

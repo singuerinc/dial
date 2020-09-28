@@ -18,7 +18,7 @@ export function Search({ onChange }: IProps) {
     if (event.key === "/" || event.key === "Escape") {
       event.preventDefault();
       handleChange({ target: { value: "" } } as React.ChangeEvent<HTMLInputElement>);
-      ref.current!.focus();
+      ref.current?.focus();
     }
   };
 
@@ -31,7 +31,7 @@ export function Search({ onChange }: IProps) {
   }, [ref.current]);
 
   useEffect(() => {
-    ref.current!.focus();
+    ref.current?.focus();
   }, []);
 
   return (
