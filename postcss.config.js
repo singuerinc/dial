@@ -14,19 +14,15 @@ plugins.push(nested);
 if (!IS_DEVELOPMENT) {
   const purgecss = require("@fullhuman/postcss-purgecss");
 
-  class TailwindExtractor {
-    static extract(content) {
-      return content.match(/[A-z0-9-:\/]+/g) || [];
-    }
-  }
+  const purgeFrom = content => content.match(/[A-z0-9-:\/]+/g) || [];
 
   plugins.push(
     purgecss({
       content: ["src/*.html", "src/**/*.tsx"],
       extractors: [
         {
-          extractor: TailwindExtractor,
-          extensions: ["html"]
+          extractor: purgeFrom,
+          extensions: ["html", "tsx"]
         }
       ]
     })

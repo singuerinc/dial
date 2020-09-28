@@ -2,11 +2,11 @@ module.exports = {
   corePlugins: {
     fontFamily: false
   },
+  purge: false,
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
-  purge: [],
   theme: {
     extend: {
       colors: {
