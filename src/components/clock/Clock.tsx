@@ -58,15 +58,17 @@ export function Clock() {
   return (
     <div>
       {state.matches("idle") && (
-        <>
-          <h2 className="text-oc-red-900 leading-none text-6xl font-variant-numeric">{time}</h2>
+        <div className="flex">
+          <h2 className="text-oc-teal-400 leading-none text-5xl font-medium font-variant-numeric">
+            {time}
+          </h2>
           <button
-            className="w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-red-600"
+            className="ml-2 w-6 h-6 stroke-current text-oc-gray-800 hover:text-oc-teal-400"
             onClick={handleOnConfig}
           >
             <PreferencesIcon />
           </button>
-        </>
+        </div>
       )}
       {state.matches("config") && (
         <ClockSettings
