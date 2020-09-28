@@ -1,11 +1,11 @@
 import { useMachine } from "@xstate/react";
-import { take, without } from "lodash/fp";
+import { take } from "lodash/fp";
 import * as React from "react";
 import { assign, Machine } from "xstate";
+import { CloseIcon } from "../../icons/CloseIcon";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IRedditStory } from "./IFeedItem";
-import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
-import { CloseIcon } from "../../icons/CloseIcon";
+import { getItemFromLocalStorage, setViewedInLocalStorage } from "./_storage";
 
 const NUM_OF_STORIES = 10;
 
@@ -15,7 +15,6 @@ const markAsNotViewed = (x: IFeedItem): IFeedItem => ({
 });
 
 interface Context {
-  top: number[];
   feed: IFeedItem[];
   viewed: number[];
 }
@@ -25,7 +24,6 @@ const machine = Machine<Context>(
     initial: "load",
     context: {
       viewed: getItemFromLocalStorage("reddit/viewed") ?? [],
-      top: [],
       feed: []
     },
     states: {
@@ -54,7 +52,7 @@ const machine = Machine<Context>(
       markAsViewedInStorage: (ctx, event) =>
         setViewedInLocalStorage([...ctx.viewed, event.data.id]),
       markAsViewed: assign((ctx, event) => {
-        const item: IRedditStory = event.data;
+        const item: IFeedItem = event.data;
         const feed = ctx.feed.map(x => {
           if (x.id === item.id) {
             x.viewed = true;
@@ -65,16 +63,19 @@ const machine = Machine<Context>(
       })
     },
     services: {
-      loadFeedService: ctx =>
+      loadFeedService: () =>
         fetch("https://www.reddit.com/r/snowrunner/new.json")
-          // .then(without(ctx.viewed))
-          .then(res => res.data)
-          .then(x => x.children)
+          .then(res => res.data.children)
           .then(x => x.map(y => y.data))
           .then(take(NUM_OF_STORIES))
-          .then(y => y.map(x => ({ id: x.id, title: x.title, url: x.url })))
-      // .then(x => x.map(markAsNotViewed))
-      // .then(x => saveInLocalStorage),
+          .then(y =>
+            y.map<IFeedItem>((x: IRedditStory) => ({
+              id: x.id,
+              title: x.title,
+              url: x.url,
+              viewed: false
+            }))
+          )
     }
   }
 );
