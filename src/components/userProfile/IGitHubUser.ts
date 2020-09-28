@@ -21,7 +21,7 @@ export interface IGitHubUser {
   company: string;
   blog: string;
   location: string;
-  email?: any;
+  email?: string;
   hireable: boolean;
   bio: string;
   public_repos: number;

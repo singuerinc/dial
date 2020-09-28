@@ -8,12 +8,9 @@ const plugins = [];
 plugins.push(tailwindcss);
 plugins.push(autoprefixer);
 plugins.push(nested);
-// plugins.push(tailwindcss('tailwind.config.js'))
-// This is if you want to include your custom config
 
 if (!IS_DEVELOPMENT) {
   const purgecss = require("@fullhuman/postcss-purgecss");
-
   const purgeFrom = content => content.match(/[A-z0-9-:\/]+/g) || [];
 
   plugins.push(
