@@ -1,6 +1,7 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
 import { assign, Machine } from "xstate";
+import * as store from "store2";
 
 export enum CLOCK_FORMAT {
   TWELVE,
@@ -27,9 +28,9 @@ const machine = Machine<IClockInfo>(
   },
   {
     actions: {
-      save: context => {
-        localStorage.setItem("dial/clock/format", JSON.stringify(context.format));
-        localStorage.setItem("dial/clock/with-seconds", JSON.stringify(context.withSeconds));
+      save: ctx => {
+        store.set("dial/clock/format", ctx.format);
+        store.set("dial/clock/with-seconds", ctx.withSeconds);
       },
       formatUpdate: assign({ format: (_, event) => event.value }),
       withSecondsUpdate: assign({ withSeconds: (_, event) => event.value })

@@ -1,6 +1,7 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
 import { assign, Machine } from "xstate";
+import * as store from "store2";
 
 export type IUserInfo = {
   username: string;
@@ -13,17 +14,15 @@ const machine = Machine<IUserInfo>(
       idle: {
         on: {
           SAVE: { actions: ["save"] },
-          USERNAME_UPDATE: { actions: ["usernameUpdate"] }
+          USERNAME_UPDATE: { actions: ["updateUsername"] }
         }
       }
     }
   },
   {
     actions: {
-      save: context => {
-        localStorage.setItem("dial/user/username", JSON.stringify(context.username));
-      },
-      usernameUpdate: assign({ username: (_, event) => event.value })
+      save: context => store.set("dial/user/username", context.username),
+      updateUsername: assign({ username: (_, event) => event.value })
     }
   }
 );
@@ -39,10 +38,10 @@ export function UserProfileSettings({ onClose, username }: IProps) {
     }
   });
 
-  function handleOnClose() {
+  const handleOnClose = () => {
     send({ type: "SAVE" });
     onClose(({ username } = state.context));
-  }
+  };
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     send({ type: "USERNAME_UPDATE", value: event.target.value });

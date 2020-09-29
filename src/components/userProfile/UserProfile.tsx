@@ -6,6 +6,7 @@ import { assign, Machine } from "xstate";
 import { PreferencesIcon } from "../../icons/Preferences";
 import { IGitHubUser } from "./IGitHubUser";
 import { IUserInfo, UserProfileSettings } from "./UserProfileSettings";
+import * as store from "store2";
 
 const loadProfile = async (username: string): Promise<IGitHubUser | null> => {
   return axios
@@ -44,7 +45,7 @@ const machine = Machine<Context>({
 export function UserProfile() {
   const [state, send] = useMachine(machine, {
     context: {
-      username: JSON.parse(localStorage.getItem("dial/user/username") ?? `"singuerinc"`)
+      username: store.get("dial/user/username") ?? "singuerinc"
     }
   });
 

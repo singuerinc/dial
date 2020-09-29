@@ -1,5 +1,5 @@
 import { uniq } from "lodash/fp";
-import { IFeedItem } from "./IFeedItem";
+import { IFeedItem } from "./types";
 
 export const parse = (s: string) => JSON.parse(s);
 

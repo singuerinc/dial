@@ -1,6 +1,9 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
+import * as store from "store2";
 import { assign, Machine } from "xstate";
+
+type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 export enum WEATHER_UNIT {
   "standard" = "standard",
@@ -22,10 +25,10 @@ const machine = Machine<IWeatherInfo>(
       idle: {
         on: {
           SAVE: { actions: ["save"] },
-          API_KEY_UPDATE: { actions: ["apiKeyUpdate"] },
-          CITY_UPDATE: { actions: ["cityUpdate"] },
-          UNIT_UPDATE: { actions: ["unitUpdate"] },
-          COUNTRY_UPDATE: { actions: ["countryUpdate"] }
+          API_KEY_UPDATE: { actions: ["updateApiKey"] },
+          CITY_UPDATE: { actions: ["updateCity"] },
+          UNIT_UPDATE: { actions: ["updateUnit"] },
+          COUNTRY_UPDATE: { actions: ["updateCountry"] }
         }
       }
     }
@@ -33,15 +36,15 @@ const machine = Machine<IWeatherInfo>(
   {
     actions: {
       save: context => {
-        localStorage.setItem("dial/weather/api/key", JSON.stringify(context.apiKey));
-        localStorage.setItem("dial/weather/city", JSON.stringify(context.city));
-        localStorage.setItem("dial/weather/country", JSON.stringify(context.country));
-        localStorage.setItem("dial/weather/unit", JSON.stringify(context.unit));
+        store.set("dial/weather/api/key", context.apiKey);
+        store.set("dial/weather/city", context.city);
+        store.set("dial/weather/country", context.country);
+        store.set("dial/weather/unit", context.unit);
       },
-      apiKeyUpdate: assign({ apiKey: (_, event) => event.value }),
-      cityUpdate: assign({ city: (_, event) => event.value }),
-      unitUpdate: assign({ unit: (_, event) => event.value }),
-      countryUpdate: assign({ country: (_, event) => event.value })
+      updateApiKey: assign({ apiKey: (_, event) => event.value }),
+      updateCity: assign({ city: (_, event) => event.value }),
+      updateUnit: assign({ unit: (_, event) => event.value }),
+      updateCountry: assign({ country: (_, event) => event.value })
     }
   }
 );
@@ -60,18 +63,18 @@ export function WeatherSettings({ onClose, apiKey, city, country, unit }: IProps
     }
   });
 
-  function handleOnClose() {
+  const handleOnClose = () => {
     send({ type: "SAVE" });
     onClose(({ apiKey, city, country, unit } = state.context));
-  }
+  };
 
-  const handleApiKeyChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const handleApiKeyChange = (event: InputChangeEvent) =>
     send({ type: "API_KEY_UPDATE", value: event.target.value });
 
-  const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const handleCityChange = (event: InputChangeEvent) =>
     send({ type: "CITY_UPDATE", value: event.target.value });
 
-  const handleCountryChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+  const handleCountryChange = (event: InputChangeEvent) =>
     send({ type: "COUNTRY_UPDATE", value: event.target.value });
 
   const handleUnitChange = (event: React.ChangeEvent<HTMLSelectElement>) =>

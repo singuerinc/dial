@@ -1,93 +1,16 @@
 import { useMachine } from "@xstate/react";
-import { take } from "lodash/fp";
 import * as React from "react";
-import { assign, Machine } from "xstate";
-import { fetch } from "../../utils/fetch";
-import { getItemFromLocalStorage, setViewedInLocalStorage } from "./storage";
-import { IFeedItem, IRedditStory, RedditResponse } from "./types";
-
-const NUM_OF_STORIES = 10;
-
-interface Context {
-  feed: IFeedItem[];
-  viewed: number[];
-}
-
-const machine = Machine<Context>(
-  {
-    initial: "load",
-    context: {
-      viewed: getItemFromLocalStorage("reddit/viewed") ?? [],
-      feed: []
-    },
-    states: {
-      load: {
-        onEntry: assign<Context>({ feed: () => [] }),
-        invoke: {
-          src: "loadFeedService",
-          onDone: "idle"
-        }
-      },
-      idle: {
-        onEntry: ["populateFeed"],
-        on: {
-          MARK_AS_VIEWED: {
-            actions: ["markAsViewedInStorage", "markAsViewed"]
-          },
-          REFRESH: "load"
-        }
-      }
-    }
-  },
-  {
-    actions: {
-      populateFeed: assign({ feed: (_, event) => event.data }),
-      markAsViewedInStorage: (ctx, event) =>
-        setViewedInLocalStorage([...ctx.viewed, event.data.id]),
-      markAsViewed: assign({
-        viewed: (ctx, event) => [...ctx.viewed, event.data.id],
-        feed: (ctx, event) => {
-          const item: IFeedItem = event.data;
-          const feed = ctx.feed.map(x => {
-            if (x.id === item.id) {
-              x.viewed = true;
-            }
-            return x;
-          });
-          return feed;
-        }
-      })
-    },
-    services: {
-      loadFeedService: () =>
-        fetch("https://www.reddit.com/r/snowrunner/new.json")
-          .then(res => (res as RedditResponse).data.children)
-          .then(x => x.map(y => y.data))
-          .then(take(NUM_OF_STORIES))
-          .then(y =>
-            y.map<IFeedItem>((x: IRedditStory) => ({
-              id: x.id,
-              title: x.title,
-              url: x.url,
-              viewed: false
-            }))
-          )
-    }
-  }
-);
+import { machine } from "./machine";
+import { IFeedItem } from "./types";
 
 export function RedditFeed() {
   const [state, send] = useMachine(machine);
 
   const handleRefresh = () => send("REFRESH");
-  const handleRemove = (item: IFeedItem) => () => {
-    send({ type: "MARK_AS_VIEWED", data: item });
-    send("REFRESH");
-  };
 
-  const handleClick = (item: IFeedItem) => () => {
-    handleRemove(item)();
-    window.open(item.url);
+  const handleClick = (item: IFeedItem) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    send({ type: "OPEN_ITEM", payload: item });
   };
 
   return (
@@ -99,7 +22,8 @@ export function RedditFeed() {
           .map((item: IFeedItem, index) => (
             <li key={index} className="flex">
               <a
-                target="#"
+                href="#"
+                target="_blank"
                 onClick={handleClick(item)}
                 className="w-full mr-4 cursor-pointer hover:underline whitespace-no-wrap overflow-hidden"
                 style={{ textOverflow: "ellipsis" }}
