@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useLayoutEffect, useRef } from "react";
-import { ILink } from "../ILink";
+import { ILink } from "./types";
 
 interface IProps {
   result: ILink[];

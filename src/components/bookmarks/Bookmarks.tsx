@@ -1,9 +1,9 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
 import { useEffect } from "react";
-import { ILink } from "./ILink";
-import { Search } from "./search/Search";
-import { SearchResult } from "./search/SearchResult";
+import { ILink } from "./types";
+import { Search } from "./Search";
+import { SearchResult } from "./SearchResult";
 import { machine } from "./states";
 
 interface IProps {

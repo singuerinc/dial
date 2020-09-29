@@ -1,6 +1,5 @@
 import * as data from "./data.json";
-import { ILink } from "./ILink";
-import { ICategory } from "./list/IdleList";
+import { ICategory, ILink } from "./types";
 
 export const bookmarks: ILink[] = data.default
   .sort((x: ICategory, y: ICategory) => (x.title > y.title ? 1 : -1))
