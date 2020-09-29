@@ -3,8 +3,8 @@ import { take } from "lodash/fp";
 import * as React from "react";
 import { assign, Machine } from "xstate";
 import { fetch } from "../../utils/fetch";
-import { IFeedItem, IRedditStory } from "./IFeedItem";
 import { getItemFromLocalStorage, setViewedInLocalStorage } from "./storage";
+import { IFeedItem, IRedditStory, RedditResponse } from "./types";
 
 const NUM_OF_STORIES = 10;
 
@@ -22,14 +22,14 @@ const machine = Machine<Context>(
     },
     states: {
       load: {
-        entry: assign<Context>({ feed: () => [] }),
+        onEntry: assign<Context>({ feed: () => [] }),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"
         }
       },
       idle: {
-        entry: ["aaa"],
+        onEntry: ["populateFeed"],
         on: {
           MARK_AS_VIEWED: {
             actions: ["markAsViewedInStorage", "markAsViewed"]
@@ -41,8 +41,7 @@ const machine = Machine<Context>(
   },
   {
     actions: {
-      aaa: assign({ feed: (context, event) => event.data }),
-
+      populateFeed: assign({ feed: (_, event) => event.data }),
       markAsViewedInStorage: (ctx, event) =>
         setViewedInLocalStorage([...ctx.viewed, event.data.id]),
       markAsViewed: assign({
@@ -62,7 +61,7 @@ const machine = Machine<Context>(
     services: {
       loadFeedService: () =>
         fetch("https://www.reddit.com/r/snowrunner/new.json")
-          .then(res => res.data.children)
+          .then(res => (res as RedditResponse).data.children)
           .then(x => x.map(y => y.data))
           .then(take(NUM_OF_STORIES))
           .then(y =>

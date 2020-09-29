@@ -25,7 +25,7 @@ export const machine = Machine<IContext>(
     },
     states: {
       idle: {
-        entry: [assign<IContext>({ selectedItemIndex: -1, result: () => [] })],
+        onEntry: [assign<IContext>({ selectedItemIndex: -1, result: () => [] })],
         on: {
           SEARCH: {
             target: "searching",
@@ -34,7 +34,7 @@ export const machine = Machine<IContext>(
         }
       },
       searching: {
-        entry: [assign<IContext>({ selectedItemIndex: -1, result: ctx => ctx.list })],
+        onEntry: [assign<IContext>({ selectedItemIndex: -1, result: ctx => ctx.list })],
         on: {
           EXIT: "idle",
           SEARCH: {

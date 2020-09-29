@@ -34,13 +34,13 @@ const loadItem = async (id: number): Promise<IFeedItem> => {
   return Promise.resolve(maybeItem);
 };
 
-interface Context {
+interface IContext {
   top: number[];
   feed: IFeedItem[];
   viewed: number[];
 }
 
-const machine = Machine<Context>(
+const machine = Machine<IContext>(
   {
     initial: "loadTop",
     context: {
@@ -59,7 +59,7 @@ const machine = Machine<Context>(
         }
       },
       loadFeed: {
-        entry: assign<Context>(() => ({ feed: [] })),
+        onEntry: assign<IContext>(() => ({ feed: [] })),
         invoke: {
           src: "loadFeedService",
           onDone: "idle"
