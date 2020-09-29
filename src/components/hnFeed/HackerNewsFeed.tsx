@@ -154,8 +154,8 @@ export function HackerNewsFeed() {
         ))}
         {Array(loadingItems)
           .fill(1)
-          .map(() => (
-            <li className="flex h-6">
+          .map((_, index) => (
+            <li key={index + feed.length} className="flex h-6">
               <div className="h-4 w-full mr-4 opacity-50">Loading...</div>
               <div className="w-6 h-6 ml-1"></div>
             </li>
