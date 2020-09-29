@@ -6,11 +6,7 @@ import { Search } from "./Search";
 import { SearchResult } from "./SearchResult";
 import { machine } from "./states";
 
-interface IProps {
-  list: ILink[];
-}
-
-export function Bookmarks({ list }: IProps) {
+export function Bookmarks({ list }: { list: ILink[] }) {
   const [state, send] = useMachine(machine, {
     context: {
       list
@@ -18,7 +14,7 @@ export function Bookmarks({ list }: IProps) {
   });
 
   useEffect(() => {
-    const handleUpDown = (event: KeyboardEvent) => {
+    function handleUpDown(event: KeyboardEvent) {
       if (event.key === "ArrowUp" || event.key === "ArrowDown") {
         // prevent the scroll down/up of the page
         event.preventDefault();
@@ -28,17 +24,17 @@ export function Bookmarks({ list }: IProps) {
         send("EXIT");
       } else if (event.key === "Enter") {
         event.preventDefault();
-        window.open(state.context.result[state.context.currentIndex].href);
+        window.open(state.context.result[state.context.selectedItemIndex].href);
         send("EXIT");
       } else if (event.key === "/") {
         send("SEARCH");
       }
-    };
+    }
 
     document.addEventListener("keydown", handleUpDown);
 
     return () => document.removeEventListener("keydown", handleUpDown);
-  }, [state.context.result, state.context.currentIndex]);
+  }, [state.context.result, state.context.selectedItemIndex]);
 
   const handleSearchChange = (value: string) => {
     if (value === "") {
@@ -50,14 +46,17 @@ export function Bookmarks({ list }: IProps) {
   };
 
   const isSearching = state.matches("searching");
+  const result = isSearching ? state.context.result : state.context.list;
+  const selectedItemIndex = state.context.selectedItemIndex;
 
   return (
     <>
       <Search onChange={handleSearchChange} />
       <SearchResult
+        list={state.context.list}
         isResult={isSearching}
-        navIndex={state.context.currentIndex}
-        result={isSearching ? state.context.result : state.context.list}
+        selectedItemIndex={selectedItemIndex}
+        result={result}
       />
     </>
   );

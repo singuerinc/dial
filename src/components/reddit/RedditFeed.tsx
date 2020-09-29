@@ -2,10 +2,9 @@ import { useMachine } from "@xstate/react";
 import { take } from "lodash/fp";
 import * as React from "react";
 import { assign, Machine } from "xstate";
-import { CloseIcon } from "../../icons/CloseIcon";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IRedditStory } from "./IFeedItem";
-import { getItemFromLocalStorage, setViewedInLocalStorage } from "./_storage";
+import { getItemFromLocalStorage, setViewedInLocalStorage } from "./storage";
 
 const NUM_OF_STORIES = 10;
 

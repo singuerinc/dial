@@ -1,25 +1,31 @@
+import { curry, includes, toLower } from "lodash/fp";
 import { assign, Machine } from "xstate";
-import { ILink } from "./ILink";
-import { withLabelOrHref } from "./utils";
+import { ILink } from "./types";
+
+export const withLabelOrHref = curry((value: string, link: ILink) => {
+  const v = toLower(value);
+  const l = toLower(link.label);
+  const h = toLower(link.href);
+  return includes(v, l) || includes(v, h);
+});
 
 interface IContext {
   list: ILink[];
   result: ILink[];
-  currentIndex: number;
+  selectedItemIndex: number;
 }
 
 export const machine = Machine<IContext>(
   {
-    id: "bookmarks",
+    initial: "idle",
     context: {
-      currentIndex: -1,
+      selectedItemIndex: -1,
       list: [],
       result: []
     },
-    initial: "idle",
     states: {
       idle: {
-        entry: [assign<IContext>({ currentIndex: -1, result: () => [] })],
+        entry: [assign<IContext>({ selectedItemIndex: -1, result: () => [] })],
         on: {
           SEARCH: {
             target: "searching",
@@ -28,11 +34,11 @@ export const machine = Machine<IContext>(
         }
       },
       searching: {
-        entry: [assign<IContext>({ currentIndex: -1, result: ctx => ctx.list })],
+        entry: [assign<IContext>({ selectedItemIndex: -1, result: ctx => ctx.list })],
         on: {
           EXIT: "idle",
           SEARCH: {
-            actions: [assign({ currentIndex: -1 }), "search"]
+            actions: [assign<IContext>({ selectedItemIndex: -1 }), "search"]
           },
           NAVIGATE: {
             actions: ["navigate"]
@@ -44,26 +50,26 @@ export const machine = Machine<IContext>(
   {
     actions: {
       navigate: assign({
-        currentIndex: (context, event) => {
-          const total = context.result.length;
-          const current = context.currentIndex;
+        selectedItemIndex: (context, { direction }) => {
+          const { result, selectedItemIndex } = context;
+          const total = result.length;
 
           if (total === 0) {
             return -1;
           }
 
-          if (event.direction === 1) {
-            return current <= total - 2 ? current + 1 : 0;
+          if (direction === 1) {
+            return selectedItemIndex <= total - 2 ? selectedItemIndex + 1 : 0;
           } else {
-            return current <= 0 ? total - 1 : current - 1;
+            return selectedItemIndex <= 0 ? total - 1 : selectedItemIndex - 1;
           }
         }
       }),
       search: assign({
-        result: (context, event) => {
-          const value = event.lookup || "";
+        result: ({ list }, { lookup }) => {
+          const value = lookup || "";
           if (value === "") return [];
-          return context.list.filter(withLabelOrHref(value));
+          return list.filter(withLabelOrHref(value));
         }
       })
     }

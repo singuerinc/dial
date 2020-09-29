@@ -7,7 +7,7 @@ import { assign, Machine } from "xstate";
 import { CloseIcon } from "../../icons/CloseIcon";
 import { fetch } from "../../utils/fetch";
 import { IFeedItem, IHackerNewsStory } from "./IFeedItem";
-import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./_storage";
+import { getItemFromLocalStorage, saveInLocalStorage, setViewedInLocalStorage } from "./storage";
 
 const NUM_OF_STORIES = 10;
 
