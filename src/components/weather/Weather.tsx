@@ -1,6 +1,6 @@
 import { useMachine } from "@xstate/react";
 import axios from "axios";
-import { path } from "ramda";
+import { path } from "lodash/fp";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { timer } from "rxjs";
@@ -12,9 +12,9 @@ import { IWeatherInfo, WeatherSettings } from "./WeatherSettings";
 
 const INTERVAL_UPDATE = 5 * 60000;
 
-const pathToDescription = path<string>(["weather", 0, "description"]);
-const pathToIcon = path<number>(["weather", 0, "icon"]);
-const pathToTemp = path<number>(["main", "temp"]);
+const pathToDescription = path(["weather", 0, "description"]);
+const pathToIcon = path(["weather", 0, "icon"]);
+const pathToTemp = path(["main", "temp"]);
 
 const loadWeather = async ({
   apiKey,

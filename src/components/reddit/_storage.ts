@@ -1,4 +1,4 @@
-import uniq from "ramda/es/uniq";
+import { uniq } from "lodash/fp";
 import { IFeedItem } from "./IFeedItem";
 
 export const parse = (s: string) => JSON.parse(s);
