@@ -1,23 +1,44 @@
 import { useMachine } from "@xstate/react";
 import * as React from "react";
-import { useEffect, useState } from "react";
 import { interval } from "rxjs";
-import { Machine } from "xstate";
+import { map } from "rxjs/operators";
+import { assign, Machine } from "xstate";
 import { PreferencesIcon } from "../../icons/Preferences";
 import { ClockSettings, CLOCK_FORMAT, IClockInfo } from "./ClockSettings";
 
 const to2 = (x: number) => String(x).padStart(2, "0");
 
-const machine = Machine({
+interface IContext {
+  date: Date;
+  info: IClockInfo;
+}
+
+const machine = Machine<IContext>({
   initial: "idle",
+  context: {
+    date: new Date(),
+    info: {
+      format: JSON.parse(localStorage.getItem("dial/clock/format") || `0`),
+      withSeconds: JSON.parse(localStorage.getItem("dial/clock/with-seconds") || "true")
+    }
+  },
   states: {
     idle: {
+      invoke: {
+        src: () => interval(1000).pipe(map(() => ({ type: "SET_DATE", value: new Date() })))
+      },
       on: {
+        SET_DATE: {
+          actions: assign({ date: (_, event) => event.value })
+        },
         CONFIG: "config"
       }
     },
     config: {
       on: {
+        SET_INFO: {
+          actions: assign({ info: (_, event) => event.value })
+        },
         IDLE: "idle"
       }
     }
@@ -26,23 +47,13 @@ const machine = Machine({
 
 export function Clock() {
   const [state, send] = useMachine(machine);
-  const [date, setDate] = useState(new Date());
-  const [info, setInfo] = useState<IClockInfo>({
-    format: JSON.parse(localStorage.getItem("dial/clock/format") || `0`),
-    withSeconds: JSON.parse(localStorage.getItem("dial/clock/with-seconds") || "true")
-  });
-
-  useEffect(() => {
-    const tick = () => setDate(new Date());
-    const clock$ = interval(1000).subscribe(tick);
-
-    return () => clock$.unsubscribe();
-  }, []);
 
   function onCloseSettings(info: IClockInfo) {
-    setInfo(info);
+    send({ type: "SET_INFO", value: info });
     send("IDLE");
   }
+
+  const { date, info } = state.context;
 
   const hours = date.getHours();
   const hhWithFormat =
