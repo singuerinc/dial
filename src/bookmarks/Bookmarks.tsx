@@ -1,10 +1,11 @@
+import * as React from "react";
 import { IBookmark } from "./data";
 
 export function Bookmarks({ bookmarks }: { bookmarks: IBookmark[] }) {
   return (
     <ul className="mb-4 grid auto-rows-auto">
-      {bookmarks.map((b) => (
-        <BookmarkItem bookmark={b} />
+      {bookmarks.map((b, idx) => (
+        <BookmarkItem key={idx} bookmark={b} />
       ))}
     </ul>
   );

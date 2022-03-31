@@ -1,7 +1,7 @@
 export type IBookmark = {
   label: string;
   href?: string;
-  children?: IBookmark;
+  children?: IBookmark[];
 };
 
 export const bookmarks = [
