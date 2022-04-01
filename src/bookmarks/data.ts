@@ -13,6 +13,10 @@ export const bookmarks = [
         href: "http://localhost:1234/",
       },
       {
+        label: "3000",
+        href: "http://localhost:3000/",
+      },
+      {
         label: "8080",
         href: "http://localhost:8080/",
       },
@@ -23,15 +27,68 @@ export const bookmarks = [
     ],
   },
   {
-    label: "Other",
+    label: "Projects",
+    children: [
+      {
+        label: "Goals",
+        href: "https://goals.singuerinc.com/goal/water",
+      },
+      {
+        label: "Better DNI",
+        href: "https://better-dni.singuerinc.com/",
+      },
+      {
+        label: "Overlay",
+        href: "https://overlay.singuerinc.com/",
+      },
+      {
+        label: "Tomeito",
+        href: "https://tomeito-app.singuerinc.com/",
+      },
+      {
+        label: "Artstagram",
+        href: "https://artstagram.singuerinc.com/",
+      },
+      {
+        label: "Bi",
+        href: "https://bi.singuerinc.com/",
+      },
+      {
+        label: "Spanish word of the day",
+        href: "https://spanish-wotd.singuerinc.com/",
+      },
+      {
+        label: "Swedish word of the day",
+        href: "https://swotd.singuerinc.com/",
+      },
+      {
+        label: "Bashtards",
+        href: "https://bashtards.netlify.app/",
+      },
+      {
+        label: "Spanish Car Plate",
+        href: "https://spanish-car-plate.singuerinc.com/",
+      },
+      {
+        label: "Blog",
+        href: "https://blog.singuerinc.com/",
+      },
+      {
+        label: "Subway",
+        href: "https://subway-singuerinc.netlify.app/",
+      },
+    ],
+  },
+  {
+    label: "Movies/Series",
     children: [
       {
         label: "Rotten Tomatoes",
-        href: "http://rottentomatoes.com",
+        href: "https://rottentomatoes.com",
       },
       {
-        label: "mnmll.ist",
-        href: "https://mnmll.ist/",
+        label: "Rotten Tomatoes",
+        href: "https://imdb.com",
       },
     ],
   },
@@ -88,28 +145,28 @@ export const bookmarks = [
         label: "Wired",
       },
       {
-        href: "http://www.ted.com/",
+        href: "https://www.ted.com/",
         label: "Ted Talks",
       },
       {
-        href: "http://www.forbes.com/technology/",
+        href: "https://www.forbes.com/technology/",
         label: "Forbes Tech",
       },
       {
         label: "El País",
-        href: "http://elpais.com",
+        href: "https://elpais.com",
       },
       {
         label: "New York Times",
-        href: "http://www.nytimes.com",
+        href: "https://www.nytimes.com",
       },
       {
         label: "Diario Olé",
-        href: "http://www.ole.com.ar",
+        href: "https://www.ole.com.ar",
       },
       {
         label: "Planeta Boca Juniors",
-        href: "http://www.planetabocajuniors.com.ar",
+        href: "https://www.planetabocajuniors.com.ar",
       },
       {
         label: "Medium",
@@ -117,7 +174,7 @@ export const bookmarks = [
       },
       {
         label: "Ciencia de Sofá",
-        href: "http://cienciadesofa.com",
+        href: "https://cienciadesofa.com",
       },
       {
         label: "Vice News",
@@ -157,28 +214,20 @@ export const bookmarks = [
         label: "PonyFoo",
       },
       {
-        href: "http://davidwalsh.name/",
+        href: "https://davidwalsh.name/",
         label: "David Walsh",
       },
       {
-        href: "http://derickbailey.com/",
-        label: "Derick Bailey",
-      },
-      {
-        href: "http://alistapart.com/",
+        href: "https://alistapart.com/",
         label: "A List Apart",
       },
       {
         label: "Can I use",
-        href: "http://caniuse.com/",
-      },
-      {
-        label: "HTML5 Updates",
-        href: "http://updates.html5rocks.com",
+        href: "https://caniuse.com/",
       },
       {
         label: "codrops",
-        href: "http://tympanus.net/codrops",
+        href: "https://tympanus.net/codrops",
       },
       {
         label: "Egghead.io",
@@ -219,27 +268,15 @@ export const bookmarks = [
       },
       {
         label: "Hacker News",
-        href: "http://news.ycombinator.com",
+        href: "https://news.ycombinator.com",
       },
       {
         label: "The Verge",
-        href: "http://theverge.com",
+        href: "https://theverge.com",
       },
       {
         label: "The Next Web",
-        href: "http://thenextweb.com",
-      },
-      {
-        label: "JetBrains Blog",
-        href: "http://blog.jetbrains.com",
-      },
-      {
-        label: "Engadget",
-        href: "http://www.engadget.com",
-      },
-      {
-        label: "Gizmodo ES",
-        href: "http://es.gizmodo.com",
+        href: "https://thenextweb.com",
       },
     ],
   },
@@ -260,7 +297,7 @@ export const bookmarks = [
       },
       {
         label: "Stackoverflow",
-        href: "http://stackoverflow.com",
+        href: "https://stackoverflow.com",
       },
       {
         label: "Product Hunt",
@@ -282,36 +319,11 @@ export const bookmarks = [
     children: [
       {
         label: "Commit Strip",
-        href: "http://commitstrip.com",
+        href: "https://commitstrip.com",
       },
       {
         label: "The Coding Love",
-        href: "http://thecodinglove.com",
-      },
-    ],
-  },
-  {
-    label: "Projects",
-    children: [
-      {
-        label: "Artstagram",
-        href: "https://artstagram.singuerinc.com/",
-      },
-      {
-        label: "Bi",
-        href: "https://bi.singuerinc.com/",
-      },
-      {
-        label: "Swedish word of the day",
-        href: "https://swotd.singuerinc.com/",
-      },
-      {
-        label: "Bashtards",
-        href: "https://bashtards.netlify.app/",
-      },
-      {
-        label: "Subway",
-        href: "https://subway-singuerinc.netlify.app/",
+        href: "https://thecodinglove.com",
       },
     ],
   },
@@ -323,16 +335,12 @@ export const bookmarks = [
         href: "https://www.artstation.com/",
       },
       {
-        label: "The Ultralinx",
-        href: "http://theultralinx.com",
-      },
-      {
-        label: "Linxspiration",
-        href: "http://linxspiration.com",
+        label: "Dribbble",
+        href: "https://dribbble.com/",
       },
       {
         label: "Designspiration",
-        href: "http://designspiration.net",
+        href: "https://designspiration.net",
       },
       {
         label: "Unsplash",
@@ -345,7 +353,16 @@ export const bookmarks = [
     children: [
       {
         label: "musicradar",
-        href: "http://www.musicradar.com/",
+        href: "https://www.musicradar.com/",
+      },
+    ],
+  },
+  {
+    label: "Others",
+    children: [
+      {
+        label: "mnmll.ist",
+        href: "https://mnmll.ist/",
       },
     ],
   },
