@@ -87,7 +87,7 @@ export const bookmarks = [
         href: "https://rottentomatoes.com",
       },
       {
-        label: "Rotten Tomatoes",
+        label: "IMDB",
         href: "https://imdb.com",
       },
     ],
