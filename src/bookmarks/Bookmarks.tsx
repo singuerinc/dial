@@ -31,9 +31,13 @@ function BookmarkItem({ bookmark }: { bookmark: IBookmark }) {
       >
         {bookmark.label}
       </a>
-      <span className="ml-4 text-gray-500 opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+      <a
+        href={bookmark.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="ml-4 text-gray-500 opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
         {bookmark.href}
-      </span>
+      </a>
     </li>
   );
 }
