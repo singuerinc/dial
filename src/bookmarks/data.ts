@@ -92,10 +92,6 @@ export const bookmarks = [
         href: "https://web.whatsapp.com",
       },
       {
-        label: "Inbox",
-        href: "https://inbox.google.com",
-      },
-      {
         label: "Drive",
         href: "https://drive.google.com/drive/#my-drive",
       },
@@ -125,10 +121,6 @@ export const bookmarks = [
         label: "Jared Palmer",
       },
       {
-        href: "https://www.indiehackers.com/",
-        label: "Indie Hackers",
-      },
-      {
         href: "https://www.wired.com/",
         label: "Wired",
       },
@@ -149,20 +141,12 @@ export const bookmarks = [
         href: "https://www.nytimes.com",
       },
       {
-        label: "Diario Olé",
-        href: "https://www.ole.com.ar",
-      },
-      {
         label: "Planeta Boca Juniors",
         href: "https://www.planetabocajuniors.com.ar",
       },
       {
         label: "Medium",
         href: "https://medium.com",
-      },
-      {
-        label: "Ciencia de Sofá",
-        href: "https://cienciadesofa.com",
       },
       {
         label: "Vice News",
@@ -272,46 +256,8 @@ export const bookmarks = [
     label: "Tech",
     children: [
       {
-        label: "GitHub",
-        href: "https://github.com/singuerinc",
-      },
-      {
-        label: "GitLab",
-        href: "https://gitlab.com/singuerinc",
-      },
-      {
-        label: "Carbon - Code images",
-        href: "https://carbon.now.sh/",
-      },
-      {
-        label: "Stackoverflow",
-        href: "https://stackoverflow.com",
-      },
-      {
         label: "Product Hunt",
         href: "https://www.producthunt.com/",
-      },
-    ],
-  },
-  {
-    label: "Social",
-    children: [
-      {
-        label: "Trakt.tv",
-        href: "https://trakt.tv/dashboard",
-      },
-    ],
-  },
-  {
-    label: "Funny",
-    children: [
-      {
-        label: "Commit Strip",
-        href: "https://commitstrip.com",
-      },
-      {
-        label: "The Coding Love",
-        href: "https://thecodinglove.com",
       },
     ],
   },
@@ -329,10 +275,6 @@ export const bookmarks = [
       {
         label: "Designspiration",
         href: "https://designspiration.net",
-      },
-      {
-        label: "Unsplash",
-        href: "https://unsplash.com/",
       },
     ],
   },
