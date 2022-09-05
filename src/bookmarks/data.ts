@@ -6,23 +6,11 @@ export type IBookmark = {
 
 export const bookmarks = [
   {
-    label: "Ports",
+    label: "Mindfulness",
     children: [
       {
-        label: "1234",
-        href: "http://localhost:1234/",
-      },
-      {
-        label: "3000",
-        href: "http://localhost:3000/",
-      },
-      {
-        label: "8080",
-        href: "http://localhost:8080/",
-      },
-      {
-        label: "8888",
-        href: "http://localhost:8888/",
+        label: "The Simple Letter",
+        href: "https://jessicarosewilliams.substack.com/",
       },
     ],
   },
