@@ -15,7 +15,11 @@ export const bookmarks = [
       {
         label: "Be more with less",
         href: "https://bemorewithless.com/",
-      }
+      },
+      {
+        label: "The simplicity habit",
+        href: "https://www.thesimplicityhabit.com/",
+      },
     ],
   },
   {
