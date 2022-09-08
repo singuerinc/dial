@@ -2,6 +2,7 @@ import * as React from "react";
 import { Bookmarks } from "./bookmarks/Bookmarks";
 import { bookmarks } from "./bookmarks/data";
 import { Clock } from "./clock/Clock";
+import { Reminders } from "./reminders/Reminders";
 
 function App() {
   return (
@@ -9,8 +10,9 @@ function App() {
       <div className="col-span-6">
         <Bookmarks bookmarks={bookmarks} />
       </div>
-      <div className="col-span-6">
+      <div className="col-span-6 flex flex-col gap-4">
         <Clock />
+        <Reminders />
       </div>
     </div>
   );
