@@ -27,17 +27,18 @@ function BookmarkItem({ bookmark }: { bookmark: IBookmark }) {
         href={bookmark.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline-offset-4 hover:underline"
+        className="hover:opacity-50"
       >
         {bookmark.label}
       </a>
-      <a
+      {/* <a
         href={bookmark.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="ml-4 text-gray-500 opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+        className="ml-4 text-gray-500 opacity-0 transition-opacity duration-1000 group-hover:opacity-100"
+      >
         {bookmark.href}
-      </a>
+      </a> */}
     </li>
   );
 }
