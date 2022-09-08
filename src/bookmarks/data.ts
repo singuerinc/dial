@@ -9,6 +9,10 @@ export const bookmarks = [
     label: "Lifestyle",
     children: [
       {
+        label: "Becoming Minimalist",
+        href: "https://www.becomingminimalist.com/",
+      },
+      {
         label: "The Simple Letter",
         href: "https://jessicarosewilliams.substack.com/",
       },
