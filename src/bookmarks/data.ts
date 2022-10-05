@@ -133,28 +133,24 @@ export const bookmarks = [
     label: "News + Blogs",
     children: [
       {
-        href: "https://jaredpalmer.com/",
+        label: "Big think",
+        href: "https://bigthink.com/",
+      },
+      {
         label: "Jared Palmer",
+        href: "https://jaredpalmer.com/",
       },
       {
-        href: "https://www.wired.com/",
         label: "Wired",
+        href: "https://www.wired.com/",
       },
       {
-        href: "https://www.ted.com/",
         label: "Ted Talks",
+        href: "https://www.ted.com/",
       },
       {
-        href: "https://www.forbes.com/technology/",
         label: "Forbes Tech",
-      },
-      {
-        label: "El País",
-        href: "https://elpais.com",
-      },
-      {
-        label: "New York Times",
-        href: "https://www.nytimes.com",
+        href: "https://www.forbes.com/technology/",
       },
       {
         label: "Planeta Boca Juniors",
