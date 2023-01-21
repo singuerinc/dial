@@ -34,8 +34,12 @@ export const bookmarks = [
     label: "Projects",
     children: [
       {
-        label: "Time",
+        label: "The time",
         href: "https://time.singuerinc.com",
+      },
+      {
+        label: "A timer",
+        href: "https://timer.singuerinc.com",
       },
       {
         label: "Goals",
